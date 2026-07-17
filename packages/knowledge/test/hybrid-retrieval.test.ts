@@ -7,7 +7,8 @@ import {
   InMemoryTrustedSourceRepository,
   LocalSemanticEmbeddingProvider,
   ReciprocalRankFusionKnowledgeSearch,
-  RegionalDeskIngestionService
+  RegionalDeskIngestionService,
+  RouteStepIngestionService
 } from "../src/index.js";
 
 describe("hybrid retrieval", () => {
@@ -196,6 +197,90 @@ describe("hybrid retrieval", () => {
     );
     expect(byRegion[0]?.record.itemType).toBe("regional_desk");
     expect(byRegion[0]?.record.body).toContain("Twente");
+  });
+
+  it("finds route step explanations as knowledge", async () => {
+    const knowledge = new InMemoryKnowledgeRepository();
+    const sources = new InMemoryTrustedSourceRepository();
+    const embeddings = new InMemoryKnowledgeEmbeddingRepository(
+      knowledge
+    );
+    const provider = new LocalSemanticEmbeddingProvider();
+    const search = new ReciprocalRankFusionKnowledgeSearch(
+      knowledge,
+      new InMemoryFuzzyKnowledgeRepository(knowledge),
+      embeddings,
+      provider,
+      sources
+    );
+    const ingestion = new RouteStepIngestionService(
+      knowledge,
+      sources,
+      search
+    );
+
+    const result = await ingestion.ingest({
+      steps: [
+        {
+          id: "33333333-3333-4333-8333-333333333333",
+          unique_name: "educatieve-master",
+          slug: "educatieve-master",
+          status: "published",
+          short_title: "Educatieve master",
+          long_title:
+            "Word eerstegraads leraar met een educatieve master",
+          duration_in_months: 24,
+          body: {
+            type: "doc",
+            content: [
+              {
+                type: "paragraph",
+                content: [
+                  {
+                    type: "text",
+                    text:
+                      "Met een educatieve master behaal je een " +
+                      "eerstegraads bevoegdheid voor alle " +
+                      "niveaus van het voortgezet onderwijs."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          id: "44444444-4444-4444-8444-444444444444",
+          unique_name: "concept-stap",
+          status: "draft",
+          short_title: "Conceptstap",
+          long_title: "Conceptstap",
+          body: {
+            type: "doc",
+            content: [
+              {
+                type: "paragraph",
+                content: [{ type: "text", text: "concept" }]
+              }
+            ]
+          }
+        }
+      ]
+    });
+
+    expect(result.imported).toBe(1);
+
+    const results = await search.search(
+      "educatieve master eerstegraads bevoegdheid",
+      { limit: 3 }
+    );
+
+    expect(results[0]?.record.title).toBe(
+      "Word eerstegraads leraar met een educatieve master"
+    );
+    expect(results[0]?.record.itemType).toBe("route_step");
+    expect(results[0]?.record.body).toContain(
+      "Indicatieve duur: 24 maanden."
+    );
   });
 
   it("returns normalized embeddings with stable dimensions", async () => {

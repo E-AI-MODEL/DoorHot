@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import {
   FaqIngestionService,
   RegionalDeskIngestionService,
+  RouteStepIngestionService,
   PostgresKnowledgeRepository,
   PostgresTrustedSourceRepository,
   PostgresFuzzyKnowledgeRepository,
@@ -76,6 +77,18 @@ export async function seedKnowledgeBase(executor) {
     indexer
   ).ingest({ desks: deskDataset });
 
+  const routeStepDataset = JSON.parse(
+    await readFile(
+      resolve(root, "datasets", "route-steps.json"),
+      "utf8"
+    )
+  );
+  const routeStepResult = await new RouteStepIngestionService(
+    knowledge,
+    sources,
+    indexer
+  ).ingest({ steps: routeStepDataset });
+
   const counts = await executor.query(
     `SELECT item_type, count(*)::int AS count
      FROM knowledge_items
@@ -92,6 +105,7 @@ export async function seedKnowledgeBase(executor) {
   return {
     faqsImported: faqResult.imported,
     desksImported: deskResult.imported,
+    routeStepsImported: routeStepResult.imported,
     knowledgeItems: Object.fromEntries(
       counts.rows.map((row) => [row.item_type, row.count])
     ),

@@ -50,7 +50,11 @@ const CONSUMERS: Readonly<Record<string, readonly string[]>> = {
   "phase-detector-questions.json": ["packages/domain/src/datasets.ts"],
   "phase-detector-rules.json": ["packages/domain/src/datasets.ts"],
   "route-questions.json": ["packages/domain/src/datasets.ts"],
-  "route-steps.json": ["packages/domain/src/datasets.ts"],
+  "route-steps.json": [
+    "packages/domain/src/datasets.ts",
+    "apps/api/src/bootstrap.ts",
+    "apps/api/src/production-bootstrap.ts"
+  ],
   "routes.json": ["packages/domain/src/datasets.ts"],
   "journey-phases.json": ["packages/domain/src/datasets.ts"],
   "phase-system-4.json": ["packages/domain/src/datasets.ts"],

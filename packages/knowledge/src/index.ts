@@ -487,6 +487,106 @@ export class RegionalDeskIngestionService {
   }
 }
 
+export interface RouteStepContentRecord {
+  id: string;
+  unique_name?: string;
+  slug?: string;
+  status?: string;
+  short_title?: string;
+  long_title?: string;
+  duration_in_months?: number | null;
+  body?: RichTextNode | null;
+  date_created?: string | null;
+  date_updated?: string | null;
+}
+
+export interface RouteStepContentDataset {
+  steps: readonly RouteStepContentRecord[];
+}
+
+export class RouteStepIngestionService {
+  constructor(
+    private readonly knowledge: KnowledgeRepository,
+    private readonly sources: TrustedSourceRepository,
+    private readonly embeddingIndexer?: {
+      index(record: KnowledgeRecord): Promise<void>;
+    }
+  ) {}
+
+  async ingest(
+    dataset: RouteStepContentDataset
+  ): Promise<{ imported: number }> {
+    const sourceKey = "door010-internal";
+    const now = new Date().toISOString();
+
+    await this.sources.upsert({
+      id: stableId(`source:${sourceKey}`),
+      sourceKey,
+      label: inferSourceLabel(sourceKey),
+      baseUrl: undefined,
+      authority: 0.6,
+      active: true,
+      allowedDomains: [],
+      createdAt: now,
+      updatedAt: now
+    });
+
+    let imported = 0;
+
+    for (const step of dataset.steps) {
+      if (step.status && step.status !== "published") continue;
+
+      const title = (step.long_title ?? step.short_title ?? "")
+        .trim();
+      const body = flattenRichText(step.body);
+      if (!title || !body) continue;
+
+      const aliases = [
+        step.short_title?.trim(),
+        step.unique_name?.replaceAll("-", " ")
+      ].filter(
+        (alias): alias is string =>
+          Boolean(alias) && alias !== title
+      );
+
+      const bodyParts = [
+        body,
+        typeof step.duration_in_months === "number"
+          ? "Indicatieve duur: " +
+            `${step.duration_in_months} maanden.`
+          : ""
+      ].filter(Boolean);
+
+      const record: KnowledgeRecord = {
+        id: stableId(`route-step:${step.id}`),
+        externalId: step.id,
+        itemType: "route_step",
+        title,
+        aliases,
+        body: bodyParts.join(" "),
+        category: "route-stap",
+        tags: [
+          "route-stap",
+          ...(step.slug ? [step.slug] : [])
+        ],
+        sourceKey,
+        timeSensitive: false,
+        requiresCitation: false,
+        reviewStatus: "approved",
+        version: 1,
+        createdAt: step.date_created ?? now,
+        updatedAt: step.date_updated ?? now
+      };
+
+      await this.knowledge.upsert(record);
+      await this.embeddingIndexer?.index(record);
+      imported += 1;
+    }
+
+    return { imported };
+  }
+}
+
 function stableId(value: string): string {
   let hash = 2166136261;
 

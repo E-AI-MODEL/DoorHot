@@ -71,6 +71,8 @@ import {
   ReciprocalRankFusionKnowledgeSearch,
   RegionalDeskIngestionService,
   type RegionalDeskRecord,
+  RouteStepIngestionService,
+  type RouteStepContentRecord,
   ShadowCrossEncoderKnowledgeSearch,
   PostgresPipelineEventRepository,
   PostgresShadowEvaluationRepository,
@@ -239,6 +241,11 @@ const regionalDeskIngestion = new RegionalDeskIngestionService(
   trustedSourceRepository,
   baseKnowledgeSearch
 );
+const routeStepIngestion = new RouteStepIngestionService(
+  knowledgeRepository,
+  trustedSourceRepository,
+  baseKnowledgeSearch
+);
 const connectors = new PostgresConnectorRepository(executor);
 const secretResolver = new EnvironmentSecretResolver();
 const connectorService = new KnowledgeConnectorService(
@@ -296,6 +303,13 @@ const regionalDesks = JSON.parse(
   )
 ) as readonly RegionalDeskRecord[];
 await regionalDeskIngestion.ingest({ desks: regionalDesks });
+const routeStepContent = JSON.parse(
+  await readFile(
+    resolve(datasetsDirectory, "route-steps.json"),
+    "utf8"
+  )
+) as readonly RouteStepContentRecord[];
+await routeStepIngestion.ingest({ steps: routeStepContent });
 
   const promptRepository =
     new PostgresPromptRepository(executor);
