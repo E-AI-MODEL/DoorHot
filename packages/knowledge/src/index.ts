@@ -1707,7 +1707,13 @@ export class AdaptiveRetrievalAnswerDraftProvider
   constructor(
     private readonly retrieval: AdaptiveRetrievalPipeline,
     private readonly generator: AnswerDraftProvider,
-    private readonly validator: AnswerValidationPipeline
+    private readonly validator: AnswerValidationPipeline,
+    private readonly options: {
+      // Without an LLM the generator produces a generic sentence;
+      // with this flag the draft answers extractively from the best
+      // retrieved record instead, so answers stay grounded.
+      preferExtractiveAnswer?: boolean;
+    } = {}
   ) {}
 
   async createDraft(
@@ -1753,8 +1759,19 @@ export class AdaptiveRetrievalAnswerDraftProvider
         .join("\n\n")
     );
 
+    const topInternal = retrieval.internal[0];
+    const topExternal = retrieval.external[0];
+    const extractiveAnswer = this.options.preferExtractiveAnswer
+      ? topExternal
+        ? `${topExternal.text} (Bron: ${topExternal.title})`
+        : topInternal
+          ? `${topInternal.record.body} (Bron: ` +
+            `${topInternal.record.title})`
+          : undefined
+      : undefined;
+
     const validated = await this.validator.validateAndRepair(
-      generated.directAnswer,
+      extractiveAnswer ?? generated.directAnswer,
       retrieval.intent
     );
 

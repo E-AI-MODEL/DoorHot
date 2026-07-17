@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  AdaptiveRetrievalAnswerDraftProvider,
   AdaptiveRetrievalPipeline,
   AnswerValidationPipeline,
   ConditionalFaqReranker,
@@ -168,6 +169,67 @@ describe("AI parity pipeline", () => {
     expect(result.external).toHaveLength(1);
     expect(result.sourceHierarchy[0]).toBe("external-fresh");
     expect(calls).toHaveLength(1);
+  });
+
+  it("answers extractively from the best record without an LLM", async () => {
+    const knowledge = new InMemoryKnowledgeRepository();
+    const sources = new InMemoryTrustedSourceRepository();
+    await knowledge.upsert(
+      record(
+        "11111111-1111-4111-8111-111111111111",
+        "Wat is de Pabo?",
+        "De pabo leidt op tot leraar in het basisonderwijs."
+      )
+    );
+
+    const pipeline = new AdaptiveRetrievalPipeline(
+      new HybridKnowledgeSearch(knowledge, sources),
+      sources,
+      new IntentRouter(),
+      new ConditionalFaqReranker()
+    );
+    const genericGenerator = {
+      async createDraft() {
+        return {
+          directAnswer: "Ik help je met algemene informatie.",
+          supportingDetail: "generiek"
+        };
+      }
+    };
+
+    const extractive = new AdaptiveRetrievalAnswerDraftProvider(
+      pipeline,
+      genericGenerator,
+      new AnswerValidationPipeline(),
+      { preferExtractiveAnswer: true }
+    );
+    const generic = new AdaptiveRetrievalAnswerDraftProvider(
+      pipeline,
+      genericGenerator,
+      new AnswerValidationPipeline()
+    );
+
+    const request = { message: "Wat is de pabo?" };
+    const context = { slots: [] };
+
+    const extracted = await extractive.createDraft(
+      "general-coach",
+      request,
+      context
+    );
+    const canned = await generic.createDraft(
+      "general-coach",
+      request,
+      context
+    );
+
+    expect(extracted.directAnswer).toContain(
+      "leidt op tot leraar in het basisonderwijs"
+    );
+    expect(extracted.directAnswer).toContain("Bron: Wat is de Pabo?");
+    expect(canned.directAnswer).toBe(
+      "Ik help je met algemene informatie."
+    );
   });
 
   it("repairs leakage and sentence overflow", async () => {

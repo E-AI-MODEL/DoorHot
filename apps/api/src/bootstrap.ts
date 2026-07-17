@@ -386,7 +386,8 @@ await routeStepIngestion.ingest({ steps: routeStepContent });
         undefined,
         undefined,
         pipelineEvents
-      )
+      ),
+      { preferExtractiveAnswer: true }
     );
   const mutationStore =
     new InMemoryPendingMutationStore();

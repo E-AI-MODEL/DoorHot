@@ -462,7 +462,8 @@ await routeStepIngestion.ingest({ steps: routeStepContent });
           : undefined,
         undefined,
         pipelineEvents
-      )
+      ),
+      { preferExtractiveAnswer: !liveIntegrations.llm }
     );
 
   const audit = new AuditService(
