@@ -19,6 +19,7 @@ interface BenchmarkCase {
 
 interface FaqRecord {
   question: string;
+  aliases?: readonly string[];
   answer: string;
   category?: string;
   tags?: readonly string[];
@@ -225,6 +226,7 @@ const titleEmphasis = 3;
 const faqTexts = faqDataset.faqs.map((faq) =>
   [
     ...Array<string>(titleEmphasis).fill(faq.question),
+    ...(faq.aliases ?? []),
     faq.answer,
     faq.category ?? "",
     ...(faq.tags ?? [])
@@ -280,18 +282,19 @@ try {
 
     await database.query(
       `INSERT INTO knowledge_items (
-         id, external_id, item_type, title, body, category,
-         tags, source_key, source_url, time_sensitive,
+         id, external_id, item_type, title, aliases, body,
+         category, tags, source_key, source_url, time_sensitive,
          requires_citation, review_status,
          version, created_at, updated_at
        ) VALUES (
-         $1, $2, 'faq', $3, $4, $5, $6, $7, $8,
-         false, false, 'approved', 1, $9, $9
+         $1, $2, 'faq', $3, $4, $5, $6, $7, $8, $9,
+         false, false, 'approved', 1, $10, $10
        )`,
       [
         questionToId.get(faq.question),
         stableId(faq.question),
         faq.question,
+        faq.aliases ?? [],
         faq.answer,
         faq.category ?? null,
         faq.tags ?? [],

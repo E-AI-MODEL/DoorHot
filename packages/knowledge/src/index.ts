@@ -37,6 +37,7 @@ export interface KnowledgeRecord {
   id: string;
   externalId?: string;
   title: string;
+  aliases?: readonly string[];
   body: string;
   category?: string;
   tags: readonly string[];
@@ -114,7 +115,12 @@ function lexicalSimilarity(
   matchedTerms: readonly string[];
 } {
   const queryTerms = normalizeTerms(query);
-  const titleTerms = new Set(normalizeTerms(record.title));
+  const titleTerms = new Set([
+    ...normalizeTerms(record.title),
+    ...(record.aliases ?? []).flatMap(
+      (alias) => normalizeTerms(alias)
+    )
+  ]);
   const bodyTerms = new Set(normalizeTerms(record.body));
   const tagTerms = new Set(
     record.tags.flatMap((tag) => normalizeTerms(tag))
@@ -259,6 +265,7 @@ function calculateFreshness(record: KnowledgeRecord): number {
 
 export interface FaqSeedRecord {
   question: string;
+  aliases?: readonly string[];
   answer: string;
   category?: string;
   tags?: readonly string[];
@@ -313,6 +320,7 @@ export class FaqIngestionService {
         id: stableId(`faq:${faq.question}`),
         externalId: stableId(faq.question),
         title: faq.question.trim(),
+        aliases: (faq.aliases ?? []).map((alias) => alias.trim()),
         body: faq.answer.trim(),
         category: faq.category,
         tags,
@@ -498,17 +506,18 @@ export class PostgresKnowledgeRepository
   async upsert(record: KnowledgeRecord): Promise<void> {
     await this.executor.query(
       `INSERT INTO knowledge_items (
-         id, external_id, item_type, title, body, category, tags,
-         source_key, source_url, time_sensitive,
+         id, external_id, item_type, title, aliases, body,
+         category, tags, source_key, source_url, time_sensitive,
          requires_citation, valid_from, valid_until,
          review_status, version, created_at, updated_at
        ) VALUES (
          $1, $2, 'faq', $3, $4, $5, $6, $7, $8, $9,
-         $10, $11, $12, $13, $14, $15, $16
+         $10, $11, $12, $13, $14, $15, $16, $17
        )
        ON CONFLICT (id) DO UPDATE SET
          external_id = EXCLUDED.external_id,
          title = EXCLUDED.title,
+         aliases = EXCLUDED.aliases,
          body = EXCLUDED.body,
          category = EXCLUDED.category,
          tags = EXCLUDED.tags,
@@ -525,6 +534,7 @@ export class PostgresKnowledgeRepository
         record.id,
         record.externalId ?? null,
         record.title,
+        record.aliases ?? [],
         record.body,
         record.category ?? null,
         record.tags,
@@ -618,6 +628,7 @@ interface KnowledgeRow {
   id: string;
   external_id: string | null;
   title: string;
+  aliases?: string[] | null;
   body: string;
   category: string | null;
   tags: string[];
@@ -638,6 +649,7 @@ function mapKnowledgeRow(row: KnowledgeRow): KnowledgeRecord {
     id: row.id,
     externalId: row.external_id ?? undefined,
     title: row.title,
+    aliases: row.aliases ?? undefined,
     body: row.body,
     category: row.category ?? undefined,
     tags: row.tags,
@@ -1889,6 +1901,7 @@ const TITLE_EMPHASIS = 3;
 function recordText(record: KnowledgeRecord): string {
   return [
     ...Array<string>(TITLE_EMPHASIS).fill(record.title),
+    ...(record.aliases ?? []),
     record.body,
     record.category ?? "",
     ...record.tags

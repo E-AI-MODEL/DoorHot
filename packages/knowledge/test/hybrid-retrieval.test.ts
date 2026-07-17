@@ -69,6 +69,63 @@ describe("hybrid retrieval", () => {
     );
   });
 
+  it("finds records through their aliases", async () => {
+    const knowledge = new InMemoryKnowledgeRepository();
+    const sources = new InMemoryTrustedSourceRepository();
+    const embeddings = new InMemoryKnowledgeEmbeddingRepository(
+      knowledge
+    );
+    const provider = new LocalSemanticEmbeddingProvider();
+    const search = new ReciprocalRankFusionKnowledgeSearch(
+      knowledge,
+      new InMemoryFuzzyKnowledgeRepository(knowledge),
+      embeddings,
+      provider,
+      sources
+    );
+    const ingestion = new FaqIngestionService(
+      knowledge,
+      sources,
+      search
+    );
+
+    await ingestion.ingest({
+      faqs: [
+        {
+          question: "Wat is een lio-stage en hoe werkt die?",
+          aliases: [
+            "Betaalde eindstage van de lerarenopleiding",
+            "Leraar in opleiding stage"
+          ],
+          answer:
+            "Een lio-stage is de afsluitende stage waarin je " +
+            "zelfstandig lesgeeft, vaak met een leerarbeidsovereenkomst.",
+          category: "route",
+          tags: ["stage", "lio"]
+        },
+        {
+          question: "Wat is de Pabo?",
+          answer:
+            "De pabo leidt op tot leraar in het basisonderwijs.",
+          category: "route",
+          tags: ["pabo", "basisschool"]
+        }
+      ]
+    });
+
+    const viaAlias = await search.search(
+      "betaalde eindstage lerarenopleiding",
+      { limit: 3 }
+    );
+
+    expect(viaAlias[0]?.record.title).toBe(
+      "Wat is een lio-stage en hoe werkt die?"
+    );
+    expect(viaAlias[0]?.record.aliases).toContain(
+      "Leraar in opleiding stage"
+    );
+  });
+
   it("returns normalized embeddings with stable dimensions", async () => {
     const provider = new LocalSemanticEmbeddingProvider(128);
     const [first, second] = await provider.embed([

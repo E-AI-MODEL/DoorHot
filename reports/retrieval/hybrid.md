@@ -7,21 +7,21 @@
 
 | Metric | FTS baseline | Hybrid | Delta |
 |---|---:|---:|---:|
-| Recall@5 | 0.3844 | 0.9039 | 0.5195 |
-| MRR@5 | 0.3717 | 0.7794 | 0.4077 |
-| nDCG@5 | 0.3749 | 0.8047 | 0.4298 |
+| Recall@5 | 0.3844 | 0.97 | 0.5856 |
+| MRR@5 | 0.3717 | 0.8707 | 0.499 |
+| nDCG@5 | 0.3749 | 0.8912 | 0.5163 |
 
 ## Hybrid per querytype bij k=5
 
 | Type | Recall@5 | MRR | nDCG@5 |
 |---|---:|---:|---:|
-| alias | 0.9787 | 0.9468 | 0.9552 |
-| conversational | 0.8542 | 0.5948 | 0.6593 |
-| exact | 1 | 0.9757 | 0.9819 |
-| hard_negative | 0.9167 | 0.6611 | 0.7251 |
-| multi_intent | 0.7917 | 0.8021 | 0.7158 |
-| paraphrase | 0.75 | 0.541 | 0.5928 |
-| short | 0.9348 | 0.8279 | 0.8554 |
-| typo | 0.9583 | 0.8438 | 0.8733 |
+| alias | 0.9787 | 0.9362 | 0.9473 |
+| conversational | 0.9375 | 0.7052 | 0.7631 |
+| exact | 1 | 0.9792 | 0.9846 |
+| hard_negative | 0.9583 | 0.6979 | 0.7645 |
+| multi_intent | 0.875 | 0.8646 | 0.8024 |
+| paraphrase | 0.9583 | 0.8212 | 0.8559 |
+| short | 1 | 0.942 | 0.957 |
+| typo | 1 | 0.934 | 0.9511 |
 
-Gemiste vragen bij k=5: 28
+Gemiste vragen bij k=5: 7

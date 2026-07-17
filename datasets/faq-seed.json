@@ -2,343 +2,945 @@
   "faqs": [
     {
       "question": "Wat is een zij-instroomtraject?",
+      "aliases": [
+        "Uitleg over zij-instroom",
+        "Wat houdt zij-instroom in?",
+        "Omscholen tot leraar via werken en leren",
+        "Betekenis zij-instroomtraject"
+      ],
       "answer": "Het zij-instroomtraject is een tweejarig versneld traject waarbij je tegelijkertijd werkt en leert. Je staat vanaf dag 1 voor de klas als leraar en volgt daarnaast vakken op een lerarenopleiding. Je werkt minimaal 0,4 fte (2 dagen per week) en volgt gemiddeld 1 dag per week opleiding. Om in aanmerking te komen heb je minimaal een hbo- of wo-diploma nodig, plus een geschiktheidsonderzoek en een aanstelling bij een school.",
       "category": "route",
-      "tags": ["zij-instroom", "route", "ZIB", "source:internal", "time_sensitive:false", "alias:Wat is ZIB", "alias:Hoe werkt zij-instroom"],
+      "tags": [
+        "zij-instroom",
+        "route",
+        "ZIB",
+        "source:internal",
+        "time_sensitive:false",
+        "alias:Wat is ZIB",
+        "alias:Hoe werkt zij-instroom"
+      ],
       "source_url": "https://www.onderwijsloket.com/over-het-onderwijs/zij-instroom-in-het-beroep/"
     },
     {
       "question": "Wat zijn de toelatingseisen voor het zij-instroomtraject?",
+      "aliases": [
+        "Aan welke eisen moet ik voldoen voor zij-instroom?",
+        "Voorwaarden om te starten met zij-instroom",
+        "Word ik toegelaten tot zij-instroom?"
+      ],
       "answer": "De toelatingseisen voor zij-instroom zijn: minimaal een hbo-bachelordiploma (PO) of een vakinhoudelijk verwant hbo/wo-diploma (VO). Daarnaast moet je een geschiktheidsonderzoek bij een lerarenopleiding doorlopen, een aanstelling bij een school hebben, en een VOG overleggen. Voor VO moet je diploma vakinhoudelijk verwant zijn aan het schoolvak waarin je wilt lesgeven. De lerarenopleiding beslist over de toelating.",
       "category": "toelating",
-      "tags": ["zij-instroom", "toelating", "ZIB", "source:external", "source:official", "alias:Wat heb ik nodig voor zij-instroom", "alias:Kom ik in aanmerking voor zij-instroom"],
+      "tags": [
+        "zij-instroom",
+        "toelating",
+        "ZIB",
+        "source:external",
+        "source:official",
+        "alias:Wat heb ik nodig voor zij-instroom",
+        "alias:Kom ik in aanmerking voor zij-instroom"
+      ],
       "source_url": "https://www.onderwijsloket.com/kennisbank/artikel-archief/hoe-kan-ik-zij-instromen-als-leraar-in-het-basisonderwijs/"
     },
     {
       "question": "Welke vooropleiding is vakinhoudelijk verwant voor zij-instroom?",
+      "aliases": [
+        "Sluit mijn studie aan bij een schoolvak?",
+        "Is mijn diploma verwant genoeg voor zij-instroom?",
+        "Welke opleiding telt als vakverwant?"
+      ],
       "answer": "Voor zij-instroom PO (basisonderwijs) maakt de richting van je diploma niet uit — je hebt alleen minimaal een hbo-bachelordiploma nodig. Voor zij-instroom VO (voortgezet onderwijs) moet je hbo/wo-diploma vakinhoudelijk verwant zijn aan het schoolvak. Bij eerstegraads: wo-bachelor + master met minimaal 120 ECTS verwant aan het vak. De verwantschapstabel geeft slechts een indicatie — de lerarenopleiding beslist zelf over toelating. Check altijd bij de beoogde opleiding.",
       "category": "toelating",
-      "tags": ["zij-instroom", "verwantschap", "toelating", "ZIB", "source:internal", "alias:Is mijn diploma verwant", "alias:Vakverwantschap zij-instroom"],
+      "tags": [
+        "zij-instroom",
+        "verwantschap",
+        "toelating",
+        "ZIB",
+        "source:internal",
+        "alias:Is mijn diploma verwant",
+        "alias:Vakverwantschap zij-instroom"
+      ],
       "source_url": "https://www.onderwijsloket.com/kennisbank/artikel-archief/welke-bevoegdheden-zijn-er/"
     },
     {
       "question": "Hoe lang duurt een zij-instroomtraject?",
+      "aliases": [
+        "Doorlooptijd van zij-instroom",
+        "In hoeveel jaar ben ik bevoegd via zij-instroom?",
+        "Duur van het zij-instroomtraject"
+      ],
       "answer": "Een zij-instroomtraject duurt in principe twee jaar. Heb je al eerder een lerarenopleiding (deels) afgerond? Geef dit dan aan bij de hogeschool of universiteit. Omdat het zij-instroomtraject een maatwerktraject is, zou het kunnen dat je recht hebt op vrijstellingen voor bepaalde vakken. Het traject zou hierdoor eventueel korter kunnen uitvallen.",
       "category": "duur",
-      "tags": ["zij-instroom", "duur", "ZIB", "source:external", "alias:Hoelang duurt zij-instroom", "alias:Duur zij-instroomtraject"],
+      "tags": [
+        "zij-instroom",
+        "duur",
+        "ZIB",
+        "source:external",
+        "alias:Hoelang duurt zij-instroom",
+        "alias:Duur zij-instroomtraject"
+      ],
       "source_url": "https://www.onderwijsloket.com/over-het-onderwijs/zij-instroom-in-het-beroep/"
     },
     {
       "question": "Wat kost een zij-instroomtraject?",
+      "aliases": [
+        "Prijs van zij-instroom",
+        "Welke uitgaven horen bij zij-instroom?",
+        "Moet ik zij-instroom zelf betalen?"
+      ],
       "answer": "Het zij-instroomtraject is kosteloos te volgen. Dit komt doordat het traject door de overheid volledig gesubsidieerd wordt via de Subsidie zij-instroom. De school waaraan je gaat werken vraagt bij de start de subsidie aan. Van deze subsidie betaalt de school jouw opleidingskosten en een deel van jouw salaris. Let op: als je het traject voortijdig stopt, kan je werkgever NIET opnieuw de zij-instroomsubsidie voor jou aanvragen.",
       "category": "subsidie",
-      "tags": ["zij-instroom", "kosten", "subsidie", "ZIB", "source:external", "source:official", "time_sensitive:true", "alias:Is zij-instroom gratis", "alias:Kosten zij-instroom"],
+      "tags": [
+        "zij-instroom",
+        "kosten",
+        "subsidie",
+        "ZIB",
+        "source:external",
+        "source:official",
+        "time_sensitive:true",
+        "alias:Is zij-instroom gratis",
+        "alias:Kosten zij-instroom"
+      ],
       "source_url": "https://duo.nl/zakelijk/voortgezet-onderwijs/bekostiging-en-subsidies/subsidie-zij-instroom.jsp"
     },
     {
       "question": "Wat is het salaris van een startende docent?",
+      "aliases": [
+        "Wat verdient een beginnende leraar?",
+        "Startsalaris in het onderwijs",
+        "Inkomen als je net voor de klas staat"
+      ],
       "answer": "Als startend docent kom je meestal in de LB-schaal. PO/VO: LB-schaal trede 1 ca. €3.840, trede 12 ca. €5.840 bruto per maand (CAO PO 2024-2025 / CAO VO 2025-2026). MBO: LB-schaal trede 1 ca. €3.940, trede 12 ca. €5.830 (CAO MBO 2025-2026). In welke trede je precies wordt ingeschaald hangt af van je werkervaring en het schoolbeleid. Onderhandelen mag.",
       "category": "salaris",
-      "tags": ["salaris", "cao", "LB-schaal", "ZIB", "source:external", "time_sensitive:true", "requires_citation:true", "alias:Hoeveel verdien ik als docent", "alias:Startsalaris leraar"],
+      "tags": [
+        "salaris",
+        "cao",
+        "LB-schaal",
+        "ZIB",
+        "source:external",
+        "time_sensitive:true",
+        "requires_citation:true",
+        "alias:Hoeveel verdien ik als docent",
+        "alias:Startsalaris leraar"
+      ],
       "peildatum": "2026-05",
       "source_url": "https://www.poraad.nl/salaristabellen"
     },
     {
       "question": "Hoeveel dagen moet ik werken en hoeveel dagen naar de opleiding tijdens zij-instroom?",
+      "aliases": [
+        "Weekindeling tijdens zij-instroom",
+        "Verdeling werkdagen en opleidingsdagen",
+        "Hoe combineer ik lesgeven met de opleiding?"
+      ],
       "answer": "Gemiddeld heb je tijdens het zij-instroomtraject per week één dag (of twee dagdelen) waarop je vakken volgt bij de lerarenopleiding. Daarnaast werk je minimaal 0,4 fte, dus minimaal twee werkdagen. Hoeveel dagen je werkt is afhankelijk van jouw eigen wensen en van de wensen van je werkgever. Hou er rekening mee dat je naast deze dagen vaak ook nog wat tijd kwijt bent aan zelfstudie.",
       "category": "route",
-      "tags": ["zij-instroom", "intensiteit", "werkdagen", "ZIB", "source:external", "alias:Hoeveel werk ik tijdens zij-instroom", "alias:Intensiteit zij-instroomtraject"],
+      "tags": [
+        "zij-instroom",
+        "intensiteit",
+        "werkdagen",
+        "ZIB",
+        "source:external",
+        "alias:Hoeveel werk ik tijdens zij-instroom",
+        "alias:Intensiteit zij-instroomtraject"
+      ],
       "source_url": "https://www.onderwijsloket.com/kennisbank/artikel-archief/past-een-zij-instroomtraject-bij-mij/"
     },
     {
       "question": "Hoe zorg ik voor inkomen tijdens het zij-instroomtraject?",
+      "aliases": [
+        "Word ik betaald tijdens zij-instroom?",
+        "Salaris tijdens het zij-instroomtraject",
+        "Geld verdienen terwijl ik word opgeleid"
+      ],
       "answer": "Tijdens het zij-instroomtraject word je uitbetaald als docent. Je ontvangt dus gewoon salaris. Wel is het belangrijk om met de school af te stemmen voor hoeveel dagen je wordt uitbetaald en wat de hoogte van je salaris wordt. Daarnaast kun je kijken of je via DUO recht hebt op bepaalde regelingen of subsidies.",
       "category": "salaris",
-      "tags": ["zij-instroom", "inkomen", "salaris", "ZIB", "source:internal", "alias:Krijg ik betaald tijdens zij-instroom", "alias:Salaris tijdens zij-instroom"],
+      "tags": [
+        "zij-instroom",
+        "inkomen",
+        "salaris",
+        "ZIB",
+        "source:internal",
+        "alias:Krijg ik betaald tijdens zij-instroom",
+        "alias:Salaris tijdens zij-instroom"
+      ],
       "source_url": null
     },
     {
       "question": "Welke bevoegdheid heb ik nodig om les te geven?",
+      "aliases": [
+        "Welke lesbevoegdheid is vereist?",
+        "Bevoegdheid voor de klas",
+        "Welk diploma heb ik nodig om leraar te worden?"
+      ],
       "answer": "Voor PO (basisonderwijs): je hebt een bevoegdheid primair onderwijs nodig, via de pabo. Daarmee mag je lesgeven op de basisschool, in het praktijkonderwijs en op scholen voor speciaal onderwijs. Voor VO (voortgezet onderwijs): tweedegraads (hbo, 4 jaar) voor vmbo en onderbouw havo/vwo, eerstegraads (universitaire master) voor alle VO-niveaus inclusief bovenbouw. Voor MBO: 'bevoegd' is geen wettelijke term. Je kunt lesgeven met een eerste- of tweedegraads bevoegdheid, of met een geschiktheidsverklaring plus PDG.",
       "category": "bevoegdheid",
-      "tags": ["bevoegdheid", "PO", "VO", "MBO", "ZIB", "source:external", "alias:Welke bevoegdheden zijn er", "alias:Verschil eerste- en tweedegraads"],
+      "tags": [
+        "bevoegdheid",
+        "PO",
+        "VO",
+        "MBO",
+        "ZIB",
+        "source:external",
+        "alias:Welke bevoegdheden zijn er",
+        "alias:Verschil eerste- en tweedegraads"
+      ],
       "source_url": "https://www.onderwijsloket.com/kennisbank/artikel-archief/welke-bevoegdheden-zijn-er/"
     },
     {
       "question": "Wat is het verschil tussen de verschillende onderwijssectoren?",
+      "aliases": [
+        "Verschil tussen po, vo, mbo en hbo",
+        "Welke onderwijssector past bij mij?",
+        "Uitleg over de sectoren in het onderwijs"
+      ],
       "answer": "Er zijn vier hoofdsectoren: Primair onderwijs (PO) — basisschool, groep 1-8, je geeft alle vakken. Voortgezet onderwijs (VO) — middelbare school, je geeft les in een specifiek vak (vmbo, havo, vwo). Middelbaar beroepsonderwijs (MBO) — beroepsopleidingen, je geeft theorie- en/of praktijklessen. Hoger onderwijs (HO) — hbo en universiteit, geen wettelijke bevoegdheid vereist maar vaak wel master + BKO/BDB gevraagd.",
       "category": "algemeen",
-      "tags": ["sector", "PO", "VO", "MBO", "HO", "ZIB", "source:internal", "alias:Wat voor soorten scholen zijn er", "alias:Verschil PO VO MBO"],
+      "tags": [
+        "sector",
+        "PO",
+        "VO",
+        "MBO",
+        "HO",
+        "ZIB",
+        "source:internal",
+        "alias:Wat voor soorten scholen zijn er",
+        "alias:Verschil PO VO MBO"
+      ],
       "source_url": null
     },
     {
       "question": "Hoe weet ik of het onderwijs iets voor mij is?",
+      "aliases": [
+        "Past lesgeven bij mij?",
+        "Is leraar worden geschikt voor mij?",
+        "Twijfel of ik het onderwijs in wil"
+      ],
       "answer": "Er zijn verschillende manieren om te ontdekken of het onderwijs bij je past: beluister podcasts met ervaringsverhalen (zoals Grote Pauze, De Lesboeren, Klaar voor de Stap), vraag bij een school in de buurt of je mag meelopen, lees artikelen uit de kennisbank over verschillende functies en sectoren, ga met mensen in je netwerk in gesprek, of neem contact op met een regionaal onderwijsloket voor advies.",
       "category": "algemeen",
-      "tags": ["orientatie", "beroep", "ZIB", "source:external", "alias:Past het onderwijs bij mij", "alias:Oriëntatie op het beroep"],
+      "tags": [
+        "orientatie",
+        "beroep",
+        "ZIB",
+        "source:external",
+        "alias:Past het onderwijs bij mij",
+        "alias:Oriëntatie op het beroep"
+      ],
       "source_url": "https://www.onderwijsloket.com/podcast"
     },
     {
       "question": "Hoeveel vraag is er naar docenten van een bepaald vak?",
+      "aliases": [
+        "Voor welke vakken zijn leraren nodig?",
+        "Vraag naar docenten per schoolvak",
+        "In welke vakken is een lerarentekort?"
+      ],
       "answer": "De vraag naar docenten verschilt sterk per vak en per regio. Het is daarom verstandig om contact op te nemen met een regionaal onderwijsloket in jouw regio. Zo'n loket kan je meer vertellen over welke tekorten er zijn en welke vacatures er bij aangesloten scholen beschikbaar zijn. Bekijk het overzicht van alle regionale initiatieven op regioloketten.onderwijsloket.com.",
       "category": "vacature",
-      "tags": ["vacature", "tekorten", "regio", "ZIB", "source:external", "alias:Waar zijn tekorten", "alias:Zijn er vacatures"],
+      "tags": [
+        "vacature",
+        "tekorten",
+        "regio",
+        "ZIB",
+        "source:external",
+        "alias:Waar zijn tekorten",
+        "alias:Zijn er vacatures"
+      ],
       "source_url": "https://regioloketten.onderwijsloket.com/"
     },
     {
       "question": "Wat is het verschil tussen deeltijd en zij-instroom?",
+      "aliases": [
+        "Deeltijdopleiding of zij-instroom kiezen",
+        "Vergelijking deeltijd en werken-en-leren",
+        "Welke route past beter: deeltijd of zij-instroom?"
+      ],
       "answer": "Bij deeltijd volg je een reguliere lerarenopleiding naast je (andere) baan. Je staat pas voor de klas als je de opleiding hebt afgerond en betaalt regulier collegegeld (€2.601 in 2025-2026, €2.660 in 2026-2027). Bij zij-instroom sta je vanaf dag 1 voor de klas en volg je de opleiding ernaast. Het traject is kosteloos (gesubsidieerd) en duurt 2 jaar. Je hebt een school nodig die je aanstelt en de subsidie aanvraagt. Deeltijd biedt meer flexibiliteit, zij-instroom is sneller en je verdient direct.",
       "category": "route",
-      "tags": ["zij-instroom", "deeltijd", "vergelijking", "ZIB", "source:internal", "alias:Deeltijd of zij-instroom", "alias:Verschil deeltijd ZIB"],
+      "tags": [
+        "zij-instroom",
+        "deeltijd",
+        "vergelijking",
+        "ZIB",
+        "source:internal",
+        "alias:Deeltijd of zij-instroom",
+        "alias:Verschil deeltijd ZIB"
+      ],
       "source_url": null
     },
     {
       "question": "Ik kom uit het buitenland, kan ik zij-instromen in Nederland?",
+      "aliases": [
+        "Zij-instroom met een buitenlands diploma",
+        "Erkenning van mijn buitenlandse opleiding",
+        "Als expat leraar worden in Nederland"
+      ],
       "answer": "Ja, dat kan onder voorwaarden. Heb je een docentengraad behaald in het buitenland, ga dan eerst langs DUO om deze te laten erkennen. Het kan zijn dat zij deze deels erkennen — neem daarna contact op met een hogeschool/universiteit over de mogelijkheden voor een volledige bevoegdheid. Om op een school te werken of de lerarenopleiding te volgen heb je minimaal B2 Nederlands nodig. Mogelijk is een traject via Wereldburgers voor de Klas interessant. Voor Surinamers die de pabo willen doen: hogeschool VIAA heeft een speciaal traject.",
       "category": "toelating",
-      "tags": ["zij-instroom", "buitenland", "diploma-erkenning", "DUO", "ZIB", "source:external", "alias:Buitenlands diploma zij-instroom", "alias:Diploma erkenning"],
+      "tags": [
+        "zij-instroom",
+        "buitenland",
+        "diploma-erkenning",
+        "DUO",
+        "ZIB",
+        "source:external",
+        "alias:Buitenlands diploma zij-instroom",
+        "alias:Diploma erkenning"
+      ],
       "source_url": "https://www.viaa.nl/bevoegd-voor-de-klas/"
     },
     {
       "question": "Wat als ik geen verwant diploma heb voor zij-instroom?",
+      "aliases": [
+        "Zonder passende vooropleiding toch leraar worden",
+        "Geen vakverwant diploma, welke route dan?",
+        "Alternatieven zonder verwant diploma"
+      ],
       "answer": "Als je diploma niet (geheel) vakinhoudelijk verwant is, zijn er verschillende opties: neem contact op met de lerarenopleiding over de mogelijkheid om deficiënties weg te werken. Soms kun je via een aanvullend programma alsnog toelaatbaar worden. Alternatieven zijn een kopopleiding (versneld hbo, 1-2 jaar), een reguliere deeltijdopleiding, of als je in het MBO wilt lesgeven: het PDG-traject waarbij 3 jaar werkervaring + hbo-denkniveau ook kan volstaan.",
       "category": "toelating",
-      "tags": ["zij-instroom", "toelating", "deficienties", "ZIB", "source:internal", "alias:Geen verwant diploma", "alias:Wel hbo maar niet verwant"],
+      "tags": [
+        "zij-instroom",
+        "toelating",
+        "deficienties",
+        "ZIB",
+        "source:internal",
+        "alias:Geen verwant diploma",
+        "alias:Wel hbo maar niet verwant"
+      ],
       "source_url": null
     },
     {
       "question": "Welke stappen moet ik nemen om voor de klas te staan?",
+      "aliases": [
+        "Stappenplan om leraar te worden",
+        "Route van start tot voor de klas",
+        "Hoe begin ik met leraar worden?"
+      ],
       "answer": "De stappen hangen af van je achtergrond en de sector. In het algemeen: 1) Bepaal in welke sector je wilt werken (PO, VO, MBO). 2) Check welke bevoegdheid je nodig hebt. 3) Kijk welke route bij je past (regulier, zij-instroom, PDG). 4) Neem contact op met een lerarenopleiding voor toelatingseisen. 5) Zoek een school (bij zij-instroom). 6) Doorloop het geschiktheidsonderzoek (bij zij-instroom). 7) Start! Een regionaal onderwijsloket kan je hierbij gratis helpen.",
       "category": "route",
-      "tags": ["stappen", "route", "ZIB", "source:internal", "alias:Hoe begin ik", "alias:Waar moet ik starten"],
+      "tags": [
+        "stappen",
+        "route",
+        "ZIB",
+        "source:internal",
+        "alias:Hoe begin ik",
+        "alias:Waar moet ik starten"
+      ],
       "source_url": null
     },
     {
       "question": "Wat is een PDG (Pedagogisch Didactisch Getuigschrift)?",
+      "aliases": [
+        "Uitleg over het PDG",
+        "Lesgeven in het mbo zonder lerarenopleiding",
+        "Pedagogisch didactisch getuigschrift betekenis"
+      ],
       "answer": "Het PDG is een 1-2 jarig traject naast het werk, bedoeld voor vakmensen die in het MBO willen lesgeven. Je leert didactiek en pedagogiek terwijl je al voor de klas staat. Voorwaarden: hbo/wo-diploma of minimaal 3 jaar relevante werkervaring + hbo-denkniveau. In het MBO is 'bevoegd' geen wettelijke term — je kunt lesgeven met een geschiktheidsverklaring plus PDG.",
       "category": "route",
-      "tags": ["PDG", "MBO", "route", "source:internal", "alias:PDG-traject", "alias:Lesgeven in het MBO"],
+      "tags": [
+        "PDG",
+        "MBO",
+        "route",
+        "source:internal",
+        "alias:PDG-traject",
+        "alias:Lesgeven in het MBO"
+      ],
       "source_url": null
     },
     {
       "question": "Wat is de Pabo?",
+      "aliases": [
+        "Uitleg over de pabo",
+        "Opleiding tot juf of meester op de basisschool",
+        "Leraar basisonderwijs worden"
+      ],
       "answer": "De Pabo duurt 4 jaar voltijd of langer in deeltijd. De opleiding leidt op tot leraar basisonderwijs. Toelatingseis: havo, vwo of mbo-4. Er is ook een verkorte pabo (2-3 jaar deeltijd) voor wie al een hbo- of wo-opleiding heeft afgerond. Zij-instroom PO is een alternatief 2-jarig traject voor hbo/wo-gediplomeerden die direct willen werken en leren.",
       "category": "route",
-      "tags": ["pabo", "PO", "route", "source:internal", "alias:Leraar basisonderwijs worden", "alias:Hoe word ik juf of meester"],
+      "tags": [
+        "pabo",
+        "PO",
+        "route",
+        "source:internal",
+        "alias:Leraar basisonderwijs worden",
+        "alias:Hoe word ik juf of meester"
+      ],
       "source_url": null
     },
     {
       "question": "Wat is een tweedegraads lerarenopleiding?",
+      "aliases": [
+        "Uitleg tweedegraads bevoegdheid",
+        "Lesgeven in de onderbouw en het mbo",
+        "Tweedegraads opleiding betekenis"
+      ],
       "answer": "De tweedegraads lerarenopleiding is een 4-jarige hbo-opleiding. Na afronding ben je bevoegd om les te geven op het vmbo en in de onderbouw van havo en vwo. Geschikt als je een specifiek vak wilt geven op de middelbare school. Er zijn ook verkorte varianten (kopopleiding, 1-2 jaar) voor wie al een hbo- of wo-bachelor heeft.",
       "category": "route",
-      "tags": ["tweedegraads", "VO", "route", "source:internal", "alias:Tweedegraads bevoegdheid", "alias:Lesgeven middelbare school"],
+      "tags": [
+        "tweedegraads",
+        "VO",
+        "route",
+        "source:internal",
+        "alias:Tweedegraads bevoegdheid",
+        "alias:Lesgeven middelbare school"
+      ],
       "source_url": null
     },
     {
       "question": "Wat is een eerstegraads lerarenopleiding?",
+      "aliases": [
+        "Uitleg eerstegraads bevoegdheid",
+        "Lesgeven in de bovenbouw van havo en vwo",
+        "Eerstegraads opleiding betekenis"
+      ],
       "answer": "De eerstegraads lerarenopleiding is een universitaire master van 1-2 jaar, na een vakinhoudelijke bachelor. Na afronding ben je bevoegd om les te geven op alle niveaus in het voortgezet onderwijs, inclusief de bovenbouw havo en vwo. Je kunt dit via een educatieve master of via zij-instroom doen.",
       "category": "route",
-      "tags": ["eerstegraads", "VO", "master", "route", "source:internal", "alias:Eerstegraads bevoegdheid", "alias:Bovenbouw lesgeven"],
+      "tags": [
+        "eerstegraads",
+        "VO",
+        "master",
+        "route",
+        "source:internal",
+        "alias:Eerstegraads bevoegdheid",
+        "alias:Bovenbouw lesgeven"
+      ],
       "source_url": null
     },
     {
       "question": "Wat kost een reguliere lerarenopleiding?",
+      "aliases": [
+        "Collegegeld van de lerarenopleiding",
+        "Prijs van een gewone lerarenopleiding",
+        "Kosten studie tot leraar"
+      ],
       "answer": "Reguliere lerarenopleidingen kosten het wettelijk collegegeld: €2.601 in studiejaar 2025-2026 en €2.660 in 2026-2027. PDG-trajecten variëren per aanbieder. Het zij-instroomtraject is kosteloos — de school vraagt subsidie aan. Let op: als je het zij-instroomtraject voortijdig stopt, kan je werkgever NIET opnieuw de subsidie voor jou aanvragen.",
       "category": "subsidie",
-      "tags": ["kosten", "collegegeld", "subsidie", "source:internal", "time_sensitive:true", "alias:Collegegeld lerarenopleiding", "alias:Wat kost de opleiding"],
+      "tags": [
+        "kosten",
+        "collegegeld",
+        "subsidie",
+        "source:internal",
+        "time_sensitive:true",
+        "alias:Collegegeld lerarenopleiding",
+        "alias:Wat kost de opleiding"
+      ],
       "peildatum": "2026-05",
       "source_url": "https://duo.nl/particulier/collegegeld/"
     },
     {
       "question": "Wat is de subsidie zij-instroom en hoe werkt die?",
+      "aliases": [
+        "Subsidie voor zij-instromers",
+        "Vergoeding voor het zij-instroomtraject",
+        "Financiering van zij-instroom door de school"
+      ],
       "answer": "De Subsidie zij-instroom is een overheidssubsidie die scholen kunnen aanvragen wanneer zij een zij-instromer in dienst nemen. De subsidie dekt de opleidingskosten en een deel van het salaris. De school vraagt de subsidie aan bij DUO. Als zij-instromer hoef je zelf niets te betalen. De voorwaarden en het aanvraagproces staan op de officiële DUO-pagina. Check die bron voor de meest actuele status, bedragen en deadlines.",
       "category": "subsidie",
-      "tags": ["subsidie", "zij-instroom", "DUO", "source:external", "source:official", "time_sensitive:true", "requires_citation:true"],
+      "tags": [
+        "subsidie",
+        "zij-instroom",
+        "DUO",
+        "source:external",
+        "source:official",
+        "time_sensitive:true",
+        "requires_citation:true"
+      ],
       "source_url": "https://duo.nl/zakelijk/voortgezet-onderwijs/bekostiging-en-subsidies/subsidie-zij-instroom.jsp"
     },
     {
       "question": "Wat is de SOOL-subsidie?",
+      "aliases": [
+        "Uitleg SOOL-regeling",
+        "Subsidie om van onderwijsondersteuner leraar te worden",
+        "SOOL betekenis"
+      ],
       "answer": "De SOOL-subsidie (Subsidieregeling Opleiding Leraren) kan beschikbaar zijn voor scholen die medewerkers laten opleiden tot leraar. Dit is ook relevant als je start als onderwijsondersteuner en daarna wilt doorgroeien. Check bij het regioloket of je werkgever hiervoor in aanmerking komt.",
       "category": "subsidie",
-      "tags": ["SOOL", "subsidie", "source:internal", "alias:Subsidie lerarenopleiding", "alias:SOOL-regeling"],
+      "tags": [
+        "SOOL",
+        "subsidie",
+        "source:internal",
+        "alias:Subsidie lerarenopleiding",
+        "alias:SOOL-regeling"
+      ],
       "source_url": null
     },
     {
       "question": "Wat is een kopopleiding?",
+      "aliases": [
+        "Uitleg over de kopopleiding",
+        "In een jaar je lesbevoegdheid halen na je bachelor",
+        "Kopopleiding docent betekenis"
+      ],
       "answer": "Een kopopleiding is een versneld hbo-bachelortraject van 1-2 jaar voor wie al een hbo- of wo-bachelor heeft. Na afronding heb je een tweedegraads bevoegdheid. Het is een alternatief voor de volledige 4-jarige lerarenopleiding.",
       "category": "route",
-      "tags": ["kopopleiding", "route", "tweedegraads", "source:internal", "alias:Versnelde lerarenopleiding"],
+      "tags": [
+        "kopopleiding",
+        "route",
+        "tweedegraads",
+        "source:internal",
+        "alias:Versnelde lerarenopleiding"
+      ],
       "source_url": null
     },
     {
       "question": "Wat is een educatieve minor?",
+      "aliases": [
+        "Uitleg educatieve minor",
+        "Lesbevoegdheid halen tijdens je bachelor",
+        "Minor onderwijs tijdens je studie"
+      ],
       "answer": "Een educatieve minor of module is een 30 ECTS-minor tijdens of na een wo-bachelor. Het levert een beperkte tweedegraads bevoegdheid op voor vmbo en onderbouw havo/vwo. Het is een laagdrempelige manier om kennis te maken met lesgeven tijdens je universitaire studie.",
       "category": "route",
-      "tags": ["educatieve minor", "wo", "route", "source:internal", "alias:Minor onderwijs", "alias:Educatieve module"],
+      "tags": [
+        "educatieve minor",
+        "wo",
+        "route",
+        "source:internal",
+        "alias:Minor onderwijs",
+        "alias:Educatieve module"
+      ],
       "source_url": null
     },
     {
       "question": "Wat doet een onderwijsondersteuner?",
+      "aliases": [
+        "Taken van een onderwijsondersteuner",
+        "Werken als ondersteuner op school",
+        "Wat houdt onderwijsondersteuning in?"
+      ],
       "answer": "Onderwijsondersteuners zijn functies die direct ondersteunen bij de lespraktijk: onderwijsassistenten, remedial teachers, leraarondersteuners, klassenassistenten. Een Associate Degree (AD-PEP, 2 jaar) leidt op tot leraarondersteuner. Geen wettelijke bevoegdheid vereist voor ondersteunend personeel. Het is een goede opstap naar een volledige bevoegdheid.",
       "category": "algemeen",
-      "tags": ["onderwijsondersteuner", "OOP", "AD", "source:internal", "alias:Onderwijsassistent worden", "alias:Leraarondersteuner"],
+      "tags": [
+        "onderwijsondersteuner",
+        "OOP",
+        "AD",
+        "source:internal",
+        "alias:Onderwijsassistent worden",
+        "alias:Leraarondersteuner"
+      ],
       "source_url": null
     },
     {
       "question": "Wat is het Onderwijsloket Rotterdam?",
+      "aliases": [
+        "Uitleg over het Onderwijsloket Rotterdam",
+        "Hulp bij leraar worden in Rotterdam",
+        "Rotterdams loket voor onderwijsvragen"
+      ],
       "answer": "Het Onderwijsloket Rotterdam biedt gratis en onafhankelijk advies over werken in het onderwijs in de regio Rotterdam-Rijnmond. Ze helpen bij oriëntatie, route-advies en het vinden van scholen. Website: onderwijsloketrotterdam.nl.",
       "category": "algemeen",
-      "tags": ["Rotterdam", "regio", "loket", "source:internal", "alias:Onderwijs010", "alias:Advies Rotterdam"],
+      "tags": [
+        "Rotterdam",
+        "regio",
+        "loket",
+        "source:internal",
+        "alias:Onderwijs010",
+        "alias:Advies Rotterdam"
+      ],
       "source_url": "https://onderwijsloketrotterdam.nl/"
     },
     {
       "question": "Waar vind ik een regionaal onderwijsloket bij mij in de buurt?",
+      "aliases": [
+        "Onderwijsloket in mijn eigen regio",
+        "Persoonlijk advies dichtbij huis",
+        "Regionale loketten voor aankomende leraren"
+      ],
       "answer": "Er zijn meer dan 20 regionale onderwijsloketten verspreid over Nederland. Elk loket biedt gratis en onafhankelijk advies over routes naar het onderwijs, vacatures en begeleiding. Bekijk het overzicht op regioloketten.onderwijsloket.com of gebruik de regiolokettennavigator op de website van het Onderwijsloket.",
       "category": "algemeen",
-      "tags": ["regio", "loket", "advies", "source:internal", "alias:Hulp bij oriëntatie", "alias:Gratis advies onderwijs"],
+      "tags": [
+        "regio",
+        "loket",
+        "advies",
+        "source:internal",
+        "alias:Hulp bij oriëntatie",
+        "alias:Gratis advies onderwijs"
+      ],
       "source_url": "https://regioloketten.onderwijsloket.com/"
     },
     {
       "question": "Welke handige bronnen en tools zijn er?",
+      "aliases": [
+        "Nuttige websites over leraar worden",
+        "Hulpmiddelen en informatiebronnen",
+        "Waar vind ik goede informatie over het onderwijs?"
+      ],
       "answer": "Nuttige bronnen voor je oriëntatie: de Routetool (onderwijsloket.com/routes) om te zien welke opleiding bij je past, de Onderwijsnavigator (onderwijsloket.com/onderwijsnavigator) voor een overzicht van opleidingen, de Kennisbank (onderwijsloket.com/kennisbank) met artikelen over het onderwijs, werkeninhetonderwijs.nl voor vacatures, en de CAO-tabellen (cao-po.nl / vo-raad.nl / mbo-raad.nl) voor salarisinformatie.",
       "category": "algemeen",
-      "tags": ["bronnen", "tools", "routetool", "source:internal", "alias:Nuttige websites", "alias:Waar vind ik meer informatie"],
+      "tags": [
+        "bronnen",
+        "tools",
+        "routetool",
+        "source:internal",
+        "alias:Nuttige websites",
+        "alias:Waar vind ik meer informatie"
+      ],
       "source_url": "https://www.onderwijsloket.com/"
     },
     {
       "question": "Kan ik lesgeven in het hoger onderwijs?",
+      "aliases": [
+        "Docent worden op hbo of universiteit",
+        "Lesgeven aan een hogeschool",
+        "Bevoegdheid voor het hoger onderwijs"
+      ],
       "answer": "Voor lesgeven in het hoger onderwijs (hbo en universiteit) is geen wettelijke bevoegdheid vereist. Wel wordt vaak een afgeronde master gevraagd, plus een BKO (Basiskwalificatie Onderwijs) of BDB (Basiskwalificatie Didactische Bekwaamheid). Solliciteren kan direct bij hogescholen en universiteiten.",
       "category": "route",
-      "tags": ["HO", "hoger onderwijs", "BKO", "source:internal", "alias:Docent hbo worden", "alias:Lesgeven universiteit"],
+      "tags": [
+        "HO",
+        "hoger onderwijs",
+        "BKO",
+        "source:internal",
+        "alias:Docent hbo worden",
+        "alias:Lesgeven universiteit"
+      ],
       "source_url": null
     },
     {
       "question": "Wat is een Associate Degree (AD)?",
+      "aliases": [
+        "Uitleg Associate degree",
+        "Tweejarige hbo-opleiding",
+        "AD-opleiding betekenis"
+      ],
       "answer": "Een Associate Degree is een 2-jarige praktijkgerichte hbo-opleiding. De AD-PEP leidt op tot leraarondersteuner in alle onderwijssectoren. Je kunt ook instructeur in het MBO of pedagogisch coach worden. Na de AD kun je doorstromen naar een volledige hbo-bachelor (bijv. pabo).",
       "category": "route",
-      "tags": ["AD", "associate degree", "leraarondersteuner", "source:internal", "alias:AD-PEP", "alias:2-jarige opleiding onderwijs"],
+      "tags": [
+        "AD",
+        "associate degree",
+        "leraarondersteuner",
+        "source:internal",
+        "alias:AD-PEP",
+        "alias:2-jarige opleiding onderwijs"
+      ],
       "source_url": null
     },
     {
       "question": "Welke loketten zijn er in regio Rotterdam?",
+      "aliases": [
+        "Rotterdamse loketten en aanspreekpunten",
+        "Waar kan ik terecht in de regio Rotterdam?",
+        "Overzicht loketten Rotterdam"
+      ],
       "answer": "In Rotterdam zijn er twee loketten die je persoonlijk kunnen begeleiden: Onderwijsloket Rotterdam (regio Rijnmond, alle sectoren) en Onderwijs010 (Rotterdamse basisscholen). Beide bieden gratis adviesgesprekken, hulp bij routekeuze en contact met scholen. Je kunt online een gesprek inplannen.",
       "category": "regio",
-      "tags": ["regio", "rotterdam", "loket", "source:internal", "alias:Hulp in Rotterdam", "alias:Loket Rotterdam"],
+      "tags": [
+        "regio",
+        "rotterdam",
+        "loket",
+        "source:internal",
+        "alias:Hulp in Rotterdam",
+        "alias:Loket Rotterdam"
+      ],
       "source_url": "https://www.onderwijsloketrotterdam.nl"
     },
     {
       "question": "Hoe plan ik een gesprek met een adviseur?",
+      "aliases": [
+        "Afspraak maken met een adviseur",
+        "In gesprek met een onderwijsadviseur",
+        "Persoonlijk adviesgesprek inplannen"
+      ],
       "answer": "Je kunt een persoonlijk gesprek met een onderwijsadviseur aanvragen via de afsprakentool op deze site. Geef aan welke vraag je hebt en welk dagdeel je voorkeur heeft. De adviseur neemt binnen 2 werkdagen contact op via mail of telefoon. Gesprekken zijn gratis en vrijblijvend.",
       "category": "next_step",
-      "tags": ["afspraak", "adviseur", "gesprek", "source:internal", "alias:Adviseur spreken", "alias:Gesprek aanvragen"],
+      "tags": [
+        "afspraak",
+        "adviseur",
+        "gesprek",
+        "source:internal",
+        "alias:Adviseur spreken",
+        "alias:Gesprek aanvragen"
+      ],
       "source_url": null
     },
     {
       "question": "Wat zijn mijn volgende stappen na orientatie?",
+      "aliases": [
+        "Vervolgstappen na het oriënteren",
+        "Wat doe ik als ik klaar ben met oriënteren?",
+        "Verder na de oriëntatiefase"
+      ],
       "answer": "Na de orientatie kun je: 1) de Routetool invullen voor een persoonlijk routeadvies, 2) een open dag of meeloopdag bezoeken om te ervaren hoe het is, 3) een gesprek aanvragen met een adviseur voor maatwerk-advies, of 4) direct contact opnemen met een lerarenopleiding voor een toelatingsgesprek. Welke stap past hangt af van hoe concreet je plan al is.",
       "category": "next_step",
-      "tags": ["next_step", "vervolg", "actie", "source:internal", "alias:Wat nu", "alias:Volgende stap"],
+      "tags": [
+        "next_step",
+        "vervolg",
+        "actie",
+        "source:internal",
+        "alias:Wat nu",
+        "alias:Volgende stap"
+      ],
       "source_url": null
     },
     {
       "question": "Zijn er open dagen of meeloopdagen?",
+      "aliases": [
+        "Een dag meelopen op een school",
+        "Open dag bezoeken van een opleiding",
+        "Proefdraaien in het onderwijs"
+      ],
       "answer": "Ja. Lerarenopleidingen organiseren door het jaar heen open dagen, infosessies en meeloopdagen. Scholen bieden vaak meeloopdagen waarbij je een dag meedraait met een leraar. De actuele agenda vind je op de Events-pagina. Loketten kunnen ook persoonlijke bezoeken regelen op verzoek.",
       "category": "events",
-      "tags": ["events", "open dag", "meeloopdag", "source:internal", "alias:Open dag opleiding", "alias:Meelopen op school"],
+      "tags": [
+        "events",
+        "open dag",
+        "meeloopdag",
+        "source:internal",
+        "alias:Open dag opleiding",
+        "alias:Meelopen op school"
+      ],
       "source_url": null
     },
     {
       "question": "Hoe is de arbeidsmarkt voor leraren in 2026?",
+      "aliases": [
+        "Baankansen voor leraren dit jaar",
+        "Lerarentekort en arbeidsmarkt",
+        "Kans op een baan in het onderwijs"
+      ],
       "answer": "Het lerarentekort is in 2026 nog steeds groot, vooral in PO (basisonderwijs) en VO bij tekortvakken zoals wiskunde, natuurkunde, scheikunde, informatica, Duits, Frans en klassieke talen. In Rotterdam is het tekort bovengemiddeld. Zij-instromers en herintreders zijn zeer welkom; scholen werven actief. Het MBO heeft tekorten bij beroepsgerichte vakken.",
       "category": "arbeidsmarkt",
-      "tags": ["arbeidsmarkt", "lerarentekort", "tekortvakken", "source:external", "time_sensitive:true", "alias:Is er werk", "alias:Lerarentekort 2026"],
+      "tags": [
+        "arbeidsmarkt",
+        "lerarentekort",
+        "tekortvakken",
+        "source:external",
+        "time_sensitive:true",
+        "alias:Is er werk",
+        "alias:Lerarentekort 2026"
+      ],
       "peildatum": "2026-05",
       "source_url": "https://www.voion.nl"
     },
     {
       "question": "Welke tekortvakken zijn er in het VO?",
+      "aliases": [
+        "Vakken met een lerarentekort op de middelbare school",
+        "Tekortvakken voortgezet onderwijs",
+        "Waar zijn de meeste docenten nodig in het vo?"
+      ],
       "answer": "Landelijk zijn de structurele tekortvakken in VO: wiskunde, natuurkunde, scheikunde, informatica, Duits, Frans, klassieke talen (Grieks/Latijn) en Nederlands. Voor deze vakken zijn extra subsidies en versnelde trajecten beschikbaar. In de Randstad (waaronder Rotterdam) zijn de tekorten groter dan in de rest van Nederland.",
       "category": "arbeidsmarkt",
-      "tags": ["tekortvakken", "VO", "arbeidsmarkt", "source:external", "alias:Welke vakken zijn tekort", "alias:Tekortvakken middelbaar onderwijs"],
+      "tags": [
+        "tekortvakken",
+        "VO",
+        "arbeidsmarkt",
+        "source:external",
+        "alias:Welke vakken zijn tekort",
+        "alias:Tekortvakken middelbaar onderwijs"
+      ],
       "source_url": "https://www.vo-raad.nl"
     },
     {
       "question": "Hoe vind ik een vacature in het onderwijs?",
+      "aliases": [
+        "Onderwijsvacatures zoeken",
+        "Baan vinden als leraar",
+        "Waar staan vacatures voor docenten?"
+      ],
       "answer": "De grootste vacaturebank is werkeninhetonderwijs.nl, met vacatures uit alle sectoren en regio's. Daarnaast hebben veel schoolbesturen eigen vacaturepaginas. In Rotterdam helpt het Onderwijsloket Rotterdam je actief matchen met scholen. Op de Vacatures-pagina van deze site staat een actueel overzicht.",
       "category": "vacature",
-      "tags": ["vacature", "werk zoeken", "source:internal", "alias:Vacatures onderwijs", "alias:Banen leraar"],
+      "tags": [
+        "vacature",
+        "werk zoeken",
+        "source:internal",
+        "alias:Vacatures onderwijs",
+        "alias:Banen leraar"
+      ],
       "source_url": "https://www.werkeninhetonderwijs.nl"
     },
     {
       "question": "Wat is een lio-stage en hoe werkt die?",
+      "aliases": [
+        "Uitleg lio-stage",
+        "Leraar in opleiding stage",
+        "Betaalde eindstage van de lerarenopleiding"
+      ],
       "answer": "Een lio-stage (Leraar in Opleiding) is de eindstage van een lerarenopleiding, meestal in het laatste jaar. Je krijgt een arbeidsovereenkomst voor ca. 0,4-0,5 fte en staat zelfstandig voor de klas, met begeleiding. Je ontvangt een lio-salaris (lager dan een afgestudeerde, hoger dan een gewone stagevergoeding). Veel scholen nemen lio's na afstuderen direct in dienst.",
       "category": "route",
-      "tags": ["lio", "stage", "lerarenopleiding", "source:internal", "alias:Lio-stage", "alias:Leraar in opleiding"],
+      "tags": [
+        "lio",
+        "stage",
+        "lerarenopleiding",
+        "source:internal",
+        "alias:Lio-stage",
+        "alias:Leraar in opleiding"
+      ],
       "source_url": null
     },
     {
       "question": "Wat is een geschiktheidsonderzoek bij zij-instroom?",
+      "aliases": [
+        "Uitleg geschiktheidsonderzoek",
+        "Assessment voor zij-instromers",
+        "Hoe wordt bepaald of ik geschikt ben voor zij-instroom?"
+      ],
       "answer": "Het geschiktheidsonderzoek beoordeelt of je geschikt bent om binnen 2 jaar tot bevoegd leraar te worden opgeleid. Het bestaat uit een gesprek, lesopname/proefles, vakinhoudelijke toets en reflectie. Een lerarenopleiding voert het uit, kosten ca. EUR 1.500-2.500 (vaak betaald door de school). Uitkomst: geschikt, geschikt onder voorwaarden, of niet geschikt nu.",
       "category": "toelating",
-      "tags": ["geschiktheidsonderzoek", "zij-instroom", "toelating", "source:external", "alias:Wat is een GO", "alias:Geschiktheidsverklaring"],
+      "tags": [
+        "geschiktheidsonderzoek",
+        "zij-instroom",
+        "toelating",
+        "source:external",
+        "alias:Wat is een GO",
+        "alias:Geschiktheidsverklaring"
+      ],
       "source_url": "https://www.onderwijsloket.com/over-het-onderwijs/zij-instroom-in-het-beroep/"
     },
     {
       "question": "Heb ik een VOG nodig om voor de klas te staan?",
+      "aliases": [
+        "Verklaring omtrent gedrag voor leraren",
+        "VOG aanvragen voor werken op school",
+        "Is een VOG verplicht in het onderwijs?"
+      ],
       "answer": "Ja. Voor elke functie in het onderwijs is een Verklaring Omtrent Gedrag (VOG) verplicht. De school vraagt deze voor je aan bij Justis; je krijgt een link om digitaal te ondertekenen. Kosten ca. EUR 41,35 (2026), meestal betaald door de school. Doorlooptijd 1-4 weken. Bij bepaalde antecedenten kan de VOG geweigerd worden.",
       "category": "toelating",
-      "tags": ["VOG", "verklaring omtrent gedrag", "toelating", "source:external", "time_sensitive:true", "alias:VOG aanvragen", "alias:Verklaring goed gedrag"],
+      "tags": [
+        "VOG",
+        "verklaring omtrent gedrag",
+        "toelating",
+        "source:external",
+        "time_sensitive:true",
+        "alias:VOG aanvragen",
+        "alias:Verklaring goed gedrag"
+      ],
       "peildatum": "2026-05",
       "source_url": "https://www.justis.nl/producten/vog"
     },
     {
       "question": "Wat zijn de werktijden van een leraar?",
+      "aliases": [
+        "Werkweek van een docent",
+        "Hoeveel uur werkt een leraar?",
+        "Normale werktijden in het onderwijs"
+      ],
       "answer": "Een fulltime leraar werkt 40 uur per week, verdeeld over lestaken, voorbereiding, nakijken, oudercontact en schooltaken. Lesgebonden uren zijn ca. 20-25 per week in PO, 22-26 in VO. De rest is werktijd thuis of op school. Vakanties zijn vastgelegd in het rooster; meestal 12 weken per jaar. Parttime werken (0,4-0,8 fte) is heel gangbaar.",
       "category": "arbeidsmarkt",
-      "tags": ["werktijden", "vakantie", "fte", "source:internal", "alias:Hoeveel uur werkt een leraar", "alias:Vakantie leraar"],
+      "tags": [
+        "werktijden",
+        "vakantie",
+        "fte",
+        "source:internal",
+        "alias:Hoeveel uur werkt een leraar",
+        "alias:Vakantie leraar"
+      ],
       "source_url": null
     },
     {
       "question": "Krijg ik vakantiegeld en eindejaarsuitkering?",
+      "aliases": [
+        "Extra uitkeringen in het onderwijs",
+        "Vakantiegeld voor leraren",
+        "Eindejaarsuitkering en extra beloningen"
+      ],
       "answer": "Ja. Volgens de CAO ontvang je 8% vakantiegeld in mei en een eindejaarsuitkering van 8,33% in december (PO en VO). MBO heeft een eindejaarsuitkering van 8,33%. Bovenop het bruto-maandsalaris. Daarnaast krijg je een persoonlijk budget voor scholing en duurzame inzetbaarheid.",
       "category": "salaris",
-      "tags": ["vakantiegeld", "eindejaarsuitkering", "CAO", "source:external", "time_sensitive:true", "alias:13e maand leraar", "alias:Vakantietoeslag onderwijs"],
+      "tags": [
+        "vakantiegeld",
+        "eindejaarsuitkering",
+        "CAO",
+        "source:external",
+        "time_sensitive:true",
+        "alias:13e maand leraar",
+        "alias:Vakantietoeslag onderwijs"
+      ],
       "peildatum": "2026-05",
       "source_url": "https://www.poraad.nl/salaristabellen"
     },
     {
       "question": "Hoe word ik schoolleider in het basisonderwijs?",
+      "aliases": [
+        "Directeur worden van een basisschool",
+        "Opleiding tot schoolleider",
+        "Doorgroeien naar schoolleiding"
+      ],
       "answer": "Schoolleider word je via een schoolleidersopleiding (master Educational Leadership of vergelijkbaar, 1-3 jaar). Voorwaarde is meestal enkele jaren leservaring. In het PO is registratie in het Schoolleidersregister PO verplicht. In het VO is registratie in het Schoolleidersregister VO gangbaar. Salaris ligt in schaal D11-D14 (PO) of vergelijkbaar (VO).",
       "category": "route",
-      "tags": ["schoolleider", "directeur", "leiderschap", "source:internal", "alias:Directeur basisschool worden", "alias:Schoolleidersopleiding"],
+      "tags": [
+        "schoolleider",
+        "directeur",
+        "leiderschap",
+        "source:internal",
+        "alias:Directeur basisschool worden",
+        "alias:Schoolleidersopleiding"
+      ],
       "source_url": "https://www.schoolleidersregisterpo.nl"
     },
     {
       "question": "Wat is herregistratie in het lerarenregister?",
+      "aliases": [
+        "Uitleg herregistratie",
+        "Registratie in het schoolleidersregister vernieuwen",
+        "Herregistratie betekenis"
+      ],
       "answer": "Het lerarenregister is sinds 2020 niet meer wettelijk verplicht, maar veel scholen werken nog met vrijwillige registratie en herregistratie via beroepsverenigingen of het Lerarencollectief. Je houdt je bevoegdheid op orde via nascholing (ca. 160 uur per 4 jaar). Sommige besturen vragen dit bij sollicitatie of functioneringsgesprek.",
       "category": "bevoegdheid",
-      "tags": ["lerarenregister", "herregistratie", "nascholing", "source:external", "alias:Lerarenregister verplicht", "alias:Herregistratie leraar"],
+      "tags": [
+        "lerarenregister",
+        "herregistratie",
+        "nascholing",
+        "source:external",
+        "alias:Lerarenregister verplicht",
+        "alias:Herregistratie leraar"
+      ],
       "source_url": "https://www.lerarencollectief.nl"
     },
     {
       "question": "Kan ik als herintreder terugkeren in het onderwijs?",
+      "aliases": [
+        "Weer voor de klas na jaren",
+        "Terugkeren als leraar na een onderbreking",
+        "Herintreden in het onderwijs"
+      ],
       "answer": "Ja. Heb je een onderwijsbevoegdheid maar al jaren niet voor de klas gestaan? Dan kun je via een herintredersprogramma terugkeren. Veel besturen bieden begeleiding, opfriscursussen en een rustige start. Je oude bevoegdheid blijft geldig. In tekortregios (zoals Rotterdam) ben je extra welkom.",
       "category": "route",
-      "tags": ["herintreder", "terugkeer", "bevoegdheid", "source:internal", "alias:Herintreden onderwijs", "alias:Weer leraar worden"],
+      "tags": [
+        "herintreder",
+        "terugkeer",
+        "bevoegdheid",
+        "source:internal",
+        "alias:Herintreden onderwijs",
+        "alias:Weer leraar worden"
+      ],
       "source_url": null
     },
     {
       "question": "Wat is het verschil tussen bevoegd en bekwaam?",
+      "aliases": [
+        "Uitleg bevoegd versus bekwaam",
+        "Lesgeven zonder formele bevoegdheid",
+        "Betekenis van bekwaamheid in het onderwijs"
+      ],
       "answer": "Bevoegd betekent dat je een wettelijk erkende lerarenbevoegdheid hebt (diploma lerarenopleiding of geschiktheidsverklaring + traject). Bekwaam betekent dat je voldoet aan de bekwaamheidseisen uit de Wet BIO: vakinhoudelijk, vakdidactisch en pedagogisch. Je bent bevoegd zodra je je diploma haalt; bekwaam blijf je via permanente ontwikkeling.",
       "category": "bevoegdheid",
-      "tags": ["bevoegdheid", "bekwaamheid", "wet BIO", "source:internal", "alias:Bevoegd vs bekwaam", "alias:Wat betekent bevoegd"],
+      "tags": [
+        "bevoegdheid",
+        "bekwaamheid",
+        "wet BIO",
+        "source:internal",
+        "alias:Bevoegd vs bekwaam",
+        "alias:Wat betekent bevoegd"
+      ],
       "source_url": null
     },
     {
       "question": "Welke subsidies bestaan er voor (aanstaande) leraren?",
+      "aliases": [
+        "Overzicht subsidies voor leraren",
+        "Financiële regelingen voor aankomende docenten",
+        "Welke vergoedingen kan ik krijgen als ik leraar word?"
+      ],
       "answer": "Belangrijke regelingen (geverifieerd mei 2026): Subsidie zij-instroom voor scholen, Lerarenbeurs voor master/post-hbo (tot EUR 7.000 per jaar), Onderwijsassistent-naar-leraar-subsidie, en regionale impulsregelingen in tekortgebieden. Voor herintreders en zij-instromers in tekortvakken zijn aanvullende premies mogelijk. Check DUO en je regioloket voor actuele voorwaarden.",
       "category": "subsidie",
-      "tags": ["subsidie", "lerarenbeurs", "financiering", "source:external", "time_sensitive:true", "alias:Welke beurzen zijn er", "alias:Subsidie opleiding leraar"],
+      "tags": [
+        "subsidie",
+        "lerarenbeurs",
+        "financiering",
+        "source:external",
+        "time_sensitive:true",
+        "alias:Welke beurzen zijn er",
+        "alias:Subsidie opleiding leraar"
+      ],
       "peildatum": "2026-05",
       "source_url": "https://duo.nl/particulier/lerarenbeurs/"
     }
