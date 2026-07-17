@@ -199,7 +199,15 @@ Mogelijke uitbreidingen, uitsluitend achter stabiele contracten:
 - MCP- en A2A-adapters;
 - multi-tenant configuratie;
 - agent memory compression;
-- aanvullende execution providerplugins.
+- aanvullende execution providerplugins;
+- autoriteits- en versheidsfeatures in de learned reranker, zodat
+  bronautoriteit en actualiteit ook na reranking meewegen bij
+  dynamische content (hertrainen via de bestaande benchmarkgates);
+- benchmarkcases voor regionale loketten en routestappen plus
+  hertraining, zodat niet-FAQ-kennistypen gelijkwaardig ranken
+  (relevant bij landelijke uitbreiding);
+- ingest van de CMS-collecties faqs en articles waarnaar de
+  routestappen verwijzen, via export of Directus-connector.
 
 Deze uitbreidingen mogen de bestaande deterministische engines en kanaalgrenzen
 niet doorbreken.
