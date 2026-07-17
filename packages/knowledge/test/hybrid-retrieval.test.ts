@@ -6,7 +6,8 @@ import {
   InMemoryKnowledgeRepository,
   InMemoryTrustedSourceRepository,
   LocalSemanticEmbeddingProvider,
-  ReciprocalRankFusionKnowledgeSearch
+  ReciprocalRankFusionKnowledgeSearch,
+  RegionalDeskIngestionService
 } from "../src/index.js";
 
 describe("hybrid retrieval", () => {
@@ -124,6 +125,77 @@ describe("hybrid retrieval", () => {
     expect(viaAlias[0]?.record.aliases).toContain(
       "Leraar in opleiding stage"
     );
+  });
+
+  it("finds regional education desks by region", async () => {
+    const knowledge = new InMemoryKnowledgeRepository();
+    const sources = new InMemoryTrustedSourceRepository();
+    const embeddings = new InMemoryKnowledgeEmbeddingRepository(
+      knowledge
+    );
+    const provider = new LocalSemanticEmbeddingProvider();
+    const search = new ReciprocalRankFusionKnowledgeSearch(
+      knowledge,
+      new InMemoryFuzzyKnowledgeRepository(knowledge),
+      embeddings,
+      provider,
+      sources
+    );
+    const ingestion = new RegionalDeskIngestionService(
+      knowledge,
+      sources,
+      search
+    );
+
+    const result = await ingestion.ingest({
+      desks: [
+        {
+          id: "11111111-1111-4111-8111-111111111111",
+          title: "VOTA",
+          status: "published",
+          slug: "vota",
+          email: "info@vota.example",
+          website: "https://vota.example",
+          regions: ["VOTA (Twente Achterhoek Oost-Salland)"],
+          cities_municipalities: "Almelo, Enschede, Hengelo",
+          description: {
+            type: "doc",
+            content: [
+              {
+                type: "paragraph",
+                content: [
+                  {
+                    type: "text",
+                    text:
+                      "Loket voor wie een overstap naar het " +
+                      "onderwijs in Twente overweegt."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          id: "22222222-2222-4222-8222-222222222222",
+          title: "Conceptloket",
+          status: "draft",
+          slug: "conceptloket"
+        }
+      ]
+    });
+
+    expect(result.imported).toBe(1);
+
+    const byRegion = await search.search(
+      "onderwijsloket regio Twente",
+      { limit: 3 }
+    );
+
+    expect(byRegion[0]?.record.title).toBe(
+      "VOTA (regionaal onderwijsloket)"
+    );
+    expect(byRegion[0]?.record.itemType).toBe("regional_desk");
+    expect(byRegion[0]?.record.body).toContain("Twente");
   });
 
   it("returns normalized embeddings with stable dimensions", async () => {

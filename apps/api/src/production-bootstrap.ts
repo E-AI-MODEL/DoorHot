@@ -69,6 +69,8 @@ import {
   PostgresKnowledgeRepository,
   PostgresRetrievalLabelQueueRepository,
   ReciprocalRankFusionKnowledgeSearch,
+  RegionalDeskIngestionService,
+  type RegionalDeskRecord,
   ShadowCrossEncoderKnowledgeSearch,
   PostgresPipelineEventRepository,
   PostgresShadowEvaluationRepository,
@@ -232,6 +234,11 @@ const knowledgeIngestion = new FaqIngestionService(
   trustedSourceRepository,
   baseKnowledgeSearch
 );
+const regionalDeskIngestion = new RegionalDeskIngestionService(
+  knowledgeRepository,
+  trustedSourceRepository,
+  baseKnowledgeSearch
+);
 const connectors = new PostgresConnectorRepository(executor);
 const secretResolver = new EnvironmentSecretResolver();
 const connectorService = new KnowledgeConnectorService(
@@ -282,6 +289,13 @@ const faqSeed = JSON.parse(
   )
 ) as FaqSeedDataset;
 await knowledgeIngestion.ingest(faqSeed);
+const regionalDesks = JSON.parse(
+  await readFile(
+    resolve(datasetsDirectory, "regional-education-desks.json"),
+    "utf8"
+  )
+) as readonly RegionalDeskRecord[];
+await regionalDeskIngestion.ingest({ desks: regionalDesks });
 
   const promptRepository =
     new PostgresPromptRepository(executor);

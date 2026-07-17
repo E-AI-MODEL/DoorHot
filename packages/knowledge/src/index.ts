@@ -36,6 +36,7 @@ export interface TrustedSource {
 export interface KnowledgeRecord {
   id: string;
   externalId?: string;
+  itemType?: string;
   title: string;
   aliases?: readonly string[];
   body: string;
@@ -350,6 +351,142 @@ export class FaqIngestionService {
   }
 }
 
+interface RichTextNode {
+  type?: string;
+  text?: string;
+  content?: readonly RichTextNode[];
+}
+
+function flattenRichText(
+  node: RichTextNode | null | undefined
+): string {
+  if (!node) return "";
+  const own = node.text ?? "";
+  const children = (node.content ?? [])
+    .map((child) => flattenRichText(child))
+    .join(" ");
+  return [own, children].filter(Boolean).join(" ").trim();
+}
+
+export interface RegionalDeskRecord {
+  id: string;
+  title: string;
+  status: string;
+  slug: string;
+  email?: string | null;
+  phone?: string | null;
+  website?: string | null;
+  regions?: readonly string[];
+  cities_municipalities?: string | null;
+  description?: RichTextNode | null;
+  consultation_service_description?: RichTextNode | null;
+  consultation_service_url?: string | null;
+  email_response_time?: string | null;
+  orientation_activity_types?: readonly string[];
+  date_created?: string | null;
+  date_updated?: string | null;
+}
+
+export interface RegionalDeskDataset {
+  desks: readonly RegionalDeskRecord[];
+}
+
+export class RegionalDeskIngestionService {
+  constructor(
+    private readonly knowledge: KnowledgeRepository,
+    private readonly sources: TrustedSourceRepository,
+    private readonly embeddingIndexer?: {
+      index(record: KnowledgeRecord): Promise<void>;
+    }
+  ) {}
+
+  async ingest(
+    dataset: RegionalDeskDataset
+  ): Promise<{
+    imported: number;
+    sourceKeys: readonly string[];
+  }> {
+    const sourceKeys = new Set<string>();
+    let imported = 0;
+
+    for (const desk of dataset.desks) {
+      if (desk.status !== "published") continue;
+
+      const sourceKey = inferSourceKey(desk.website ?? null, []);
+      sourceKeys.add(sourceKey);
+      const now = new Date().toISOString();
+
+      await this.sources.upsert({
+        id: stableId(`source:${sourceKey}`),
+        sourceKey,
+        label: inferSourceLabel(sourceKey),
+        baseUrl: desk.website
+          ? new URL(desk.website).origin
+          : undefined,
+        authority: desk.website ? 0.8 : 0.6,
+        active: true,
+        allowedDomains: desk.website
+          ? [new URL(desk.website).hostname]
+          : [],
+        createdAt: now,
+        updatedAt: now
+      });
+
+      const regions = desk.regions ?? [];
+      const bodyParts = [
+        flattenRichText(desk.description),
+        flattenRichText(desk.consultation_service_description),
+        regions.length > 0
+          ? `Regio's: ${regions.join(", ")}.`
+          : "",
+        desk.cities_municipalities
+          ? `Gemeenten en plaatsen: ${desk.cities_municipalities}.`
+          : "",
+        (desk.orientation_activity_types ?? []).length > 0
+          ? "Oriëntatieactiviteiten: " +
+            `${(desk.orientation_activity_types ?? []).join(", ")}.`
+          : "",
+        desk.email ? `Contact: ${desk.email}.` : "",
+        desk.email_response_time
+          ? `Reactietijd: ${desk.email_response_time}.`
+          : "",
+        desk.website ? `Website: ${desk.website}.` : ""
+      ].filter(Boolean);
+
+      const record: KnowledgeRecord = {
+        id: stableId(`desk:${desk.id}`),
+        externalId: desk.id,
+        itemType: "regional_desk",
+        title: `${desk.title.trim()} (regionaal onderwijsloket)`,
+        aliases: [
+          `Onderwijsloket ${desk.title.trim()}`,
+          ...regions
+        ],
+        body: bodyParts.join(" "),
+        category: "regionaal-loket",
+        tags: ["regionaal-loket", desk.slug, ...regions],
+        sourceKey,
+        sourceUrl: desk.website ?? undefined,
+        timeSensitive: false,
+        requiresCitation: false,
+        reviewStatus: "approved",
+        version: 1,
+        createdAt: desk.date_created ?? now,
+        updatedAt: desk.date_updated ?? now
+      };
+
+      await this.knowledge.upsert(record);
+      await this.embeddingIndexer?.index(record);
+      imported += 1;
+    }
+
+    return {
+      imported,
+      sourceKeys: [...sourceKeys].sort()
+    };
+  }
+}
+
 function stableId(value: string): string {
   let hash = 2166136261;
 
@@ -511,11 +648,12 @@ export class PostgresKnowledgeRepository
          requires_citation, valid_from, valid_until,
          review_status, version, created_at, updated_at
        ) VALUES (
-         $1, $2, 'faq', $3, $4, $5, $6, $7, $8, $9,
+         $1, $2, $18, $3, $4, $5, $6, $7, $8, $9,
          $10, $11, $12, $13, $14, $15, $16, $17
        )
        ON CONFLICT (id) DO UPDATE SET
          external_id = EXCLUDED.external_id,
+         item_type = EXCLUDED.item_type,
          title = EXCLUDED.title,
          aliases = EXCLUDED.aliases,
          body = EXCLUDED.body,
@@ -547,7 +685,8 @@ export class PostgresKnowledgeRepository
         record.reviewStatus,
         record.version,
         record.createdAt,
-        record.updatedAt
+        record.updatedAt,
+        record.itemType ?? "faq"
       ]
     );
   }
@@ -627,6 +766,7 @@ export class PostgresKnowledgeRepository
 interface KnowledgeRow {
   id: string;
   external_id: string | null;
+  item_type?: string | null;
   title: string;
   aliases?: string[] | null;
   body: string;
@@ -648,6 +788,7 @@ function mapKnowledgeRow(row: KnowledgeRow): KnowledgeRecord {
   return {
     id: row.id,
     externalId: row.external_id ?? undefined,
+    itemType: row.item_type ?? undefined,
     title: row.title,
     aliases: row.aliases ?? undefined,
     body: row.body,
