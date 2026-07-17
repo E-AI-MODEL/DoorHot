@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "dev": "npm run dev --workspace @door010/api",
+    "demo": "node scripts/demo.mjs",
     "build": "tsc -b && npm run build --workspace @door010/web",
     "typecheck": "tsc -b --pretty false && npm run typecheck --workspace @door010/web",
     "test": "npm run test --workspaces --if-present",

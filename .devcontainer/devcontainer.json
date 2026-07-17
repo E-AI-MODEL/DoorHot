@@ -1,0 +1,22 @@
+{
+  "name": "Door010 demo",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
+  "containerEnv": {
+    "DATASETS_DIRECTORY": "${containerWorkspaceFolder}/datasets"
+  },
+  "postCreateCommand": "npm ci && npx tsc -b",
+  "forwardPorts": [5173, 4000],
+  "portsAttributes": {
+    "5173": {
+      "label": "Door010 webapp",
+      "onAutoForward": "openPreview"
+    },
+    "4000": {
+      "label": "Door010 API",
+      "onAutoForward": "silent"
+    }
+  },
+  "postAttachCommand": {
+    "demo": "npm run demo"
+  }
+}

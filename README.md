@@ -21,6 +21,25 @@ Versie 5.0 bundelt de volledige cumulatieve foundation met:
 De huidige readinessstatus blijft `CONDITIONAL_GO` totdat staging- en
 go-live-evidence extern is uitgevoerd.
 
+## Demo in een klik (GitHub Codespaces)
+
+De snelste manier om Door010 te zien werken, zonder installatie:
+
+1. klik op **Code -> Codespaces -> Create codespace on main**;
+2. wacht tot de omgeving is gebouwd (eenmalig enkele minuten) - de
+   demo start daarna automatisch via `npm run demo`;
+3. open de doorgestuurde poort **5173** (Door010 webapp).
+
+De demo draait volledig in-memory in de codespace: de API seedt bij het
+opstarten alle referentiedata (FAQ's, regionale loketten,
+routestap-uitleg) en de webapp praat via de Vite-proxy met de echte
+API. Registreren, chatten met de coach, de route- en talentflows en het
+journey-dashboard werken allemaal. Zet de poort op *Public* om de demo
+tijdelijk met anderen te delen; met het stoppen van de codespace
+verdwijnt alles.
+
+Lokaal werkt hetzelfde met `npm ci && npx tsc -b && npm run demo`.
+
 ## Repositorystructuur
 
 ```text
