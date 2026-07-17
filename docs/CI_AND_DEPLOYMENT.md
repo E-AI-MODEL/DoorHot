@@ -28,6 +28,20 @@ npm run verify:migrations
 Na een geslaagde verificatie controleert een tweede job de Compose-configuratie
 en bouwt de productie-image.
 
+## Automatisch readinessrapport
+
+De job `readiness` in `ci.yml` draait altijd als laatste en bundelt de
+uitkomsten van de workspace-, browser- en imagejobs tot
+`readiness-report.json`, geüpload als artifact
+`door010-readiness-<sha>`. Het rapport bevat de commit-SHA, het
+tijdstip, de Node-versie, de status en het commando per check, de
+run-URL en een expliciete lijst van gates die deze pipeline niet dekt
+(staging-load, restore-drill, acceptance, security/DPIA). Het veld
+`overall` is `GO_TECHNICAL` uitsluitend wanneer alle pipelinechecks
+groen zijn; de job faalt mee wanneer dat niet zo is. Alleen de
+pipeline produceert deze status — een handmatige tekst kan geen GO
+verklaren.
+
 ## Productie-image
 
 De `Dockerfile` gebruikt:

@@ -111,3 +111,75 @@ jobs:
         run: docker build --file Dockerfile.web --tag door010-web:${{ github.sha }} .
 
 # Production acceptance runs in .github/workflows/acceptance.yml
+
+  readiness:
+    name: Generate readiness report
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+      - verify
+      - e2e
+      - container
+    if: always()
+
+    steps:
+      - name: Compose readiness report
+        env:
+          VERIFY_RESULT: ${{ needs.verify.result }}
+          E2E_RESULT: ${{ needs.e2e.result }}
+          CONTAINER_RESULT: ${{ needs.container.result }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          node - <<'SCRIPT'
+          const fs = require("node:fs");
+
+          const checks = {
+            workspace: {
+              status: process.env.VERIFY_RESULT,
+              command:
+                "npm audit && typecheck && test && build && " +
+                "verify:migrations && verify:seed && reranker gates"
+            },
+            browserParity: {
+              status: process.env.E2E_RESULT,
+              command: "npm run test:e2e -- --workers=1"
+            },
+            deploymentImage: {
+              status: process.env.CONTAINER_RESULT,
+              command: "docker compose config && docker build (api, web)"
+            }
+          };
+
+          const allGreen = Object.values(checks)
+            .every((check) => check.status === "success");
+
+          const report = {
+            commitSha: process.env.GITHUB_SHA,
+            generatedAt: new Date().toISOString(),
+            nodeVersion: process.version,
+            workflowRunUrl: process.env.RUN_URL,
+            checks,
+            overall: allGreen ? "GO_TECHNICAL" : "NO_GO",
+            notCoveredByThisPipeline: [
+              "staging loadtest (staging-load.yml)",
+              "postgres restore drill (postgres-restore-drill.yml)",
+              "provider- en realtime-acceptance (acceptance.yml)",
+              "security review en DPIA (organisatorisch)"
+            ]
+          };
+
+          fs.writeFileSync(
+            "readiness-report.json",
+            JSON.stringify(report, null, 2)
+          );
+          console.log(JSON.stringify(report, null, 2));
+
+          if (!allGreen) process.exitCode = 1;
+          SCRIPT
+
+      - name: Upload readiness report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: door010-readiness-${{ github.sha }}
+          path: readiness-report.json
