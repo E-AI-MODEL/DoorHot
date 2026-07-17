@@ -62,6 +62,11 @@ jobs:
         ephemeral-staging-token-secret-with-at-least-32-characters
       APP_STORAGE_MODE: postgres
       API_PORT: "4000"
+      # The load gate measures capacity and latency, not the abuse
+      # limiter; with the default of 180/minute the gate is capped by
+      # design (the first run proved exactly that with 180/1000
+      # successes).
+      RATE_LIMIT_DEFAULT: "100000"
 
     steps:
       - name: Check out repository
