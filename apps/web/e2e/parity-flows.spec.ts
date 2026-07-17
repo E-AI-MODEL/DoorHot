@@ -109,7 +109,9 @@ test("talententest toont de beste sector", async ({ page }) => {
   await page.getByText("Mensen helpen").click();
   await page.getByRole("button", { name: "Toon mijn resultaat" }).click();
 
-  await expect(page.getByText("Primair onderwijs")).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Primair onderwijs" })
+  ).toBeVisible();
 });
 
 test("events en vacatures kunnen worden opgeslagen", async ({ page }) => {

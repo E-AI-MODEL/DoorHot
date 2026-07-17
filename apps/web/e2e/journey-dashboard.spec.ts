@@ -171,7 +171,7 @@ test("journey-dashboard toont voortgang, context en notificaties", async ({ page
   await page.getByRole("button", { name: "Mijn traject" }).click();
 
   await expect(page.getByRole("heading", { name: "Jouw voortgang en volgende stap" })).toBeVisible();
-  await expect(page.getByText("55%")).toBeVisible();
+  await expect(page.locator("strong", { hasText: "55%" })).toBeVisible();
   await expect(page.getByText("matching")).toBeVisible();
   await expect(page.getByText("zij-instroom-vo")).toBeVisible();
   await expect(page.getByText("Je adviesgesprek is morgen.")).toBeVisible();

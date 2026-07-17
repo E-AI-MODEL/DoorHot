@@ -270,6 +270,41 @@ test("beheerder ziet kandidaten en promptbeheer", async ({ page }) => {
       body: JSON.stringify({ deadLetters: [] })
     });
   });
+  await page.route("**/v1/backoffice/execution-requests**", async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ requests: [] })
+    });
+  });
+  await page.route("**/v1/backoffice/notification-outbox**", async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ items: [] })
+    });
+  });
+  await page.route("**/v1/backoffice/orchestration-runs**", async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ runs: [] })
+    });
+  });
+  await page.route("**/v1/backoffice/planner-shadow**", async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ evaluations: [] })
+    });
+  });
+  await page.route("**/v1/backoffice/connectors/health", async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ health: [], activeScheduleCount: 0 })
+    });
+  });
   await page.route("**/v1/backoffice/prompts", async (route) => {
     await route.fulfill({
       status: 200,
@@ -304,7 +339,9 @@ test("beheerder ziet kandidaten en promptbeheer", async ({ page }) => {
   await page.getByRole("button", { name: "Backoffice" }).click();
 
   await expect(page.getByText("Sam Kandidaat")).toBeVisible();
-  await expect(page.getByText("Algemene coach")).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Algemene coach" })
+  ).toBeVisible();
   await expect(page.getByTestId("candidate-table")).toContainText(
     "82%"
   );
