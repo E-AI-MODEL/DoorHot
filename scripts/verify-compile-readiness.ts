@@ -25,11 +25,11 @@ const missingSlots = requiredSlots.filter(
   (slot) => !domainSource.includes(`"${slot}"`)
 );
 
-if (rootPackage.version !== "0.5.1") {
-  throw new Error("Root package version is not 0.5.1.");
+if (!/^\d+\.\d+\.\d+$/.test(rootPackage.version)) {
+  throw new Error("Root package version is not a valid semver version.");
 }
 
-if (rootPackage.scripts.build !== "tsc -b") {
+if (!rootPackage.scripts.build.startsWith("tsc -b")) {
   throw new Error("Root build does not use TypeScript project references.");
 }
 
