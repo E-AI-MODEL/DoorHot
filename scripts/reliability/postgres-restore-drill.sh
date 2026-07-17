@@ -28,8 +28,7 @@ mkdir -p "$ARTIFACT_DIR"
 cleanup() {
   psql "$DATABASE_ADMIN_URL" \
     --set ON_ERROR_STOP=1 \
-    --command "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = :'restore_database' AND pid <> pg_backend_pid();" \
-    --set restore_database="$RESTORE_DATABASE" >/dev/null 2>&1 || true
+    --command "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = '$RESTORE_DATABASE' AND pid <> pg_backend_pid();" >/dev/null 2>&1 || true
   psql "$DATABASE_ADMIN_URL" \
     --set ON_ERROR_STOP=1 \
     --command "DROP DATABASE IF EXISTS \"$RESTORE_DATABASE\";" >/dev/null 2>&1 || true
@@ -72,7 +71,8 @@ psql "$DATABASE_ADMIN_URL" \
   --set ON_ERROR_STOP=1 \
   --command "CREATE DATABASE \"$RESTORE_DATABASE\" TEMPLATE template0;"
 
-pg_restore "$RESTORE_URL" \
+pg_restore \
+  --dbname="$RESTORE_URL" \
   --exit-on-error \
   --no-owner \
   --no-privileges \
