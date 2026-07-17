@@ -1,0 +1,137 @@
+name: Door010 Ephemeral Staging Gates
+
+# Runs the staging load gate and the PostgreSQL restore drill against
+# a stack that lives only for the duration of this workflow run: real
+# PostgreSQL as a service container, the production API booted inside
+# the runner. No external hosting, domain or secrets required. This
+# proves the procedures and guards regressions; capacity on production
+# hardware still requires a real environment.
+
+on:
+  workflow_dispatch:
+    inputs:
+      requests:
+        description: Total request count
+        required: true
+        default: "1000"
+      concurrency:
+        description: Parallel workers
+        required: true
+        default: "25"
+      maximum_p95_ms:
+        description: Maximum accepted p95 latency (ms)
+        required: true
+        default: "500"
+      minimum_success_rate:
+        description: Minimum accepted success rate
+        required: true
+        default: "0.99"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: door010-ephemeral-staging-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gates:
+    name: Load gate and restore drill on ephemeral stack
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: door010_staging
+          POSTGRES_USER: door010
+          POSTGRES_PASSWORD: ephemeral-staging-password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U door010 -d door010_staging"
+          --health-interval 2s
+          --health-timeout 3s
+          --health-retries 30
+
+    env:
+      DATABASE_URL: >-
+        postgresql://door010:ephemeral-staging-password@127.0.0.1:5432/door010_staging
+      AUTH_TOKEN_SECRET: >-
+        ephemeral-staging-token-secret-with-at-least-32-characters
+      APP_STORAGE_MODE: postgres
+      API_PORT: "4000"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build workspace packages
+        run: npx tsc -b
+
+      - name: Apply migrations
+        run: npm run migrate
+
+      - name: Seed reference data
+        run: npm run seed
+
+      - name: Start production API
+        run: |
+          node scripts/start-production.mjs > api.log 2>&1 &
+          for attempt in $(seq 1 60); do
+            if curl -sf http://127.0.0.1:4000/health/ready > /dev/null; then
+              echo "API is ready."
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "API did not become ready in time."
+          tail -100 api.log
+          exit 1
+
+      - name: Run load gate
+        env:
+          LOAD_TEST_BASE_URL: http://127.0.0.1:4000
+          LOAD_TEST_PATH: /health/live
+          LOAD_TEST_REQUESTS: ${{ inputs.requests }}
+          LOAD_TEST_CONCURRENCY: ${{ inputs.concurrency }}
+          LOAD_TEST_MAX_P95_MS: ${{ inputs.maximum_p95_ms }}
+          LOAD_TEST_MIN_SUCCESS_RATE: ${{ inputs.minimum_success_rate }}
+          LOAD_TEST_REPORT_PATH: artifacts/staging-load-result.json
+        run: npm run test:load-smoke
+
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes postgresql-client
+
+      - name: Execute restore drill
+        env:
+          DATABASE_ADMIN_URL: >-
+            postgresql://door010:ephemeral-staging-password@127.0.0.1:5432/postgres
+          SOURCE_DATABASE: door010_staging
+          RESTORE_DATABASE: door010_restore_drill
+          RESTORE_DRILL_ARTIFACT_DIR: artifacts/postgres-restore-drill
+        run: bash scripts/reliability/postgres-restore-drill.sh
+
+      - name: Upload gate evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: door010-ephemeral-staging-gates-${{ github.sha }}
+          path: |
+            artifacts/staging-load-result.json
+            artifacts/postgres-restore-drill
+            api.log
+          if-no-files-found: ignore
+          retention-days: 30
