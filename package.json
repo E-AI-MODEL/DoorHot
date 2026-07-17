@@ -50,9 +50,11 @@
     "@electric-sql/pglite": "^0.5.4",
     "@types/node": "^22.0.0",
     "eslint": "^9.0.0",
+    "globals": "^17.7.0",
     "prettier": "^3.0.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.64.0"
   },
   "engines": {
     "node": ">=22"

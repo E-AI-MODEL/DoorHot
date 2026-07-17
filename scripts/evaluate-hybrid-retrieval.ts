@@ -221,12 +221,6 @@ const questionToId = new Map(
     stableId(`faq:${faq.question}`)
   ])
 );
-const faqById = new Map(
-  faqDataset.faqs.map((faq) => [
-    stableId(`faq:${faq.question}`),
-    faq
-  ])
-);
 const faqTexts = faqDataset.faqs.map((faq) =>
   [
     faq.question,

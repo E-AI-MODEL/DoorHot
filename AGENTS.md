@@ -119,6 +119,7 @@ Voer minimaal uit:
 ```bash
 npm install --ignore-scripts
 npm run typecheck
+npm run lint
 npm test
 npm run build
 npm run verify:migrations
