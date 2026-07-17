@@ -1,0 +1,74 @@
+{
+  "version": "4.3.0",
+  "journeyDashboard": {
+    "authenticatedRoute": true,
+    "progress": true,
+    "phaseAndRoute": true,
+    "goals": true,
+    "milestones": true,
+    "blockers": true,
+    "actions": true,
+    "graphContext": true,
+    "notifications": true,
+    "actionCompletion": true,
+    "milestoneCompletion": true,
+    "blockerResolution": true
+  },
+  "alignment": {
+    "version": "4.3.0",
+    "originalParityFlows": {
+      "publicGeneralChat": "aligned",
+      "authentication": "aligned",
+      "profile": "aligned",
+      "personalJourneyChat": "aligned",
+      "routeFlow": "aligned",
+      "phaseFlow": "aligned",
+      "talentTest": "aligned",
+      "advisorChat": "aligned",
+      "events": "aligned",
+      "vacancies": "aligned",
+      "backoffice": "aligned"
+    },
+    "architectureBoundaries": {
+      "generalCoachSeparated": true,
+      "personalCoachSeparated": true,
+      "humanAdvisorSeparated": true,
+      "domainIndependentFromSupabase": true,
+      "providerAdaptersSeparated": true,
+      "deterministicJourneyState": true,
+      "orchestratorDoesNotReplaceCoachResponse": true,
+      "writeActionsRequireConfirmation": true
+    },
+    "newCapabilities": {
+      "hybridRetrieval": true,
+      "journeyEngine2": true,
+      "graphMemory": true,
+      "parallelOrchestration": true,
+      "shadowPlanning": true,
+      "safeExecution": true,
+      "journeyDashboard": true
+    },
+    "knownGaps": [
+      "full Playwright browser run not executed",
+      "live provider acceptance not executed",
+      "live PostgreSQL multi-instance acceptance not executed",
+      "external email/webhook delivery not executed",
+      "journey dashboard has no dedicated Playwright scenario yet"
+    ],
+    "assessment": "on-plan-no-material-architecture-drift"
+  },
+  "verification": {
+    "apiTests": "2 files / 3 tests passed",
+    "domainTests": "8 files / 22 tests passed",
+    "orchestrationTests": "3 files / 10 tests passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "migrations": "25/25 passed",
+    "publicTableCount": 100,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files",
+    "fullPlaywrightBrowserRun": false
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

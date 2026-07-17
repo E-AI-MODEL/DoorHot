@@ -1,0 +1,44 @@
+{
+  "version": "4.0.0",
+  "parallelOrchestration": {
+    "dependencyAware": true,
+    "parallelExecutionGroups": true,
+    "requiredFailurePropagation": true,
+    "toolTimeouts": true
+  },
+  "shadowPlanning": {
+    "providerIndependentContract": true,
+    "httpModelProvider": true,
+    "heuristicFallback": true,
+    "productionPlanChanged": false,
+    "toolAllowlistValidation": true,
+    "agreementScoring": true,
+    "persistentEvaluations": true,
+    "externalProviderExecuted": false
+  },
+  "explainability": {
+    "runExplanationApi": true,
+    "plannerShadowApi": true,
+    "backofficeUi": true,
+    "toolReasons": true,
+    "dependencies": true,
+    "parallelGroups": true,
+    "failureReasons": true
+  },
+  "verification": {
+    "orchestrationTests": "2 files / 6 tests passed",
+    "domainTests": "7 files / 19 tests passed",
+    "knowledgeTests": "10 files / 23 tests passed",
+    "apiTests": "2 files / 3 tests passed",
+    "typecheck": "passed",
+    "rerankerQualityGate": "passed",
+    "shadowRerankerQualityGate": "passed",
+    "build": "passed",
+    "migrations": "24/24 passed",
+    "publicTableCount": 96,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files"
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

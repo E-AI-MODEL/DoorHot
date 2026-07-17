@@ -1,0 +1,17 @@
+[
+  {
+    "command": "npm run build",
+    "returncode": 0,
+    "outputTail": "> door010-3@1.5.0 build\n> tsc -b"
+  },
+  {
+    "command": "npm run verify:migrations",
+    "returncode": 0,
+    "outputTail": "> door010-3@1.5.0 verify:migrations\n> node scripts/verify-migrations-pglite.mjs\n\nPASS 0001_initial.sql\nPASS 0002_domain_schema.sql\nPASS 0003_routes_and_journey.sql\nPASS 0004_response_pipeline.sql\nPASS 0005_phase_systems.sql\nPASS 0006_phase_system_preferences.sql\nPASS 0007_persistent_journey_state.sql\nPASS 0008_pending_mutations.sql\nPASS 0009_parity_conversations.sql\nPASS 0010_parity_flows_5_to_9.sql\nPASS 0011_vacancy_parity.sql\nPASS 0012_auth_profile_production.sql\nPASS 0013_persistent_parity_flows.sql\n{\n  \"passed\": true,\n  \"engine\": \"PGlite embedded PostgreSQL\",\n  \"compatibilityAdjustments\": [\n    \"Skipped CREATE EXTENSION pgcrypto because PGlite ships gen_random_uuid in core.\"\n  ],\n  \"migrationCount\": 13,\n  \"publicTableCount\": 74,\n  \"results\": [\n    {\n      \"filename\": \"0001_initial.sql\",\n      \"passed\": true,\n      \"durationMs\": 2510\n    },\n    {\n      \"filename\": \"0002_domain_schema.sql\",\n      \"passed\": true,\n      \"durationMs\": 102\n    },\n    {\n      \"filename\": \"0003_routes_and_journey.sql\",\n      \"passed\": true,\n      \"durationMs\": 11\n    },\n    {\n      \"filename\": \"0004_response_pipeline.sql\",\n      \"passed\": true,\n      \"durationMs\": 5\n    },\n    {\n      \"filename\": \"0005_phase_systems.sql\",\n      \"passed\": true,\n      \"durationMs\": 9\n    },\n    {\n      \"filename\": \"0006_phase_system_preferences.sql\",\n      \"passed\": true,\n      \"durationMs\": 4\n    },\n    {\n      \"filename\": \"0007_persistent_journey_state.sql\",\n      \"passed\": true,\n      \"durationMs\": 2\n    },\n    {\n      \"filename\": \"0008_pending_mutations.sql\",\n      \"passed\": true,\n      \"durationMs\": 5\n    },\n    {\n      \"filename\": \"0009_parity_conversations.sql\",\n      \"passed\": true,\n      \"durationMs\": 5\n    },\n    {\n      \"filename\": \"0010_parity_flows_5_to_9.sql\",\n      \"passed\": true,\n      \"durationMs\": 9\n    },\n    {\n      \"filename\": \"0011_vacancy_parity.sql\",\n      \"passed\": true,\n      \"durationMs\": 4\n    },\n    {\n      \"filename\": \"0012_auth_profile_production.sql\",\n      \"passed\": true,\n      \"durationMs\": 6\n    },\n    {\n      \"filename\": \"0013_persistent_parity_flows.sql\",\n      \"passed\": true,\n      \"durationMs\": 6\n    }\n  ]\n}"
+  },
+  {
+    "command": "npm audit --json",
+    "returncode": 0,
+    "outputTail": "{\n  \"auditReportVersion\": 2,\n  \"vulnerabilities\": {},\n  \"metadata\": {\n    \"vulnerabilities\": {\n      \"info\": 0,\n      \"low\": 0,\n      \"moderate\": 0,\n      \"high\": 0,\n      \"critical\": 0,\n      \"total\": 0\n    },\n    \"dependencies\": {\n      \"prod\": 92,\n      \"dev\": 191,\n      \"optional\": 53,\n      \"peer\": 0,\n      \"peerOptional\": 0,\n      \"total\": 283\n    }\n  }\n}"
+  }
+]

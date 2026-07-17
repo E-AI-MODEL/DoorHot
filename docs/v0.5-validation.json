@@ -1,0 +1,18 @@
+{
+  "version": "0.5.0",
+  "checks": {
+    "phaseDetectorAlwaysReturnsQuestion": true,
+    "modelCannotInventQuestion": true,
+    "confidenceThreshold": true,
+    "requiredBeforeOptional": true,
+    "responseModes": true,
+    "answerTypes": true,
+    "directAnswerSeparated": true,
+    "migrationPresent": true,
+    "testsPresent": true
+  },
+  "limitations": [
+    "npm install, typecheck en Vitest zijn niet uitgevoerd in deze omgeving."
+  ],
+  "passed": true
+}

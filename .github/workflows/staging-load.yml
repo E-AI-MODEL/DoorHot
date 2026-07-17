@@ -1,0 +1,88 @@
+name: Door010 Staging Load Gate
+
+on:
+  workflow_dispatch:
+    inputs:
+      path:
+        description: HTTP path to test
+        required: true
+        default: /health/live
+      requests:
+        description: Total request count
+        required: true
+        default: "1000"
+      concurrency:
+        description: Parallel workers
+        required: true
+        default: "25"
+      maximum_p95_ms:
+        description: Maximum accepted p95 latency
+        required: true
+        default: "500"
+      minimum_success_rate:
+        description: Minimum accepted success rate
+        required: true
+        default: "0.99"
+
+permissions:
+  contents: read
+
+jobs:
+  load:
+    name: Execute staging load gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: staging
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Validate staging URL secret
+        env:
+          LOAD_TEST_BASE_URL: ${{ secrets.STAGING_BASE_URL }}
+        run: |
+          test -n "$LOAD_TEST_BASE_URL" || {
+            echo "STAGING_BASE_URL is not configured."
+            exit 2
+          }
+
+      - name: Run load gate
+        env:
+          LOAD_TEST_BASE_URL: ${{ secrets.STAGING_BASE_URL }}
+          LOAD_TEST_PATH: ${{ inputs.path }}
+          LOAD_TEST_REQUESTS: ${{ inputs.requests }}
+          LOAD_TEST_CONCURRENCY: ${{ inputs.concurrency }}
+          LOAD_TEST_MAX_P95_MS: ${{ inputs.maximum_p95_ms }}
+          LOAD_TEST_MIN_SUCCESS_RATE: ${{ inputs.minimum_success_rate }}
+          LOAD_TEST_REPORT_PATH: artifacts/staging-load-result.json
+        run: npm run test:load-smoke
+
+      - name: Upload load evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: door010-staging-load-${{ github.run_id }}
+          path: artifacts/staging-load-result.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Publish load summary
+        if: always()
+        run: |
+          {
+            echo "## Door010 staging load gate"
+            echo
+            echo '```json'
+            cat artifacts/staging-load-result.json 2>/dev/null || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,89 @@
+PASS 0001_initial.sql
+PASS 0002_domain_schema.sql
+PASS 0003_routes_and_journey.sql
+PASS 0004_response_pipeline.sql
+PASS 0005_phase_systems.sql
+PASS 0006_phase_system_preferences.sql
+PASS 0007_persistent_journey_state.sql
+PASS 0008_pending_mutations.sql
+PASS 0009_parity_conversations.sql
+PASS 0010_parity_flows_5_to_9.sql
+PASS 0011_vacancy_parity.sql
+PASS 0012_auth_profile_production.sql
+PASS 0013_persistent_parity_flows.sql
+{
+  "passed": true,
+  "engine": "PGlite embedded PostgreSQL",
+  "compatibilityAdjustments": [
+    "Skipped CREATE EXTENSION pgcrypto because PGlite ships gen_random_uuid in core."
+  ],
+  "migrationCount": 13,
+  "publicTableCount": 74,
+  "results": [
+    {
+      "filename": "0001_initial.sql",
+      "passed": true,
+      "durationMs": 2573
+    },
+    {
+      "filename": "0002_domain_schema.sql",
+      "passed": true,
+      "durationMs": 109
+    },
+    {
+      "filename": "0003_routes_and_journey.sql",
+      "passed": true,
+      "durationMs": 11
+    },
+    {
+      "filename": "0004_response_pipeline.sql",
+      "passed": true,
+      "durationMs": 6
+    },
+    {
+      "filename": "0005_phase_systems.sql",
+      "passed": true,
+      "durationMs": 10
+    },
+    {
+      "filename": "0006_phase_system_preferences.sql",
+      "passed": true,
+      "durationMs": 12
+    },
+    {
+      "filename": "0007_persistent_journey_state.sql",
+      "passed": true,
+      "durationMs": 3
+    },
+    {
+      "filename": "0008_pending_mutations.sql",
+      "passed": true,
+      "durationMs": 5
+    },
+    {
+      "filename": "0009_parity_conversations.sql",
+      "passed": true,
+      "durationMs": 5
+    },
+    {
+      "filename": "0010_parity_flows_5_to_9.sql",
+      "passed": true,
+      "durationMs": 9
+    },
+    {
+      "filename": "0011_vacancy_parity.sql",
+      "passed": true,
+      "durationMs": 5
+    },
+    {
+      "filename": "0012_auth_profile_production.sql",
+      "passed": true,
+      "durationMs": 6
+    },
+    {
+      "filename": "0013_persistent_parity_flows.sql",
+      "passed": true,
+      "durationMs": 6
+    }
+  ]
+}

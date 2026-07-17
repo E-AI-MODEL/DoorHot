@@ -1,0 +1,80 @@
+{
+  "version": "3.5.0",
+  "capabilityArchitecture": {
+    "version": "1.0.0",
+    "capabilities": [
+      {
+        "key": "identity",
+        "package": "@door010/identity-profile",
+        "status": "implemented"
+      },
+      {
+        "key": "knowledge",
+        "package": "@door010/knowledge",
+        "status": "implemented"
+      },
+      {
+        "key": "journey",
+        "package": "@door010/domain",
+        "status": "implemented"
+      },
+      {
+        "key": "reasoning",
+        "package": "@door010/knowledge",
+        "status": "implemented"
+      },
+      {
+        "key": "conversation",
+        "package": "@door010/chat",
+        "status": "implemented"
+      },
+      {
+        "key": "planning",
+        "package": "@door010/domain",
+        "status": "partial"
+      },
+      {
+        "key": "execution",
+        "package": "@door010/parity-flows",
+        "status": "partial"
+      },
+      {
+        "key": "learning",
+        "package": "@door010/knowledge",
+        "status": "implemented"
+      },
+      {
+        "key": "observability",
+        "package": "@door010/audit",
+        "status": "implemented"
+      }
+    ]
+  },
+  "knowledgeConnectors": {
+    "json": true,
+    "csv": true,
+    "httpJson": true,
+    "normalization": true,
+    "diffByContentHash": true,
+    "versioning": true,
+    "healthTracking": true,
+    "runMetrics": true,
+    "manualSyncApi": true,
+    "scheduledExecution": false
+  },
+  "verification": {
+    "knowledgeTests": "8 files / 16 tests passed",
+    "integrationTests": "4 files / 8 tests passed",
+    "apiTests": "2 files / 3 tests passed",
+    "typecheck": "passed",
+    "rerankerQualityGate": "passed",
+    "shadowQualityGate": "passed",
+    "build": "passed",
+    "migrations": "20/20 passed",
+    "publicTableCount": 85,
+    "playwrightDiscovery": "9 tests / 2 files",
+    "npmAudit": "not completed: configured registry returned HTTP 410"
+  },
+  "supabaseSdkImports": [],
+  "passedWithAuditRegistryLimitation": true
+}

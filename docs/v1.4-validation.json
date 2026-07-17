@@ -1,0 +1,27 @@
+{
+  "version": "1.4.0",
+  "dependencySecurity": {
+    "vitestVersion": "3.2.6",
+    "npmAuditVulnerabilities": 0,
+    "typecheckPassed": true,
+    "buildPassed": true,
+    "testFilesPassed": 22,
+    "testsPassed": 40
+  },
+  "migrationExecution": {
+    "engine": "PGlite embedded PostgreSQL",
+    "migrationCount": 13,
+    "migrationsPassed": 13,
+    "publicTableCount": 74,
+    "compatibilityAdjustments": [
+      "CREATE EXTENSION pgcrypto skipped only in PGlite verification because gen_random_uuid is built in."
+    ],
+    "migrationFixes": [
+      "Removed non-immutable tags array conversion from generated tsvector.",
+      "Created journey_states in migration 0003 before later ALTER statements.",
+      "Added and backfilled conversations.user_id before repository indexes use it."
+    ]
+  },
+  "supabaseSdkImported": false,
+  "passed": true
+}

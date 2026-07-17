@@ -1,0 +1,33 @@
+{
+  "version": "4.4.0",
+  "journeyDashboardE2E": {
+    "dedicatedTestsAdded": 2,
+    "discoveredTests": "11 tests / 3 files",
+    "fullBrowserRun": "blocked",
+    "officialBrowserDownload": "failed: DNS/network restriction",
+    "systemChromiumRun": "failed during browser startup because GPU process was unusable in sandbox",
+    "applicationAssertionsExecuted": false,
+    "requiredNextEnvironment": "official Playwright CI image"
+  },
+  "productionReadiness": {
+    "decision": "CONDITIONAL_GO",
+    "security": "pass_with_external_gates",
+    "privacy": "conditional",
+    "load": "not_proven",
+    "recovery": "partial",
+    "goLiveBlockers": 5
+  },
+  "verification": {
+    "apiTests": "2 files / 3 tests passed after build",
+    "domainTests": "8 files / 22 tests passed",
+    "orchestrationTests": "3 files / 10 tests passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "migrations": "25/25 passed",
+    "publicTableCount": 100,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "11 tests / 3 files"
+  },
+  "supabaseSdkImports": [],
+  "passedWithRuntimeBrowserBlocker": true
+}

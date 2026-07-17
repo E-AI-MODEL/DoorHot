@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0.0",
+  "system_key": "phase-5",
+  "title": "Phase Detector in 5 fasen",
+  "description": "De bestaande detectorfasen voor oriëntatie en instroom.",
+  "phases": [
+    {
+      "code": "interesse",
+      "title": "Interesseren",
+      "sort": 1,
+      "canonical_range": [
+        "interesse"
+      ],
+      "entry_criteria": [
+        {
+          "type": "always"
+        }
+      ],
+      "exit_criteria": [
+        {
+          "type": "intent",
+          "intent": "wants_orientation_info"
+        }
+      ],
+      "required_slots": [],
+      "optional_slots": [
+        "school_type",
+        "role_interest"
+      ],
+      "allowed_previous_phases": [],
+      "allowed_next_phases": [
+        "orientatie"
+      ],
+      "default_next_phase": "orientatie"
+    },
+    {
+      "code": "orientatie",
+      "title": "Oriënteren",
+      "sort": 2,
+      "canonical_range": [
+        "orientatie"
+      ],
+      "entry_criteria": [
+        {
+          "type": "phase_completed",
+          "phase": "interesse"
+        }
+      ],
+      "exit_criteria": [
+        {
+          "type": "slot_present",
+          "slot": "school_type"
+        },
+        {
+          "type": "slot_present",
+          "slot": "role_interest"
+        },
+        {
+          "type": "slot_present",
+          "slot": "credential_goal"
+        }
+      ],
+      "required_slots": [
+        "school_type",
+        "role_interest",
+        "credential_goal"
+      ],
+      "optional_slots": [
+        "admission_requirements"
+      ],
+      "allowed_previous_phases": [
+        "interesse"
+      ],
+      "allowed_next_phases": [
+        "beslissing"
+      ],
+      "default_next_phase": "beslissing"
+    },
+    {
+      "code": "beslissing",
+      "title": "Beslissen",
+      "sort": 3,
+      "canonical_range": [
+        "beslissing"
+      ],
+      "entry_criteria": [
+        {
+          "type": "phase_completed",
+          "phase": "orientatie"
+        }
+      ],
+      "exit_criteria": [
+        {
+          "type": "intent",
+          "intent": "wants_to_proceed"
+        },
+        {
+          "type": "slot_present",
+          "slot": "credential_goal"
+        }
+      ],
+      "required_slots": [
+        "credential_goal"
+      ],
+      "optional_slots": [
+        "duration_info",
+        "costs_info"
+      ],
+      "allowed_previous_phases": [
+        "orientatie"
+      ],
+      "allowed_next_phases": [
+        "matching"
+      ],
+      "default_next_phase": "matching"
+    },
+    {
+      "code": "matching",
+      "title": "Matchen",
+      "sort": 4,
+      "canonical_range": [
+        "matching"
+      ],
+      "entry_criteria": [
+        {
+          "type": "phase_completed",
+          "phase": "beslissing"
+        }
+      ],
+      "exit_criteria": [
+        {
+          "type": "entity_selected",
+          "entity": "education_route"
+        },
+        {
+          "type": "slot_present",
+          "slot": "region_preference"
+        }
+      ],
+      "required_slots": [
+        "region_preference"
+      ],
+      "optional_slots": [
+        "salary_info"
+      ],
+      "allowed_previous_phases": [
+        "beslissing"
+      ],
+      "allowed_next_phases": [
+        "voorbereiding"
+      ],
+      "default_next_phase": "voorbereiding"
+    },
+    {
+      "code": "voorbereiding",
+      "title": "Voorbereiden",
+      "sort": 5,
+      "canonical_range": [
+        "voorbereiding",
+        "start",
+        "opleiding",
+        "inductie",
+        "behoud"
+      ],
+      "entry_criteria": [
+        {
+          "type": "phase_completed",
+          "phase": "matching"
+        },
+        {
+          "type": "entity_selected",
+          "entity": "education_route"
+        }
+      ],
+      "exit_criteria": [
+        {
+          "type": "event_recorded",
+          "event": "started"
+        }
+      ],
+      "required_slots": [
+        "next_step"
+      ],
+      "optional_slots": [
+        "duration_info",
+        "costs_info",
+        "salary_info"
+      ],
+      "allowed_previous_phases": [
+        "matching"
+      ],
+      "allowed_next_phases": [],
+      "default_next_phase": null
+    }
+  ]
+}

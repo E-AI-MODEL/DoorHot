@@ -1,0 +1,79 @@
+{
+  "version": "4.4.0",
+  "decision": "CONDITIONAL_GO",
+  "summary": "Code- en schemafundament zijn releasewaardig; productie-go blijft afhankelijk van live infrastructuur-, load-, recovery- en providerbewijs.",
+  "security": {
+    "status": "PASS_WITH_EXTERNAL_GATES",
+    "evidence": [
+      "ownership enforcement and privileged backoffice checks",
+      "rate limiting for authentication and default API traffic",
+      "CSP, frame, content-type, referrer and permissions headers",
+      "npm audit: zero known vulnerabilities",
+      "staging security review artifact reports PASS"
+    ],
+    "remaining": [
+      "independent penetration test",
+      "secret-manager verification",
+      "production TLS/HSTS verification",
+      "malware scanning for future uploads"
+    ]
+  },
+  "privacy": {
+    "status": "CONDITIONAL",
+    "evidence": [
+      "raw orchestration tool outputs are not persisted by default",
+      "confirmation tokens are hash-only",
+      "execution is user-owned and explicitly confirmed",
+      "graph memory remains scoped by user ID"
+    ],
+    "remaining": [
+      "DPIA and processing-register approval",
+      "retention and deletion job acceptance",
+      "data-subject export/deletion acceptance",
+      "PII review of provider payloads and logs"
+    ]
+  },
+  "load": {
+    "status": "NOT_PROVEN",
+    "evidence": [
+      "parallel orchestration implemented",
+      "provider retries and circuit behavior implemented",
+      "reusable native HTTP load-smoke script added"
+    ],
+    "remaining": [
+      "run against staging with production-sized PostgreSQL",
+      "chat and retrieval p95/p99 tests",
+      "SSE and multi-instance concurrency tests",
+      "notification worker backlog test"
+    ]
+  },
+  "recovery": {
+    "status": "PARTIAL",
+    "evidence": [
+      "25 migrations replay successfully in embedded PostgreSQL",
+      "connector leases recover after expiry",
+      "dead-letter retry and notification outbox are persistent",
+      "soft archival preserves connector history"
+    ],
+    "remaining": [
+      "real PostgreSQL backup restore drill",
+      "RPO and RTO approval",
+      "point-in-time recovery test",
+      "multi-instance failover and reconnect acceptance"
+    ]
+  },
+  "browserAcceptance": {
+    "dedicatedJourneyTests": "2 tests added",
+    "discovery": "11 tests in 3 files",
+    "fullRun": "BLOCKED_BY_RUNTIME",
+    "reason": "System Chromium terminates because its GPU process is unusable in this sandbox; Playwright browser download is unavailable due DNS/network restrictions.",
+    "ciRequired": true
+  },
+  "goLiveBlockers": [
+    "successful full Playwright run in supported CI browser image",
+    "staging load test and agreed latency/error thresholds",
+    "real PostgreSQL restore drill",
+    "live provider contract acceptance",
+    "privacy/DPIA sign-off"
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "command": "npm run typecheck",
+    "returncode": 0,
+    "outputTail": "> door010-3@1.6.0 typecheck\n> tsc -b --pretty false"
+  },
+  {
+    "command": "npm run build",
+    "returncode": 0,
+    "outputTail": "> door010-3@1.6.0 build\n> tsc -b"
+  },
+  {
+    "command": "npm run test --workspace @door010/observability",
+    "returncode": 0,
+    "outputTail": "> @door010/observability@1.6.0 test\n> vitest run\n\n\n\u001b[1m\u001b[46m RUN \u001b[49m\u001b[22m \u001b[36mv3.2.6 \u001b[39m\u001b[90m/mnt/data/door010-3-v1.5-work/door010-3-foundation/packages/observability\u001b[39m\n\n \u001b[32m✓\u001b[39m test/metrics.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 85\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m   Start at \u001b[22m 23:55:51\n\u001b[2m   Duration \u001b[22m 13.85s\u001b[2m (transform 1.21s, setup 0ms, collect 1.10s, tests 85ms, environment 0ms, prepare 1.40s)\u001b[22m"
+  },
+  {
+    "command": "npm run test --workspace @door010/api",
+    "returncode": 0,
+    "outputTail": "> @door010/api@1.6.0 test\n> vitest run\n\n\n\u001b[1m\u001b[46m RUN \u001b[49m\u001b[22m \u001b[36mv3.2.6 \u001b[39m\u001b[90m/mnt/data/door010-3-v1.5-work/door010-3-foundation/apps/api\u001b[39m\n\n \u001b[32m✓\u001b[39m test/bootstrap.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 39\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m   Start at \u001b[22m 23:56:07\n\u001b[2m   Duration \u001b[22m 13.65s\u001b[2m (transform 1.61s, setup 0ms, collect 1.62s, tests 39ms, environment 0ms, prepare 1.80s)\u001b[22m"
+  },
+  {
+    "command": "npm run verify:migrations",
+    "returncode": 0,
+    "outputTail": "> door010-3@1.6.0 verify:migrations\n> node scripts/verify-migrations-pglite.mjs\n\nPASS 0001_initial.sql\nPASS 0002_domain_schema.sql\nPASS 0003_routes_and_journey.sql\nPASS 0004_response_pipeline.sql\nPASS 0005_phase_systems.sql\nPASS 0006_phase_system_preferences.sql\nPASS 0007_persistent_journey_state.sql\nPASS 0008_pending_mutations.sql\nPASS 0009_parity_conversations.sql\nPASS 0010_parity_flows_5_to_9.sql\nPASS 0011_vacancy_parity.sql\nPASS 0012_auth_profile_production.sql\nPASS 0013_persistent_parity_flows.sql\n{\n  \"passed\": true,\n  \"engine\": \"PGlite embedded PostgreSQL\",\n  \"compatibilityAdjustments\": [\n    \"Skipped CREATE EXTENSION pgcrypto because PGlite ships gen_random_uuid in core.\"\n  ],\n  \"migrationCount\": 13,\n  \"publicTableCount\": 74,\n  \"results\": [\n    {\n      \"filename\": \"0001_initial.sql\",\n      \"passed\": true,\n      \"durationMs\": 2544\n    },\n    {\n      \"filename\": \"0002_domain_schema.sql\",\n      \"passed\": true,\n      \"durationMs\": 111\n    },\n    {\n      \"filename\": \"0003_routes_and_journey.sql\",\n      \"passed\": true,\n      \"durationMs\": 11\n    },\n    {\n      \"filename\": \"0004_response_pipeline.sql\",\n      \"passed\": true,\n      \"durationMs\": 6\n    },\n    {\n      \"filename\": \"0005_phase_systems.sql\",\n      \"passed\": true,\n      \"durationMs\": 9\n    },\n    {\n      \"filename\": \"0006_phase_system_preferences.sql\",\n      \"passed\": true,\n      \"durationMs\": 5\n    },\n    {\n      \"filename\": \"0007_persistent_journey_state.sql\",\n      \"passed\": true,\n      \"durationMs\": 2\n    },\n    {\n      \"filename\": \"0008_pending_mutations.sql\",\n      \"passed\": true,\n      \"durationMs\": 4\n    },\n    {\n      \"filename\": \"0009_parity_conversations.sql\",\n      \"passed\": true,\n      \"durationMs\": 5\n    },\n    {\n      \"filename\": \"0010_parity_flows_5_to_9.sql\",\n      \"passed\": true,\n      \"durationMs\": 9\n    },\n    {\n      \"filename\": \"0011_vacancy_parity.sql\",\n      \"passed\": true,\n      \"durationMs\": 4\n    },\n    {\n      \"filename\": \"0012_auth_profile_production.sql\",\n      \"passed\": true,\n      \"durationMs\": 6\n    },\n    {\n      \"filename\": \"0013_persistent_parity_flows.sql\",\n      \"passed\": true,\n      \"durationMs\": 6\n    }\n  ]\n}"
+  },
+  {
+    "command": "npm audit --json",
+    "returncode": 0,
+    "outputTail": "{\n  \"auditReportVersion\": 2,\n  \"vulnerabilities\": {},\n  \"metadata\": {\n    \"vulnerabilities\": {\n      \"info\": 0,\n      \"low\": 0,\n      \"moderate\": 0,\n      \"high\": 0,\n      \"critical\": 0,\n      \"total\": 0\n    },\n    \"dependencies\": {\n      \"prod\": 94,\n      \"dev\": 191,\n      \"optional\": 53,\n      \"peer\": 0,\n      \"peerOptional\": 0,\n      \"total\": 285\n    }\n  }\n}"
+  }
+]

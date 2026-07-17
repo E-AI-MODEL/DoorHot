@@ -1,0 +1,68 @@
+{
+  "version": "2.9.0",
+  "benchmark": {
+    "dataset": "datasets/retrieval-benchmark.json",
+    "faqCount": 48,
+    "caseCount": 191,
+    "queryTypes": [
+      "exact",
+      "alias",
+      "paraphrase",
+      "typo"
+    ],
+    "engine": "PGlite PostgreSQL FTS",
+    "reports": [
+      "reports/retrieval/baseline.json",
+      "reports/retrieval/baseline.md"
+    ],
+    "overallAt5": {
+      "recallAtK": 0.555,
+      "meanReciprocalRank": 0.5329,
+      "ndcgAtK": 0.5384,
+      "hitRateAtK": 0.555
+    },
+    "byQueryTypeAt5": {
+      "exact": {
+        "recallAtK": 1,
+        "meanReciprocalRank": 0.9861,
+        "ndcgAtK": 0.9896,
+        "hitRateAtK": 1
+      },
+      "alias": {
+        "recallAtK": 0.9787,
+        "meanReciprocalRank": 0.9032,
+        "ndcgAtK": 0.9222,
+        "hitRateAtK": 0.9787
+      },
+      "paraphrase": {
+        "recallAtK": 0.0208,
+        "meanReciprocalRank": 0.0208,
+        "ndcgAtK": 0.0208,
+        "hitRateAtK": 0.0208
+      },
+      "typo": {
+        "recallAtK": 0.2292,
+        "meanReciprocalRank": 0.2292,
+        "ndcgAtK": 0.2292,
+        "hitRateAtK": 0.2292
+      }
+    },
+    "missesAt5": 85,
+    "ciGate": true,
+    "ciGatePassed": true
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "retrievalBenchmark": "191 cases executed",
+    "retrievalQualityGate": "passed",
+    "knowledgeTests": "3 files / 7 tests passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "migrations": "17/17 passed",
+    "publicTableCount": 78,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files"
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

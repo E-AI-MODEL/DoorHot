@@ -1,0 +1,37 @@
+{
+  "modelVersion": "door010-learned-linear-v1",
+  "splitStrategy": "semantic groupId, 70% train / 15% validation / 15% holdout",
+  "training": {
+    "caseCount": 242,
+    "recallAt5": 0.8822,
+    "meanReciprocalRank": 0.8064,
+    "ndcgAt5": 0.8215,
+    "brierScore": 0.21
+  },
+  "validation": {
+    "caseCount": 46,
+    "recallAt5": 0.9348,
+    "meanReciprocalRank": 0.8569,
+    "ndcgAt5": 0.8766,
+    "brierScore": 0.1584
+  },
+  "holdout": {
+    "caseCount": 45,
+    "recallAt5": 0.9222,
+    "meanReciprocalRank": 0.8407,
+    "ndcgAt5": 0.8544,
+    "brierScore": 0.178
+  },
+  "weights": {
+    "reciprocal_rank": 3.4299395,
+    "rrf_score": 0.18629973,
+    "title_token_overlap": 0.18216352,
+    "body_token_overlap": -0.47179203,
+    "tag_token_overlap": 4.00839145,
+    "title_trigram_similarity": 9.42988158,
+    "concept_overlap": 0.21193634,
+    "exact_title_match": 0.63753424,
+    "query_length_ratio": -1.52892722,
+    "channel_count": -0.10021334
+  }
+}

@@ -1,0 +1,25 @@
+name: Deploy staging
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: Container image tag
+        required: false
+        default: staging
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: door010-staging
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    uses: ./.github/workflows/reusable-release.yml
+    with:
+      environment_name: staging
+      image_tag: ${{ inputs.image_tag }}
+    secrets: inherit

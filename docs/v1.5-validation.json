@@ -1,0 +1,42 @@
+{
+  "version": "1.5.0",
+  "ci": {
+    "workflowPresent": true,
+    "runsAudit": true,
+    "runsTypecheck": true,
+    "runsTests": true,
+    "runsBuild": true,
+    "runsMigrations": true,
+    "buildsContainer": true
+  },
+  "deployment": {
+    "dockerfilePresent": true,
+    "composePresent": true,
+    "environmentExamplePresent": true,
+    "migrationRunnerPresent": true,
+    "productionStartScriptPresent": true,
+    "nonRootRuntime": true,
+    "apiReadinessChecksDatabase": true,
+    "gracefulShutdown": true
+  },
+  "yaml": {
+    "composeParses": true,
+    "workflowParses": true,
+    "composeHasDatabaseHealthcheck": true,
+    "composeHasApiHealthcheck": true,
+    "apiWaitsForHealthyDatabase": true
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "typecheck": "passed",
+    "workspaceTestFiles": 22,
+    "workspaceTests": 40,
+    "build": "passed",
+    "migrations": "13/13 passed",
+    "npmAuditVulnerabilities": 0,
+    "dockerBuildExecuted": false,
+    "dockerBuildReason": "Docker is not installed in the execution environment; the CI workflow performs the actual image build."
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

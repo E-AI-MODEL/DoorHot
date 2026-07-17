@@ -1,0 +1,20 @@
+{
+  "version": "1.7.0",
+  "features": {
+    "trustedSources": true,
+    "faqIngestion": true,
+    "hybridRetrieval": true,
+    "publicCoachUsesRetrieval": true,
+    "postgresPersistence": true,
+    "memoryDevelopmentMode": true
+  },
+  "verification": {
+    "typecheck": "passed",
+    "knowledgeTests": "passed",
+    "apiTests": "passed",
+    "build": "passed",
+    "migrations": "14/14 passed",
+    "npmAuditVulnerabilities": 0
+  },
+  "passed": true
+}

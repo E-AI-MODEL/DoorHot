@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-02-05T11:30:49Z",
+  "audience": {
+    "label": "Zij-instromer",
+    "code": "zijinstromer"
+  },
+  "slots": {
+    "school_type": {
+      "description": "Onderwijssector: PO/VO/MBO of onbekend."
+    },
+    "role_interest": {
+      "description": "Type functie/rol waar kandidaat interesse in heeft."
+    },
+    "credential_goal": {
+      "description": "Beoogde bevoegdheid/getuigschrift."
+    },
+    "admission_requirements": {
+      "description": "Toelatingseisen/voorwaarden relevant voor route."
+    },
+    "duration_info": {
+      "description": "Vragen over globale duur/looptijd van route."
+    },
+    "costs_info": {
+      "description": "Vragen over globale kosten/financiering."
+    },
+    "salary_info": {
+      "description": "Vragen over salaris/inschaling."
+    },
+    "region_preference": {
+      "description": "Voorkeur voor regio/locatie."
+    },
+    "next_step": {
+      "description": "Voorkeur/actie voor vervolgstap (intake, aanmelden, gesprek)."
+    }
+  },
+  "phases": [
+    {
+      "code": "interesse",
+      "title": "Interesseren",
+      "description": "De kandidaat heeft kennis gemaakt met het onderwijs als potentiële arbeidsmarkt en de interesse voor een functie in het onderwijs is gewekt.",
+      "sort": 1,
+      "required_slots": [],
+      "optional_slots": [
+        "role_interest",
+        "credential_goal",
+        "admission_requirements",
+        "duration_info",
+        "costs_info",
+        "salary_info",
+        "region_preference",
+        "next_step"
+      ],
+      "exit_criteria": [
+        {
+          "type": "intent",
+          "intent": "wants_orientation_info"
+        }
+      ],
+      "next_phase_default": "orientatie"
+    },
+    {
+      "code": "orientatie",
+      "title": "Oriënteren",
+      "description": "De kandidaat overweegt of een functie in het onderwijs passend is en hoe de route daarnaartoe eruit ziet.",
+      "sort": 2,
+      "required_slots": [
+        "school_type"
+      ],
+      "optional_slots": [
+        "role_interest",
+        "credential_goal",
+        "admission_requirements",
+        "duration_info",
+        "costs_info",
+        "salary_info",
+        "region_preference",
+        "next_step"
+      ],
+      "exit_criteria": [
+        {
+          "type": "slots_present",
+          "slots": [
+            "school_type"
+          ]
+        }
+      ],
+      "next_phase_default": "beslissing"
+    },
+    {
+      "code": "beslissing",
+      "title": "Beslissen",
+      "description": "Aan het eind van de oriëntatie volgt een beslismoment: de kandidaat wil de stap wél of niet gaan maken.",
+      "sort": 3,
+      "required_slots": [
+        "school_type"
+      ],
+      "optional_slots": [
+        "role_interest",
+        "credential_goal",
+        "admission_requirements",
+        "duration_info",
+        "costs_info",
+        "salary_info",
+        "region_preference",
+        "next_step"
+      ],
+      "exit_criteria": [
+        {
+          "type": "slots_present",
+          "slots": [
+            "school_type"
+          ]
+        }
+      ],
+      "next_phase_default": "matching"
+    },
+    {
+      "code": "matching",
+      "title": "Matchen",
+      "description": "Wanneer de route voor de kandidaat bekend is moet er een geschikte werk- en/of opleidingsplek worden gevonden.",
+      "sort": 4,
+      "required_slots": [
+        "school_type"
+      ],
+      "optional_slots": [
+        "role_interest",
+        "credential_goal",
+        "admission_requirements",
+        "duration_info",
+        "costs_info",
+        "salary_info",
+        "region_preference",
+        "next_step"
+      ],
+      "exit_criteria": [
+        {
+          "type": "slots_present",
+          "slots": [
+            "school_type"
+          ]
+        }
+      ],
+      "next_phase_default": "voorbereiding"
+    },
+    {
+      "code": "voorbereiding",
+      "title": "Voorbereiden",
+      "description": "Vóórdat de kandidaat aan de eerste werk- of opleidingsdag begint is er ter voorbereiding vanalles te ondernemen.",
+      "sort": 5,
+      "required_slots": [
+        "school_type"
+      ],
+      "optional_slots": [
+        "role_interest",
+        "credential_goal",
+        "admission_requirements",
+        "duration_info",
+        "costs_info",
+        "salary_info",
+        "region_preference",
+        "next_step"
+      ],
+      "exit_criteria": [
+        {
+          "type": "slots_present",
+          "slots": [
+            "school_type"
+          ]
+        }
+      ],
+      "next_phase_default": "voorbereiding"
+    }
+  ],
+  "classification": {
+    "allowed_phase_codes": [
+      "interesse",
+      "orientatie",
+      "beslissing",
+      "matching",
+      "voorbereiding"
+    ],
+    "policy": {
+      "goal": "Praktische, objectieve info; geen druk/garanties/commerciële bias.",
+      "ask_one_question": "Stel maximaal 1 vervolgvraag per beurt, gericht op grootste progressie."
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "version": "3.4.0",
+  "crossEncoderShadow": {
+    "providerIndependentInterface": true,
+    "httpAdapter": true,
+    "localShadowAdapter": true,
+    "productionRankingChanged": false,
+    "queryTextStored": false,
+    "benchmarkCases": 333,
+    "failures": 0,
+    "averageLatencyMs": 0.19,
+    "baseline": {
+      "recallAt5": 0.8604,
+      "mrrAt5": 0.729,
+      "ndcgAt5": 0.7559
+    },
+    "shadow": {
+      "recallAt5": 0.8664,
+      "mrrAt5": 0.7305,
+      "ndcgAt5": 0.7585
+    },
+    "delta": {
+      "recallAt5": 0.006,
+      "mrrAt5": 0.0015,
+      "ndcgAt5": 0.0026
+    },
+    "externalProviderExecuted": false
+  },
+  "activeLearning": {
+    "uncertaintyDetection": true,
+    "normalizedMargin": true,
+    "deduplicatedQueue": true,
+    "humanClaimFlow": true,
+    "humanLabelFlow": true,
+    "trainingLabelPersistence": true,
+    "rawQueryStoredByDefault": false,
+    "exportScript": true
+  },
+  "verification": {
+    "rerankerQualityGate": "passed",
+    "shadowQualityGate": "passed",
+    "knowledgeTests": "7 files / 13 tests passed",
+    "integrationTests": "4 files / 8 tests passed",
+    "apiTests": "2 files / 3 tests passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "migrations": "19/19 passed",
+    "publicTableCount": 82,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files"
+  },
+  "supabaseSdkImports": [],
+  "passedWithExternalCrossEncoderPending": true
+}

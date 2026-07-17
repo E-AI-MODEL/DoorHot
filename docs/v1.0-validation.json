@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "scope": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "checks": {
+    "routeFlowReusesRouteEngine": true,
+    "routeAnswersValidated": true,
+    "phaseFlowReusesAdaptiveDetector": true,
+    "phaseDebugEndpoint": true,
+    "talentDatasetHasEightQuestions": true,
+    "talentScoringPresent": true,
+    "backofficeNotesPresent": true,
+    "appointmentsPresent": true,
+    "eventSourceListReused": true,
+    "eventCachePresent": true,
+    "savedEventsPresent": true,
+    "apiRoutesRegistered": true,
+    "migrationPresent": true,
+    "testsPresent": true
+  },
+  "passed": true,
+  "reusedSources": {
+    "existingFoundation": [
+      "RouteEngine",
+      "AdaptivePhaseDetector",
+      "PhaseSystemRegistry",
+      "advisor chat",
+      "conversation persistence"
+    ],
+    "door010Repository": [
+      "InterestTest question set and sector weighting",
+      "scrape-events source list and cache pattern",
+      "AdvisorChatPanel and appointment flow concepts"
+    ],
+    "presentatieRepository": [
+      "DetectorDebugTab snapshot presentation model",
+      "ScheduleAppointmentDialog appointment workflow",
+      "chat artifact separation tests"
+    ]
+  },
+  "notExecuted": [
+    "npm install",
+    "npm run typecheck",
+    "npm test",
+    "npm run build"
+  ]
+}

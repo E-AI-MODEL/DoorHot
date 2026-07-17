@@ -1,0 +1,5 @@
+{
+  "command": "npx playwright test --list",
+  "returncode": 0,
+  "output": "Listing tests:\n  [chromium] › core-flows.spec.ts:23:1 › publieke chat toont het antwoord van de algemene coach\n  [chromium] › core-flows.spec.ts:66:1 › gebruiker kan inloggen\n  [chromium] › core-flows.spec.ts:108:1 › profiel kan worden geladen en opgeslagen\n  [chromium] › core-flows.spec.ts:156:1 › persoonlijke chat gebruikt de ingelogde gebruiker\n  [chromium] › core-flows.spec.ts:192:1 › beheerder ziet kandidaten en promptbeheer\n  [chromium] › parity-flows.spec.ts:22:1 › routeflow doorloopt een vraag en toont een route\n  [chromium] › parity-flows.spec.ts:76:1 › talententest toont de beste sector\n  [chromium] › parity-flows.spec.ts:115:1 › events en vacatures kunnen worden opgeslagen\n  [chromium] › parity-flows.spec.ts:172:1 › kandidaat verstuurt een bericht naar een adviseur\nTotal: 9 tests in 2 files"
+}

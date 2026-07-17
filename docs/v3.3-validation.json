@@ -1,0 +1,119 @@
+{
+  "version": "3.3.0",
+  "benchmark": {
+    "version": "2.0.0",
+    "caseCount": 333,
+    "queryTypes": [
+      "alias",
+      "conversational",
+      "exact",
+      "hard_negative",
+      "multi_intent",
+      "paraphrase",
+      "short",
+      "typo"
+    ],
+    "semanticGroups": 72,
+    "groupedSplit": "70/15/15",
+    "hardNegativeCases": 24,
+    "multiIntentCases": 24
+  },
+  "hybridRetrieval": {
+    "overallAt5": {
+      "recallAtK": 0.8604,
+      "meanReciprocalRank": 0.729,
+      "ndcgAtK": 0.7559,
+      "hitRateAtK": 0.8769
+    },
+    "byQueryTypeAt5": {
+      "alias": {
+        "recallAtK": 1,
+        "meanReciprocalRank": 0.9468,
+        "ndcgAtK": 0.9602,
+        "hitRateAtK": 1
+      },
+      "conversational": {
+        "recallAtK": 0.75,
+        "meanReciprocalRank": 0.5285,
+        "ndcgAtK": 0.5847,
+        "hitRateAtK": 0.75
+      },
+      "exact": {
+        "recallAtK": 1,
+        "meanReciprocalRank": 0.9635,
+        "ndcgAtK": 0.9728,
+        "hitRateAtK": 1
+      },
+      "hard_negative": {
+        "recallAtK": 0.7917,
+        "meanReciprocalRank": 0.5813,
+        "ndcgAtK": 0.6338,
+        "hitRateAtK": 0.7917
+      },
+      "multi_intent": {
+        "recallAtK": 0.6458,
+        "meanReciprocalRank": 0.6771,
+        "ndcgAtK": 0.5873,
+        "hitRateAtK": 0.875
+      },
+      "paraphrase": {
+        "recallAtK": 0.75,
+        "meanReciprocalRank": 0.5167,
+        "ndcgAtK": 0.5741,
+        "hitRateAtK": 0.75
+      },
+      "short": {
+        "recallAtK": 0.8478,
+        "meanReciprocalRank": 0.7536,
+        "ndcgAtK": 0.7779,
+        "hitRateAtK": 0.8478
+      },
+      "typo": {
+        "recallAtK": 0.9583,
+        "meanReciprocalRank": 0.7701,
+        "ndcgAtK": 0.8165,
+        "hitRateAtK": 0.9583
+      }
+    },
+    "missesAt5": 41
+  },
+  "learnedReranker": {
+    "training": {
+      "caseCount": 242,
+      "recallAt5": 0.8822,
+      "meanReciprocalRank": 0.8064,
+      "ndcgAt5": 0.8215,
+      "brierScore": 0.21
+    },
+    "validation": {
+      "caseCount": 46,
+      "recallAt5": 0.9348,
+      "meanReciprocalRank": 0.8569,
+      "ndcgAt5": 0.8766,
+      "brierScore": 0.1584
+    },
+    "holdout": {
+      "caseCount": 45,
+      "recallAt5": 0.9222,
+      "meanReciprocalRank": 0.8407,
+      "ndcgAt5": 0.8544,
+      "brierScore": 0.178
+    },
+    "calibrationMetric": "Brier score",
+    "earlyStopping": true,
+    "groupLeakagePrevention": true,
+    "qualityGatePassed": true
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "rerankerQualityGate": "passed",
+    "knowledgeTests": "6 files / 11 tests passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "migrations": "18/18 passed",
+    "publicTableCount": 79,
+    "npmAuditVulnerabilities": 0
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

@@ -1,0 +1,136 @@
+{
+  "passed": true,
+  "engine": "PGlite embedded PostgreSQL",
+  "compatibilityAdjustments": [
+    "Skipped CREATE EXTENSION pgcrypto because PGlite ships gen_random_uuid in core."
+  ],
+  "migrationCount": 25,
+  "publicTableCount": 100,
+  "results": [
+    {
+      "filename": "0001_initial.sql",
+      "passed": true,
+      "durationMs": 2717
+    },
+    {
+      "filename": "0002_domain_schema.sql",
+      "passed": true,
+      "durationMs": 113
+    },
+    {
+      "filename": "0003_routes_and_journey.sql",
+      "passed": true,
+      "durationMs": 11
+    },
+    {
+      "filename": "0004_response_pipeline.sql",
+      "passed": true,
+      "durationMs": 15
+    },
+    {
+      "filename": "0005_phase_systems.sql",
+      "passed": true,
+      "durationMs": 9
+    },
+    {
+      "filename": "0006_phase_system_preferences.sql",
+      "passed": true,
+      "durationMs": 4
+    },
+    {
+      "filename": "0007_persistent_journey_state.sql",
+      "passed": true,
+      "durationMs": 2
+    },
+    {
+      "filename": "0008_pending_mutations.sql",
+      "passed": true,
+      "durationMs": 4
+    },
+    {
+      "filename": "0009_parity_conversations.sql",
+      "passed": true,
+      "durationMs": 4
+    },
+    {
+      "filename": "0010_parity_flows_5_to_9.sql",
+      "passed": true,
+      "durationMs": 9
+    },
+    {
+      "filename": "0011_vacancy_parity.sql",
+      "passed": true,
+      "durationMs": 4
+    },
+    {
+      "filename": "0012_auth_profile_production.sql",
+      "passed": true,
+      "durationMs": 7
+    },
+    {
+      "filename": "0013_persistent_parity_flows.sql",
+      "passed": true,
+      "durationMs": 6
+    },
+    {
+      "filename": "0014_knowledge_retrieval.sql",
+      "passed": true,
+      "durationMs": 6
+    },
+    {
+      "filename": "0015_audit_events.sql",
+      "passed": true,
+      "durationMs": 4
+    },
+    {
+      "filename": "0016_provider_dead_letters.sql",
+      "passed": true,
+      "durationMs": 2
+    },
+    {
+      "filename": "0017_ai_parity_pipeline.sql",
+      "passed": true,
+      "durationMs": 16
+    },
+    {
+      "filename": "0018_hybrid_fusion_retrieval.sql",
+      "passed": true,
+      "durationMs": 8
+    },
+    {
+      "filename": "0019_shadow_reranking_active_learning.sql",
+      "passed": true,
+      "durationMs": 8
+    },
+    {
+      "filename": "0020_knowledge_connectors.sql",
+      "passed": true,
+      "durationMs": 7
+    },
+    {
+      "filename": "0021_connector_leases_snapshots.sql",
+      "passed": true,
+      "durationMs": 3
+    },
+    {
+      "filename": "0022_journey_engine_2.sql",
+      "passed": true,
+      "durationMs": 18
+    },
+    {
+      "filename": "0023_ai_orchestrator.sql",
+      "passed": true,
+      "durationMs": 6
+    },
+    {
+      "filename": "0024_parallel_shadow_planning_explainability.sql",
+      "passed": true,
+      "durationMs": 3
+    },
+    {
+      "filename": "0025_graph_memory_execution_tools.sql",
+      "passed": true,
+      "durationMs": 15
+    }
+  ]
+}

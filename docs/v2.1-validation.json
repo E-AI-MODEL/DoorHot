@@ -1,0 +1,36 @@
+{
+  "version": "2.1.0",
+  "liveProviders": {
+    "openAiCompatibleLlm": true,
+    "jsonVacancyProvider": true,
+    "jsonEventProvider": true,
+    "webhookNotificationProvider": true,
+    "deterministicFallbacks": true,
+    "configuredCapabilitiesEndpoint": true,
+    "providerSdkInDomain": false
+  },
+  "auditTrail": {
+    "postgresPersistence": true,
+    "memoryDevelopmentRepository": true,
+    "profileChanges": true,
+    "promptActivations": true,
+    "backofficeActions": true,
+    "sensitiveMetadataRedaction": true,
+    "administratorReadEndpoint": true,
+    "migration": "0015_audit_events.sql"
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "typecheck": "passed",
+    "integrationsTests": "1 file / 2 tests passed",
+    "auditTests": "1 file / 1 test passed",
+    "chatTests": "6 files / 8 tests passed",
+    "apiTests": "1 file / 1 test passed",
+    "backendAndFrontendBuild": "passed",
+    "migrations": "15/15 passed",
+    "publicTableCount": 76,
+    "npmAuditVulnerabilities": 0
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

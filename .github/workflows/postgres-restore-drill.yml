@@ -1,0 +1,72 @@
+name: Door010 PostgreSQL Restore Drill
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_database:
+        description: Source database name
+        required: true
+        default: door010_staging
+      restore_database:
+        description: Temporary restore database name
+        required: true
+        default: door010_restore_drill
+
+permissions:
+  contents: read
+
+jobs:
+  restore:
+    name: Backup and restore staging snapshot
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: staging
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes postgresql-client
+
+      - name: Validate database secret
+        env:
+          DATABASE_ADMIN_URL: ${{ secrets.STAGING_DATABASE_ADMIN_URL }}
+        run: |
+          test -n "$DATABASE_ADMIN_URL" || {
+            echo "STAGING_DATABASE_ADMIN_URL is not configured."
+            exit 2
+          }
+
+      - name: Execute restore drill
+        env:
+          DATABASE_ADMIN_URL: ${{ secrets.STAGING_DATABASE_ADMIN_URL }}
+          SOURCE_DATABASE: ${{ inputs.source_database }}
+          RESTORE_DATABASE: ${{ inputs.restore_database }}
+          RESTORE_DRILL_ARTIFACT_DIR: artifacts/postgres-restore-drill
+        run: bash scripts/reliability/postgres-restore-drill.sh
+
+      - name: Upload restore evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: door010-postgres-restore-${{ github.run_id }}
+          path: artifacts/postgres-restore-drill
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Publish restore summary
+        if: always()
+        run: |
+          {
+            echo "## Door010 PostgreSQL restore drill"
+            echo
+            cat artifacts/postgres-restore-drill/summary.md 2>/dev/null || true
+          } >> "$GITHUB_STEP_SUMMARY"

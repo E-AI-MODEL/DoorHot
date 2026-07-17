@@ -1,0 +1,33 @@
+{
+  "version": "3.8.0",
+  "journeyEngine": {
+    "persistentJourney": true,
+    "goals": true,
+    "milestones": true,
+    "blockers": true,
+    "actions": true,
+    "evidence": true,
+    "decisions": true,
+    "deterministicProgress": true,
+    "nextBestAction": true,
+    "phaseRouteSynchronization": true,
+    "ruleVersion": "journey-engine-2.0.0",
+    "authorizationChecks": true,
+    "postgresRepository": true,
+    "memoryRepository": true
+  },
+  "verification": {
+    "domainTests": "7 files / 19 tests passed",
+    "apiTests": "2 files / 3 tests passed",
+    "typecheck": "passed",
+    "rerankerQualityGate": "passed",
+    "shadowQualityGate": "passed",
+    "build": "passed",
+    "migrations": "22/22 passed",
+    "publicTableCount": 93,
+    "playwrightDiscovery": "9 tests / 2 files",
+    "npmAudit": "not completed: configured registry audit endpoint returned HTTP 502"
+  },
+  "supabaseSdkImports": [],
+  "passedWithAuditRegistryLimitation": true
+}

@@ -1,0 +1,130 @@
+{
+  "version": "0.4.1",
+  "checks": [
+    {
+      "name": "vereiste repositorystructuur",
+      "passed": true,
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "alle JSON-bestanden zijn geldig",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "datasettellingen kloppen",
+      "passed": true,
+      "details": {
+        "expected": {
+          "routes": 3378,
+          "journeyPhases": 9,
+          "routeQuestions": 4,
+          "routeAnswers": 56,
+          "routeSteps": 66,
+          "detectorQuestions": 654,
+          "detectorSlots": 9,
+          "detectorPhases": 5,
+          "faqs": 48,
+          "regionalDesks": 52
+        },
+        "actual": {
+          "routes": 3378,
+          "journeyPhases": 9,
+          "routeQuestions": 4,
+          "routeAnswers": 56,
+          "routeSteps": 66,
+          "detectorQuestions": 654,
+          "detectorSlots": 9,
+          "detectorPhases": 5,
+          "faqs": 48,
+          "regionalDesks": 52
+        }
+      }
+    },
+    {
+      "name": "alle niet-lege routereferenties bestaan",
+      "passed": true,
+      "details": {
+        "nullAnswerRelations": [
+          {
+            "route": "vavo-a-mbo4-c-hbo-a-vmbo-b",
+            "relationId": 12231
+          }
+        ],
+        "unknownAnswerRelations": [],
+        "unknownStepRelations": []
+      }
+    },
+    {
+      "name": "routeslugs zijn uniek",
+      "passed": true,
+      "details": {
+        "duplicates": {}
+      }
+    },
+    {
+      "name": "kritieke route-engine-invarianten aanwezig",
+      "passed": true,
+      "details": {
+        "all_required_answers": true,
+        "nullable_answer_filter": true,
+        "empty_route_guard": true,
+        "step_sorting": true,
+        "best_route": true
+      }
+    },
+    {
+      "name": "kritieke fase-engine-invarianten aanwezig",
+      "passed": true,
+      "details": {
+        "transition_proposal": true,
+        "next_question": true,
+        "missing_slots": true,
+        "confidence": true
+      }
+    },
+    {
+      "name": "route- en journey-migraties aanwezig",
+      "passed": true,
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "golden tests zijn aanwezig",
+      "passed": true,
+      "details": {
+        "testFiles": [
+          "packages/domain/test/phase-engine.test.ts",
+          "packages/domain/test/route-engine.test.ts",
+          "packages/domain/test/journey-phases.test.ts"
+        ],
+        "tests": [
+          "retains the current phase and selects a missing-slot question",
+          "proposes a transition only when exit criteria are met",
+          "detects slot-based exit criteria",
+          "navigates the conditional question tree",
+          "ignores null answer relations without matching an empty route",
+          "matches routes only when all required answers are selected",
+          "returns route steps in configured order with enriched content",
+          "separates detector phases from extended lifecycle phases"
+        ],
+        "nullRelationRegressionTest": true
+      }
+    }
+  ],
+  "limitations": [
+    "npm install, TypeScript typecheck en Vitest konden niet worden uitgevoerd: de uitvoeromgeving heeft geen internettoegang en de dependencies waren niet vooraf geïnstalleerd."
+  ],
+  "summary": {
+    "passed": 9,
+    "failed": 0,
+    "total": 9,
+    "staticValidationPassed": true
+  },
+  "generatedAt": "2026-07-15T22:45:55Z"
+}

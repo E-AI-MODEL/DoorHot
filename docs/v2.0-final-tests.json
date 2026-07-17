@@ -1,0 +1,12 @@
+[
+  {
+    "command": "npm run test --workspace @door010/chat",
+    "returncode": 0,
+    "outputTail": "> @door010/chat@2.0.0 test\n> vitest run\n\n\n\u001b[1m\u001b[46m RUN \u001b[49m\u001b[22m \u001b[36mv3.2.6 \u001b[39m\u001b[90m/mnt/data/door010-3-v2.0-work/door010-3-foundation/packages/chat\u001b[39m\n\n \u001b[32m✓\u001b[39m test/active-prompts.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 3\u001b[2mms\u001b[22m\u001b[39m\n \u001b[32m✓\u001b[39m test/coaches.test.ts \u001b[2m(\u001b[22m\u001b[2m2 tests\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 5\u001b[2mms\u001b[22m\u001b[39m\n \u001b[32m✓\u001b[39m test/advisor-chat.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 4\u001b[2mms\u001b[22m\u001b[39m\n \u001b[32m✓\u001b[39m test/personal-persistence.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 3\u001b[2mms\u001b[22m\u001b[39m\n \u001b[32m✓\u001b[39m test/general-coach-boundary.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 5\u001b[2mms\u001b[22m\u001b[39m\n \u001b[32m✓\u001b[39m test/mutations.test.ts \u001b[2m(\u001b[22m\u001b[2m2 tests\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 5\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m6 passed\u001b[39m\u001b[22m\u001b[90m (6)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m8 passed\u001b[39m\u001b[22m\u001b[90m (8)\u001b[39m\n\u001b[2m   Start at \u001b[22m 00:24:25\n\u001b[2m   Duration \u001b[22m 14.89s\u001b[2m (transform 6.34s, setup 0ms, collect 10.25s, tests 26ms, environment 2ms, prepare 14.43s)\u001b[22m"
+  },
+  {
+    "command": "npx playwright test --list",
+    "returncode": 0,
+    "outputTail": "Listing tests:\n  [chromium] › core-flows.spec.ts:23:1 › publieke chat toont het antwoord van de algemene coach\n  [chromium] › core-flows.spec.ts:66:1 › gebruiker kan inloggen\n  [chromium] › core-flows.spec.ts:108:1 › profiel kan worden geladen en opgeslagen\n  [chromium] › core-flows.spec.ts:156:1 › persoonlijke chat gebruikt de ingelogde gebruiker\n  [chromium] › core-flows.spec.ts:192:1 › beheerder ziet kandidaten en promptbeheer\nTotal: 5 tests in 1 file"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "title": "Voorbereiden",
+    "status": "published",
+    "code": "voorbereiding",
+    "color": "#A194C7",
+    "date_created": "2025-04-17T08:21:39.800Z",
+    "date_updated": null,
+    "sort": 5,
+    "id": "0f0fbd3c-db7a-438f-98bb-09cfc0cd4492",
+    "description": "Vóórdat de kandidaat aan de eerste werk- of opleidingsdag begint is er ter voorbereiding vanalles te ondernemen."
+  },
+  {
+    "title": "Inductie",
+    "status": "published",
+    "code": "inductie",
+    "color": "#4366B0",
+    "date_created": "2025-04-17T08:21:39.843Z",
+    "date_updated": null,
+    "sort": 8,
+    "id": "34a39e93-7512-4ce9-80f2-e9852c04c943",
+    "description": "De startende onderwijsprofessional wordt een warm welkom geboden in het onderwijs, met adequate begeleiding."
+  },
+  {
+    "title": "Starten",
+    "status": "published",
+    "code": "start",
+    "color": "#7DCACC",
+    "date_created": "2025-04-17T08:21:39.813Z",
+    "date_updated": null,
+    "sort": 6,
+    "id": "4c9f0baa-c169-4064-95e2-3fd161b0199a",
+    "description": "Het eind van (het eerste deel van) de klantreis is bereikt: de kandidaat is gestart in het onderwijs."
+  },
+  {
+    "title": "Behouden",
+    "status": "published",
+    "code": "behoud",
+    "color": "#42284A",
+    "date_created": "2025-04-17T08:21:39.862Z",
+    "date_updated": null,
+    "sort": 9,
+    "id": "611e8d62-11f0-442b-a5b4-2ec2bd5be32f",
+    "description": "Voor de werkzame onderwijsprofessional zijn er mogelijkheden tot persoonlijke groei, ontwikkeling en verdere professionalisering."
+  },
+  {
+    "title": "Beslissen",
+    "status": "published",
+    "code": "beslissing",
+    "color": "#E33776",
+    "date_created": "2025-04-17T08:21:39.766Z",
+    "date_updated": null,
+    "sort": 3,
+    "id": "6f4d8e58-ae4b-4dd6-8a58-8db65537dd4c",
+    "description": "Aan het eind van de oriëntatie volgt een beslismoment: de kandidaat wil de stap wél of niet gaan maken."
+  },
+  {
+    "title": "Interesseren",
+    "status": "published",
+    "code": "interesse",
+    "color": "#F79258",
+    "date_created": "2025-04-17T08:21:39.738Z",
+    "date_updated": null,
+    "sort": 1,
+    "id": "bd2a6ac1-40a3-4543-8c0e-8af3ae012048",
+    "description": "De kandidaat heeft kennis gemaakt met het onderwijs als potentiële arbeidsmarkt en de interesse voor een functie in het onderwijs is gewekt."
+  },
+  {
+    "title": "Matchen",
+    "status": "published",
+    "code": "matching",
+    "color": "#C8208E",
+    "date_created": "2025-04-17T08:21:39.788Z",
+    "date_updated": null,
+    "sort": 4,
+    "id": "d2fea012-4d91-4f4c-af68-c7ef2431fda6",
+    "description": "Wanneer de route voor de kandidaat bekend is moet er een geschikte werk- en/of opleidingsplek worden gevonden."
+  },
+  {
+    "title": "Oriënteren",
+    "status": "published",
+    "code": "orientatie",
+    "color": "#EF3752",
+    "date_created": "2025-04-17T08:21:39.752Z",
+    "date_updated": null,
+    "sort": 2,
+    "id": "da1f747d-c16b-477d-8521-df728ebc23e2",
+    "description": "De kandidaat overweegt of een functie in het onderwijs passend is en hoe de route daarnaartoe eruit ziet."
+  },
+  {
+    "title": "Opleiden",
+    "status": "published",
+    "code": "opleiding",
+    "color": "#99C2E8",
+    "date_created": "2025-04-17T08:21:39.826Z",
+    "date_updated": null,
+    "sort": 7,
+    "id": "e59f7403-aae8-4fd0-b097-a4b41e360e25",
+    "description": "De startende kandidaat wordt opgeleid en/of ingewerkt tot onderwijsprofessional."
+  }
+]

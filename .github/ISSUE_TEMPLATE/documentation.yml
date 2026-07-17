@@ -1,0 +1,23 @@
+name: Documentatie
+description: Meld ontbrekende, onduidelijke of onjuiste documentatie
+title: "[Docs]: "
+labels:
+  - documentation
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Bestand of pagina
+      placeholder: README.md, docs/... of URL
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: Probleem
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Voorgestelde verbetering

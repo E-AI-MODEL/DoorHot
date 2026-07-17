@@ -1,0 +1,44 @@
+{
+  "version": "4.2.0",
+  "eventDrivenGraph": {
+    "journeyChangeListener": true,
+    "automaticGraphSynchronization": true,
+    "manualRecoverySynchronization": true,
+    "existingJourneyFallbackSynchronization": true,
+    "synchronousProjection": true
+  },
+  "personalCoachGraphContext": {
+    "activeGoals": true,
+    "openBlockers": true,
+    "pendingActions": true,
+    "evidenceClaims": true,
+    "deterministicFallbackUsesContext": true,
+    "liveLlmContextCompatible": true
+  },
+  "notificationDelivery": {
+    "inAppProvider": true,
+    "httpEmailProvider": true,
+    "httpWebhookProvider": true,
+    "scheduledWorker": true,
+    "manualWorkerTrigger": true,
+    "maximumAttempts": 5,
+    "userNotificationFeed": true,
+    "liveExternalProviderExecuted": false
+  },
+  "verification": {
+    "domainTests": "8 files / 22 tests passed",
+    "orchestrationTests": "3 files / 10 tests passed",
+    "apiTests": "2 files / 3 tests passed",
+    "typecheck": "passed",
+    "rerankerQualityGate": "passed",
+    "shadowRerankerQualityGate": "passed",
+    "build": "passed",
+    "migrations": "25/25 passed",
+    "publicTableCount": 100,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files",
+    "fullPlaywrightBrowserRun": false
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

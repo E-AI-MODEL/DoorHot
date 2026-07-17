@@ -1,0 +1,47 @@
+{
+  "source": "presentatie-door010-main.zip",
+  "datasets": {
+    "phase-detector-questions.json": {
+      "slots": 9,
+      "phases": 5,
+      "questions": 654
+    },
+    "phase-detector-rules.json": {
+      "slots": 9,
+      "phases": 5
+    },
+    "route-questions.json": {
+      "questions": 4,
+      "answers": 56
+    },
+    "route-steps.json": {
+      "steps": 66
+    },
+    "faq-seed.json": {
+      "faqs": 48,
+      "mode": "replace"
+    },
+    "regional-education-desks.json": {
+      "desks": 52
+    },
+    "routes.json": {
+      "routes": 3378
+    },
+    "journey-phases.json": {
+      "phases": 9
+    },
+    "phase-system-4.json": {
+      "phases": 4
+    },
+    "phase-system-5.json": {
+      "phases": 5
+    },
+    "phase-system-9.json": {
+      "phases": 9
+    },
+    "interest-talent-test.json": {
+      "questions": 8,
+      "sectors": 4
+    }
+  }
+}

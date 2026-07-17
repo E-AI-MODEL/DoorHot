@@ -1,0 +1,110 @@
+# Door010 4.0 — parallel orchestration, shadow planning en explainability
+
+## Parallelle uitvoering
+
+De orchestrator voert onafhankelijke tools nu parallel uit.
+
+Voorbeeld:
+
+```text
+execution group 1
+├── journey.dashboard
+└── knowledge.search
+
+execution group 2
+└── journey.next-action
+```
+
+`dependsOn` bepaalt welke stappen eerst moeten zijn afgerond. Required
+dependency failures stoppen alleen de afhankelijke vervolgstappen.
+
+## Model-assisted planner in shadow mode
+
+Nieuwe contracten:
+
+```text
+PlannerSuggestionProvider
+PlannerShadowRepository
+ShadowPlanningService
+```
+
+Implementaties:
+
+```text
+HeuristicShadowPlanner
+HttpPlannerSuggestionProvider
+InMemoryPlannerShadowRepository
+PostgresPlannerShadowRepository
+```
+
+De HTTP-provider ontvangt:
+
+- gebruikersvraag;
+- beperkte context;
+- deterministisch plan;
+- allowlist van beschikbare tools.
+
+Een shadowplan mag alleen tools uit die allowlist gebruiken. Het plan beïnvloedt
+de productie-uitvoering niet.
+
+Configuratie:
+
+```text
+PLANNER_SHADOW_ENDPOINT
+PLANNER_SHADOW_API_KEY
+PLANNER_SHADOW_MODEL
+PLANNER_SHADOW_TIMEOUT_MS
+```
+
+Zonder providerconfiguratie wordt de lokale heuristische shadowplanner gebruikt.
+
+## Planvergelijking
+
+Per orchestrationrun worden opgeslagen:
+
+```text
+provider
+deterministisch plan
+shadowplan
+agreement score
+toegevoegde tools
+verwijderde tools
+latency
+status en foutcode
+```
+
+Nieuwe tabel:
+
+```text
+planner_shadow_evaluations
+```
+
+## Explainability
+
+Nieuwe API:
+
+```text
+GET /v1/backoffice/orchestration-runs/:runId/explanation
+GET /v1/backoffice/planner-shadow
+```
+
+De uitleg bevat:
+
+- intent;
+- antwoordstrategie;
+- verplichte en optionele tools;
+- redenen per planstap;
+- dependencies;
+- parallelle execution groups;
+- toolfouten;
+- shadowplannervergelijking.
+
+De backoffice toont recente orchestrationruns en de shadow agreement score.
+
+## Grenzen
+
+- De externe modelplanner is niet live uitgevoerd.
+- De lokale shadowplanner is heuristisch en dient als veilige fallback.
+- Productierouting blijft volledig deterministisch.
+- De negen Playwright-tests zijn ontdekt, maar niet als volledige browserrun
+  uitgevoerd.

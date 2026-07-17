@@ -1,0 +1,30 @@
+{
+  "version": "1.2.0",
+  "checks": {
+    "authService": true,
+    "passwordHashing": true,
+    "tokenVerification": true,
+    "centralAuthorizationHook": true,
+    "profileCrudRoutes": true,
+    "fileUploadRoutes": true,
+    "notesCrud": true,
+    "postgresExecutor": true,
+    "productionBootstrap": true,
+    "persistentChatContext": true,
+    "persistentMutationStore": true,
+    "noSupabaseImports": true,
+    "migration": true,
+    "tests": true
+  },
+  "passed": true,
+  "storageModes": {
+    "memory": "local development",
+    "postgres": "production core services"
+  },
+  "notExecuted": [
+    "npm install",
+    "npm run typecheck",
+    "npm test",
+    "npm run build"
+  ]
+}

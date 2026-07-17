@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Beveiligingsprobleem
+    url: https://github.com/E-AI-MODEL/door010/security
+    about: Gebruik private vulnerability reporting; meld securityproblemen niet openbaar.

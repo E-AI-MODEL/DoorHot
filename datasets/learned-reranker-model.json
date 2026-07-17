@@ -1,0 +1,34 @@
+{
+  "version": "door010-learned-linear-v1",
+  "featureNames": [
+    "reciprocal_rank",
+    "rrf_score",
+    "title_token_overlap",
+    "body_token_overlap",
+    "tag_token_overlap",
+    "title_trigram_similarity",
+    "concept_overlap",
+    "exact_title_match",
+    "query_length_ratio",
+    "channel_count"
+  ],
+  "weights": [
+    3.4299395,
+    0.18629973,
+    0.18216352,
+    -0.47179203,
+    4.00839145,
+    9.42988158,
+    0.21193634,
+    0.63753424,
+    -1.52892722,
+    -0.10021334
+  ],
+  "bias": -2.93556959,
+  "trainedAt": "2026-07-16T19:42:29.040Z",
+  "trainingCases": 242,
+  "validationCases": 46,
+  "holdoutCases": 45,
+  "splitStrategy": "grouped 70/15/15",
+  "bestValidationLoss": 0.32091
+}

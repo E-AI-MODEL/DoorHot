@@ -1,0 +1,45 @@
+{
+  "version": "3.6.0",
+  "connectorRuntime": {
+    "environmentSecretResolver": true,
+    "secretReferencesStoredInsteadOfValues": true,
+    "retryPolicy": {
+      "maxAttempts": 3,
+      "exponentialBackoff": true,
+      "baseDelayMs": 250,
+      "maximumDelayMs": 5000
+    },
+    "processLocalScheduler": true,
+    "supportedSchedules": [
+      "every:<n>m",
+      "every:<n>h"
+    ],
+    "distributedScheduling": false,
+    "healthService": true,
+    "healthDashboard": true,
+    "manualSynchronization": true
+  },
+  "domainConnectors": {
+    "education": true,
+    "subsidy": true,
+    "event": true,
+    "vacancy": true,
+    "defaultTemplatesSeeded": true,
+    "liveExternalSourcesExecuted": false
+  },
+  "verification": {
+    "npmInstall": "passed; install reported 0 vulnerabilities",
+    "knowledgeTests": "9 files / 20 tests passed",
+    "apiTests": "2 files / 3 tests passed",
+    "typecheck": "passed",
+    "rerankerQualityGate": "passed",
+    "shadowQualityGate": "passed",
+    "build": "passed",
+    "migrations": "20/20 passed",
+    "publicTableCount": 85,
+    "playwrightDiscovery": "9 tests / 2 files",
+    "explicitNpmAudit": "not completed: configured registry audit endpoint returned HTTP 502"
+  },
+  "supabaseSdkImports": [],
+  "passedWithExternalSourceAndAuditLimitations": true
+}

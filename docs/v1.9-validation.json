@@ -1,0 +1,40 @@
+{
+  "version": "1.9.0",
+  "backoffice": {
+    "candidateOverview": true,
+    "roleProtectedCandidateEndpoints": true,
+    "promptManagement": true,
+    "promptVersioning": true,
+    "promptActivation": true,
+    "memoryRepository": true,
+    "postgresRepository": true,
+    "frontendBackoffice": true
+  },
+  "e2e": {
+    "framework": "Playwright",
+    "testFile": "apps/web/e2e/core-flows.spec.ts",
+    "testsDiscovered": 5,
+    "scenarios": [
+      "public chat",
+      "login",
+      "profile update",
+      "personal chat",
+      "backoffice and prompt management"
+    ],
+    "browserExecutionPassed": false,
+    "browserExecutionBlocker": "The installed system Chromium terminated because the execution container does not expose a usable GPU process. Downloading the Playwright-managed browser was also blocked by DNS access to cdn.playwright.dev. CI installs and runs the managed browser."
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "typecheck": "passed",
+    "backendBuild": "passed",
+    "frontendBuild": "passed",
+    "backofficeUnitTest": "passed",
+    "apiBootstrapTest": "passed",
+    "migrations": "14/14 passed",
+    "npmAuditVulnerabilities": 0,
+    "playwrightTestDiscovery": "5/5 discovered"
+  },
+  "supabaseSdkImports": [],
+  "passedWithEnvironmentLimitation": true
+}

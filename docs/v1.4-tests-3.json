@@ -1,0 +1,12 @@
+[
+  {
+    "workspace": "@door010/response-pipeline",
+    "returncode": 0,
+    "output_tail": "> @door010/response-pipeline@1.3.0 test\n> vitest run\n\n\n\u001b[1m\u001b[46m RUN \u001b[49m\u001b[22m \u001b[36mv3.2.6 \u001b[39m\u001b[90m/mnt/data/door010-3-v1.4-work/door010-3-foundation/packages/response-pipeline\u001b[39m\n\n \u001b[32m✓\u001b[39m test/response-pipeline.test.ts \u001b[2m(\u001b[22m\u001b[2m5 tests\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 6\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m5 passed\u001b[39m\u001b[22m\u001b[90m (5)\u001b[39m\n\u001b[2m   Start at \u001b[22m 23:38:06\n\u001b[2m   Duration \u001b[22m 14.18s\u001b[2m (transform 1.29s, setup 0ms, collect 1.20s, tests 6ms, environment 0ms, prepare 1.71s)\u001b[22m"
+  },
+  {
+    "workspace": "@door010/api",
+    "returncode": 0,
+    "output_tail": "> @door010/api@1.3.0 test\n> vitest run\n\n\n\u001b[1m\u001b[46m RUN \u001b[49m\u001b[22m \u001b[36mv3.2.6 \u001b[39m\u001b[90m/mnt/data/door010-3-v1.4-work/door010-3-foundation/apps/api\u001b[39m\n\n \u001b[32m✓\u001b[39m test/bootstrap.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 49\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m   Start at \u001b[22m 23:38:21\n\u001b[2m   Duration \u001b[22m 14.79s\u001b[2m (transform 1.53s, setup 0ms, collect 1.72s, tests 49ms, environment 0ms, prepare 1.69s)\u001b[22m"
+  }
+]

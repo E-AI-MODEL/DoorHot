@@ -1,0 +1,29 @@
+{
+  "version": "0.4.0",
+  "counts": {
+    "routes": 3378,
+    "journeyPhases": 9,
+    "routeQuestions": 4,
+    "routeAnswers": 56,
+    "routeSteps": 66,
+    "routeRequiredAnswerRelations": 6756,
+    "routeStepRelations": 14182
+  },
+  "integrity": {
+    "nullAnswerRelations": [
+      {
+        "routeId": "2749ba7e-6076-4314-894b-2672855d63dc",
+        "routeSlug": "vavo-a-mbo4-c-hbo-a-vmbo-b",
+        "relationId": 12231
+      }
+    ],
+    "unknownAnswerRelations": [],
+    "unknownStepRelations": [],
+    "usable": true,
+    "policy": "Null answer relations are ignored. Routes must retain at least one non-null required answer to be eligible for matching."
+  },
+  "phaseModels": {
+    "detectorPhases": 5,
+    "journeyPhases": 9
+  }
+}

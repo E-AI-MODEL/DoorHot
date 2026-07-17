@@ -1,0 +1,17 @@
+[
+  {
+    "workspace": "@door010/identity-profile",
+    "returncode": 0,
+    "outputTail": "> @door010/identity-profile@1.6.0 test\n> vitest run\n\n\n\u001b[1m\u001b[46m RUN \u001b[49m\u001b[22m \u001b[36mv3.2.6 \u001b[39m\u001b[90m/mnt/data/door010-3-v1.5-work/door010-3-foundation/packages/identity-profile\u001b[39m\n\n \u001b[32m✓\u001b[39m test/profile.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 5\u001b[2mms\u001b[22m\u001b[39m\n \u001b[32m✓\u001b[39m test/auth.test.ts \u001b[2m(\u001b[22m\u001b[2m2 tests\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 133\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m2 passed\u001b[39m\u001b[22m\u001b[90m (2)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m3 passed\u001b[39m\u001b[22m\u001b[90m (3)\u001b[39m\n\u001b[2m   Start at \u001b[22m 23:53:35\n\u001b[2m   Duration \u001b[22m 13.91s\u001b[2m (transform 2.70s, setup 0ms, collect 3.00s, tests 137ms, environment 0ms, prepare 3.00s)\u001b[22m"
+  },
+  {
+    "workspace": "@door010/parity-flows",
+    "returncode": 0,
+    "outputTail": "> @door010/parity-flows@1.6.0 test\n> vitest run\n\n\n\u001b[1m\u001b[46m RUN \u001b[49m\u001b[22m \u001b[36mv3.2.6 \u001b[39m\u001b[90m/mnt/data/door010-3-v1.5-work/door010-3-foundation/packages/parity-flows\u001b[39m\n\n \u001b[32m✓\u001b[39m test/backoffice.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 6\u001b[2mms\u001b[22m\u001b[39m\n \u001b[32m✓\u001b[39m test/route-flow.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 6\u001b[2mms\u001b[22m\u001b[39m\n \u001b[32m✓\u001b[39m test/vacancies.test.ts \u001b[2m(\u001b[22m\u001b[2m2 tests\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 8\u001b[2mms\u001b[22m\u001b[39m\n \u001b[32m✓\u001b[39m test/talent-test.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 5\u001b[2mms\u001b[22m\u001b[39m\n \u001b[32m✓\u001b[39m test/events.test.ts \u001b[2m(\u001b[22m\u001b[2m1 test\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 88\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m5 passed\u001b[39m\u001b[22m\u001b[90m (5)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m6 passed\u001b[39m\u001b[22m\u001b[90m (6)\u001b[39m\n\u001b[2m   Start at \u001b[22m 23:53:50\n\u001b[2m   Duration \u001b[22m 14.58s\u001b[2m (transform 5.71s, setup 0ms, collect 7.20s, tests 113ms, environment 1ms, prepare 9.16s)\u001b[22m"
+  },
+  {
+    "workspace": "@door010/parity-persistence",
+    "returncode": 0,
+    "outputTail": "> @door010/parity-persistence@1.6.0 test\n> vitest run\n\n\n\u001b[1m\u001b[46m RUN \u001b[49m\u001b[22m \u001b[36mv3.2.6 \u001b[39m\u001b[90m/mnt/data/door010-3-v1.5-work/door010-3-foundation/packages/parity-persistence\u001b[39m\n\n \u001b[32m✓\u001b[39m test/repositories.test.ts \u001b[2m(\u001b[22m\u001b[2m2 tests\u001b[22m\u001b[2m)\u001b[22m\u001b[32m 4\u001b[2mms\u001b[22m\u001b[39m\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m2 passed\u001b[39m\u001b[22m\u001b[90m (2)\u001b[39m\n\u001b[2m   Start at \u001b[22m 23:54:06\n\u001b[2m   Duration \u001b[22m 13.85s\u001b[2m (transform 1.69s, setup 0ms, collect 1.52s, tests 4ms, environment 0ms, prepare 1.61s)\u001b[22m"
+  }
+]

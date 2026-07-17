@@ -1,0 +1,14 @@
+.git
+.github
+node_modules
+**/node_modules
+**/dist
+**/*.tsbuildinfo
+coverage
+var
+.env
+.env.*
+!.env.example
+docs/*-results.json
+docs/*.txt
+*.zip

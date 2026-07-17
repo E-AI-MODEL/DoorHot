@@ -1,0 +1,51 @@
+{
+  "version": "1.6.0",
+  "repoAndPlanReview": {
+    "door010RepositoryReviewed": true,
+    "presentationRepositoryReviewed": true,
+    "uploadedSourceArchivesReviewed": true,
+    "driftReportPresent": true,
+    "coreDomainDriftDetected": false,
+    "remainingProductLayerDriftDocumented": true
+  },
+  "deployment": {
+    "stagingWorkflow": true,
+    "productionWorkflow": true,
+    "reusableReleaseWorkflow": true,
+    "githubEnvironmentApprovalReady": true,
+    "ghcrPublish": true,
+    "providerIndependentDeploymentWebhook": true
+  },
+  "observability": {
+    "structuredJsonLogging": true,
+    "sensitiveLogRedaction": true,
+    "requestIdLogging": true,
+    "livenessEndpoint": "/health/live",
+    "readinessEndpoint": "/health/ready",
+    "prometheusMetricsEndpoint": "/metrics",
+    "optionalMetricsBearerToken": true,
+    "prometheusComposeProfile": true,
+    "gracefulShutdown": true
+  },
+  "verification": {
+    "typecheck": "passed",
+    "build": "passed",
+    "testFilesPassed": 23,
+    "testsPassed": 41,
+    "migrations": "13/13 passed",
+    "npmAuditVulnerabilities": 0,
+    "yamlFilesParsed": {
+      ".github/workflows/ci.yml": true,
+      ".github/workflows/deploy-staging.yml": true,
+      ".github/workflows/deploy-production.yml": true,
+      ".github/workflows/reusable-release.yml": true,
+      "compose.yaml": true,
+      "compose.monitoring.yaml": true,
+      "deploy/monitoring/prometheus.yml": true
+    },
+    "dockerBuildExecuted": false,
+    "dockerBuildReason": "Docker is unavailable in this execution environment; the CI workflow builds the image."
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

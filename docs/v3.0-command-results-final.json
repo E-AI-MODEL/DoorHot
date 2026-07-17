@@ -1,0 +1,17 @@
+[
+  {
+    "command": "npm run build",
+    "returncode": 0,
+    "outputTail": "> door010-3@3.0.0 build\n> tsc -b && npm run build --workspace @door010/web\n\n\n> @door010/web@3.0.0 build\n> tsc --noEmit && vite build\n\n\u001b[36mvite v7.3.6 \u001b[32mbuilding client environment for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32m✓\u001b[39m 5 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                 \u001b[39m\u001b[1m\u001b[2m 0.53 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip:  0.31 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[2massets/\u001b[22m\u001b[35mindex-B31vHyom.css  \u001b[39m\u001b[1m\u001b[2m11.37 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip:  3.07 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[2massets/\u001b[22m\u001b[36mindex-Ds6PeUmB.js   \u001b[39m\u001b[1m\u001b[2m43.04 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip: 10.92 kB\u001b[22m\n\u001b[32m✓ built in 193ms\u001b[39m"
+  },
+  {
+    "command": "npm audit --json",
+    "returncode": 0,
+    "outputTail": "{\n  \"auditReportVersion\": 2,\n  \"vulnerabilities\": {},\n  \"metadata\": {\n    \"vulnerabilities\": {\n      \"info\": 0,\n      \"low\": 0,\n      \"moderate\": 0,\n      \"high\": 0,\n      \"critical\": 0,\n      \"total\": 0\n    },\n    \"dependencies\": {\n      \"prod\": 106,\n      \"dev\": 195,\n      \"optional\": 54,\n      \"peer\": 0,\n      \"peerOptional\": 0,\n      \"total\": 301\n    }\n  }\n}"
+  },
+  {
+    "command": "npx playwright test --list",
+    "returncode": 0,
+    "outputTail": "Listing tests:\n  [chromium] › core-flows.spec.ts:23:1 › publieke chat toont het antwoord van de algemene coach\n  [chromium] › core-flows.spec.ts:66:1 › gebruiker kan inloggen\n  [chromium] › core-flows.spec.ts:108:1 › profiel kan worden geladen en opgeslagen\n  [chromium] › core-flows.spec.ts:156:1 › persoonlijke chat gebruikt de ingelogde gebruiker\n  [chromium] › core-flows.spec.ts:192:1 › beheerder ziet kandidaten en promptbeheer\n  [chromium] › parity-flows.spec.ts:22:1 › routeflow doorloopt een vraag en toont een route\n  [chromium] › parity-flows.spec.ts:76:1 › talententest toont de beste sector\n  [chromium] › parity-flows.spec.ts:115:1 › events en vacatures kunnen worden opgeslagen\n  [chromium] › parity-flows.spec.ts:172:1 › kandidaat verstuurt een bericht naar een adviseur\nTotal: 9 tests in 2 files"
+  }
+]

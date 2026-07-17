@@ -1,0 +1,50 @@
+{
+  "version": "2.2.0",
+  "capabilities": [
+    {
+      "key": "identity",
+      "package": "@door010/identity-profile",
+      "status": "implemented"
+    },
+    {
+      "key": "knowledge",
+      "package": "@door010/knowledge",
+      "status": "implemented"
+    },
+    {
+      "key": "journey",
+      "package": "@door010/domain",
+      "status": "implemented"
+    },
+    {
+      "key": "reasoning",
+      "package": "@door010/orchestration",
+      "status": "implemented"
+    },
+    {
+      "key": "conversation",
+      "package": "@door010/chat",
+      "status": "implemented"
+    },
+    {
+      "key": "planning",
+      "package": "@door010/domain",
+      "status": "implemented"
+    },
+    {
+      "key": "execution",
+      "package": "@door010/orchestration",
+      "status": "implemented"
+    },
+    {
+      "key": "learning",
+      "package": "@door010/domain",
+      "status": "implemented"
+    },
+    {
+      "key": "observability",
+      "package": "@door010/orchestration",
+      "status": "implemented"
+    }
+  ]
+}

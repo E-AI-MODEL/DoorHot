@@ -1,0 +1,48 @@
+{
+  "version": "2.7.0",
+  "branchProtection": {
+    "installer": "scripts/github/apply-main-protection.mjs",
+    "dryRunPassed": true,
+    "target": "main",
+    "requiredChecks": [
+      "Verify Node.js workspace",
+      "Run browser parity tests",
+      "PostgreSQL, providers and browser acceptance"
+    ],
+    "codeOwners": ".github/CODEOWNERS",
+    "actuallyApplied": false,
+    "notAppliedReason": "No repository administration token was provided."
+  },
+  "stagingReview": {
+    "workflow": ".github/workflows/staging-security-review.yml",
+    "door010ReviewScript": "scripts/security/review-staging.mjs",
+    "owaspZapBaseline": true,
+    "scheduledWeekly": true,
+    "manualDispatch": true,
+    "mockTargetValidationPassed": true,
+    "actualStagingReviewed": false,
+    "notReviewedReason": "No staging URL, test accounts or explicit external testing authorization were provided."
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "typecheck": "passed",
+    "apiTests": "2 files / 3 tests passed",
+    "build": "passed",
+    "migrations": "16/16 passed",
+    "publicTableCount": 77,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files",
+    "workflowAndComposeYaml": {
+      ".github/workflows/acceptance.yml": true,
+      ".github/workflows/ci.yml": true,
+      ".github/workflows/deploy-production.yml": true,
+      ".github/workflows/deploy-staging.yml": true,
+      ".github/workflows/reusable-release.yml": true,
+      ".github/workflows/staging-security-review.yml": true,
+      "compose.yaml": true,
+      "compose.acceptance.yaml": true
+    }
+  },
+  "supabaseSdkImports": [],
+  "passedWithExternalExecutionPending": true
+}

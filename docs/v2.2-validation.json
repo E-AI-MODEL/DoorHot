@@ -1,0 +1,37 @@
+{
+  "version": "2.2.0",
+  "flows": {
+    "publicChat": true,
+    "authentication": true,
+    "profile": true,
+    "personalChat": true,
+    "phaseMutationConfirmation": true,
+    "routeExplorer": true,
+    "talentTest": true,
+    "advisorChat": true,
+    "events": true,
+    "vacancies": true
+  },
+  "frontend": {
+    "routeQuestionsFromApi": true,
+    "routeMatchingDuplicatedInBrowser": false,
+    "talentScoringDuplicatedInBrowser": false,
+    "twoWayHumanChat": true,
+    "eventSave": true,
+    "vacancySave": true
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "typecheck": "passed",
+    "chatTests": "7 files / 9 tests passed",
+    "parityFlowTests": "6 files / 7 tests passed",
+    "apiTests": "1 file / 1 test passed",
+    "build": "passed",
+    "migrations": "15/15 passed",
+    "npmAuditVulnerabilities": 0,
+    "playwrightTestsDiscovered": 9,
+    "fullAggregatedNpmTest": "not completed: execution environment time limit"
+  },
+  "supabaseSdkImports": [],
+  "passedWithEnvironmentLimitation": true
+}

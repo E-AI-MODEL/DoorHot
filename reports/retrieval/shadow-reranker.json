@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-07-16T19:43:13.201Z",
+  "providerKey": "local-concept-cross-encoder-v1",
+  "mode": "shadow",
+  "caseCount": 333,
+  "failures": 0,
+  "averageLatencyMs": 0.73,
+  "changedTopRate": 0,
+  "baseline": {
+    "recallAt5": 0.8604,
+    "mrrAt5": 0.729,
+    "ndcgAt5": 0.7559
+  },
+  "shadow": {
+    "recallAt5": 0.8664,
+    "mrrAt5": 0.7305,
+    "ndcgAt5": 0.7585
+  },
+  "delta": {
+    "recallAt5": 0.006,
+    "mrrAt5": 0.0015,
+    "ndcgAt5": 0.0026
+  }
+}

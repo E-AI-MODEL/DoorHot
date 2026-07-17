@@ -1,0 +1,54 @@
+{
+  "version": "2.3.0",
+  "providerResilience": {
+    "exponentialRetry": true,
+    "retryableStatuses": [
+      408,
+      429,
+      "5xx"
+    ],
+    "circuitBreaker": true,
+    "halfOpenRecovery": true,
+    "deadLetterMemoryRepository": true,
+    "deadLetterPostgresRepository": true,
+    "deadLetterAdminEndpoint": true,
+    "migration": "0016_provider_dead_letters.sql"
+  },
+  "realtimeAdvisorChat": {
+    "transport": "authenticated server-sent events",
+    "candidateMessagesPublished": true,
+    "advisorMessagesPublished": true,
+    "frontendStreamingClient": true,
+    "heartbeatSeconds": 15,
+    "brokerScope": "single API process"
+  },
+  "ci": {
+    "dedicatedE2eJob": true,
+    "managedChromiumInstall": true,
+    "workers": 1,
+    "testsDiscovered": 9,
+    "containerWaitsForE2e": true,
+    "yamlValid": {
+      ".github/workflows/ci.yml": true,
+      ".github/workflows/deploy-staging.yml": true,
+      ".github/workflows/deploy-production.yml": true,
+      ".github/workflows/reusable-release.yml": true,
+      "compose.yaml": true
+    }
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "typecheck": "passed",
+    "integrationsTests": "2 files / 5 tests passed",
+    "chatTests": "7 files / 9 tests passed",
+    "apiTests": "1 file / 1 test passed",
+    "build": "passed",
+    "migrations": "16/16 passed",
+    "publicTableCount": 77,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files",
+    "localPlaywrightExecution": "blocked: system Chromium cannot start GPU process inside the execution container"
+  },
+  "supabaseSdkImports": [],
+  "passedWithEnvironmentLimitation": true
+}

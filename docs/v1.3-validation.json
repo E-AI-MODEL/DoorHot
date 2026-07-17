@@ -1,0 +1,50 @@
+{
+  "version": "1.3.0",
+  "scope": [
+    "PostgreSQL route sessions",
+    "PostgreSQL talent-test results",
+    "PostgreSQL phase snapshots",
+    "PostgreSQL advisor notes and appointments",
+    "PostgreSQL cached and saved events",
+    "PostgreSQL vacancies and saved vacancies",
+    "dependency installation",
+    "TypeScript typecheck",
+    "workspace tests",
+    "TypeScript build",
+    "static migration validation"
+  ],
+  "checks": {
+    "npmInstall": true,
+    "typecheck": true,
+    "build": true,
+    "allTestWorkspacesPassed": true,
+    "testFilesPassed": 22,
+    "testsPassed": 40,
+    "migrationFilesValidated": 13,
+    "migrationStaticValidationPassed": true,
+    "databaseMigrationApplyExecuted": false,
+    "postgresRouteRepository": true,
+    "postgresTalentRepository": true,
+    "postgresPhaseSnapshotRepository": true,
+    "postgresBackofficeRepositories": true,
+    "postgresEventRepositories": true,
+    "postgresVacancyRepositories": true,
+    "supabaseSdkImported": false
+  },
+  "databaseMigrationApplyReason": "DATABASE_URL was not provided, so migrations were statically validated but not applied to a live PostgreSQL database.",
+  "npmAudit": {
+    "total": 5,
+    "moderate": 3,
+    "high": 1,
+    "critical": 1,
+    "automaticForceFixApplied": false,
+    "reason": "A forced audit fix can introduce breaking dependency upgrades and was not applied without explicit review."
+  },
+  "commands": {
+    "npm install --ignore-scripts": "passed",
+    "npm run typecheck": "passed",
+    "workspace tests": "22 files / 40 tests passed",
+    "npm run build": "passed"
+  },
+  "passed": true
+}

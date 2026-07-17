@@ -1,0 +1,18 @@
+{
+  "version": "5.0.1",
+  "repositoryRoot": "door010-foundation",
+  "license": "Apache-2.0",
+  "checks": {
+    "yamlFiles": "13 passed",
+    "typecheck": "passed",
+    "apiTests": "3 passed",
+    "domainTests": "22 passed",
+    "orchestrationTests": "10 passed",
+    "build": "passed",
+    "migrations": "25/25 passed",
+    "publicTables": 100,
+    "npmAudit": "0 vulnerabilities",
+    "playwrightDiscovery": "11 tests / 3 files"
+  },
+  "readinessDecision": "CONDITIONAL_GO"
+}

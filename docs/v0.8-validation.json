@@ -1,0 +1,23 @@
+{
+  "version": "0.8.0",
+  "checks": {
+    "generalCoachConnected": true,
+    "personalCoachConnected": true,
+    "responsePipelineConnected": true,
+    "adaptiveDetectorConnected": true,
+    "phaseTransitionRequiresConfirmation": true,
+    "postgresPreferenceRepository": true,
+    "postgresJourneyRepository": true,
+    "postgresPhaseRepository": true,
+    "persistenceAdapterPresent": true,
+    "testsPresent": true,
+    "migrationPresent": true
+  },
+  "notExecuted": [
+    "npm install",
+    "npm run typecheck",
+    "npm test",
+    "npm run build"
+  ],
+  "passed": true
+}

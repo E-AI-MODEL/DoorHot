@@ -1,0 +1,12 @@
+[
+  {
+    "command": "npm install --ignore-scripts",
+    "returncode": 0,
+    "outputTail": "added 232 packages, and audited 252 packages in 3s\n\n60 packages are looking for funding\n  run `npm fund` for details\n\nfound 0 vulnerabilities"
+  },
+  {
+    "command": "npm run typecheck",
+    "returncode": 2,
+    "outputTail": "> door010-3@3.0.0 typecheck\n> tsc -b --pretty false && npm run typecheck --workspace @door010/web\n\npackages/knowledge/src/index.ts(1680,9): error TS2532: Object is possibly 'undefined'.\napps/api/src/server.ts(183,3): error TS2739: Type 'ReciprocalRankFusionKnowledgeSearch' is missing the following properties from type 'HybridKnowledgeSearch': knowledge, semantic"
+  }
+]

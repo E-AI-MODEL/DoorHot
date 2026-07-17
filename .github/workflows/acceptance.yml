@@ -1,0 +1,92 @@
+name: Door010 Production Acceptance
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: door010-acceptance-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  acceptance:
+    name: PostgreSQL, providers and browser acceptance
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB: door010_acceptance
+          POSTGRES_USER: door010
+          POSTGRES_PASSWORD: acceptance-password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U door010 -d door010_acceptance"
+          --health-interval 2s
+          --health-timeout 3s
+          --health-retries 30
+
+    env:
+      CI: "1"
+      ACCEPTANCE_DATABASE_URL: >-
+        postgresql://door010:acceptance-password@127.0.0.1:5432/door010_acceptance
+      DATABASE_URL: >-
+        postgresql://door010:acceptance-password@127.0.0.1:5432/door010_acceptance
+      AUTH_TOKEN_SECRET: >-
+        acceptance-auth-token-secret-with-at-least-32-characters
+      DEAD_LETTER_STORE_BODY: "false"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Typecheck and build
+        run: |
+          npm run typecheck
+          npm run build
+
+      - name: Apply PostgreSQL migrations
+        run: |
+          for migration in migrations/*.sql; do
+            docker run --rm               --network host               -e PGPASSWORD=acceptance-password               -v "$PWD:/workspace"               postgres:17-alpine               psql               --host 127.0.0.1               --username door010               --dbname door010_acceptance               --set ON_ERROR_STOP=1               --file "/workspace/$migration"
+          done
+
+      - name: Test live PostgreSQL LISTEN/NOTIFY
+        run: npm run acceptance:realtime
+
+      - name: Test provider contracts
+        run: npm run acceptance:providers
+
+      - name: Install managed Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run browser acceptance
+        run: npm run acceptance:browser
+
+      - name: Upload Playwright diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: door010-playwright-report
+          path: |
+            apps/web/playwright-report
+            apps/web/test-results
+          if-no-files-found: ignore
+          retention-days: 14

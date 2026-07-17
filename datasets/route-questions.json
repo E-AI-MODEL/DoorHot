@@ -1,0 +1,1284 @@
+[
+  {
+    "question": "In wat voor functie ben je geïnteresseerd?",
+    "status": "published",
+    "date_created": "2026-01-21T12:13:19.154Z",
+    "date_updated": null,
+    "description": "Per schoolsoort zijn er verschillende categorieën aan functies. Kies er eentje.",
+    "id": "0973fae8-732b-4a9e-b04b-9e02a7eb7b77",
+    "sort": 2,
+    "answers": [
+      {
+        "id": "869ed3c3-d388-45ed-b45c-c260aa8ce6cc",
+        "status": "published",
+        "title": "Leraar",
+        "description": "Een leraar draagt verantwoordelijkheid voor een klas. In de meeste gevallen moeten leraren wettelijk aan bekwaamheidseisen voldoen.",
+        "question": "0973fae8-732b-4a9e-b04b-9e02a7eb7b77",
+        "sort": 22,
+        "date_created": "2026-01-21T12:13:21.608Z",
+        "date_updated": "2026-01-27T09:05:59.433Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "c30c2eba-a022-4366-bf1b-c1a4e980824d"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "50dbad67-0904-4f8e-a71c-dcc0e183afff",
+        "status": "published",
+        "title": "Onderwijsondersteunend personeel",
+        "description": "Binnen elke vorm van onderwijs zijn er ondersteunende functies die direct ondersteunen bij de lespraktijk. In het primair onderwijs heb je onderwijsassistenten, remedial teachers en leraarondersteuners, in het voortgezet onderwijs (technisch) onderwijsassistenten en leraarondersteuners en in het speciaal onderwijs klassenassistenten.",
+        "question": "0973fae8-732b-4a9e-b04b-9e02a7eb7b77",
+        "sort": 23,
+        "date_created": "2026-01-21T12:13:21.798Z",
+        "date_updated": "2026-01-27T09:06:28.531Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "494c77fc-0967-4524-8cc3-a2fd0664f690",
+        "status": "published",
+        "title": "Ondersteunend personeel",
+        "description": "Binnen elke vorm van onderwijs zijn er ondersteunende functies in de organisatie die niet direct betrokken zijn bij het leerproces. Denk daarbij aan de conciërge, de personeelsmedewerkers, de roostermaker, de financiële- en leerlingenadministratie, et cetera.",
+        "question": "0973fae8-732b-4a9e-b04b-9e02a7eb7b77",
+        "sort": 24,
+        "date_created": "2026-01-21T12:13:22.170Z",
+        "date_updated": "2026-01-22T12:30:33.709Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "da036694-fa8d-4507-9983-23d05cc4097f",
+        "status": "published",
+        "title": "Schoolleiding",
+        "description": "De dagelijkse leiding van een school ligt in het handen van de directie. Op een basisschool is dit vaak alleen een directeur, in het voortgezet onderwijs is dit een directeur of rector (vaak ondersteund door één of meer conrectoren). In het mbo en hoger onderwijs is de omvang van de directie afhankelijk van hoe groot de instelling is.",
+        "question": "0973fae8-732b-4a9e-b04b-9e02a7eb7b77",
+        "sort": 25,
+        "date_created": "2026-01-21T12:13:21.987Z",
+        "date_updated": "2026-01-22T12:25:06.597Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "f07f61ef-58f5-4441-b416-fb9b3337bb8a",
+        "status": "published",
+        "title": "Middenmanagement",
+        "description": "Het middenmanagement vormt samen met de schoolleiding het managementteam. Op een basisschool zijn dit de bouwcoördinatoren, op een middelbare school de teamleiders, en in het mbo de opleidingsmanagers.",
+        "question": "0973fae8-732b-4a9e-b04b-9e02a7eb7b77",
+        "sort": 26,
+        "date_created": "2026-01-21T12:13:22.076Z",
+        "date_updated": "2026-01-22T12:25:21.691Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "099af0e1-1d2d-4d6b-9b5b-a8409557085b",
+        "status": "published",
+        "title": "Instructeur",
+        "description": "Binnen het mbo zijn instructeurs verantwoordelijk voor de praktijkonderdelen van een opleiding. Een instructeur geeft zelfstandig (delen van) lessen, maar valt altijd onder de verantwoordelijkheid van een docent of het onderwijsteam. ",
+        "question": "0973fae8-732b-4a9e-b04b-9e02a7eb7b77",
+        "sort": 27,
+        "date_created": "2026-01-21T12:13:21.702Z",
+        "date_updated": "2026-01-21T12:13:28.400Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          }
+        ]
+      },
+      {
+        "id": "d2e77721-9220-4f2e-946d-6ddd2781c33c",
+        "status": "published",
+        "title": "Leerlingenzorg",
+        "description": "Binnen elke vorm van onderwijs zijn er mensen specifiek gericht op leerlingenzorg. In een basisschool is dat vooral de Intern Begeleider, in het voortgezet onderwijs is dat vaak de Zorgcoördinator, in het hoger onderwijs en mbo de studieadviseur. Binnen het speciaal onderwijs is de zorg wat intensiever en is er vaak een orthopedagoog betrokken bij de leerlingenzorg.",
+        "question": "0973fae8-732b-4a9e-b04b-9e02a7eb7b77",
+        "sort": 28,
+        "date_created": "2026-01-21T12:13:21.894Z",
+        "date_updated": "2026-01-22T12:23:52.982Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "c30c2eba-a022-4366-bf1b-c1a4e980824d"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "question": "Wat voor lesbevoegdheid of getuigschift wil je halen?",
+    "status": "published",
+    "date_created": "2026-01-21T12:13:19.222Z",
+    "date_updated": null,
+    "description": "Afhankelijk van het type onderwijs en de functie zijn er mogelijk wettelijke kwalificaties nodig. Kies welke van deze kwalificaties je wilt behalen.",
+    "id": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+    "sort": 4,
+    "answers": [
+      {
+        "id": "daa3b054-fbee-431d-ab62-e7d30ef9e2c1",
+        "status": "published",
+        "title": "Primair onderwijs",
+        "description": "Met een bevoegdheid voor het primair onderwijs mag je lesgeven als groepsleerkracht in het po. Onder het po vallen basisscholen, maar ook scholen voor speciaal onderwijs, daarnaast mag je met deze bevoegdheid lesgeven in het praktijkonderwijs.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 9,
+        "date_created": "2026-01-21T12:13:27.232Z",
+        "date_updated": "2026-01-27T09:27:23.355Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "869ed3c3-d388-45ed-b45c-c260aa8ce6cc"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "f9bd6075-2e77-4bf5-96f8-7b82ba962039",
+        "status": "published",
+        "title": "Tweedegraads bevoegdheid",
+        "description": "Met een tweedegraads lesbevoegdheid mag je in jouw vak lesgeven in het voortgezet onderwijs (het hele vmbo en de onderbouw van havo en vwo) en het mbo. Je mag ook lesgeven in jouw vak in het primair onderwijs.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 10,
+        "date_created": "2026-01-21T12:13:27.334Z",
+        "date_updated": "2026-01-27T09:28:23.911Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "869ed3c3-d388-45ed-b45c-c260aa8ce6cc"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "62a05532-abb2-4e29-99bd-92885634f64e",
+        "status": "published",
+        "title": "Beperkte tweedegraads bevoegdheid",
+        "description": "Met een beperkte tweedegraads lesbevoegdheid mag je lesgeven in het voortgezet onderwijs (vmbo en de onderbouw van havo en vwo).",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 11,
+        "date_created": "2026-01-21T12:13:25.400Z",
+        "date_updated": "2026-01-27T09:29:25.744Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "869ed3c3-d388-45ed-b45c-c260aa8ce6cc"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "4967c1d6-f7c3-43e0-97a1-7eb0860c35fb",
+        "status": "published",
+        "title": "Eerstegraads bevoegdheid",
+        "description": "Met een  lesbevoegdheid mag je lesgeven in voortgezet onderwijs (vmbo, havo en vwo), het mbo en als vakleerkracht in het primair onderwijs. Met een eerstegraads lesbevoegdheid mag je in jouw vak lesgeven in het voortgezet onderwijs (vmbo, havo en vwo) en het mbo. Je mag ook lesgeven in jouw vak in het primair onderwijs.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 12,
+        "date_created": "2026-01-21T12:13:25.285Z",
+        "date_updated": "2026-01-27T09:30:14.630Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "869ed3c3-d388-45ed-b45c-c260aa8ce6cc"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "37af9e08-9af1-48d4-b473-71bdefb9b374",
+        "status": "published",
+        "title": "Schoolleiding PO",
+        "description": "Schoolleiders in het primair onderwijs registreren zich in het beroepsregister van schooldirecteuren (Ascenda). Hiervoor moet je kunnen aantonen met een schoolleidersopleiding, relevante NVAO-geaccrediteerde masteropleiding, toetsend assessment, EVC-procedure (Erkenning van eerder verworven competenties) of een IDW (Individuele diplomawaardering).",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 13,
+        "date_created": "2026-01-21T12:13:27.441Z",
+        "date_updated": "2026-01-27T10:08:09.721Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "da036694-fa8d-4507-9983-23d05cc4097f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "3fdafaff-c26d-48db-aafa-ed634c7ef827",
+        "status": "published",
+        "title": "PDG",
+        "description": "Met een pedagogisch-didactisch-getuigschrift (PDG) mag je lesgeven in het middelbaar beroepsonderwijs (mbo) en volwassenenonderwijs (vavo).",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 14,
+        "date_created": "2026-01-21T12:13:27.135Z",
+        "date_updated": "2026-01-27T09:54:40.197Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "869ed3c3-d388-45ed-b45c-c260aa8ce6cc"
+            }
+          }
+        ]
+      },
+      {
+        "id": "491ab2c9-90f4-4e20-841e-374297d9e061",
+        "status": "published",
+        "title": "Instructeursdiploma",
+        "description": "Met een opleiding tot instructeur kun je aan de slag als instructeur in het mbo.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 15,
+        "date_created": "2026-01-21T12:13:27.532Z",
+        "date_updated": "2026-01-21T12:13:34.801Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "099af0e1-1d2d-4d6b-9b5b-a8409557085b"
+            }
+          }
+        ]
+      },
+      {
+        "id": "179d7cef-acda-4316-829b-70a03bba0510",
+        "status": "published",
+        "title": "Ongegradeerde bevoegdheid",
+        "description": "Met een ongegradeerde bevoegdheid mag je in jouw vak lesgeven in alle vormen van onderwijs (po, vo, mbo). Deze bevoegdheid bestaat alleen voor de schoolvakken lichamelijke opvoeding, muziek en andere kunstvakken.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 16,
+        "date_created": "2026-01-21T12:13:27.032Z",
+        "date_updated": "2026-01-27T09:55:27.233Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "869ed3c3-d388-45ed-b45c-c260aa8ce6cc"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "a02b3138-785a-4e7a-ac3b-3728b38cf5a6",
+        "status": "published",
+        "title": "Leerlingenzorg hoger onderwijs - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 17,
+        "date_created": "2026-01-21T12:13:25.868Z",
+        "date_updated": "2026-01-27T09:57:12.429Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "c30c2eba-a022-4366-bf1b-c1a4e980824d"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "d2e77721-9220-4f2e-946d-6ddd2781c33c"
+            }
+          }
+        ]
+      },
+      {
+        "id": "a70393d5-1af9-4b7d-a38e-e9d610b56959",
+        "status": "published",
+        "title": "Leerlingenzorg mbo/vavo - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 18,
+        "date_created": "2026-01-21T12:13:26.220Z",
+        "date_updated": "2026-01-27T09:58:06.372Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "d2e77721-9220-4f2e-946d-6ddd2781c33c"
+            }
+          }
+        ]
+      },
+      {
+        "id": "d5e6c2cc-14f6-4ef3-8f45-5e6ba738e3b8",
+        "status": "published",
+        "title": "Ondersteunend personeel mbo - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 19,
+        "date_created": "2026-01-21T12:13:26.567Z",
+        "date_updated": "2026-01-27T09:58:34.706Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "494c77fc-0967-4524-8cc3-a2fd0664f690"
+            }
+          }
+        ]
+      },
+      {
+        "id": "1bf489cb-daa2-4a30-a84f-3e004e41ab4c",
+        "status": "published",
+        "title": "Schoolleiding vo - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 20,
+        "date_created": "2026-01-21T12:13:26.936Z",
+        "date_updated": "2026-01-27T09:59:45.952Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "da036694-fa8d-4507-9983-23d05cc4097f"
+            }
+          }
+        ]
+      },
+      {
+        "id": "d1aabb77-f9d2-42aa-83b2-b97d909bebb7",
+        "status": "published",
+        "title": "Leraarondersteuner - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als de school je voor deze functie wil aannemen kan dat. Er zijn echter wel opleidingen die je voorbereiden op deze functie. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 21,
+        "date_created": "2026-01-21T12:13:25.490Z",
+        "date_updated": "2026-01-27T10:00:40.037Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "50dbad67-0904-4f8e-a71c-dcc0e183afff"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "6c0e4eec-f889-4348-ba57-7af188bab45d",
+        "status": "published",
+        "title": "Leerlingenzorg mbo - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 42,
+        "date_created": "2026-01-21T12:13:25.958Z",
+        "date_updated": "2026-01-27T10:01:16.173Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "d2e77721-9220-4f2e-946d-6ddd2781c33c"
+            }
+          }
+        ]
+      },
+      {
+        "id": "1201f0ae-3624-45b1-bc46-03c9ddb5c0d9",
+        "status": "published",
+        "title": "Middenmanagement mbo - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 43,
+        "date_created": "2026-01-21T12:13:26.305Z",
+        "date_updated": "2026-01-27T10:02:07.630Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "f07f61ef-58f5-4441-b416-fb9b3337bb8a"
+            }
+          }
+        ]
+      },
+      {
+        "id": "63f1ed13-d979-451a-9044-b04c21fd09f9",
+        "status": "published",
+        "title": "Onderwijsassistent - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als de school je voor deze functie wil aannemen kan dat. Er zijn echter wel opleidingen die je voorbereiden op deze functie. Deze opleidingsroutes hebben we voor jou uiteengezet: klik hiervoor op 'Zoek naar beschikbare routes'. Let op, deze opleidingen zijn meestal vooral gericht op het primair onderwijs. Ook komt deze functie voornamelijk voor in het primair onderwijs. ",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 44,
+        "date_created": "2026-01-21T12:13:25.589Z",
+        "date_updated": "2026-01-27T10:02:38.255Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "50dbad67-0904-4f8e-a71c-dcc0e183afff"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "6e1fe36e-583f-4ba0-a92f-415bdc4100a9",
+        "status": "published",
+        "title": "Ondersteunend personeel po - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 45,
+        "date_created": "2026-01-21T12:13:26.661Z",
+        "date_updated": "2026-01-27T10:03:25.796Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "494c77fc-0967-4524-8cc3-a2fd0664f690"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "def7d254-da1c-4261-8310-de5cd7f99938",
+        "status": "published",
+        "title": "Ondersteunend personeel vo - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 49,
+        "date_created": "2026-01-21T12:13:26.751Z",
+        "date_updated": "2026-01-27T10:03:51.099Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "494c77fc-0967-4524-8cc3-a2fd0664f690"
+            }
+          }
+        ]
+      },
+      {
+        "id": "9b900643-029a-4433-a807-5915c4e53d6f",
+        "status": "published",
+        "title": "Leerlingenzorg po - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 50,
+        "date_created": "2026-01-21T12:13:26.044Z",
+        "date_updated": "2026-01-27T10:04:12.609Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "d2e77721-9220-4f2e-946d-6ddd2781c33c"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "9daec921-5ec9-4603-acbd-7302081d74ab",
+        "status": "published",
+        "title": "Middenmanagement po - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 51,
+        "date_created": "2026-01-21T12:13:26.390Z",
+        "date_updated": "2026-01-27T10:04:36.408Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "f07f61ef-58f5-4441-b416-fb9b3337bb8a"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "fd5b1018-5ef7-488e-9744-88812e7051db",
+        "status": "published",
+        "title": "Gastdocent - geen verplicht diploma nodig",
+        "description": "Als je zonder diploma wilt lesgeven, kan dat alleen als gastdocent en alleen in het voortgezet onderwijs, mbo, hbo en aan de universiteit.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 52,
+        "date_created": "2026-01-21T12:13:25.682Z",
+        "date_updated": "2026-01-27T10:05:58.385Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "869ed3c3-d388-45ed-b45c-c260aa8ce6cc"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff"
+            }
+          }
+        ]
+      },
+      {
+        "id": "9115cb16-43d8-48fe-9b39-da051af4112e",
+        "status": "published",
+        "title": "Leraar hoger onderwijs - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 53,
+        "date_created": "2026-01-21T12:13:25.776Z",
+        "date_updated": "2026-01-27T10:06:23.480Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "c30c2eba-a022-4366-bf1b-c1a4e980824d"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "869ed3c3-d388-45ed-b45c-c260aa8ce6cc"
+            }
+          }
+        ]
+      },
+      {
+        "id": "5dc928f5-89cd-4347-a32a-1c19b7718e32",
+        "status": "published",
+        "title": "Leerlingenzorg speciaal onderwijs - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 54,
+        "date_created": "2026-01-21T12:13:26.133Z",
+        "date_updated": "2026-01-27T10:06:50.780Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "d2e77721-9220-4f2e-946d-6ddd2781c33c"
+            }
+          }
+        ]
+      },
+      {
+        "id": "72b0cabc-729f-42e0-a6a4-eb4206170cc2",
+        "status": "published",
+        "title": "Middenmanagement vo - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 55,
+        "date_created": "2026-01-21T12:13:26.480Z",
+        "date_updated": "2026-01-27T10:07:20.091Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "573c0e1d-f578-44af-8bd6-3da064ead680"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "2e6b253f-1d87-4845-af67-1db9853a0de3"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "f07f61ef-58f5-4441-b416-fb9b3337bb8a"
+            }
+          }
+        ]
+      },
+      {
+        "id": "512b7405-b601-407e-a8e8-9ff343dfa208",
+        "status": "published",
+        "title": "Schoolleiding mbo - geen verplicht diploma nodig",
+        "description": "Voor deze functie heb je wettelijk gezien geen diploma nodig. Als een school je voor deze functie wil aannemen kan dat. Voor meer informatie bekijk mogelijke routes.",
+        "question": "0a9e0eb0-f45c-4069-aee8-e4333061b42b",
+        "sort": 56,
+        "date_created": "2026-01-21T12:13:26.844Z",
+        "date_updated": "2026-01-27T10:07:44.975Z",
+        "requires_answers": [
+          {
+            "related_route_answers_id": {
+              "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f"
+            }
+          },
+          {
+            "related_route_answers_id": {
+              "id": "da036694-fa8d-4507-9983-23d05cc4097f"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "question": "Op wat voor school zou je willen werken?",
+    "status": "published",
+    "date_created": "2026-01-21T12:13:19.119Z",
+    "date_updated": null,
+    "description": "Maak een keuze voor het soort school waar je zou willen werken.",
+    "id": "3a049db7-70da-43cd-be29-b312dcbcdd1f",
+    "sort": 1,
+    "answers": [
+      {
+        "id": "a0ccd547-d28e-45b1-a869-eb99b0823eff",
+        "status": "published",
+        "title": "Basisschool (po)",
+        "description": "De basisschool is bedoeld voor kinderen van vier tot en met twaalf jaar. Een kind is in Nederland vanaf vijf jaar leerplichtig, maar meestal gaan kinderen van vier jaar al volledig naar de basisschool. De kinderen krijgen in groep 1 t/m groep 8 via een vast weekrooster les van een of enkele leraren. Daarnaast zijn er ook scholen voor speciaal basisonderwijs. Kinderen die meer hulp nodig hebben met leren en opvoeding dan op een basisschool kan worden geboden, kunnen naar het speciaal basisonderwijs.  Op deze scholen zijn de groepen leerlingen doorgaans kleiner en zijn er meer deskundigen voor de begeleiding van de leerlingen.",
+        "question": "3a049db7-70da-43cd-be29-b312dcbcdd1f",
+        "sort": 29,
+        "date_created": "2026-01-21T12:13:19.906Z",
+        "date_updated": "2026-01-27T09:19:41.494Z",
+        "requires_answers": []
+      },
+      {
+        "id": "573c0e1d-f578-44af-8bd6-3da064ead680",
+        "status": "published",
+        "title": "Middelbare school (vo)",
+        "description": "Een school waar voortgezet onderwijs aangeboden wordt ook een middelbare school genoemd. Kinderen vanaf ongeveer 12 jaar gaan naar de middelbare school. Het voorgezet onderwijs duurt vier, vijf of zes jaar, afhankelijk van welk niveau voortgezet onderwijs de leerling volgt. Leerlingen zijn normaal gesproken tussen de 16 en 18 jaar oud wanneer zij hun voortgezet onderwijs afronden. Onder het voortgezet onderwijs valt ook het praktijkonderwijs. Praktijkonderwijs is bedoeld voor leerlingen van 12 t/m 18 jaar die sterk zijn in praktische vakken.",
+        "question": "3a049db7-70da-43cd-be29-b312dcbcdd1f",
+        "sort": 30,
+        "date_created": "2026-01-21T12:13:21.202Z",
+        "date_updated": "2026-01-27T09:21:10.644Z",
+        "requires_answers": []
+      },
+      {
+        "id": "5bdbdbef-c9ad-4455-a044-5c5d859a037f",
+        "status": "published",
+        "title": "Middelbaar beroepsonderwijs (mbo)",
+        "description": "Mbo staat voor middelbaar beroepsonderwijs. Het is onderwijs dat aansluit op de middelbare school. Het vmbo (voorbereidend middelbaar beroepsonderwijs) bereidt je voor op het mbo, maar ook met een havo- of vwo-diploma kun je studeren aan het mbo. Mbo-opleidingen begeleiden je in het uitoefenen van een vak of beroep. Deze beroepen zijn onderverdeeld in rond de 500 opleidingen waar je een mbo-diploma in kunt halen.",
+        "question": "3a049db7-70da-43cd-be29-b312dcbcdd1f",
+        "sort": 31,
+        "date_created": "2026-01-21T12:13:21.406Z",
+        "date_updated": "2026-01-27T09:21:54.655Z",
+        "requires_answers": []
+      },
+      {
+        "id": "c30c2eba-a022-4366-bf1b-c1a4e980824d",
+        "status": "published",
+        "title": "Hoger onderwijs (ho)",
+        "description": "Het hoger onderwijs bestaat uit Hoger Beroepsonderwijs aan een hbo-instelling en Wetenschappelijk onderwijs aan een universiteit. De hbo-opleidingen leiden studenten op tot een beroep en is daardoor gericht op de beroepspraktijk, daar waar universitaire opleidingen gericht zijn op wetenschappelijk onderzoek. ",
+        "question": "3a049db7-70da-43cd-be29-b312dcbcdd1f",
+        "sort": 32,
+        "date_created": "2026-01-21T12:13:21.502Z",
+        "date_updated": "2026-01-27T09:20:17.873Z",
+        "requires_answers": []
+      },
+      {
+        "id": "4ca58dfb-1946-46cc-a08b-5e102d172ba9",
+        "status": "published",
+        "title": "Speciaal onderwijs (so/vso)",
+        "description": "Het Speciaal Onderwijs is er voor kinderen met speciale leerbehoeften. Het gaat dan om een visuele, auditieve, lichamelijke of verstandelijke beperkingen. Ook worden kinderen met psychische en/of zware gedragsproblemen toegelaten tot het speciaal onderwijs.",
+        "question": "3a049db7-70da-43cd-be29-b312dcbcdd1f",
+        "sort": 33,
+        "date_created": "2026-01-21T12:13:20.810Z",
+        "date_updated": "2026-01-27T09:24:33.848Z",
+        "requires_answers": []
+      },
+      {
+        "id": "2e6b253f-1d87-4845-af67-1db9853a0de3",
+        "status": "published",
+        "title": "Volwassenenonderwijs (vavo)",
+        "description": "In het voortgezet algemeen volwassenenonderwijs (vavo) kunnen volwassenen een vmbo-tl-, havo- of vwo-diploma of deelcertificaten voor bepaalde schoolvakken halen. Ook leerlingen van 16 en 17 jaar kunnen onder bepaalde voorwaarden via het vavo hun middelbare school afronden.",
+        "question": "3a049db7-70da-43cd-be29-b312dcbcdd1f",
+        "sort": 34,
+        "date_created": "2026-01-21T12:13:21.305Z",
+        "date_updated": "2026-01-27T09:20:36.914Z",
+        "requires_answers": []
+      }
+    ]
+  },
+  {
+    "question": "Wat is het niveau van je hoogst afgeronde opleiding?",
+    "status": "published",
+    "date_created": "2026-01-21T12:13:19.186Z",
+    "date_updated": "2026-01-28T09:32:21.971Z",
+    "description": "Je huidige opleidingsniveau bepaalt welke routes er voor je mogelijk zijn.",
+    "id": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+    "sort": 3,
+    "answers": [
+      {
+        "id": "7cc5adfb-138e-4dfe-b6ff-ed6b2956086b",
+        "status": "published",
+        "title": "Geen vooropleiding",
+        "description": "Mochten geen van de genoemde kwalificaties op jou van toepassing zijn. Kies dan voor 'Geen vooropleiding'.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 1,
+        "date_created": "2026-01-21T12:13:22.267Z",
+        "date_updated": "2026-01-21T12:13:29.624Z",
+        "requires_answers": []
+      },
+      {
+        "id": "cc37eeee-28fe-4381-8146-08fdb7f1695c",
+        "status": "published",
+        "title": "Praktijkonderwijs",
+        "description": "Binnen dit deel van het voortgezet onderwijs volgen de leerlingen een maatwerktraject van ca. 5 jaar dat hen zo goed mogelijk voorbereidt op de maatschappij.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 2,
+        "date_created": "2026-01-21T12:13:22.365Z",
+        "date_updated": "2026-01-21T12:13:29.673Z",
+        "requires_answers": []
+      },
+      {
+        "id": "351569ce-8408-4e80-b13a-cd4e58943a46",
+        "status": "published",
+        "title": "Vmbo-kl",
+        "description": "Voorbereidend middelbaar beroepsonderwijs - kaderberoepsgerichte leerweg (vmbo-kl). Hierbinnen volgen de leerlingen in gelijke mate beroepsgericht onderwijs en algemeen vormende vakken (avo-vakken).",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 3,
+        "date_created": "2026-01-21T12:13:22.547Z",
+        "date_updated": "2026-01-21T12:13:29.769Z",
+        "requires_answers": []
+      },
+      {
+        "id": "d94cc1b7-cd3f-4fa9-bcf9-f52722345e97",
+        "status": "published",
+        "title": "Vmbo-gl",
+        "description": "Voorbereidend middelbaar beroepsonderwijs - gemengde leerweg (vmbo-gl). Hierbinnen volgen de leerlingen voornamelijk algemeen vormende vakken (avo-vakken) plus vier uur per week beroepsgericht onderwijs.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 4,
+        "date_created": "2026-01-21T12:13:22.635Z",
+        "date_updated": "2026-01-21T12:13:29.815Z",
+        "requires_answers": []
+      },
+      {
+        "id": "4101fdc0-7f3a-489e-883f-6158bbdad6e8",
+        "status": "published",
+        "title": "Vmbo-bl",
+        "description": "Voorbereidend middelbaar beroepsonderwijs - basisberoepsgerichte leerweg (vmbo-kl). Hierbinnen volgen de leerlingen in gelijke mate beroepsgericht onderwijs en algemeen vormende vakken (avo-vakken).",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 5,
+        "date_created": "2026-01-21T12:13:22.458Z",
+        "date_updated": "2026-01-21T12:13:29.718Z",
+        "requires_answers": []
+      },
+      {
+        "id": "8d6292c9-89a7-4199-adb1-73ca3274b742",
+        "status": "published",
+        "title": "Vmbo-tl/mavo",
+        "description": "Voorbereidend middelbaar beroepsonderwijs - theoretische leerweg (vmbo-tl). Deze opleiding duurt vier jaar en leerlingen volgen voornamelijk algemeen vormende vakken (avo-vakken).",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 6,
+        "date_created": "2026-01-21T12:13:22.722Z",
+        "date_updated": "2026-01-21T12:13:29.872Z",
+        "requires_answers": []
+      },
+      {
+        "id": "5cd49590-1294-4cea-82b2-ef9183b7e4c0",
+        "status": "published",
+        "title": "Havo",
+        "description": "Havo staat voor hoger algemeen voortgezet onderwijs. Deze opleiding duurt vijf jaar en bereidt leerlingen voor op het hoger beroepsonderwijs (hbo).",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 7,
+        "date_created": "2026-01-21T12:13:22.816Z",
+        "date_updated": "2026-01-21T12:13:29.916Z",
+        "requires_answers": []
+      },
+      {
+        "id": "7808886f-47dc-4932-a8e6-146165382298",
+        "status": "published",
+        "title": "Vwo",
+        "description": "Het voorbereidend wetenschappelijk onderwijs (vwo) bereidt leerlingen voor op een studie aan de universiteit. Het vwo duurt 6 jaar.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 8,
+        "date_created": "2026-01-21T12:13:22.923Z",
+        "date_updated": "2026-01-21T12:13:30.073Z",
+        "requires_answers": []
+      },
+      {
+        "id": "83ce9098-d672-4c58-8dd4-05a7dac50511",
+        "status": "published",
+        "title": "Mbo entree",
+        "description": "Middelbaar beroepsonderwijs (mbo). Een mbo entree-opleiding is een basisberoepsopleiding die je volgt aan een school voor het middelbaar beroepsonderwijs.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 35,
+        "date_created": "2026-01-21T12:13:23.037Z",
+        "date_updated": "2026-01-21T12:13:30.173Z",
+        "requires_answers": []
+      },
+      {
+        "id": "fc329cee-545f-4f6b-bc5e-62d63451aba2",
+        "status": "published",
+        "title": "Mbo 2",
+        "description": "Middelbaar beroepsonderwijs (mbo). Een mbo 2-opleiding is een basisberoepsopleiding die je volgt aan een school voor het middelbaar beroepsonderwijs.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 36,
+        "date_created": "2026-01-21T12:13:23.147Z",
+        "date_updated": "2026-01-21T12:13:30.218Z",
+        "requires_answers": []
+      },
+      {
+        "id": "2cd07b05-e71a-43c3-aae1-630130b4ce5c",
+        "status": "published",
+        "title": "Mbo 3",
+        "description": "Middelbaar beroepsonderwijs (mbo). Een mbo 3-opleiding is een vakopleiding die je volgt aan een school voor het middelbaar beroepsonderwijs.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 37,
+        "date_created": "2026-01-21T12:13:23.252Z",
+        "date_updated": "2026-01-21T12:13:30.264Z",
+        "requires_answers": []
+      },
+      {
+        "id": "24bf2412-89fe-4182-8ef0-379b1991bab6",
+        "status": "published",
+        "title": "Mbo 4",
+        "description": "Middelbaar beroepsonderwijs (mbo). Een mbo 4-opleiding is een middenkaderopleiding die je volgt aan een school voor het middelbaar beroepsonderwijs.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 38,
+        "date_created": "2026-01-21T12:13:23.352Z",
+        "date_updated": "2026-01-21T12:13:30.312Z",
+        "requires_answers": []
+      },
+      {
+        "id": "e34bed80-674a-4002-8b7a-7621d74d533e",
+        "status": "published",
+        "title": "Associate degree",
+        "description": "Een associate degree is een tweejarige praktijkgerichte opleiding op hbo-niveau. ",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 39,
+        "date_created": "2026-01-21T12:13:23.463Z",
+        "date_updated": "2026-01-21T12:13:30.369Z",
+        "requires_answers": []
+      },
+      {
+        "id": "d534a1a0-8d82-4186-9d90-b5223cde55bc",
+        "status": "published",
+        "title": "Hbo-propedeuse",
+        "description": "Hoger beroepsonderwijs (hbo). Een hbo-propedeusecertificaat ontvang je na het behalen van alle studiepunten van het eerste jaar van je hbo-opleiding aan een hogeschool.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 40,
+        "date_created": "2026-01-21T12:13:23.580Z",
+        "date_updated": "2026-01-21T12:13:30.417Z",
+        "requires_answers": []
+      },
+      {
+        "id": "7c5dfe12-c087-4bb7-90b0-1a69e8326d6e",
+        "status": "published",
+        "title": "Hbo-bachelor",
+        "description": "Hoger beroepsonderwijs (hbo). Een hbo-bacheloropleiding is een vierjarige opleiding die je volgt aan een hogeschool.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 41,
+        "date_created": "2026-01-21T12:13:23.679Z",
+        "date_updated": "2026-01-21T12:13:30.465Z",
+        "requires_answers": []
+      },
+      {
+        "id": "36068d97-4f1c-4b97-8692-6ac1bb76622e",
+        "status": "published",
+        "title": "Hbo-master",
+        "description": "Hoger beroepsonderwijs (hbo). Een hbo-masteropleiding is een verdiepende vervolgstudie na afronding van een hbo- of wo-bachelor.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 46,
+        "date_created": "2026-01-21T12:13:23.966Z",
+        "date_updated": "2026-01-21T12:13:30.516Z",
+        "requires_answers": []
+      },
+      {
+        "id": "ed90340f-329f-4d61-afb6-a55db45d9549",
+        "status": "published",
+        "title": "Wo-bachelor",
+        "description": "Een wo-bacheloropleiding is een universitaire studie van drie jaar op het wetenschappelijk niveau van een vakgebied.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 47,
+        "date_created": "2026-01-21T12:13:24.252Z",
+        "date_updated": "2026-01-21T12:13:30.563Z",
+        "requires_answers": []
+      },
+      {
+        "id": "823772ea-14ea-4330-adc2-6291c5fd9fe6",
+        "status": "published",
+        "title": "Wo-master",
+        "description": "Een wo-master is een universitaire studie van één of twee jaar op het wetenschappelijk niveau van een vakgebied. Deze volg je na de afronding van een bachelor.",
+        "question": "ffde53a3-c46f-413c-828f-1d000a0fccea",
+        "sort": 48,
+        "date_created": "2026-01-21T12:13:24.706Z",
+        "date_updated": "2026-01-21T12:13:30.608Z",
+        "requires_answers": []
+      }
+    ]
+  }
+]

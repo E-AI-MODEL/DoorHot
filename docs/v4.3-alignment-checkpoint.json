@@ -1,0 +1,43 @@
+{
+  "version": "4.3.0",
+  "originalParityFlows": {
+    "publicGeneralChat": "aligned",
+    "authentication": "aligned",
+    "profile": "aligned",
+    "personalJourneyChat": "aligned",
+    "routeFlow": "aligned",
+    "phaseFlow": "aligned",
+    "talentTest": "aligned",
+    "advisorChat": "aligned",
+    "events": "aligned",
+    "vacancies": "aligned",
+    "backoffice": "aligned"
+  },
+  "architectureBoundaries": {
+    "generalCoachSeparated": true,
+    "personalCoachSeparated": true,
+    "humanAdvisorSeparated": true,
+    "domainIndependentFromSupabase": true,
+    "providerAdaptersSeparated": true,
+    "deterministicJourneyState": true,
+    "orchestratorDoesNotReplaceCoachResponse": true,
+    "writeActionsRequireConfirmation": true
+  },
+  "newCapabilities": {
+    "hybridRetrieval": true,
+    "journeyEngine2": true,
+    "graphMemory": true,
+    "parallelOrchestration": true,
+    "shadowPlanning": true,
+    "safeExecution": true,
+    "journeyDashboard": true
+  },
+  "knownGaps": [
+    "full Playwright browser run not executed",
+    "live provider acceptance not executed",
+    "live PostgreSQL multi-instance acceptance not executed",
+    "external email/webhook delivery not executed",
+    "journey dashboard has no dedicated Playwright scenario yet"
+  ],
+  "assessment": "on-plan-no-material-architecture-drift"
+}

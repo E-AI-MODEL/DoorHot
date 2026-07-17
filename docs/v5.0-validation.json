@@ -1,0 +1,23 @@
+{
+  "version": "5.0.1",
+  "added": [
+    "AGENTS.md",
+    "CONTRIBUTING.md",
+    "ARCHITECTURE.md",
+    "README project overview",
+    "README installation guide",
+    "README roadmap"
+  ],
+  "verification": {
+    "apiTests": "3 passed",
+    "domainTests": "22 passed",
+    "orchestrationTests": "10 passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "migrations": "25/25 passed",
+    "publicTableCount": 100,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "11 tests / 3 files"
+  },
+  "readinessDecision": "CONDITIONAL_GO"
+}

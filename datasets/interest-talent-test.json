@@ -1,0 +1,303 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Interesse- en talententest onderwijs",
+  "sectors": {
+    "po": {
+      "label": "Primair Onderwijs",
+      "description": "Basisschool, groep 1 tot en met 8"
+    },
+    "vo": {
+      "label": "Voortgezet Onderwijs",
+      "description": "Middelbare school"
+    },
+    "mbo": {
+      "label": "MBO",
+      "description": "Middelbaar beroepsonderwijs"
+    },
+    "so": {
+      "label": "Speciaal Onderwijs",
+      "description": "Onderwijs voor leerlingen met extra ondersteuning"
+    }
+  },
+  "questions": [
+    {
+      "id": "age_group",
+      "question": "Met welke leeftijdsgroep werk je het liefst?",
+      "options": [
+        {
+          "value": "jong",
+          "label": "Jonge kinderen (4-12 jaar)",
+          "sectors": [
+            "po"
+          ]
+        },
+        {
+          "value": "tieners",
+          "label": "Tieners (12-18 jaar)",
+          "sectors": [
+            "vo",
+            "mbo"
+          ]
+        },
+        {
+          "value": "jongvolwassenen",
+          "label": "Jongvolwassenen (16-25 jaar)",
+          "sectors": [
+            "mbo"
+          ]
+        },
+        {
+          "value": "extra_zorg",
+          "label": "Leerlingen met extra ondersteuningsbehoefte",
+          "sectors": [
+            "so"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teaching_style",
+      "question": "Welke onderwijsstijl past het beste bij jou?",
+      "options": [
+        {
+          "value": "speels",
+          "label": "Speels en creatief, veel variatie",
+          "sectors": [
+            "po",
+            "so"
+          ]
+        },
+        {
+          "value": "vakgericht",
+          "label": "Vakinhoudelijk diepgaand",
+          "sectors": [
+            "vo"
+          ]
+        },
+        {
+          "value": "praktisch",
+          "label": "Praktijkgericht en beroepsvormend",
+          "sectors": [
+            "mbo"
+          ]
+        },
+        {
+          "value": "individueel",
+          "label": "Individuele begeleiding en maatwerk",
+          "sectors": [
+            "so"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation",
+      "question": "Wat motiveert jou het meest in het onderwijs?",
+      "options": [
+        {
+          "value": "ontwikkeling",
+          "label": "De ontwikkeling van kinderen zien",
+          "sectors": [
+            "po",
+            "so"
+          ]
+        },
+        {
+          "value": "kennis",
+          "label": "Mijn vakkennis overdragen",
+          "sectors": [
+            "vo"
+          ]
+        },
+        {
+          "value": "arbeidsmarkt",
+          "label": "Jongeren voorbereiden op de arbeidsmarkt",
+          "sectors": [
+            "mbo"
+          ]
+        },
+        {
+          "value": "impact",
+          "label": "Verschil maken voor kwetsbare leerlingen",
+          "sectors": [
+            "so"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work_environment",
+      "question": "In welke werkomgeving voel jij je het beste?",
+      "options": [
+        {
+          "value": "klaslokaal",
+          "label": "Traditioneel klaslokaal met vaste groep",
+          "sectors": [
+            "po",
+            "vo"
+          ]
+        },
+        {
+          "value": "praktijk",
+          "label": "Praktijklokalen en werkplaatsen",
+          "sectors": [
+            "mbo"
+          ]
+        },
+        {
+          "value": "klein",
+          "label": "Kleine groepen met intensieve begeleiding",
+          "sectors": [
+            "so"
+          ]
+        },
+        {
+          "value": "afwisselend",
+          "label": "Afwisselend tussen theorie en praktijk",
+          "sectors": [
+            "vo",
+            "mbo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "question": "Welke vaardigheid beschrijft jou het beste?",
+      "options": [
+        {
+          "value": "creatief",
+          "label": "Creatief en geduldig",
+          "sectors": [
+            "po",
+            "so"
+          ]
+        },
+        {
+          "value": "analytisch",
+          "label": "Analytisch en vakinhoudelijk sterk",
+          "sectors": [
+            "vo"
+          ]
+        },
+        {
+          "value": "praktisch",
+          "label": "Praktisch en resultaatgericht",
+          "sectors": [
+            "mbo"
+          ]
+        },
+        {
+          "value": "empathisch",
+          "label": "Empathisch en flexibel",
+          "sectors": [
+            "so"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "challenge",
+      "question": "Welke uitdaging spreekt jou het meeste aan?",
+      "options": [
+        {
+          "value": "basis",
+          "label": "Kinderen een sterke basis geven",
+          "sectors": [
+            "po"
+          ]
+        },
+        {
+          "value": "examen",
+          "label": "Leerlingen naar hun examen begeleiden",
+          "sectors": [
+            "vo"
+          ]
+        },
+        {
+          "value": "beroep",
+          "label": "Studenten klaarstomen voor een beroep",
+          "sectors": [
+            "mbo"
+          ]
+        },
+        {
+          "value": "inclusie",
+          "label": "Inclusief onderwijs realiseren",
+          "sectors": [
+            "so"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "collaboration",
+      "question": "Hoe werk je het liefst samen?",
+      "options": [
+        {
+          "value": "team",
+          "label": "In een hecht lerarenteam",
+          "sectors": [
+            "po",
+            "so"
+          ]
+        },
+        {
+          "value": "vaksectie",
+          "label": "Binnen een vaksectie",
+          "sectors": [
+            "vo"
+          ]
+        },
+        {
+          "value": "bedrijven",
+          "label": "Met bedrijven en stagebegeleiders",
+          "sectors": [
+            "mbo"
+          ]
+        },
+        {
+          "value": "zorgteam",
+          "label": "In een multidisciplinair zorgteam",
+          "sectors": [
+            "so"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "growth",
+      "question": "Waar zie je jezelf over 5 jaar?",
+      "options": [
+        {
+          "value": "meester",
+          "label": "Als ervaren groepsleerkracht",
+          "sectors": [
+            "po"
+          ]
+        },
+        {
+          "value": "specialist",
+          "label": "Als vakspecialist of sectieleider",
+          "sectors": [
+            "vo"
+          ]
+        },
+        {
+          "value": "opleider",
+          "label": "Als praktijkopleider of trajectbegeleider",
+          "sectors": [
+            "mbo"
+          ]
+        },
+        {
+          "value": "expert",
+          "label": "Als specialist in passend onderwijs",
+          "sectors": [
+            "so"
+          ]
+        }
+      ]
+    }
+  ]
+}

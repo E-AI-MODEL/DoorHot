@@ -1,0 +1,132 @@
+{
+  "version": "1.6.0",
+  "sourcesReviewed": [
+    "E-AI-MODEL/door010 public main repository",
+    "E-AI-MODEL/presentatie-door010 public main repository",
+    "uploaded source archives",
+    "Door010 feature-parity plan flows 1 through 10",
+    "Door010 3.0 foundation v1.5"
+  ],
+  "conclusion": {
+    "coreDomainDrift": false,
+    "backendFlowDrift": false,
+    "deliveryAndUiDrift": true,
+    "summary": "The portable backend now covers the reconstructed core flows, but the original repositories contain UI, content-management and provider integrations that are not yet reproduced."
+  },
+  "preserved": [
+    "Separate public and personal chatbot responsibilities",
+    "Personal phase and route context",
+    "Four, five and nine phase systems",
+    "Route matching and ordered route steps",
+    "Talent test",
+    "Advisor chat, notes and appointments",
+    "Events and vacancies with saved items",
+    "Authentication, profile and file storage",
+    "PostgreSQL persistence without Supabase SDK coupling",
+    "Explicit mutation confirmation"
+  ],
+  "gaps": [
+    {
+      "priority": "P0",
+      "area": "Frontend product shell",
+      "evidence": [
+        "Public chat widget",
+        "Authenticated chat overlay",
+        "Profile dashboard and timeline",
+        "Backoffice pages",
+        "Event pages"
+      ],
+      "status": "not implemented in the foundation"
+    },
+    {
+      "priority": "P0",
+      "area": "Trusted-source retrieval and FAQ ingestion",
+      "evidence": [
+        "TrustedSourcesTab",
+        "faq-seed.json",
+        "ingest-faqs function"
+      ],
+      "status": "interfaces exist, live ingestion and retrieval remain"
+    },
+    {
+      "priority": "P1",
+      "area": "Prompt and superuser controls",
+      "evidence": [
+        "SuperuserControlTab",
+        "superuser prompt control migration"
+      ],
+      "status": "roles exist; prompt versioning and management UI remain"
+    },
+    {
+      "priority": "P1",
+      "area": "Backoffice operational UX",
+      "evidence": [
+        "Backoffice alerts",
+        "Backoffice statistics",
+        "Candidate detail panel",
+        "User overview table"
+      ],
+      "status": "core services exist; operational UI and aggregate APIs remain"
+    },
+    {
+      "priority": "P1",
+      "area": "Live providers",
+      "evidence": [
+        "Event scraping function",
+        "FAQ ingestion function",
+        "Production chat function"
+      ],
+      "status": "adapter boundaries exist; live event, vacancy, retrieval and LLM providers remain"
+    },
+    {
+      "priority": "P2",
+      "area": "User-facing interaction polish",
+      "evidence": [
+        "Chat actions and suggestions",
+        "Collapsible answers",
+        "Response actions",
+        "Profile completeness"
+      ],
+      "status": "response contracts exist; frontend behavior remains"
+    },
+    {
+      "priority": "P2",
+      "area": "Notifications and outbound communication",
+      "evidence": [
+        "Profile email lookup",
+        "Appointment workflows"
+      ],
+      "status": "no portable email or notification provider yet"
+    }
+  ],
+  "antiDriftRules": [
+    "Every new release updates the parity matrix.",
+    "Public coach may not own personal phase or profile mutations.",
+    "No provider SDK imports in domain or flow packages.",
+    "All new persistent behavior requires repository and migration tests.",
+    "UI work must consume the existing contracts instead of duplicating business rules.",
+    "Live provider integrations remain behind adapter interfaces."
+  ],
+  "nextBuildPlan": [
+    {
+      "release": "1.7",
+      "scope": "Trusted sources, FAQ ingestion and retrieval",
+      "priority": "P0"
+    },
+    {
+      "release": "1.8",
+      "scope": "Frontend shell for public chat, profile and personal chat",
+      "priority": "P0"
+    },
+    {
+      "release": "1.9",
+      "scope": "Backoffice UI, prompt controls, alerts and statistics",
+      "priority": "P1"
+    },
+    {
+      "release": "2.0",
+      "scope": "Live event, vacancy, LLM, search and notification providers",
+      "priority": "P1"
+    }
+  ]
+}

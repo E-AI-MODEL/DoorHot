@@ -1,0 +1,33 @@
+{
+  "version": "2.5.0",
+  "deadLetterManagement": {
+    "retry": true,
+    "manualResolve": true,
+    "purgeResolved": true,
+    "optionalPurgeCutoff": true,
+    "memoryRepository": true,
+    "postgresRepository": true,
+    "providerCredentialRehydration": true,
+    "authorizationHeadersPersisted": false,
+    "requestBodyReplayLimitCharacters": 200000,
+    "auditEvents": [
+      "provider.dead_letter_retried",
+      "provider.dead_letter_resolved",
+      "provider.dead_letters_purged"
+    ],
+    "backofficeControls": true
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "typecheck": "passed",
+    "integrationTests": "4 files / 8 tests passed",
+    "apiTests": "1 file / 1 test passed",
+    "build": "passed",
+    "migrations": "16/16 passed",
+    "publicTableCount": 77,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files"
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

@@ -1,0 +1,51 @@
+{
+  "version": "2.8.0",
+  "aiParity": {
+    "intentModelWithHeuristicFallback": true,
+    "dutchWeightedFts": true,
+    "ftsFields": {
+      "title": "A",
+      "body": "B",
+      "tags": "B",
+      "category": "C"
+    },
+    "ginIndex": true,
+    "plaintoTsqueryDutch": true,
+    "maximumLexicalCandidates": 10,
+    "conditionalReranking": true,
+    "rerankingOutputCount": 3,
+    "rerankingUncertaintyRatio": 2,
+    "adaptiveWebFallback": true,
+    "sparseTrigger": true,
+    "timeSensitiveTrigger": true,
+    "staleMonthsTrigger": 12,
+    "trustedDomainValidation": true,
+    "sourceHierarchy": [
+      "external-fresh",
+      "internal-faq",
+      "static-ssot"
+    ],
+    "generateValidateRepair": true,
+    "pipelineEvents": true,
+    "retrievalMetrics": [
+      "recall@k",
+      "MRR",
+      "nDCG@k"
+    ]
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "typecheck": "passed",
+    "knowledgeTests": "2 files / 6 tests passed",
+    "integrationTests": "4 files / 8 tests passed",
+    "apiTests": "2 files / 3 tests passed",
+    "build": "passed",
+    "migrations": "17/17 passed",
+    "publicTableCount": 78,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files"
+  },
+  "externalProviderCredentialsUsed": false,
+  "supabaseSdkImports": [],
+  "passedWithProviderCredentialsPending": true
+}

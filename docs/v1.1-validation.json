@@ -1,0 +1,23 @@
+{
+  "version": "1.1.0",
+  "checks": {
+    "vacancyProviderPresent": true,
+    "vacancySearchPresent": true,
+    "vacancySavePresent": true,
+    "vacancyRemovePresent": true,
+    "profileLinkPresent": true,
+    "vacancyRoutesPresent": true,
+    "vacancyMigrationPresent": true,
+    "vacancyTestsPresent": true,
+    "auditMarkdownPresent": true,
+    "auditJsonPresent": true,
+    "noSupabaseImportInDomain": true
+  },
+  "passed": true,
+  "notExecuted": [
+    "npm install",
+    "npm run typecheck",
+    "npm test",
+    "npm run build"
+  ]
+}

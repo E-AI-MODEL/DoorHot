@@ -1,0 +1,20 @@
+{
+  "yaml": {
+    ".github/workflows/acceptance.yml": true,
+    ".github/workflows/ci.yml": true,
+    ".github/workflows/deploy-production.yml": true,
+    ".github/workflows/deploy-staging.yml": true,
+    ".github/workflows/reusable-release.yml": true,
+    ".github/workflows/staging-security-review.yml": true,
+    "compose.yaml": true,
+    "compose.acceptance.yaml": true
+  },
+  "branchProtectionDryRun": {
+    "passed": true,
+    "output": "\n> door010-3@2.7.0 github:protect-main:dry-run\n> node scripts/github/apply-main-protection.mjs --dry-run\n\n{\n  \"endpoint\": \"repos/E-AI-MODEL/door010/branches/main/protection\",\n  \"protection\": {\n    \"required_status_checks\": {\n      \"strict\": true,\n      \"contexts\": [\n        \"Verify Node.js workspace\",\n        \"Run browser parity tests\",\n        \"PostgreSQL, providers and browser acceptance\"\n      ]\n    },\n    \"enforce_admins\": true,\n    \"required_pull_request_reviews\": {\n      \"dismiss_stale_reviews\": true,\n      \"require_code_owner_reviews\": true,\n      \"required_approving_review_count\": 1,\n      \"require_last_push_approval\": true\n    },\n    \"restrictions\": null,\n    \"required_linear_history\": true,\n    \"allow_force_pushes\": false,\n    \"allow_deletions\": false,\n    \"block_creations\": false,\n    \"required_conversation_resolution\": true,\n    \"lock_branch\": false,\n    \"allow_fork_syncing\": true\n  }\n}\n"
+  },
+  "stagingReviewMock": {
+    "passed": true,
+    "outputTail": "\n> door010-3@2.7.0 security:review:staging\n> node scripts/security/review-staging.mjs http://localhost:42285\n\n# Door010 staging security/privacy review\n\n- Target: http://localhost:42285\n- Generated: 2026-07-16T05:18:08.213Z\n- Result: PASS\n\n## Findings\n\nNo findings.\n\n## Checks\n\n- PASS — http.status: HTTP 200\n- PASS — header.x-content-type-options: nosniff\n- PASS — header.x-frame-options: DENY\n- PASS — header.referrer-policy: strict-origin-when-cross-origin\n- PASS — header.content-security-policy: default-src 'self'; frame-ancestors 'none'\n- PASS — header.permissions-policy: camera=(), microphone=(), geolocation=()\n- PASS — body.secret-pattern-1: No match.\n- PASS — body.secret-pattern-2: No match.\n- PASS — body.secret-pattern-3: No match.\n- PASS — body.secret-pattern-4: No match.\n- PASS — privacy.noindex-staging: Checked meta robots and X-Robots-Tag.\n- PASS — transport.hsts: max-age=31536000; includeSubDomains\n"
+  }
+}

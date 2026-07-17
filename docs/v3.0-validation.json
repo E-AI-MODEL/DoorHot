@@ -1,0 +1,78 @@
+{
+  "version": "3.0.0",
+  "hybridRetrieval": {
+    "fts": true,
+    "portableFuzzyTrigrams": true,
+    "ginTrigramIndex": true,
+    "embeddingProviderInterface": true,
+    "localSemanticEmbeddingFallback": true,
+    "openAiCompatibleEmbeddingAdapter": true,
+    "portablePostgresVectorStorage": true,
+    "cosineSimilarity": true,
+    "reciprocalRankFusion": true,
+    "rankConstant": 60,
+    "benchmarkCases": 191,
+    "baselineAt5": {
+      "recallAtK": 0.555,
+      "meanReciprocalRank": 0.5329,
+      "ndcgAtK": 0.5384,
+      "hitRateAtK": 0.555
+    },
+    "hybridAt5": {
+      "recallAtK": 0.8901,
+      "meanReciprocalRank": 0.762,
+      "ndcgAtK": 0.7939,
+      "hitRateAtK": 0.8901
+    },
+    "deltas": {
+      "recall": 0.3351,
+      "mrr": 0.2291,
+      "ndcg": 0.2555
+    },
+    "queryTypesAt5": {
+      "exact": {
+        "recallAtK": 1,
+        "meanReciprocalRank": 0.9531,
+        "ndcgAtK": 0.9651,
+        "hitRateAtK": 1
+      },
+      "alias": {
+        "recallAtK": 0.9787,
+        "meanReciprocalRank": 0.9149,
+        "ndcgAtK": 0.9311,
+        "hitRateAtK": 0.9787
+      },
+      "paraphrase": {
+        "recallAtK": 0.7292,
+        "meanReciprocalRank": 0.4847,
+        "ndcgAtK": 0.5452,
+        "hitRateAtK": 0.7292
+      },
+      "typo": {
+        "recallAtK": 0.8542,
+        "meanReciprocalRank": 0.6983,
+        "ndcgAtK": 0.737,
+        "hitRateAtK": 0.8542
+      }
+    },
+    "missesAt5": 21,
+    "ciGatePassed": true
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "typecheck": "passed",
+    "hybridBenchmark": "191 cases passed",
+    "hybridQualityGate": "passed",
+    "knowledgeTests": "4 files / 9 tests passed",
+    "integrationTests": "4 files / 8 tests passed",
+    "apiTests": "2 files / 3 tests passed",
+    "build": "passed",
+    "migrations": "18/18 passed",
+    "publicTableCount": 79,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files"
+  },
+  "externalEmbeddingCredentialsUsed": false,
+  "supabaseSdkImports": [],
+  "passedWithExternalEmbeddingValidationPending": true
+}

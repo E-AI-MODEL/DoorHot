@@ -1,0 +1,171 @@
+{
+  "schema_version": "1.0.0",
+  "system_key": "phase-4",
+  "title": "Compacte klantreis in 4 fasen",
+  "description": "Bundelt de volledige klantreis in vier bestuurbare hoofdfasen.",
+  "phases": [
+    {
+      "code": "verkennen",
+      "title": "Verkennen",
+      "sort": 1,
+      "canonical_range": [
+        "interesse",
+        "orientatie"
+      ],
+      "entry_criteria": [
+        {
+          "type": "always"
+        }
+      ],
+      "exit_criteria": [
+        {
+          "type": "slot_present",
+          "slot": "school_type"
+        },
+        {
+          "type": "slot_present",
+          "slot": "role_interest"
+        }
+      ],
+      "required_slots": [
+        "school_type",
+        "role_interest"
+      ],
+      "optional_slots": [
+        "credential_goal"
+      ],
+      "allowed_previous_phases": [],
+      "allowed_next_phases": [
+        "kiezen"
+      ],
+      "default_next_phase": "kiezen"
+    },
+    {
+      "code": "kiezen",
+      "title": "Kiezen",
+      "sort": 2,
+      "canonical_range": [
+        "beslissing",
+        "matching"
+      ],
+      "entry_criteria": [
+        {
+          "type": "phase_completed",
+          "phase": "verkennen"
+        },
+        {
+          "type": "slot_present",
+          "slot": "credential_goal"
+        }
+      ],
+      "exit_criteria": [
+        {
+          "type": "entity_selected",
+          "entity": "education_route"
+        },
+        {
+          "type": "slot_present",
+          "slot": "region_preference"
+        }
+      ],
+      "required_slots": [
+        "credential_goal",
+        "region_preference"
+      ],
+      "optional_slots": [
+        "duration_info",
+        "costs_info"
+      ],
+      "allowed_previous_phases": [
+        "verkennen"
+      ],
+      "allowed_next_phases": [
+        "realiseren"
+      ],
+      "default_next_phase": "realiseren"
+    },
+    {
+      "code": "realiseren",
+      "title": "Realiseren",
+      "sort": 3,
+      "canonical_range": [
+        "voorbereiding",
+        "start",
+        "opleiding"
+      ],
+      "entry_criteria": [
+        {
+          "type": "phase_completed",
+          "phase": "kiezen"
+        },
+        {
+          "type": "entity_selected",
+          "entity": "education_route"
+        }
+      ],
+      "exit_criteria": [
+        {
+          "type": "event_recorded",
+          "event": "started"
+        },
+        {
+          "type": "event_recorded",
+          "event": "education_in_progress"
+        }
+      ],
+      "required_slots": [
+        "next_step"
+      ],
+      "optional_slots": [
+        "duration_info",
+        "costs_info",
+        "salary_info"
+      ],
+      "allowed_previous_phases": [
+        "kiezen"
+      ],
+      "allowed_next_phases": [
+        "verduurzamen"
+      ],
+      "default_next_phase": "verduurzamen"
+    },
+    {
+      "code": "verduurzamen",
+      "title": "Verduurzamen",
+      "sort": 4,
+      "canonical_range": [
+        "inductie",
+        "behoud"
+      ],
+      "entry_criteria": [
+        {
+          "type": "phase_completed",
+          "phase": "realiseren"
+        },
+        {
+          "type": "event_recorded",
+          "event": "started"
+        }
+      ],
+      "exit_criteria": [
+        {
+          "type": "event_recorded",
+          "event": "sustainable_placement"
+        },
+        {
+          "type": "intent",
+          "intent": "journey_complete"
+        }
+      ],
+      "required_slots": [],
+      "optional_slots": [
+        "next_step"
+      ],
+      "allowed_previous_phases": [
+        "realiseren"
+      ],
+      "allowed_next_phases": [],
+      "default_next_phase": null
+    }
+  ]
+}

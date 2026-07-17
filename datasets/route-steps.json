@@ -1,0 +1,3440 @@
+[
+  {
+    "short_title": "Wo-bachelor",
+    "slug": "wo-f",
+    "status": "published",
+    "duration_in_months": 36,
+    "long_title": "Stroom door naar het primair onderwijs met behulp van specifieke wo-bachelors",
+    "date_created": "2026-01-21T12:13:36.238Z",
+    "date_updated": "2026-01-23T12:47:36.152Z",
+    "id": "02175a81-b4a6-499e-beeb-f6e2ea79bc6b",
+    "unique_name": "Wo-F",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Wo-bacheloropleidingen zijn academische studies op het wetenschappelijk niveau van een vakgebied. Er zijn tal van wo-bacheloropleidingen die mogelijk passen bij jouw interesse. Met een wo-bachelor in de sector Gedrag en Maatschappij ben je toelaatbaar tot de universitaire Educatieve Master Primair Onderwijs (EMPO)."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": []
+  },
+  {
+    "short_title": "Hbo-master",
+    "slug": "hbom",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Verdiep je als tweedegraads leraar en wordt eerstegraads leraar.",
+    "date_created": "2026-01-21T12:13:35.694Z",
+    "date_updated": "2026-01-27T09:28:56.022Z",
+    "id": "0fbdcea0-dd5f-47bc-bcf1-38c4b54e7555",
+    "unique_name": "HboM",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Na het behalen van een tweedegraads bevoegdheid (via een hbo-bacheloropleiding of kopopleiding) kun je jouw bevoegdheid uitbreiden tot een eerstegraads bevoegdheid voor datzelfde schoolvak door middel van een hbo-master. De focus van deze opleiding ligt op het lesgeven in de bovenbouw van de havo en het vwo. Deze mogelijkheid bestaat echter niet voor alle schoolvakken (voor deze vakken kun je dan alleen via een universitaire lerarenopleiding een eerstegraads bevoegdheid halen)."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 16,
+        "route_steps_id": "0fbdcea0-dd5f-47bc-bcf1-38c4b54e7555",
+        "faqs_id": "150bcafc-4052-4925-9671-d977cb354d42",
+        "sort": 1
+      },
+      {
+        "id": 17,
+        "route_steps_id": "0fbdcea0-dd5f-47bc-bcf1-38c4b54e7555",
+        "faqs_id": "e8a6522b-f214-4f55-8c6a-799d28354260",
+        "sort": 2
+      }
+    ],
+    "articles": [
+      {
+        "id": 23,
+        "route_steps_id": "0fbdcea0-dd5f-47bc-bcf1-38c4b54e7555",
+        "articles_id": "8acf8ed6-c592-4612-a29f-20a9ee9f787e",
+        "sort": 1
+      },
+      {
+        "id": 24,
+        "route_steps_id": "0fbdcea0-dd5f-47bc-bcf1-38c4b54e7555",
+        "articles_id": "faaf075f-a5ef-45bf-b18d-640cb2850fa6",
+        "sort": 2
+      },
+      {
+        "id": 25,
+        "route_steps_id": "0fbdcea0-dd5f-47bc-bcf1-38c4b54e7555",
+        "articles_id": "46f212b1-845c-41e8-a138-0116a3340a5a",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Wo-bachelor",
+    "slug": "wo-a",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Word leraar in het primair onderwijs met behulp van deze wo-bachelor",
+    "date_created": "2026-01-21T12:13:36.098Z",
+    "date_updated": "2026-01-27T10:23:29.773Z",
+    "id": "105de8a2-1920-4be3-a037-f0646d7dc67e",
+    "unique_name": "Wo-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Je kunt de hbo-studie tot leraar primair onderwijs combineren met een wo-bachelor Onderwijswetenschappen of Pedagogische Wetenschappen. Deze combinatie wordt ook wel de universitaire pabo genoemd. Er zijn verschillende varianten, maar in alle gevallen behaal je in ca. 4 jaar een hbo-bachelor én een wo-bachelor."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 55,
+        "route_steps_id": "105de8a2-1920-4be3-a037-f0646d7dc67e",
+        "faqs_id": "31f01851-3ce7-4b7b-ac27-d0236fbef891",
+        "sort": 1
+      },
+      {
+        "id": 56,
+        "route_steps_id": "105de8a2-1920-4be3-a037-f0646d7dc67e",
+        "faqs_id": "551f63c5-4581-4f47-ac6f-24c1d54379d3",
+        "sort": 2
+      }
+    ],
+    "articles": [
+      {
+        "id": 84,
+        "route_steps_id": "105de8a2-1920-4be3-a037-f0646d7dc67e",
+        "articles_id": "5de4f605-34d8-4f66-bf18-a4e19958718a",
+        "sort": 1
+      },
+      {
+        "id": 85,
+        "route_steps_id": "105de8a2-1920-4be3-a037-f0646d7dc67e",
+        "articles_id": "bda0dbbd-0fb5-41ac-8a64-5df010e33a7b",
+        "sort": 2
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-4",
+    "slug": "mbo4-b",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Stroom door naar een associate degree of hbo-opleiding met behulp van een mbo 4-opleiding",
+    "date_created": "2026-01-21T12:13:36.729Z",
+    "date_updated": "2026-01-27T09:53:38.108Z",
+    "id": "121ab316-7f5b-43b1-a5d8-b0924f26278b",
+    "unique_name": "Mbo4-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een mbo 4-opleiding is een middenkaderopleiding. Dat betekent dat je opgeleid wordt voor een baan waarin je zonder begeleiding specialistisch, uitvoerend werk doet. Deze opleiding duurt drie tot vier jaar. Na een mbo 4-opleiding kun je doorstromen naar een associate degree-opleiding of een hbo-bacheloropleiding. Deze vervolgopleiding hoeft niet in dezelfde richting te zijn als je mbo 4-opleiding, maar dat is wel gebruikelijk. Je kunt soms vrijstellingen krijgen als jouw mbo 4-opleiding aansluit bij jouw vervolgopleiding."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 21,
+        "route_steps_id": "121ab316-7f5b-43b1-a5d8-b0924f26278b",
+        "faqs_id": "c326b2d2-a110-4fe3-8d13-7242ddc3680c",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 34,
+        "route_steps_id": "121ab316-7f5b-43b1-a5d8-b0924f26278b",
+        "articles_id": "83db8b06-7e1c-4d75-94e6-5014e95d3830",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Vavo",
+    "slug": "vavo-b",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Behaal je havodiploma via het volwassenenonderwijs",
+    "date_created": "2026-01-21T12:13:37.369Z",
+    "date_updated": "2026-01-27T10:21:13.063Z",
+    "id": "154a5561-bc83-4d0f-a506-279d43758b80",
+    "unique_name": "VAVO-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Heb je geen of niet het juiste middelbareschooldiploma om toegelaten te worden tot een hbo-opleiding? Dan kun je via het vavo (volwassenenonderwijs) je havodiploma halen. Hiervoor moet je 18 jaar of ouder zijn (uitzonderingen zijn mogelijk). Je rondt het vavo af met het reguliere havo-eindexamen."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 53,
+        "route_steps_id": "154a5561-bc83-4d0f-a506-279d43758b80",
+        "faqs_id": "3e2ba2bd-cbf7-4131-84aa-171bd41f34b4",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 82,
+        "route_steps_id": "154a5561-bc83-4d0f-a506-279d43758b80",
+        "articles_id": "01f90101-9f1c-4241-a7e8-0a1d60d7fa5d",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "PDG",
+    "slug": "pdg-a",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Word docent in het mbo met behulp van een PDG-traject",
+    "date_created": "2026-01-21T12:13:37.204Z",
+    "date_updated": "2026-01-27T10:06:15.038Z",
+    "id": "15a162af-26ed-480f-b2a9-214d9fc2f07e",
+    "unique_name": "PDG-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Met een pedagogisch-didactisch getuigschrift (PDG), in combinatie met een geschiktheidsverklaring afgegeven door het bevoegd gezag van de mbo-instelling, mag je lesgeven op die mbo-instelling. Je kunt dit getuigschrift halen via een zij-instroomtraject: het PDG-traject. Tijdens dit leer-werktraject volg je vakken aan een hogeschool, waarin je je richt op de pedagogische en didactische kant van het lesgeven. Je moet dus alle vakinhoudelijke kennis en ervaring al in huis hebben. Om toegelaten te worden tot zo’n traject moet je een hbo- of wo-diploma hebben. Heb je dat niet? Ook dan kun je toegelaten worden op voorwaarde dat je minstens 3 jaar werkervaring hebt én dat je over minimaal hbo-werk- en denkniveau beschikt. Om dit te bewijzen maak je een erkende capaciteitentest."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 34,
+        "route_steps_id": "15a162af-26ed-480f-b2a9-214d9fc2f07e",
+        "faqs_id": "205e1fb7-1b34-4727-9cf2-78a6e1b2ec9d",
+        "sort": 1
+      },
+      {
+        "id": 35,
+        "route_steps_id": "15a162af-26ed-480f-b2a9-214d9fc2f07e",
+        "faqs_id": "a1f6d5da-8ff9-492b-8946-d5e427396a53",
+        "sort": 2
+      },
+      {
+        "id": 36,
+        "route_steps_id": "15a162af-26ed-480f-b2a9-214d9fc2f07e",
+        "faqs_id": "e662eb2a-2a77-457a-9a0c-3fb91f350721",
+        "sort": 3
+      },
+      {
+        "id": 37,
+        "route_steps_id": "15a162af-26ed-480f-b2a9-214d9fc2f07e",
+        "faqs_id": "41c7ea45-d56d-4e3a-b1a6-3ebd49f40be2",
+        "sort": 4
+      }
+    ],
+    "articles": [
+      {
+        "id": 56,
+        "route_steps_id": "15a162af-26ed-480f-b2a9-214d9fc2f07e",
+        "articles_id": "544f11a4-b4fd-41f8-a63c-06161ac29e10",
+        "sort": 1
+      },
+      {
+        "id": 57,
+        "route_steps_id": "15a162af-26ed-480f-b2a9-214d9fc2f07e",
+        "articles_id": "9bbabbfd-b42b-4376-ae5c-ad67893ae92a",
+        "sort": 2
+      },
+      {
+        "id": 58,
+        "route_steps_id": "15a162af-26ed-480f-b2a9-214d9fc2f07e",
+        "articles_id": "d9ac5661-0395-4873-8a1e-7e1a007d13b5",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Schoolleiding",
+    "slug": "sl-a",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Schoolleiding binnen het primair onderwijs",
+    "date_created": "2026-01-21T12:13:37.257Z",
+    "date_updated": "2026-01-27T10:16:21.572Z",
+    "id": "16515891-2d6c-4dcb-852c-85e7b784900d",
+    "unique_name": "SL-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De schoolleiding in het primair onderwijs bestaat over het algemeen uit een directeur en vaak ook een adjunct-directeur. Zij hebben de dagelijkse leiding over de school. Hierbij leggen ze verantwoording af aan het bestuur van de stichting waar de school onder valt. Bij grotere besturen met meer scholen, wordt de directeur soms ook locatieleider genoemd."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Binnen het primair onderwijs is het verplicht dat de directie geregistreerd staat in het Schoolleidersregister PO en dat zij daarvoor gekwalificeerd zijn. Met de juiste vooropleiding en/of werkervaring kun je aantonen dat je gekwalificeerd bent. Dit kan met een relevante masteropleiding, toetsend assessment, EVC-procedure, individuele diplomawaardering of een gecertificeerde schoolleidersopleiding tot Schoolleider Basisbekwaam en vervolgens Schoolleider Vakbekwaam. Na het behalen van de opleiding Basisbekwaam word je geregistreerd als Registerdirecteur Onderwijs niveau 1 (RDO niveau 1) en ben je in bezit van een kwalificatiebewijs type vakbekwaam als Registerdirecteur Onderwijs niveau 2 (RDO niveau 2). Gedurende de geaccrediteerde schoolleidersopleiding mag je al wel een functie binnen de schoolleiding bekleden en sta je geregistreerd als Registerdirecteur Onderwijs in opleiding."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Bekijk "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "https://www.schoolleidersregisterpo.nl/schoolleiders/basisregistratie",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "hier"
+            },
+            {
+              "type": "text",
+              "text": " de website van het Schoolleidersregister PO."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 72,
+        "route_steps_id": "16515891-2d6c-4dcb-852c-85e7b784900d",
+        "articles_id": "f16128a8-12bc-4a70-b749-8b97f6786e06",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-3",
+    "slug": "mbo3-a",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Stroom door met behulp van een mbo 3-opleiding",
+    "date_created": "2026-01-21T12:13:36.704Z",
+    "date_updated": "2026-01-27T09:48:57.621Z",
+    "id": "16f80a2e-e7c0-499e-b4ac-d895be769e01",
+    "unique_name": "Mbo3-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een mbo 3-opleiding is een vakopleiding. Je wordt opgeleid om in een bepaald beroep zelfstandig je werk te kunnen uitvoeren. De opleiding duurt twee tot drie jaar. Na een mbo 3-opleiding kun je doorstromen naar een mbo 4-opleiding. Deze vervolgopleiding hoeft niet in dezelfde richting te zijn als je mbo 3-opleiding, maar dat is wel gebruikelijk. Je kunt soms vrijstellingen krijgen als jouw mbo 3-opleiding aansluit bij jouw vervolgopleiding."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 30,
+        "route_steps_id": "16f80a2e-e7c0-499e-b4ac-d895be769e01",
+        "articles_id": "71f5838e-4d2a-462d-ada7-d5e57c19b8aa",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Hbo-bachelor",
+    "slug": "hbo-f",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Geef les in iedere onderwijssector met behulp van een ongegradeerde bevoegdheid",
+    "date_created": "2026-01-21T12:13:35.865Z",
+    "date_updated": "2026-01-27T09:27:00.713Z",
+    "id": "1c30b42b-5f28-44ed-8e7d-5b196b3e2279",
+    "unique_name": "Hbo-F",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Je kunt een bevoegdheid halen voor het primair onderwijs of een eerste- of tweedegraads bevoegdheid, maar er zijn ook enkele vakgebieden waarvoor je ongegradeerde (eerstegraads) bevoegdheid kunt behalen. Hiermee mag je lesgeven in elke onderwijssector."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Voor welke vakgebieden kun je een ongegradeerde bevoegdheid halen?"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "text": "Lichamelijke opvoeding"
+                    },
+                    {
+                      "type": "text",
+                      "text": " Bij de Academie voor Lichamelijke Opvoeding (ALO) kun je een ongegradeerde bevoegdheid voor 'docent lichamelijke opvoeding’ halen."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "text": "Kunst- en cultuurvakken"
+                    },
+                    {
+                      "type": "text",
+                      "text": " Aan een kunstacademie (ook wel Hogeschool voor de Kunsten) kun je een ongegradeerde bevoegdheid halen voor de vakken: Kunst algemeen, Beeldende kunst en vormgeving, Beeldende vorming, Drama, Theater, Dans en Culturele kunstzinnige vorming (CKV)."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De bevoegdheid voor Kunstgeschiedenis is echter geen ongegradeerde bevoegdheid, maar een "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ],
+              "text": "eerstegraads"
+            },
+            {
+              "type": "text",
+              "text": " bevoegdheid die je kunt halen bij enkele universiteiten. Deze opleiding bereidt jou voor om les te geven specifiek in het voortgezet onderwijs."
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ],
+                      "text": "Muziek"
+                    },
+                    {
+                      "type": "text",
+                      "text": " Aan een conservatorium (onderdeel van de Hogeschool voor de Kunsten) kun je een ongegradeerde bevoegdheid voor ‘docent muziek’ halen."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Daarnaast is het ook mogelijk om een "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "italic"
+                }
+              ],
+              "text": "eerstegraads"
+            },
+            {
+              "type": "text",
+              "text": " bevoegdheid voor het vak muziek te halen aan de Universiteit Utrecht. Deze opleiding bereidt jou voor om les te geven specifiek in het voortgezet onderwijs."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 20,
+        "route_steps_id": "1c30b42b-5f28-44ed-8e7d-5b196b3e2279",
+        "articles_id": "dc5de905-eb73-46b8-b592-44d884b79151",
+        "sort": 1
+      },
+      {
+        "id": 21,
+        "route_steps_id": "1c30b42b-5f28-44ed-8e7d-5b196b3e2279",
+        "articles_id": "8d26d281-6e09-4bab-ae4d-1b7bd157b94c",
+        "sort": 2
+      },
+      {
+        "id": 22,
+        "route_steps_id": "1c30b42b-5f28-44ed-8e7d-5b196b3e2279",
+        "articles_id": "8acf8ed6-c592-4612-a29f-20a9ee9f787e",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Middenmanagement",
+    "slug": "mm-b",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Functies in het middenmanagement binnen het voortgezet onderwijs",
+    "date_created": "2026-01-21T12:13:36.599Z",
+    "date_updated": "2026-01-27T10:00:27.929Z",
+    "id": "1dc21c7c-8ee1-43d4-9ca3-09a7e5c8cde6",
+    "unique_name": "MM-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De managementstructuur is per middelbare school verschillend. Er kan een grotere schoolleiding zijn, met een rector en conrectoren die leidinggeven aan het team van leraren en onderwijsondersteunend personeel. Aangevuld met coördinatoren die inhoudelijk verantwoordelijk zijn voor een deel van het onderwijs. In andere scholen is de schoolleiding kleiner en hebben coördinatoren ook een leidinggevende functie. Vaak heten zij teamleider of afdelingsleider. Zij zijn dan bijvoorbeeld verantwoordelijk voor alle tweede klassen of de bovenbouw van de havo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "In nascholingstrajecten professionaliseren ze zich verder op het vlak van managementvaardigheden of onderwijskundig leiderschap. "
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "In veel gevallen staan deze middenmanagers deels nog voor de klas, en dus hebben ze meestal ook een lesbevoegdheid."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 44,
+        "route_steps_id": "1dc21c7c-8ee1-43d4-9ca3-09a7e5c8cde6",
+        "articles_id": "c2bdf9db-863e-4208-b2a2-27b0114a642a",
+        "sort": 1
+      },
+      {
+        "id": 45,
+        "route_steps_id": "1dc21c7c-8ee1-43d4-9ca3-09a7e5c8cde6",
+        "articles_id": "22750a20-2b41-491b-ab70-a57780df112b",
+        "sort": 2
+      }
+    ]
+  },
+  {
+    "short_title": "Wo-master",
+    "slug": "wom-a",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Word eerstegraads leraar met behulp van een educatieve master of zij-instroomtraject",
+    "date_created": "2026-01-21T12:13:35.750Z",
+    "date_updated": "2026-01-27T10:29:53.390Z",
+    "id": "1f375426-f00d-4707-9d0d-2e48487bb56e",
+    "unique_name": "WoM-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een wo-master is een wetenschappelijk studie die je kan volgen na het behalen van een bachelor. Afhankelijk van je studie kun je kiezen uit eenjarige masters of tweejarige onderzoeksmasters."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Als je eerstegraads leraar wilt worden via een wo-master, kan dat op drie manieren:"
+            }
+          ]
+        },
+        {
+          "type": "bulletList",
+          "content": [
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Je kunt ná een (één- of tweejarige) reguliere master een eenjarige educatieve master volgen om je eerstegraads lesbevoegdheid te halen (master leraar voorbereidend hoger onderwijs, LVHO). Of;"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Je kunt ook ná een (één- of tweejarige) reguliere master starten met het traject 'zij-instroom in het beroep'. Of;"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "listItem",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": "Je kunt direct een tweejarige educatieve master volgen waarbij je tegelijkertijd een wo-masterdiploma haalt én je eerstegraads lesbevoegdheid. Dit tweejarige traject is niet voor alle schoolvakken beschikbaar."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Let op: bij het kiezen van je reguliere master (dus niet een educatieve variant) is het belangrijk dat deze master (samen met jouw overige vooropleidingen en ervaring) voldoende aansluit bij een schoolvak, zodat je toelaatbaar bent tot de lerarenopleiding of het zij-instroomtraject. Sluit dit niet helemaal aan, dan moet je deze vakkennis bijspijkeren. Dit kan deels tijdens de lerarenopleiding of zij-instroomtraject. Voor de talen en de bètavakken zijn hiervoor "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "https://www.onderwijsloket.com/onderwijsnavigator/organisaties/alfa4all/",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "Alfa4all"
+            },
+            {
+              "type": "text",
+              "text": " en "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "https://www.onderwijsloket.com/onderwijsnavigator/organisaties/beta4all/",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "Beta4all"
+            },
+            {
+              "type": "text",
+              "text": " in het leven geroepen, waar je je vóór je aan een lerarenopleiding of zij-instroomtraject begint kunt laten bijspijkeren."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 60,
+        "route_steps_id": "1f375426-f00d-4707-9d0d-2e48487bb56e",
+        "faqs_id": "150bcafc-4052-4925-9671-d977cb354d42",
+        "sort": 1
+      },
+      {
+        "id": 61,
+        "route_steps_id": "1f375426-f00d-4707-9d0d-2e48487bb56e",
+        "faqs_id": "e8a6522b-f214-4f55-8c6a-799d28354260",
+        "sort": 2
+      }
+    ],
+    "articles": [
+      {
+        "id": 1,
+        "route_steps_id": "1f375426-f00d-4707-9d0d-2e48487bb56e",
+        "articles_id": "faaf075f-a5ef-45bf-b18d-640cb2850fa6",
+        "sort": 1
+      },
+      {
+        "id": 99,
+        "route_steps_id": "1f375426-f00d-4707-9d0d-2e48487bb56e",
+        "articles_id": "46f212b1-845c-41e8-a138-0116a3340a5a",
+        "sort": 2
+      },
+      {
+        "id": 100,
+        "route_steps_id": "1f375426-f00d-4707-9d0d-2e48487bb56e",
+        "articles_id": "8acf8ed6-c592-4612-a29f-20a9ee9f787e",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "AD",
+    "slug": "ad-a",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Word leraarondersteuner met behulp van een associate degree",
+    "date_created": "2026-01-21T12:13:35.574Z",
+    "date_updated": "2026-01-27T09:07:34.968Z",
+    "id": "205b2029-e68b-421f-a2a8-2457f64d201a",
+    "unique_name": "AD-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De associate degree is een tweejarige praktijkgerichte opleiding op hbo-niveau. Deze opleiding zit wat niveau betreft tussen een mbo 4-opleiding en een hbo-bacheloropleiding in. Als je kiest voor de associate degree Pedagogisch Educatief Professional (AD-PEP) word je opgeleid tot leraarondersteuner in alle sectoren van het onderwijs. Met deze opleiding kun je ook aan de slag als instructeur in het mbo of als pedagogisch coach in de kinderopvang. Er zijn drie andere educatieve associate degrees: Educatief Professional Beroepsonderwijs, Onderwijsondersteuner Technisch Beroepsonderwijs en Onderwijsondersteuner Gezondheidszorg en Welzijn. Met deze drie educatieve associate degrees kun je voornamelijk in het (voorbereidend) beroepsonderwijs aan de slag."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 4,
+        "route_steps_id": "205b2029-e68b-421f-a2a8-2457f64d201a",
+        "faqs_id": "c326b2d2-a110-4fe3-8d13-7242ddc3680c",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 5,
+        "route_steps_id": "205b2029-e68b-421f-a2a8-2457f64d201a",
+        "articles_id": "83db8b06-7e1c-4d75-94e6-5014e95d3830",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Wo-bachelor",
+    "slug": "wo-c",
+    "status": "published",
+    "duration_in_months": 36,
+    "long_title": "Stroom door naar een lerarenopleiding met een wo-bachelor",
+    "date_created": "2026-01-21T12:13:36.152Z",
+    "date_updated": "2026-01-27T10:25:40.436Z",
+    "id": "22817662-d9da-4f78-a5a8-b7802800d69d",
+    "unique_name": "Wo-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Wo-bacheloropleidingen zijn academische studies op het wetenschappelijk niveau van een vakgebied. Er zijn tal van wo-bacheloropleidingen die mogelijk passen bij jouw interesse. Een aantal wo-bacheloropleidingen sluit direct aan bij een schoolvak, zoals Franse taal en cultuur of wiskunde. Als je voor zo’n opleiding je wo-bachelordiploma haalt, kun je daarmee direct starten met een educatieve wo-master (voor een eerstegraads bevoegdheid), de hbo-kopopleiding of het traject 'zij-instroom in het beroep' (beiden voor een tweedegraads bevoegdheid). Sluit jouw wo-bacheloropleiding niet helemaal goed aan, dan zijn er mogelijkheden om met deficiëntiepakketten of een premasterprogramma de verschillen weg te werken."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 88,
+        "route_steps_id": "22817662-d9da-4f78-a5a8-b7802800d69d",
+        "articles_id": "f6d79ea4-541f-489a-a80a-3fcf797a3c1c",
+        "sort": 1
+      },
+      {
+        "id": 89,
+        "route_steps_id": "22817662-d9da-4f78-a5a8-b7802800d69d",
+        "articles_id": "8acf8ed6-c592-4612-a29f-20a9ee9f787e",
+        "sort": 2
+      },
+      {
+        "id": 90,
+        "route_steps_id": "22817662-d9da-4f78-a5a8-b7802800d69d",
+        "articles_id": "0dbab3e8-1d2b-489f-a539-1f4cdbec0f05",
+        "sort": 3
+      },
+      {
+        "id": 91,
+        "route_steps_id": "22817662-d9da-4f78-a5a8-b7802800d69d",
+        "articles_id": "46f212b1-845c-41e8-a138-0116a3340a5a",
+        "sort": 4
+      }
+    ]
+  },
+  {
+    "short_title": "Middenmanagement",
+    "slug": "mm-c",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Functies in het middenmanagement binnen het mbo",
+    "date_created": "2026-01-21T12:13:36.623Z",
+    "date_updated": "2026-01-27T10:01:24.035Z",
+    "id": "280d48ad-5dd6-4e0b-ac60-f750521cc591",
+    "unique_name": "MM-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "In het mbo wordt vaak gewerkt met onderwijsteams die samen het onderwijs en curriculum van een opleiding vormgeven. De onderwijsteams staan vaak onder leiding van een teamleider. De teamleiders kennen hun opleiding en al het personeel dat hierbinnen werkzaam is. Meestal hebben ze ook zelf binnen de opleiding gewerkt, maar dat is geen vereiste."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 46,
+        "route_steps_id": "280d48ad-5dd6-4e0b-ac60-f750521cc591",
+        "articles_id": "2110f494-78c0-4dce-a9fc-05bf8382ab33",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "21+-toets",
+    "slug": "21a",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Toelatingstoets voor een associate degree",
+    "date_created": "2026-01-21T12:13:35.543Z",
+    "date_updated": "2026-01-27T09:01:48.588Z",
+    "id": "2a11d550-10e4-4695-9480-4f6538b64244",
+    "unique_name": "21+A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Wil je starten met een associate degree, maar heb je geen mbo 4-, havo- of vwo-diploma? Dan kun je met een 21+-toets toch toegelaten worden – mits je hem haalt natuurlijk. Deze toets kun je alleen maken als je 21 jaar of ouder bent. Als je deze toets haalt, bewijs je dat jouw werk- en denkniveau voldoende is voor een associate degree."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 1,
+        "route_steps_id": "2a11d550-10e4-4695-9480-4f6538b64244",
+        "faqs_id": "0218b2d4-e807-4a72-b183-8a8a2e6b4a9f",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 2,
+        "route_steps_id": "2a11d550-10e4-4695-9480-4f6538b64244",
+        "articles_id": "d494f22b-8aaf-49bc-bbe5-8d74c0b07e06",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-4",
+    "slug": "mbo4-d",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Stroom door naar de tweedegraads lerarenopleiding met behulp van een mbo 4-opleiding",
+    "date_created": "2026-01-21T12:13:36.785Z",
+    "date_updated": "2026-01-27T09:55:03.404Z",
+    "id": "33411ebb-29fe-4d05-8da6-4d7f9952cf54",
+    "unique_name": "Mbo4-D",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een mbo-4-opleiding is een middenkaderopleiding. Dat betekent dat je opgeleid wordt voor een baan waarin je zonder begeleiding specialistisch, uitvoerend werk doet. Deze opleiding duurt drie tot vier jaar. Na een mbo-4-opleiding kun je doorstromen naar een associate degree-opleiding of een hbo-bacheloropleiding. Deze vervolgopleiding hoeft niet in dezelfde richting te zijn als je mbo 4-opleiding, maar dat is wel gebruikelijk. Afhankelijk van het schoolvak dat je wilt gaan geven, kun je voor de vervolgopleiding op basis van je mbo-4-opleiding vrijstellingen krijgen. Wil je bijvoorbeeld een lerarenopleiding volgen voor een beroepsgericht profiel op het vmbo? Dan kun je een verkort traject volgen als jouw mbo 4-opleiding op dit profiel aansluit. "
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 23,
+        "route_steps_id": "33411ebb-29fe-4d05-8da6-4d7f9952cf54",
+        "faqs_id": "3044c244-37cc-4cb5-91b0-2d9c2c5b1072",
+        "sort": 1
+      },
+      {
+        "id": 24,
+        "route_steps_id": "33411ebb-29fe-4d05-8da6-4d7f9952cf54",
+        "faqs_id": "9f90823a-903d-4135-9172-756bbac00b7a",
+        "sort": 2
+      }
+    ],
+    "articles": [
+      {
+        "id": 38,
+        "route_steps_id": "33411ebb-29fe-4d05-8da6-4d7f9952cf54",
+        "articles_id": "bb32b378-d159-4006-bf59-17f4ffc30ccb",
+        "sort": 1
+      },
+      {
+        "id": 39,
+        "route_steps_id": "33411ebb-29fe-4d05-8da6-4d7f9952cf54",
+        "articles_id": "8acf8ed6-c592-4612-a29f-20a9ee9f787e",
+        "sort": 2
+      }
+    ]
+  },
+  {
+    "short_title": "Wo-bachelor",
+    "slug": "wo-d",
+    "status": "published",
+    "duration_in_months": 36,
+    "long_title": "Stroom door naar een wo-master met behulp van een wo-bachelor",
+    "date_created": "2026-01-21T12:13:36.182Z",
+    "date_updated": "2026-01-27T10:27:01.831Z",
+    "id": "37716160-00a8-48d2-baf8-06256bbb3a37",
+    "unique_name": "Wo-D",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Wo-bacheloropleidingen zijn academische studies op het wetenschappelijk niveau van een vakgebied. Er zijn tal van wo-bacheloropleidingen die mogelijk passen bij jouw interesse. Met je wo-bachelordiploma kun je doorstromen naar een wo-master. Na het behalen van deze wo-master kun je starten aan de educatieve wo-master of het traject 'zij-instroom in het beroep' (beiden voor een eerstegraads bevoegdheid). In dat geval is het wel belangrijk dat jouw bacheloropleiding aansluit bij een schoolvak. Is dit niet helemaal het geval, dan zijn er mogelijkheden om met deficiëntiepakketten of een premasterprogramma de verschillen weg te werken."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 92,
+        "route_steps_id": "37716160-00a8-48d2-baf8-06256bbb3a37",
+        "articles_id": "46f212b1-845c-41e8-a138-0116a3340a5a",
+        "sort": 1
+      },
+      {
+        "id": 93,
+        "route_steps_id": "37716160-00a8-48d2-baf8-06256bbb3a37",
+        "articles_id": "faaf075f-a5ef-45bf-b18d-640cb2850fa6",
+        "sort": 2
+      },
+      {
+        "id": 94,
+        "route_steps_id": "37716160-00a8-48d2-baf8-06256bbb3a37",
+        "articles_id": "8acf8ed6-c592-4612-a29f-20a9ee9f787e",
+        "sort": 3
+      },
+      {
+        "id": 95,
+        "route_steps_id": "37716160-00a8-48d2-baf8-06256bbb3a37",
+        "articles_id": "0dbab3e8-1d2b-489f-a539-1f4cdbec0f05",
+        "sort": 4
+      }
+    ]
+  },
+  {
+    "short_title": "Hbo-bachelor",
+    "slug": "hbo-c",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Stroom door naar de verkorte lerarenopleiding met behulp van een hbo-bachelor",
+    "date_created": "2026-01-21T12:13:35.629Z",
+    "date_updated": "2026-01-27T09:15:18.585Z",
+    "id": "3cda0fd1-8b6a-469b-8107-0f49298771c4",
+    "unique_name": "Hbo-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Hbo-bacheloropleidingen zijn beroepsgerichte opleidingen met stages in de praktijk. Er zijn tal van hbo-bacheloropleidingen die mogelijk passen bij jouw interesse. Binnen de opleiding leer je de vakinhoud die nodig is om vervolgens door te kunnen stromen tot de verkorte lerarenopleiding, de kopopleiding of het traject 'zij-instroom in het beroep'. Let hierbij wel op jouw keuze voor je opleiding. Niet alle hbo-bacheloropleidingen sluiten goed aan op een schoolvak."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 13,
+        "route_steps_id": "3cda0fd1-8b6a-469b-8107-0f49298771c4",
+        "faqs_id": "e0c5ff0a-eeeb-4c16-a8b4-296ae225c0c5",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 14,
+        "route_steps_id": "3cda0fd1-8b6a-469b-8107-0f49298771c4",
+        "articles_id": "f6d79ea4-541f-489a-a80a-3fcf797a3c1c",
+        "sort": 1
+      },
+      {
+        "id": 15,
+        "route_steps_id": "3cda0fd1-8b6a-469b-8107-0f49298771c4",
+        "articles_id": "bb32b378-d159-4006-bf59-17f4ffc30ccb",
+        "sort": 2
+      }
+    ]
+  },
+  {
+    "short_title": "Verkorte pabo",
+    "slug": "p-hbo-b",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Word leraar in het primair onderwijs met behulp van de verkorte deeltijd pabo",
+    "date_created": "2026-01-21T12:13:35.839Z",
+    "date_updated": "2026-01-27T10:08:25.610Z",
+    "id": "4776ba7a-68bb-4589-b0a6-455592b31fe4",
+    "unique_name": "P-Hbo-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Als je je hbo- of wo-opleiding hebt afgerond, kun je starten aan een verkorte deeltijdvariant van de pabo. Hierbij behaal je in twee tot drie jaar een pabodiploma en kun je aan de slag als leraar in het primair onderwijs."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 43,
+        "route_steps_id": "4776ba7a-68bb-4589-b0a6-455592b31fe4",
+        "faqs_id": "b836d81e-a0aa-404b-8170-66f3c72611f6",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 64,
+        "route_steps_id": "4776ba7a-68bb-4589-b0a6-455592b31fe4",
+        "articles_id": "76da9cbf-9c2f-48f6-b34e-c502c63acb08",
+        "sort": 1
+      },
+      {
+        "id": 65,
+        "route_steps_id": "4776ba7a-68bb-4589-b0a6-455592b31fe4",
+        "articles_id": "bda0dbbd-0fb5-41ac-8a64-5df010e33a7b",
+        "sort": 2
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-toets",
+    "slug": "mbotoets-b",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Toelatingstoets voor een mbo 3-opleiding",
+    "date_created": "2026-01-21T12:13:37.013Z",
+    "date_updated": "2026-01-23T12:47:37.617Z",
+    "id": "4de2432a-23dc-4c78-90e3-333ba15dbfc6",
+    "unique_name": "Mbotoets-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Je mag starten met een mbo 3-opleiding als je een mbo-2 diploma hebt, een vmbo-diploma (kl, gl, of tl) hebt, of een bewijs dat je 3 havo of 2 vwo succesvol hebt afgerond. Heb jij niet de gevraagde vooropleiding? Dan kun je soms ook toegelaten worden op basis van een toelatingstoets. Het bestuur van de mbo-school beslist of jij deze mogelijkheid krijgt en bepaalt de inhoud van de toelatingstoets."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": []
+  },
+  {
+    "short_title": "Hbo-bachelor",
+    "slug": "hbo-b",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Word tweedegraads leraar met behulp van deze hbo-opleiding",
+    "date_created": "2026-01-21T12:13:35.922Z",
+    "date_updated": "2026-01-27T09:13:51.618Z",
+    "id": "566a083e-c059-4db1-9f1a-69f20b2cf142",
+    "unique_name": "Hbo-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De opleiding tot tweedegraads leraar in een bepaald schoolvak is een hbo-bacheloropleiding. Tijdens deze opleiding duik je in de vakkennis en de pedagogische en didactische vaardigheden die horen het geven van jouw schoolvak of beroepsprofiel. Daarnaast doe je praktijkervaring op in het onderwijs, zodat je uiteindelijk zelfstandig voor de klas kunt staan."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Als je deze opleiding hebt afgerond, kun je aan de slag als tweedegraads leraar. Je mag dan lesgeven in de onderbouw van havo en vwo, het volledige vmbo, voortgezet speciaal onderwijs, praktijkonderwijs, mbo, vavo en primair onderwijs (mits je een schoolvak geeft dat overeenkomt met een vak dat daar wordt gegeven). Je kunt na deze opleiding doorstromen naar de opleiding tot eerstegraads leraar. Je hebt dan mogelijk wel recht op vrijstellingen voor die opleiding."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 11,
+        "route_steps_id": "566a083e-c059-4db1-9f1a-69f20b2cf142",
+        "faqs_id": "3044c244-37cc-4cb5-91b0-2d9c2c5b1072",
+        "sort": 1
+      },
+      {
+        "id": 12,
+        "route_steps_id": "566a083e-c059-4db1-9f1a-69f20b2cf142",
+        "faqs_id": "9f90823a-903d-4135-9172-756bbac00b7a",
+        "sort": 2
+      }
+    ],
+    "articles": [
+      {
+        "id": 12,
+        "route_steps_id": "566a083e-c059-4db1-9f1a-69f20b2cf142",
+        "articles_id": "bb32b378-d159-4006-bf59-17f4ffc30ccb",
+        "sort": 1
+      },
+      {
+        "id": 13,
+        "route_steps_id": "566a083e-c059-4db1-9f1a-69f20b2cf142",
+        "articles_id": "8acf8ed6-c592-4612-a29f-20a9ee9f787e",
+        "sort": 2
+      }
+    ]
+  },
+  {
+    "short_title": "Ondersteunend personeel",
+    "slug": "op-a",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Ondersteunend personeel binnen het primair onderwijs",
+    "date_created": "2026-01-21T12:13:37.072Z",
+    "date_updated": "2026-01-27T10:04:45.873Z",
+    "id": "569705fa-a028-4479-9a32-770bcccc2920",
+    "unique_name": "OP-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Onderwijsondersteuners spelen een belangrijke rol op school. Alle onderwijsondersteuners vormen samen het onderwijsondersteunend personeel (oop). Een deel van hen is direct betrokken bij het onderwijsleerproces, zoals onderwijsassistenten en ib’ers, maar er zijn ook veel andere functies die onmisbaar zijn op een school. Denk daarbij aan de conciërge, technische dienst, administratiemedewerkers, p&o-medewerkers, de financiële administratie en beleidsmedewerkers. We noemen hen het ondersteunend personeel. Afhankelijk van de organisatiestructuur van de school is er vaak een bovenschoolse organisatie die dergelijke taken voor meer scholen uitvoert."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Voor al deze functies binnen het ondersteunend personeel zijn geen wettelijke eisen vastgesteld, dus je kunt direct solliciteren op een dergelijke functie. Uiteraard is een opleiding en/of ervaring die aansluit bij de specifieke functie wel belangrijk. Deze opleiding kun je onder andere vinden op "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "http://www.kiesmbo.nl",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "kiesmbo.nl"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 32,
+        "route_steps_id": "569705fa-a028-4479-9a32-770bcccc2920",
+        "faqs_id": "3a8202a1-3b7f-4905-89ee-8b2f6c8e519a",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 53,
+        "route_steps_id": "569705fa-a028-4479-9a32-770bcccc2920",
+        "articles_id": "14e31617-8d75-4ba9-a237-1ee797941350",
+        "sort": 1
+      },
+      {
+        "id": 54,
+        "route_steps_id": "569705fa-a028-4479-9a32-770bcccc2920",
+        "articles_id": "8afab15a-6fb6-48c4-85df-6752ef0adec3",
+        "sort": 2
+      }
+    ]
+  },
+  {
+    "short_title": "AD",
+    "slug": "ad-e",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Word instructeur met behulp van een associate degree",
+    "date_created": "2026-01-21T12:13:36.011Z",
+    "date_updated": "2026-01-27T09:11:02.375Z",
+    "id": "58ba7f45-d439-4ff7-b4b3-83d3ce0b7ef1",
+    "unique_name": "AD-E",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De associate degree is een tweejarige praktijkgerichte opleiding op hbo-niveau. Deze opleiding zit wat niveau betreft tussen een mbo 4-opleiding en een hbo-bacheloropleiding in. Als je kiest voor de associate degree Pedagogisch Educatief Professional (AD-PEP) word je opgeleid tot leraarondersteuner in alle sectoren van het onderwijs. Met deze opleiding kun je ook aan de slag als instructeur in het mbo of als pedagogisch coach in de kinderopvang."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 8,
+        "route_steps_id": "58ba7f45-d439-4ff7-b4b3-83d3ce0b7ef1",
+        "faqs_id": "c326b2d2-a110-4fe3-8d13-7242ddc3680c",
+        "sort": 1
+      },
+      {
+        "id": 9,
+        "route_steps_id": "58ba7f45-d439-4ff7-b4b3-83d3ce0b7ef1",
+        "faqs_id": "f9322b6e-1302-42f6-a281-b637bcb91f6f",
+        "sort": 2
+      }
+    ],
+    "articles": [
+      {
+        "id": 9,
+        "route_steps_id": "58ba7f45-d439-4ff7-b4b3-83d3ce0b7ef1",
+        "articles_id": "eed2fb32-3c90-41f7-8a16-adab6088f06f",
+        "sort": 1
+      },
+      {
+        "id": 10,
+        "route_steps_id": "58ba7f45-d439-4ff7-b4b3-83d3ce0b7ef1",
+        "articles_id": "83db8b06-7e1c-4d75-94e6-5014e95d3830",
+        "sort": 2
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-4 Spec.",
+    "slug": "mbo4sp-b",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Stroom door naar een associate degree of hbo-opleiding met behulp van een mbo 4-specialistenopleiding",
+    "date_created": "2026-01-21T12:13:36.933Z",
+    "date_updated": "2026-01-23T12:47:37.859Z",
+    "id": "5a3c4a73-d572-481d-b2c2-ec0bf9b09afa",
+    "unique_name": "Mbo4Sp-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een mbo 4-specialistenopleiding is een korte variant van een reguliere mbo 4-opleiding en duurt een tot twee jaar. Je komt hier alleen voor in aanmerking als je een aansluitende mbo3-opleiding of mbo4-opleiding hebt afgerond. Bovendien moet je in dienst zijn bij een organisatie in een relevante functie – het is namelijk een leer-werktraject (bbl).  "
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Na je mbo 4-specialistenopleiding kun je doorstromen naar een willekeurige associate degree-opleiding of hbo-bacheloropleiding, ongeacht je studierichting. Als je de specialistenopleiding tot instructeur hebt gevolgd kun je bovendien direct in het mbo aan de slag."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": []
+  },
+  {
+    "short_title": "WO-master",
+    "slug": "wom-b",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Word leraar in het primair onderwijs met behulp van deze wo-master",
+    "date_created": "2026-01-21T12:13:36.269Z",
+    "date_updated": "2026-01-27T10:32:45.559Z",
+    "id": "5d09659f-0ad6-41a5-90b6-363fecc1eb88",
+    "unique_name": "WoM-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Door middel van de Educatieve Master Primair Onderwijs (EMPO) kun je een bevoegdheid halen voor het primair onderwijs. In deze tweejarige opleiding word je opgeleid tot leerkracht en loop je stage in het basisonderwijs."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Om hiervoor toegelaten te worden heb je een afgeronde wo-bachelor of -master in de "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "https://www.onderwijsinspectie.nl/binaries/onderwijsinspectie/documenten/publicaties/2016/03/02/indeling-sectoren-ho/Bijlage+Indeling+van+sectoren+ho.pdf",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "sector Gedrag- en Maatschappij"
+            },
+            {
+              "type": "text",
+              "text": " nodig. Of een andere afgeronde wo-bachelor met daarnaast een premaster in de pedagogische of onderwijswetenschappen."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Indien je een ander universitaire bachelor- of masterdiploma hebt kun je een toelatingsverzoek indienen bij de toelatingscommissie van de EMPO."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 62,
+        "route_steps_id": "5d09659f-0ad6-41a5-90b6-363fecc1eb88",
+        "faqs_id": "194a3442-b291-426a-afef-d162c5dea0aa",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 101,
+        "route_steps_id": "5d09659f-0ad6-41a5-90b6-363fecc1eb88",
+        "articles_id": "46f212b1-845c-41e8-a138-0116a3340a5a",
+        "sort": 1
+      },
+      {
+        "id": 102,
+        "route_steps_id": "5d09659f-0ad6-41a5-90b6-363fecc1eb88",
+        "articles_id": "bda0dbbd-0fb5-41ac-8a64-5df010e33a7b",
+        "sort": 2
+      },
+      {
+        "id": 103,
+        "route_steps_id": "5d09659f-0ad6-41a5-90b6-363fecc1eb88",
+        "articles_id": "5de4f605-34d8-4f66-bf18-a4e19958718a",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-4",
+    "slug": "mbo4-e",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Stroom door naar de mbo 4-specialistenopleiding met behulp van een mbo 4-opleiding",
+    "date_created": "2026-01-21T12:13:36.962Z",
+    "date_updated": "2026-01-23T12:47:37.978Z",
+    "id": "5ddc1ac5-e9f7-42c9-b7de-598df714a421",
+    "unique_name": "Mbo4-E",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een mbo 4-opleiding is een middenkaderopleiding. Dat betekent dat je opgeleid wordt voor een baan waarin je zonder begeleiding specialistisch, uitvoerend werk doet. Deze opleiding duurt drie tot vier jaar. Na een mbo 4-opleiding kun je onder andere doorstromen naar een mbo 4-specialistenopleiding, mits de studierichting aansluit bij de specialistenopleiding die je wilt gaan doen."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": []
+  },
+  {
+    "short_title": "AD",
+    "slug": "ad-b",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Stroom door naar een hbo-opleiding met behulp van een associate degree",
+    "date_created": "2026-01-21T12:13:35.605Z",
+    "date_updated": "2026-01-27T09:08:46.523Z",
+    "id": "61dc0bdb-9839-4072-814e-a724283e3a96",
+    "unique_name": "AD-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De associate degree is een tweejarige praktijkgerichte opleiding op hbo-niveau. Deze opleiding zit wat niveau betreft tussen een mbo 4-opleiding en een hbo-bacheloropleiding in. Met een associate degree op zak kom je in aanmerking voor een verkort traject bij de hbo-opleiding in dezelfde richting."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 5,
+        "route_steps_id": "61dc0bdb-9839-4072-814e-a724283e3a96",
+        "faqs_id": "c326b2d2-a110-4fe3-8d13-7242ddc3680c",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 6,
+        "route_steps_id": "61dc0bdb-9839-4072-814e-a724283e3a96",
+        "articles_id": "83db8b06-7e1c-4d75-94e6-5014e95d3830",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Hbo-P",
+    "slug": "hbop",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Stroom door naar het wo met behulp van een hbo-propedeuse",
+    "date_created": "2026-01-21T12:13:36.070Z",
+    "date_updated": "2026-01-23T12:47:38.101Z",
+    "id": "6a4d6412-df53-4508-ad36-4dcf9efd03cb",
+    "unique_name": "HboP",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een hbo-propedeusediploma krijg je als je alle studiepunten van het eerste jaar van een hbo-bacheloropleiding hebt gehaald. Je kunt hiermee doorstromen naar een wo-bacheloropleiding. Hiervoor gelden wel vaak aanvullende toelatingseisen. Op de website van de opleiding die je wilt volgen, kun je hier meer informatie over vinden."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": []
+  },
+  {
+    "short_title": "Gastdocent",
+    "slug": "onbler-a",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Word gastdocent",
+    "date_created": "2026-01-21T12:13:37.152Z",
+    "date_updated": "2026-01-27T10:01:54.997Z",
+    "id": "75770174-9409-468c-9a2f-13013e260606",
+    "unique_name": "Onb.Ler-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Als gastdocent kun je zonder bevoegdheid voor de klas staan in het voortgezet onderwijs en in het mbo. Dat mag voor gemiddeld maximaal 6 klokuren per week op jaarbasis. Een gastdocent valt altijd onder de verantwoordelijkheid van een daartoe door het bevoegd gezag aan te wijzen docent."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 27,
+        "route_steps_id": "75770174-9409-468c-9a2f-13013e260606",
+        "faqs_id": "2bce9f07-f442-4980-a340-24916a390b2d",
+        "sort": 1
+      },
+      {
+        "id": 28,
+        "route_steps_id": "75770174-9409-468c-9a2f-13013e260606",
+        "faqs_id": "e3587e92-3097-4b2b-9935-cef5114585e6",
+        "sort": 2
+      },
+      {
+        "id": 29,
+        "route_steps_id": "75770174-9409-468c-9a2f-13013e260606",
+        "faqs_id": "faedd0f1-7c88-480b-8538-1a0a98af0fd2",
+        "sort": 3
+      }
+    ],
+    "articles": [
+      {
+        "id": 47,
+        "route_steps_id": "75770174-9409-468c-9a2f-13013e260606",
+        "articles_id": "def75e20-5fa2-4516-a2a9-e32148e60efe",
+        "sort": 1
+      },
+      {
+        "id": 48,
+        "route_steps_id": "75770174-9409-468c-9a2f-13013e260606",
+        "articles_id": "db974468-8242-44c5-9552-b9d815f15bc0",
+        "sort": 2
+      },
+      {
+        "id": 49,
+        "route_steps_id": "75770174-9409-468c-9a2f-13013e260606",
+        "articles_id": "51ab8daa-c878-4a96-8d91-6a3346bbf77a",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Ondersteunend personeel",
+    "slug": "op-b",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Ondersteunend personeel binnen het voortgezet onderwijs",
+    "date_created": "2026-01-21T12:13:37.100Z",
+    "date_updated": "2026-01-27T10:04:13.192Z",
+    "id": "76f0a6b3-1e9a-4bed-a68e-bcdd04766945",
+    "unique_name": "OP-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Onderwijsondersteuners spelen een belangrijke rol op school. Alle onderwijsondersteuners vormen samen het onderwijsondersteunend personeel (oop). Een deel van hen is direct betrokken bij het onderwijsleerproces, zoals onderwijsassistenten en zorgcoördinatoren, maar er zijn ook veel andere functies die onmisbaar zijn op een school. Denk daarbij aan de conciërge, technische dienst, werkplaatsassistenten, administratiemedewerkers, p&o-medewerkers, financiële administratie, beleidsmedewerkers, roostermakers, mediatheekbeheerders en ict’ers. We noemen hen het ondersteunend personeel. Afhankelijk van de organisatiestructuur van de school is er vaak een bovenschoolse organisatie die dergelijke taken voor meer scholen uitvoert."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Voor al deze functies binnen het ondersteunend personeel zijn geen wettelijke eisen vastgesteld, dus je kunt direct solliciteren op een dergelijke functie. Uiteraard is een opleiding en/of ervaring die aansluit bij de specifieke functie wel belangrijk. Deze opleiding kun je onder andere vinden op "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "http://www.kiesmbo.nl",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "kiesmbo.nl"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 31,
+        "route_steps_id": "76f0a6b3-1e9a-4bed-a68e-bcdd04766945",
+        "faqs_id": "3a8202a1-3b7f-4905-89ee-8b2f6c8e519a",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 51,
+        "route_steps_id": "76f0a6b3-1e9a-4bed-a68e-bcdd04766945",
+        "articles_id": "83db8b06-7e1c-4d75-94e6-5014e95d3830",
+        "sort": 1
+      },
+      {
+        "id": 52,
+        "route_steps_id": "76f0a6b3-1e9a-4bed-a68e-bcdd04766945",
+        "articles_id": "8afab15a-6fb6-48c4-85df-6752ef0adec3",
+        "sort": 2
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-1",
+    "slug": "mbo1",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Start in het mbo met een mbo-entreeopleiding",
+    "date_created": "2026-01-21T12:13:36.652Z",
+    "date_updated": "2026-01-27T09:44:47.064Z",
+    "id": "78b33b4a-dbd4-4e38-9e04-25aecb58bfd5",
+    "unique_name": "Mbo1",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De mbo-entreeopleiding (ook wel mbo-1) is een eenjarige opleiding. Iedereen van 16 jaar of ouder die niet voldoet aan de toelatingseisen voor een mbo-2, mbo-3 of mbo-4-opleiding kan zich aanmelden voor deze opleiding. Hierna kun je doorstromen naar een mbo 2-opleiding."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 28,
+        "route_steps_id": "78b33b4a-dbd4-4e38-9e04-25aecb58bfd5",
+        "articles_id": "71f5838e-4d2a-462d-ada7-d5e57c19b8aa",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Ondersteunend personeel",
+    "slug": "op-c",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Ondersteunend personeel binnen het mbo",
+    "date_created": "2026-01-21T12:13:37.124Z",
+    "date_updated": "2026-01-27T10:05:30.049Z",
+    "id": "7c5e4a7f-d95b-446e-9aae-c4855eec5d99",
+    "unique_name": "OP-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Onderwijsondersteuners spelen een belangrijke rol op school. Alle onderwijsondersteuners vormen samen het ondersteunend en beheerspersoneel (obp). Een deel van hen is direct betrokken bij het onderwijsleerproces, zoals onderwijsassistenten en zorgcoördinatoren, maar er zijn ook veel andere functies die onmisbaar zijn op een school. Denk daarbij aan de conciërge, technische dienst, administratiemedewerkers, p&o-medewerkers, financiële administratie, beleidsmedewerkers, roostermakers, mediatheekbeheerders en ict’ers. Ook zij zijn ondersteunend en beheerspersoneel."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Voor al deze functies binnen het ondersteunend personeel zijn geen wettelijke eisen vastgesteld, dus je kunt direct solliciteren op een dergelijke functie. Uiteraard is een opleiding en/of ervaring die aansluit bij de specifieke functie wel belangrijk. Deze opleiding kun je onder andere vinden op "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "http://www.kiesmbo.nl",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "kiesmbo.nl"
+            },
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 33,
+        "route_steps_id": "7c5e4a7f-d95b-446e-9aae-c4855eec5d99",
+        "faqs_id": "3a8202a1-3b7f-4905-89ee-8b2f6c8e519a",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 55,
+        "route_steps_id": "7c5e4a7f-d95b-446e-9aae-c4855eec5d99",
+        "articles_id": "8afab15a-6fb6-48c4-85df-6752ef0adec3",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Leerlingenzorg",
+    "slug": "lz-a",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Zorg voor leerlingen op een basisschool",
+    "date_created": "2026-01-21T12:13:36.423Z",
+    "date_updated": "2026-01-27T09:30:37.202Z",
+    "id": "892a2320-f548-49f5-b68d-765197e7c71d",
+    "unique_name": "LZ-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Op een basisschool zijn er naast de docenten verschillende personen betrokken bij de zorg voor leerlingen. De meest voorkomende functie is hierbij de intern begeleider (ib’er). Als ib’er ondersteun je de leerkrachten met situaties en leerlingen die wat meer aandacht nodig hebben."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 18,
+        "route_steps_id": "892a2320-f548-49f5-b68d-765197e7c71d",
+        "faqs_id": "0de5db16-ad30-4bc9-865d-057a0f79aa12",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 26,
+        "route_steps_id": "892a2320-f548-49f5-b68d-765197e7c71d",
+        "articles_id": "c2bdf9db-863e-4208-b2a2-27b0114a642a",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Leerlingenzorg",
+    "slug": "lz-c",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Zorg voor leerlingen op een middelbare school",
+    "date_created": "2026-01-21T12:13:36.485Z",
+    "date_updated": "2026-01-23T12:47:38.458Z",
+    "id": "8a97dbdf-6eff-489d-8847-130001998921",
+    "unique_name": "LZ-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "In het voortgezet onderwijs en het volwassenenonderwijs (vavo) zijn er allerlei verschillende functies die leerlingen ondersteunen. Zo zijn er zorgcoördinatoren die docenten en teamleiders ondersteunen bij leerlingen die meer aandacht nodig hebben,  decanen die zich bezig houden met loopbaanoriëntatie en -begeleiding en verzuimcoördinatoren die zich ontfermen over absenten en geschorsten."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": []
+  },
+  {
+    "short_title": "Hbo-bachelor",
+    "slug": "hbo-a",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Word leraar in het primair onderwijs met behulp van deze hbo-opleiding",
+    "date_created": "2026-01-21T12:13:35.986Z",
+    "date_updated": "2026-01-27T09:12:46.091Z",
+    "id": "8e9c1a1d-3032-4e9e-91b4-e45fdf0b9a05",
+    "unique_name": "Hbo-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De hbo-opleiding tot leraar in het primair onderwijs wordt ook wel de pabo genoemd. Dit is de afkorting voor pedagogische academie basisonderwijs. Binnen deze opleiding ontwikkel je alle kennis en vaardigheden om te kunnen starten als leerkracht. Na deze opleiding kun je lesgeven op de basisschool, in het praktijkonderwijs en op scholen voor speciaal onderwijs, het speciaal basisonderwijs en het voortgezet speciaal onderwijs, tenzij die school zelf eindexamens afneemt. Dan volstaat een bevoegdheid voor het primair onderwijs niet. Je moet dan een tweede- of eerstegraads lesbevoegdheid halen om daar te les te mogen geven. Je hebt met je bevoegdheid voor het primair onderwijs mogelijk wel recht op vrijstellingen voor die opleiding."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 10,
+        "route_steps_id": "8e9c1a1d-3032-4e9e-91b4-e45fdf0b9a05",
+        "faqs_id": "7ab14990-5a93-4792-99c9-34cffc1b00de",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 11,
+        "route_steps_id": "8e9c1a1d-3032-4e9e-91b4-e45fdf0b9a05",
+        "articles_id": "bda0dbbd-0fb5-41ac-8a64-5df010e33a7b",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Leerlingenzorg",
+    "slug": "lz-d",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Zorg voor leerlingen in het middelbaar beroepsonderwijs",
+    "date_created": "2026-01-21T12:13:36.511Z",
+    "date_updated": "2026-01-23T12:47:38.587Z",
+    "id": "8ea846c8-a93f-4526-80f4-0c5034570ad6",
+    "unique_name": "LZ-D",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Iedere mbo-school heeft een bepaald ondersteuningsaanbod voor passend onderwijs. Er zijn verschillende functies binnen een mbo-school die zich bezighouden met de zorg voor leerlingen, zoals een zorgcoördinator, loopbaanbegeleider, leer-werkcoach, schoolmaatschappelijk werker, budgetcoach, jeugdarts, jeugdpsycholoog, etc."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": []
+  },
+  {
+    "short_title": "Wo-bachelor",
+    "slug": "wo-b",
+    "status": "published",
+    "duration_in_months": 6,
+    "long_title": "Word leraar in het voortgezet onderwijs met behulp van deze educatieve minor of module",
+    "date_created": "2026-01-21T12:13:36.122Z",
+    "date_updated": "2026-01-27T10:24:36.783Z",
+    "id": "9420df51-0a51-4321-aa86-02ce7b03c209",
+    "unique_name": "Wo-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Wo-bacheloropleidingen zijn academische studies op het wetenschappelijk niveau van een vakgebied. Er zijn tal van wo-bacheloropleidingen die mogelijk passen bij jouw interesse. Als een wo-bacheloropleiding direct aansluit bij een schoolvak, zoals Franse taal en cultuur of wiskunde, is het mogelijk om een educatieve minor van 30 ECTS te volgen, als onderdeel van je bacheloropleiding. Met deze minor behaal je een beperkte tweedegraads bevoegdheid, waarmee je les mag geven in het vmbo en in de onderbouw van havo en vwo."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Het is ook mogelijk om na het afronden van je wo-bachelor een beperkt tweedegraads bevoegdheid te halen. Je volgt dan de educatieve module. De inhoud van deze module is gelijk aan die van de educatieve minor, maar volg je dus pas na het afronden van je wo-bachelor."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Met een beperkte tweedegraads bevoegdheid krijg je 30 ECTS vrijstelling voor de universitaire lerarenopleiding tot eerstegraads docent."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 57,
+        "route_steps_id": "9420df51-0a51-4321-aa86-02ce7b03c209",
+        "faqs_id": "8e1c4d8a-bb5d-4828-b81b-94047648e075",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 86,
+        "route_steps_id": "9420df51-0a51-4321-aa86-02ce7b03c209",
+        "articles_id": "8acf8ed6-c592-4612-a29f-20a9ee9f787e",
+        "sort": 1
+      },
+      {
+        "id": 87,
+        "route_steps_id": "9420df51-0a51-4321-aa86-02ce7b03c209",
+        "articles_id": "27b23f26-5c8f-473f-ae88-0e3a4a43c234",
+        "sort": 2
+      }
+    ]
+  },
+  {
+    "short_title": "Leerlingenzorg",
+    "slug": "lz-e",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Zorg voor leerlingen in het hoger onderwijs",
+    "date_created": "2026-01-21T12:13:36.549Z",
+    "date_updated": "2026-01-23T12:47:38.713Z",
+    "id": "9c408143-7d19-45dd-92d3-5d87a6a50237",
+    "unique_name": "LZ-E",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "In tegenstelling tot andere onderwijssectoren is het hoger onderwijs niet gebonden aan de wet op passend onderwijs. Hierdoor is de zorg voor studenten minder uniform gereguleerd en wordt er eerder doorverwezen naar externe partijen. Binnen een hogeschool of universiteit zijn er vaak een studentenpsycholoog, een vertrouwenspersoon en studieloopbaanbegeleiders/studentendecanen/studieadviseurs die studenten met een ondersteuningsbehoefte verder helpen of doorverwijzen."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": []
+  },
+  {
+    "short_title": "Leraar HO",
+    "slug": "onbler-b",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Word leraar in het hoger onderwijs",
+    "date_created": "2026-01-21T12:13:37.176Z",
+    "date_updated": "2026-01-27T10:02:28.842Z",
+    "id": "9e6ece2a-812f-4c12-b85f-f522d8689263",
+    "unique_name": "Onb.Ler-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Je bent niet wettelijk verplicht om een lesbevoegdheid te hebben om les te geven in het hoger onderwijs. Dat betekent dat je ook zonder een specifiek diploma kunt solliciteren op een functie bij een hogeschool of universiteit. Wel vraagt een hogeschool of universiteit vaak om een afgeronde master en om de bereidheid een basiskwalificatie onderwijs (BKO) of basiskwalificatie didactische bekwaamheid (BDB) te halen."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 30,
+        "route_steps_id": "9e6ece2a-812f-4c12-b85f-f522d8689263",
+        "faqs_id": "a7169a1a-2216-4b51-b2c4-f16940fa6e03",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 50,
+        "route_steps_id": "9e6ece2a-812f-4c12-b85f-f522d8689263",
+        "articles_id": "72d3ef5b-ec8b-4a67-aa5b-f3de2708f1f3",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Leerlingenzorg",
+    "slug": "lz-b",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Zorg voor leerlingen in het speciaal onderwijs",
+    "date_created": "2026-01-21T12:13:36.453Z",
+    "date_updated": "2026-01-27T09:31:24.180Z",
+    "id": "a124cc88-032b-4d8b-8935-19bbc7cc8a3f",
+    "unique_name": "LZ-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De leerlingen op een school voor speciaal onderwijs hebben vaak specifieke zorg nodig. Het speciaal onderwijs is dan ook onderverdeeld in verschillende clusters."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 19,
+        "route_steps_id": "a124cc88-032b-4d8b-8935-19bbc7cc8a3f",
+        "faqs_id": "446653bb-587c-4168-be3a-a1430c763e8f",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 27,
+        "route_steps_id": "a124cc88-032b-4d8b-8935-19bbc7cc8a3f",
+        "articles_id": "103c27b6-d48b-4b70-926a-12beeb9596da",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Zij-instroom",
+    "slug": "ulo-zib",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Word eerstegraads leraar met behulp van een zij-instroomtraject",
+    "date_created": "2026-01-21T12:13:36.349Z",
+    "date_updated": "2026-01-27T10:19:47.820Z",
+    "id": "a4e215b4-4e76-41e1-9517-84fa198484b6",
+    "unique_name": "Ulo-zib",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Het traject 'zij-instroom in het beroep' (zib) is een bijzonder opleidingstraject tot een bevoegdheid. Tijdens dit leer-werktraject loop je geen stage, maar sta je direct zelfstandig voor de klas. Om hiervoor toegelaten te worden moet je een uitgebreid geschiktheidsonderzoek ondergaan. Hierin wordt bepaald of je zelfstandig voor de klas kan staan en wat je nog moet leren om je bevoegdheid te halen."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 50,
+        "route_steps_id": "a4e215b4-4e76-41e1-9517-84fa198484b6",
+        "faqs_id": "150bcafc-4052-4925-9671-d977cb354d42",
+        "sort": 1
+      },
+      {
+        "id": 51,
+        "route_steps_id": "a4e215b4-4e76-41e1-9517-84fa198484b6",
+        "faqs_id": "e8a6522b-f214-4f55-8c6a-799d28354260",
+        "sort": 2
+      }
+    ],
+    "articles": [
+      {
+        "id": 78,
+        "route_steps_id": "a4e215b4-4e76-41e1-9517-84fa198484b6",
+        "articles_id": "faaf075f-a5ef-45bf-b18d-640cb2850fa6",
+        "sort": 1
+      },
+      {
+        "id": 79,
+        "route_steps_id": "a4e215b4-4e76-41e1-9517-84fa198484b6",
+        "articles_id": "8acf8ed6-c592-4612-a29f-20a9ee9f787e",
+        "sort": 2
+      },
+      {
+        "id": 80,
+        "route_steps_id": "a4e215b4-4e76-41e1-9517-84fa198484b6",
+        "articles_id": "0dbab3e8-1d2b-489f-a539-1f4cdbec0f05",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Wo-bachelor",
+    "slug": "wo-e",
+    "status": "published",
+    "duration_in_months": 36,
+    "long_title": "Stroom door naar de verkorte lerarenopleiding van de pabo met behulp van een wo-bachelor",
+    "date_created": "2026-01-21T12:13:36.210Z",
+    "date_updated": "2026-01-27T10:28:27.399Z",
+    "id": "ab554286-dde2-4818-ae4c-357bef3ff9eb",
+    "unique_name": "Wo-E",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Wo-bacheloropleidingen zijn academische studies op het wetenschappelijk niveau van een vakgebied. Er zijn tal van wo-bacheloropleidingen die mogelijk passen bij jouw interesse. Als je een wo-bachelordiploma op zak hebt, ben je direct toelaatbaar voor een verkorte deeltijdvariant van de pabo of het traject 'zij-instroom in het beroep'."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 58,
+        "route_steps_id": "ab554286-dde2-4818-ae4c-357bef3ff9eb",
+        "faqs_id": "13c9e5af-9398-4f0c-8b88-417898b77f27",
+        "sort": 1
+      },
+      {
+        "id": 59,
+        "route_steps_id": "ab554286-dde2-4818-ae4c-357bef3ff9eb",
+        "faqs_id": "b836d81e-a0aa-404b-8170-66f3c72611f6",
+        "sort": 2
+      }
+    ],
+    "articles": [
+      {
+        "id": 96,
+        "route_steps_id": "ab554286-dde2-4818-ae4c-357bef3ff9eb",
+        "articles_id": "bda0dbbd-0fb5-41ac-8a64-5df010e33a7b",
+        "sort": 1
+      },
+      {
+        "id": 97,
+        "route_steps_id": "ab554286-dde2-4818-ae4c-357bef3ff9eb",
+        "articles_id": "44049c8d-26b3-42f3-9e0c-71cc0fea3dd5",
+        "sort": 2
+      },
+      {
+        "id": 98,
+        "route_steps_id": "ab554286-dde2-4818-ae4c-357bef3ff9eb",
+        "articles_id": "76da9cbf-9c2f-48f6-b34e-c502c63acb08",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Schoolleiding",
+    "slug": "sl-c",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Schoolleiding binnen het mbo",
+    "date_created": "2026-01-21T12:13:37.317Z",
+    "date_updated": "2026-01-27T10:17:52.698Z",
+    "id": "ab9ac0f1-f594-414f-835b-d53da8827a65",
+    "unique_name": "SL-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Op een mbo-school is het bevoegd gezag van de school eindverantwoordelijk voor de kwaliteit van de opleidingen. In veel gevallen is dat het regionaal opleidingscentrum (roc) of een beroepscollege, waar meerdere mbo-instellingen onder vallen."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De directie zorgt ervoor dat de onderwijskwaliteit en de professionalisering van de docenten op peil blijft. Ze vormen de schakel tussen de school en de omgeving en zien erop toe dat de school zich blijft ontwikkelen."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Er zijn geen wettelijke eisen aan schoolleiders in het mbo. De schoolleidersopleidingen basisbekwaam en vakbekwaam bereiden je wel goed voor op zo een dergelijke functie."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 74,
+        "route_steps_id": "ab9ac0f1-f594-414f-835b-d53da8827a65",
+        "articles_id": "2110f494-78c0-4dce-a9fc-05bf8382ab33",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Zij-instroom",
+    "slug": "p-hbo-d",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Word leraar in het primair onderwijs met behulp van een Zij-instroomtraject",
+    "date_created": "2026-01-21T12:13:36.379Z",
+    "date_updated": "2026-01-27T10:14:56.743Z",
+    "id": "add27f4f-e825-4486-b27a-929594153d89",
+    "unique_name": "P-Hbo-D",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Het traject 'zij-instroom in het beroep' (zib) is een bijzonder opleidingstraject tot een bevoegdheid. Tijdens dit leer-werktraject loop je geen stage, maar sta je direct zelfstandig voor de klas. Om hiervoor toegelaten te worden moet je een uitgebreid geschiktheidsonderzoek ondergaan. Hierin wordt bepaald of je zelfstandig voor de klas kan staan en wat je nog moet leren om je bevoegdheid te halen."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Het opleidingstraject volg je in principe aan een hogeschool."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 47,
+        "route_steps_id": "add27f4f-e825-4486-b27a-929594153d89",
+        "faqs_id": "13c9e5af-9398-4f0c-8b88-417898b77f27",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 69,
+        "route_steps_id": "add27f4f-e825-4486-b27a-929594153d89",
+        "articles_id": "44049c8d-26b3-42f3-9e0c-71cc0fea3dd5",
+        "sort": 1
+      },
+      {
+        "id": 70,
+        "route_steps_id": "add27f4f-e825-4486-b27a-929594153d89",
+        "articles_id": "bda0dbbd-0fb5-41ac-8a64-5df010e33a7b",
+        "sort": 2
+      },
+      {
+        "id": 71,
+        "route_steps_id": "add27f4f-e825-4486-b27a-929594153d89",
+        "articles_id": "e54001b3-ddce-4d70-9a50-4c43552fb53c",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-4",
+    "slug": "mbo4-a",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Word onderwijsassistent met behulp van deze mbo 4-opleiding",
+    "date_created": "2026-01-21T12:13:36.841Z",
+    "date_updated": "2026-01-27T09:53:06.524Z",
+    "id": "af1d3fa5-ab9a-43c5-95b1-d023ff2118b1",
+    "unique_name": "Mbo4-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een mbo 4-opleiding is een middenkaderopleiding. Dat betekent dat je opgeleid wordt voor een baan waarin je zonder begeleiding specialistisch, uitvoerend werk doet. Deze opleiding duurt drie tot vier jaar. De specifieke opleiding tot onderwijsassistent bereidt je voor op alle aspecten van het onderwijsassistentschap. Er is ook een opleiding tot gespecialiseerd pedagogisch medewerker. Met deze opleiding kun je niet alleen aan de slag bij de buitenschoolse opvang of het kinderdagverblijf, maar ook in het speciaal onderwijs."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 20,
+        "route_steps_id": "af1d3fa5-ab9a-43c5-95b1-d023ff2118b1",
+        "faqs_id": "3a8202a1-3b7f-4905-89ee-8b2f6c8e519a",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 33,
+        "route_steps_id": "af1d3fa5-ab9a-43c5-95b1-d023ff2118b1",
+        "articles_id": "14e31617-8d75-4ba9-a237-1ee797941350",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "21+-toets",
+    "slug": "21c",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Toelatingstoets voor het wo",
+    "date_created": "2026-01-21T12:13:36.295Z",
+    "date_updated": "2026-01-27T09:05:12.873Z",
+    "id": "b6e09b71-c687-4b9f-b373-240da73000fe",
+    "unique_name": "21+C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Wil je starten met een wo-opleiding, maar heb je geen vwo-diploma? Dan kun je met een 21+-toets (colloquium doctum) toch toegelaten worden – mits je hem haalt natuurlijk. Deze toets kun je alleen maken als je 21 jaar of ouder bent. Als je deze toets haalt, bewijs je dat jouw werk- en denkniveau voldoende is voor een wo-opleiding."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 2,
+        "route_steps_id": "b6e09b71-c687-4b9f-b373-240da73000fe",
+        "faqs_id": "0218b2d4-e807-4a72-b183-8a8a2e6b4a9f",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 3,
+        "route_steps_id": "b6e09b71-c687-4b9f-b373-240da73000fe",
+        "articles_id": "d494f22b-8aaf-49bc-bbe5-8d74c0b07e06",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "PDG",
+    "slug": "pdg-b",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Word docent in het mbo met behulp van een PDG-traject",
+    "date_created": "2026-01-21T12:13:37.229Z",
+    "date_updated": "2026-01-27T10:06:59.502Z",
+    "id": "b971eb03-7031-4f9d-9c5f-1fb9b29a7a5a",
+    "unique_name": "PDG-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Met een pedagogisch-didactisch getuigschrift (PDG), in combinatie met een geschiktheidsverklaring afgegeven door het bevoegd gezag van de mbo-instelling, mag je lesgeven op die mbo-instelling. Je kunt dit getuigschrift halen via een zij-instroomtraject: het PDG-traject. Tijdens dit leer-werktraject volg je vakken aan een hogeschool, waarin je je richt op de pedagogische en didactische kant van het lesgeven. Je moet dus alle vakinhoudelijke kennis en ervaring al in huis hebben."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 38,
+        "route_steps_id": "b971eb03-7031-4f9d-9c5f-1fb9b29a7a5a",
+        "faqs_id": "205e1fb7-1b34-4727-9cf2-78a6e1b2ec9d",
+        "sort": 1
+      },
+      {
+        "id": 39,
+        "route_steps_id": "b971eb03-7031-4f9d-9c5f-1fb9b29a7a5a",
+        "faqs_id": "a1f6d5da-8ff9-492b-8946-d5e427396a53",
+        "sort": 2
+      },
+      {
+        "id": 40,
+        "route_steps_id": "b971eb03-7031-4f9d-9c5f-1fb9b29a7a5a",
+        "faqs_id": "e662eb2a-2a77-457a-9a0c-3fb91f350721",
+        "sort": 3
+      },
+      {
+        "id": 41,
+        "route_steps_id": "b971eb03-7031-4f9d-9c5f-1fb9b29a7a5a",
+        "faqs_id": "41c7ea45-d56d-4e3a-b1a6-3ebd49f40be2",
+        "sort": 4
+      }
+    ],
+    "articles": [
+      {
+        "id": 59,
+        "route_steps_id": "b971eb03-7031-4f9d-9c5f-1fb9b29a7a5a",
+        "articles_id": "544f11a4-b4fd-41f8-a63c-06161ac29e10",
+        "sort": 1
+      },
+      {
+        "id": 60,
+        "route_steps_id": "b971eb03-7031-4f9d-9c5f-1fb9b29a7a5a",
+        "articles_id": "9bbabbfd-b42b-4376-ae5c-ad67893ae92a",
+        "sort": 2
+      },
+      {
+        "id": 61,
+        "route_steps_id": "b971eb03-7031-4f9d-9c5f-1fb9b29a7a5a",
+        "articles_id": "d9ac5661-0395-4873-8a1e-7e1a007d13b5",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Middenmanagement",
+    "slug": "mm-a",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Functies in het middenmanagement binnen het primair onderwijs",
+    "date_created": "2026-01-21T12:13:36.573Z",
+    "date_updated": "2026-01-27T10:00:04.400Z",
+    "id": "bba0bca3-65fd-48c9-bc2a-719548ff3ae9",
+    "unique_name": "MM-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De managementstructuur is per basisschool verschillend. Hierin maakt het onder andere uit of een school binnen een grotere stichting met meer scholen valt of niet."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De meeste scholen in het primair onderwijs hebben een directeur als hoofdverantwoordelijke van de school. Daarnaast zijn er bouwcoördinatoren, of een adjunct-directeur, of intern begeleiders, die het middenmanagement vormen. Deze mt-leden verdelen onderling de verschillende verantwoordelijkheden en zijn soms leidinggevende van een deel van het team. Zij volgen vaak nascholingstrajecten om zich te professionaliseren als manager binnen een school."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "In veel gevallen staan deze middenmanagers deels nog voor de klas, en dus hebben ze meestal ook een lesbevoegdheid."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 42,
+        "route_steps_id": "bba0bca3-65fd-48c9-bc2a-719548ff3ae9",
+        "articles_id": "f16128a8-12bc-4a70-b749-8b97f6786e06",
+        "sort": 2
+      },
+      {
+        "id": 43,
+        "route_steps_id": "bba0bca3-65fd-48c9-bc2a-719548ff3ae9",
+        "articles_id": "c2bdf9db-863e-4208-b2a2-27b0114a642a",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Zij-instroom",
+    "slug": "p-hbo-c",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Word tweedegraads leraar met behulp van een Zij-instroomtraject",
+    "date_created": "2026-01-21T12:13:36.324Z",
+    "date_updated": "2026-01-27T10:12:29.591Z",
+    "id": "c2008c09-f9ff-4e69-9f94-7c77250d6075",
+    "unique_name": "P-HBO-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Het traject 'zij-instroom in het beroep' (zib) is een bijzonder opleidingstraject tot een bevoegdheid. Tijdens dit leer-werktraject loop je geen stage, maar sta je direct zelfstandig voor de klas. Om hiervoor toegelaten te worden moet je een uitgebreid geschiktheidsonderzoek ondergaan. Hierin wordt bepaald of je zelfstandig voor de klas kan staan en wat je nog moet leren om je bevoegdheid te halen."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Het opleidingstraject volg je aan een hogeschool."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 44,
+        "route_steps_id": "c2008c09-f9ff-4e69-9f94-7c77250d6075",
+        "faqs_id": "9f90823a-903d-4135-9172-756bbac00b7a",
+        "sort": 1
+      },
+      {
+        "id": 45,
+        "route_steps_id": "c2008c09-f9ff-4e69-9f94-7c77250d6075",
+        "faqs_id": "3044c244-37cc-4cb5-91b0-2d9c2c5b1072",
+        "sort": 2
+      },
+      {
+        "id": 46,
+        "route_steps_id": "c2008c09-f9ff-4e69-9f94-7c77250d6075",
+        "faqs_id": "13c9e5af-9398-4f0c-8b88-417898b77f27",
+        "sort": 3
+      }
+    ],
+    "articles": [
+      {
+        "id": 66,
+        "route_steps_id": "c2008c09-f9ff-4e69-9f94-7c77250d6075",
+        "articles_id": "bb32b378-d159-4006-bf59-17f4ffc30ccb",
+        "sort": 1
+      },
+      {
+        "id": 67,
+        "route_steps_id": "c2008c09-f9ff-4e69-9f94-7c77250d6075",
+        "articles_id": "0dbab3e8-1d2b-489f-a539-1f4cdbec0f05",
+        "sort": 2
+      },
+      {
+        "id": 68,
+        "route_steps_id": "c2008c09-f9ff-4e69-9f94-7c77250d6075",
+        "articles_id": "ff205ad4-f811-4668-94eb-4deeb5301571",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-3",
+    "slug": "mbo3-c",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Stroom door naar de mbo 4-specialistenopleiding met behulp van een mbo 3-opleiding ",
+    "date_created": "2026-01-21T12:13:36.871Z",
+    "date_updated": "2026-01-27T09:52:07.980Z",
+    "id": "c98034de-e75c-44eb-8ac4-c4a3a9cf66ea",
+    "unique_name": "Mbo3-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een mbo 3-opleiding is een vakopleiding. Je wordt opgeleid om in een bepaald beroep zelfstandig je werk te kunnen uitvoeren. De opleiding duurt twee tot drie jaar. Na een mbo 3-opleiding kun je doorstromen naar een mbo 4-opleiding. Wil je doorstromen naar een mbo 4-specialistenopleiding? Dan moet je studierichting inhoudelijk aansluiten bij de specialistenopleiding die je wilt volgen."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 32,
+        "route_steps_id": "c98034de-e75c-44eb-8ac4-c4a3a9cf66ea",
+        "articles_id": "71f5838e-4d2a-462d-ada7-d5e57c19b8aa",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Hbo-bachelor",
+    "slug": "hbo-d",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Stroom door naar een wo-master met behulp van een hbo-bachelor",
+    "date_created": "2026-01-21T12:13:35.724Z",
+    "date_updated": "2026-01-27T09:17:42.042Z",
+    "id": "cc1f046b-56af-4a78-afd1-6d2a894360a7",
+    "unique_name": "Hbo-D",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Hbo-bacheloropleidingen zijn beroepsgerichte opleidingen met stages in de praktijk. Er zijn tal van hbo-bacheloropleidingen die mogelijk passen bij jouw interesse. Als je je hbo-bachelor hebt afgerond, kun je doorstromen naar een wo-master. Daarvoor moet je vaak eerst een pre-masterprogramma volgen. De toelatingscommissie van de wo-master bepaalt uit welke vakken jouw pre-masterprogramma moet bestaan op basis van de vakken die je hebt gevolgd binnen jouw hbo-bacheloropleiding."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 14,
+        "route_steps_id": "cc1f046b-56af-4a78-afd1-6d2a894360a7",
+        "faqs_id": "e8a6522b-f214-4f55-8c6a-799d28354260",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 16,
+        "route_steps_id": "cc1f046b-56af-4a78-afd1-6d2a894360a7",
+        "articles_id": "faaf075f-a5ef-45bf-b18d-640cb2850fa6",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Schoolleiding",
+    "slug": "sl-b",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Schoolleiding binnen het voortgezet onderwijs",
+    "date_created": "2026-01-21T12:13:37.287Z",
+    "date_updated": "2026-01-27T10:17:17.725Z",
+    "id": "cc87bbe3-adcf-4c65-9cb7-289b724c3ff0",
+    "unique_name": "SL-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De schoolleiding in het voortgezet onderwijs bestaat over het algemeen uit een rector en een of meer conrectoren. Zij hebben de dagelijkse leiding over de school. Hierbij leggen zij verantwoording af aan het bestuur van de stichting waar de school onder valt. Bij grotere besturen met meer scholen wordt de directeur of rector soms ook locatieleider genoemd."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Schoolleiders zorgen ervoor dat de onderwijskwaliteit en de professionalisering van de docenten op peil blijft. Ze worden daarin ondersteund door een managementteam met afdelingsleiders, teamleiders of coördinatoren die elk verantwoordelijk zijn voor een afdeling van de school (bijvoorbeeld de brugklas of de bovenbouw vwo). Daarnaast vormen de schoolleiders ook de schakel tussen de school en de omgeving en ze zien erop toe dat de school zich blijft ontwikkelen."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Er zijn geen wettelijke eisen aan schoolleiders in het voortgezet onderwijs en registratie in het Schoolleidersregister VO is niet verplicht. Er is wel een beroepsstandaard van de VO-academie als leidraad voor de kwaliteiten van schoolleiders."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Bekijk "
+            },
+            {
+              "type": "text",
+              "marks": [
+                {
+                  "type": "link",
+                  "attrs": {
+                    "href": "https://www.schoolleidersregistervo.nl/",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer nofollow",
+                    "class": null
+                  }
+                }
+              ],
+              "text": "hier"
+            },
+            {
+              "type": "text",
+              "text": " de website van het Schoolleidersregister VO."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 73,
+        "route_steps_id": "cc87bbe3-adcf-4c65-9cb7-289b724c3ff0",
+        "articles_id": "22750a20-2b41-491b-ab70-a57780df112b",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-toets",
+    "slug": "mbotoets-c",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Toelatingstoets voor een mbo 4-opleiding",
+    "date_created": "2026-01-21T12:13:37.047Z",
+    "date_updated": "2026-01-23T12:47:39.662Z",
+    "id": "cf460e34-1e9e-4f37-8e27-ec495337f2fb",
+    "unique_name": "Mbotoets-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Je mag starten met een mbo 4-opleiding als je een mbo-3 diploma hebt, een vmbo-diploma (kl, gl of tl) hebt of een bewijs dat je 3 havo of 2 vwo succesvol hebt afgerond. Heb jij niet de gevraagde vooropleiding? Dan kun je soms ook toegelaten worden op basis van een toelatingstoets. Het bestuur van de mbo-school beslist of jij deze mogelijkheid krijgt en bepaalt de inhoud van de toelatingstoets. "
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": []
+  },
+  {
+    "short_title": "21+-toets",
+    "slug": "21b",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Toelatingstoets voor het hbo",
+    "date_created": "2026-01-21T12:13:36.041Z",
+    "date_updated": "2026-01-27T09:06:12.141Z",
+    "id": "d0c1da91-7482-4641-b313-bd7fe5df0d91",
+    "unique_name": "21+B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Wil je starten met een hbo-bachelor, maar heb je geen mbo 4-, havo- of vwo-diploma? Dan kun je met een 21+-toets toch toegelaten worden – mits je hem haalt natuurlijk. Deze toets kun je alleen maken als je 21 jaar of ouder bent. Als je deze toets haalt, bewijs je dat jouw werk- en denkniveau voldoende is voor een hbo-opleiding."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 3,
+        "route_steps_id": "d0c1da91-7482-4641-b313-bd7fe5df0d91",
+        "faqs_id": "0218b2d4-e807-4a72-b183-8a8a2e6b4a9f",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 4,
+        "route_steps_id": "d0c1da91-7482-4641-b313-bd7fe5df0d91",
+        "articles_id": "d494f22b-8aaf-49bc-bbe5-8d74c0b07e06",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-toets",
+    "slug": "mbotoets-a",
+    "status": "published",
+    "duration_in_months": 0,
+    "long_title": "Toelatingstoets voor een mbo 2-opleiding",
+    "date_created": "2026-01-21T12:13:36.989Z",
+    "date_updated": "2026-01-23T12:47:39.785Z",
+    "id": "d85a5c96-b087-4606-baf1-22f5983698e9",
+    "unique_name": "Mbotoets-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Je mag starten met een mbo 2-opleiding als je een vmbo-diploma (b, kl, gl of tl) hebt of een bewijs dat je 3 havo of 2 vwo succesvol hebt afgerond. Heb jij niet de gevraagde vooropleiding? Dan kun je soms ook toegelaten worden op basis van een toelatingstoets. Het bestuur van de mbo-school beslist of jij deze mogelijkheid krijgt en bepaalt de inhoud van de toelatingstoets."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": []
+  },
+  {
+    "short_title": "Vavo",
+    "slug": "vavo-c",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Behaal je vwo-diploma via het volwassenenonderwijs",
+    "date_created": "2026-01-21T12:13:37.394Z",
+    "date_updated": "2026-01-27T10:21:36.784Z",
+    "id": "dc3bf7da-a0da-4567-9cec-3b32811c7942",
+    "unique_name": "VAVO-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Heb je geen of niet het juiste middelbareschooldiploma om toegelaten te worden tot een wo-opleiding? Dan kun je via het vavo (volwassenenonderwijs) je vwo-diploma halen. Hiervoor moet je 18 jaar of ouder zijn (uitzonderingen zijn mogelijk). Je rondt het vavo af met het reguliere vwo-eindexamen."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 54,
+        "route_steps_id": "dc3bf7da-a0da-4567-9cec-3b32811c7942",
+        "faqs_id": "3e2ba2bd-cbf7-4131-84aa-171bd41f34b4",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 83,
+        "route_steps_id": "dc3bf7da-a0da-4567-9cec-3b32811c7942",
+        "articles_id": "01f90101-9f1c-4241-a7e8-0a1d60d7fa5d",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-2",
+    "slug": "mbo2",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Stroom door met behulp van een mbo 2-opleiding",
+    "date_created": "2026-01-21T12:13:36.678Z",
+    "date_updated": "2026-01-27T09:46:05.076Z",
+    "id": "dd3b32c9-add5-4365-81b0-646851e6dcd4",
+    "unique_name": "Mbo2",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een mbo 2-opleiding is een basisberoepsopleiding die praktisch is ingestoken en zich richt op uitvoerend werk. De opleiding duurt een tot twee jaar. Na een mbo 2-opleiding kun je doorstromen naar een mbo 3-opleiding. Deze vervolgopleiding hoeft niet in dezelfde richting te zijn als je mbo 2-opleiding. Als dit wel het geval is, dan kun je mogelijk vrijstellingen krijgen voor bepaalde vakken. Je kunt vanuit een mbo 2-opleiding ook direct doorstromen naar mbo 4, maar deze grote stap is minder gebruikelijk."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 29,
+        "route_steps_id": "dd3b32c9-add5-4365-81b0-646851e6dcd4",
+        "articles_id": "71f5838e-4d2a-462d-ada7-d5e57c19b8aa",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Wo-master",
+    "slug": "ulo",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Word eerstegraads leraar met behulp van de universitaire lerarenopleiding",
+    "date_created": "2026-01-21T12:13:35.783Z",
+    "date_updated": "2026-01-27T10:18:44.472Z",
+    "id": "dfcc144a-bf8c-40da-baad-7f4dfe6a9faa",
+    "unique_name": "Ulo",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Als jouw vooropleiding en eventuele werkervaring voldoende aansluit bij een schoolvak, ben je toelaatbaar tot de universitaire lerarenopleiding (master leraar voorbereidend hoger onderwijs, LVHO). Deze lerarenopleiding gaat niet in op de vakinhoud van het schoolvak waarin je les in gaat geven. Dat heb je immers (grotendeels) tijdens je vooropleiding al geleerd. Er zijn wel beperkte mogelijkheden om enige vakkennis bij te spijkeren gedurende de opleiding, maar deze studie richt zich voornamelijk op het lesgeven in het betreffende schoolvak. Je werkt dus vooral aan je pedagogische en didactische kennis en vaardigheden. Na afronding ontvang je een eerstegraads lesbevoegdheid voor het betreffende schoolvak, waarmee je les kunt geven in alle klassen van havo en vwo, het volledige vmbo, voortgezet speciaal onderwijs, praktijkonderwijs, mbo, vavo en primair onderwijs (mits je een schoolvak geeft dat overeenkomt met een vak dat daar wordt gegeven)."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 48,
+        "route_steps_id": "dfcc144a-bf8c-40da-baad-7f4dfe6a9faa",
+        "faqs_id": "150bcafc-4052-4925-9671-d977cb354d42",
+        "sort": 1
+      },
+      {
+        "id": 49,
+        "route_steps_id": "dfcc144a-bf8c-40da-baad-7f4dfe6a9faa",
+        "faqs_id": "e8a6522b-f214-4f55-8c6a-799d28354260",
+        "sort": 2
+      }
+    ],
+    "articles": [
+      {
+        "id": 75,
+        "route_steps_id": "dfcc144a-bf8c-40da-baad-7f4dfe6a9faa",
+        "articles_id": "8acf8ed6-c592-4612-a29f-20a9ee9f787e",
+        "sort": 1
+      },
+      {
+        "id": 76,
+        "route_steps_id": "dfcc144a-bf8c-40da-baad-7f4dfe6a9faa",
+        "articles_id": "faaf075f-a5ef-45bf-b18d-640cb2850fa6",
+        "sort": 2
+      },
+      {
+        "id": 77,
+        "route_steps_id": "dfcc144a-bf8c-40da-baad-7f4dfe6a9faa",
+        "articles_id": "46f212b1-845c-41e8-a138-0116a3340a5a",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-4",
+    "slug": "mbo4-c",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Stroom door naar de pabo met behulp van een mbo 4-opleiding",
+    "date_created": "2026-01-21T12:13:36.756Z",
+    "date_updated": "2026-01-27T09:54:25.055Z",
+    "id": "dfe33d19-9466-4394-9dc1-e9c925cb2cca",
+    "unique_name": "Mbo4-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een mbo-4-opleiding is een middenkaderopleiding. Dat betekent dat je opgeleid wordt voor een baan waarin je zonder begeleiding specialistisch, uitvoerend werk doet. Deze opleiding duurt drie tot vier jaar. Na een mbo 4-opleiding kun je doorstromen naar een associate degree-opleiding of een hbo-bacheloropleiding. Deze vervolgopleiding hoeft niet in dezelfde richting te zijn als je mbo-4-opleiding, maar dat is wel gebruikelijk. Volg je bijvoorbeeld een opleiding richting onderwijsassistent of gespecialiseerd pedagogisch medewerker, dan kan je al aan de slag als onderwijsassistent of klassenassistent en krijg je bij een vervolgopleiding aan de pabo een aantal vrijstellingen."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 22,
+        "route_steps_id": "dfe33d19-9466-4394-9dc1-e9c925cb2cca",
+        "faqs_id": "fc10cf49-3486-4359-8ce1-d87c709d927b",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 35,
+        "route_steps_id": "dfe33d19-9466-4394-9dc1-e9c925cb2cca",
+        "articles_id": "db6e14b0-5e2f-40b9-bd43-91ffdc3a473b",
+        "sort": 1
+      },
+      {
+        "id": 36,
+        "route_steps_id": "dfe33d19-9466-4394-9dc1-e9c925cb2cca",
+        "articles_id": "cfbda852-be03-46cb-901b-2bebd81c1c2c",
+        "sort": 2
+      },
+      {
+        "id": 37,
+        "route_steps_id": "dfe33d19-9466-4394-9dc1-e9c925cb2cca",
+        "articles_id": "bda0dbbd-0fb5-41ac-8a64-5df010e33a7b",
+        "sort": 3
+      }
+    ]
+  },
+  {
+    "short_title": "AD",
+    "slug": "ad-c",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Stroom door naar een tweedegraads lerarenopleiding met behulp van een associate degree",
+    "date_created": "2026-01-21T12:13:35.893Z",
+    "date_updated": "2026-01-27T09:09:28.279Z",
+    "id": "e3a9fdd4-505d-4900-ac70-25ecb8ed8764",
+    "unique_name": "AD-C",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De associate degree is een tweejarige praktijkgerichte opleiding op hbo-niveau. Deze opleiding zit wat niveau betreft tussen een mbo 4-opleiding en een hbo-bacheloropleiding in. Als je kiest voor de associate degree Pedagogisch Educatief Professional (AD-PEP) word je opgeleid tot leraarondersteuner in alle sectoren van het onderwijs. Met deze opleiding kun je ook aan de slag als instructeur in het mbo of als pedagogisch coach in de kinderopvang. Besluit je daarna door te studeren voor tweedegraads leraar, dan kun je vaak vrijstellingen krijgen."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 6,
+        "route_steps_id": "e3a9fdd4-505d-4900-ac70-25ecb8ed8764",
+        "faqs_id": "c326b2d2-a110-4fe3-8d13-7242ddc3680c",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 7,
+        "route_steps_id": "e3a9fdd4-505d-4900-ac70-25ecb8ed8764",
+        "articles_id": "83db8b06-7e1c-4d75-94e6-5014e95d3830",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-3",
+    "slug": "mbo3-b",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Stroom door naar de opleiding van onderwijsassistent (mbo 4) met behulp van een mbo 3-opleiding",
+    "date_created": "2026-01-21T12:13:36.814Z",
+    "date_updated": "2026-01-27T09:51:32.940Z",
+    "id": "e48c3942-be83-4762-9d58-75dc642abf0e",
+    "unique_name": "Mbo3-B",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een mbo 3-opleiding is een vakopleiding. Je wordt opgeleid om in een bepaald beroep zelfstandig je werk te kunnen uitvoeren. De opleiding duurt twee tot drie jaar. Na een mbo 3-opleiding kun je doorstromen naar een mbo 4-opleiding. Deze vervolgopleiding hoeft niet in dezelfde richting te zijn als je mbo 3-opleiding, maar dat is wel gebruikelijk. Als je bijvoorbeeld de mbo 3-opleiding Pedagogisch Werk volgt, leer je werken met kinderen van alle leeftijden. Dit komt natuurlijk van pas in de mbo 4-opleiding tot onderwijsassistent. Je kunt soms vrijstellingen krijgen als jouw mbo 3-opleiding aansluit bij deze vervolgopleiding."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [],
+    "articles": [
+      {
+        "id": 31,
+        "route_steps_id": "e48c3942-be83-4762-9d58-75dc642abf0e",
+        "articles_id": "14e31617-8d75-4ba9-a237-1ee797941350",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Vavo",
+    "slug": "vavo-a",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Behaal je vmbo-tl-diploma via het volwassenenonderwijs",
+    "date_created": "2026-01-21T12:13:37.342Z",
+    "date_updated": "2026-01-27T10:20:38.712Z",
+    "id": "e7065114-1f4a-4d49-b194-211db66e5252",
+    "unique_name": "VAVO-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Heb je geen of niet het juiste middelbareschooldiploma om toegelaten te worden tot een mbo 4-opleiding? Dan kun je via het vavo (volwassenenonderwijs) je vmbo-tl-diploma halen. Hiervoor moet je 18 jaar of ouder zijn (uitzonderingen zijn mogelijk). Je rondt het vavo af met het reguliere eindexamen voor vmbo-tl."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 52,
+        "route_steps_id": "e7065114-1f4a-4d49-b194-211db66e5252",
+        "faqs_id": "3e2ba2bd-cbf7-4131-84aa-171bd41f34b4",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 81,
+        "route_steps_id": "e7065114-1f4a-4d49-b194-211db66e5252",
+        "articles_id": "01f90101-9f1c-4241-a7e8-0a1d60d7fa5d",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Kopopleiding",
+    "slug": "p-hbo-a",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Word tweedegraads leraar met behulp van de kopopleiding",
+    "date_created": "2026-01-21T12:13:35.667Z",
+    "date_updated": "2026-01-27T10:07:42.005Z",
+    "id": "eaa6f629-b050-4e86-acc0-73f2f89d4e68",
+    "unique_name": "P-Hbo-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Als je een hbo- of wo-bachelor hebt behaald en als deze voldoende aansluit bij een schoolvak, kun je starten aan de eenjarige kopopleiding. De kopopleiding is het verkorte traject van de tweedegraads lerarenopleiding. Deze opleiding gaat niet in op de vakinhoud van jouw vakgebied, deze heb je immers al onder de knie vanwege jouw vooropleiding. Je richt je op pedagogische en didactische vaardigheden van het leraarschap."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Na het afronden van de kopopleiding krijg je een tweedegraads lesbevoegdheid voor jouw schoolvak, waarmee je les kunt geven in de onderbouw van havo en vwo, het volledige vmbo, voortgezet speciaal onderwijs, praktijkonderwijs, mbo, vavo en primair onderwijs (mits je een schoolvak geeft dat overeenkomt met een vak dat daar wordt gegeven)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Je kunt na de kopopleiding doorstromen naar de opleiding tot eerstegraads leraar."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 42,
+        "route_steps_id": "eaa6f629-b050-4e86-acc0-73f2f89d4e68",
+        "faqs_id": "e0c5ff0a-eeeb-4c16-a8b4-296ae225c0c5",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 62,
+        "route_steps_id": "eaa6f629-b050-4e86-acc0-73f2f89d4e68",
+        "articles_id": "bb32b378-d159-4006-bf59-17f4ffc30ccb",
+        "sort": 1
+      },
+      {
+        "id": 63,
+        "route_steps_id": "eaa6f629-b050-4e86-acc0-73f2f89d4e68",
+        "articles_id": "f6d79ea4-541f-489a-a80a-3fcf797a3c1c",
+        "sort": 2
+      }
+    ]
+  },
+  {
+    "short_title": "AD",
+    "slug": "ad-d",
+    "status": "published",
+    "duration_in_months": 24,
+    "long_title": "Stroom door naar de pabo met behulp van een associate degree",
+    "date_created": "2026-01-21T12:13:35.949Z",
+    "date_updated": "2026-01-27T09:10:11.860Z",
+    "id": "ec113cb5-acfb-48d7-abf5-a37e363f44bc",
+    "unique_name": "AD-D",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "De associate degree is een tweejarige praktijkgerichte opleiding op hbo-niveau. Deze opleiding zit wat niveau betreft tussen een mbo 4-opleiding en een hbo-bacheloropleiding in. Met de associate degree Pedagogisch Educatief Professional (AD PEP) kom je in aanmerking voor een tweejarige variant van de pabo – mits je in je laatste jaar een leer-werkplek in het primair onderwijs hebt."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 7,
+        "route_steps_id": "ec113cb5-acfb-48d7-abf5-a37e363f44bc",
+        "faqs_id": "c326b2d2-a110-4fe3-8d13-7242ddc3680c",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 8,
+        "route_steps_id": "ec113cb5-acfb-48d7-abf5-a37e363f44bc",
+        "articles_id": "83db8b06-7e1c-4d75-94e6-5014e95d3830",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Mbo-4 Spec.",
+    "slug": "mbo4sp-a",
+    "status": "published",
+    "duration_in_months": 12,
+    "long_title": "Word instructeur in het mbo met deze mbo 4-specialistenopleiding",
+    "date_created": "2026-01-21T12:13:36.901Z",
+    "date_updated": "2026-01-27T09:55:53.660Z",
+    "id": "f54b3797-8938-4135-a403-9d91d4681d02",
+    "unique_name": "Mbo4Sp-A",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Een mbo4-specialistenopleiding is een korte variant van een reguliere mbo4-opleiding en duurt een tot twee jaar. Je komt hier alleen voor in aanmerking als je een aansluitende mbo3-opleiding of mbo4-opleiding hebt afgerond. Als je de specialistenopleiding tot instructeur wilt volgen, moet je bovendien zorgen dat een school jou als instructeur in dienst neemt – het is namelijk een leer-werktraject (bbl).  "
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Tijdens de opleiding tot instructeur leer je didactische en pedagogische vaardigheden. Als instructeur begeleid je studenten en ondersteun je hen bij het leren van nieuwe vaardigheden."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 25,
+        "route_steps_id": "f54b3797-8938-4135-a403-9d91d4681d02",
+        "faqs_id": "213be6ba-a76c-452b-8cb9-a95158de6ae2",
+        "sort": 1
+      },
+      {
+        "id": 26,
+        "route_steps_id": "f54b3797-8938-4135-a403-9d91d4681d02",
+        "faqs_id": "f9322b6e-1302-42f6-a281-b637bcb91f6f",
+        "sort": 2
+      }
+    ],
+    "articles": [
+      {
+        "id": 40,
+        "route_steps_id": "f54b3797-8938-4135-a403-9d91d4681d02",
+        "articles_id": "eed2fb32-3c90-41f7-8a16-adab6088f06f",
+        "sort": 1
+      }
+    ]
+  },
+  {
+    "short_title": "Hbo-bachelor",
+    "slug": "hbo-e",
+    "status": "published",
+    "duration_in_months": 48,
+    "long_title": "Stroom door naar de verkorte lerarenopleiding van de pabo met behulp van een hbo-bachelor",
+    "date_created": "2026-01-21T12:13:35.807Z",
+    "date_updated": "2026-01-27T09:19:10.157Z",
+    "id": "f8b2abfc-9b24-452f-a973-c6037db880d1",
+    "unique_name": "Hbo-E",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Hbo-bacheloropleidingen zijn beroepsgerichte opleidingen met stages in de praktijk. Er zijn tal van hbo-bacheloropleidingen die mogelijk passen bij jouw interesse. Als je een hbo-bachelordiploma op zak hebt, mag je starten met een verkorte deeltijdvariant van de pabo, of kom je mogelijk in aanmerking voor het traject 'zij-instroom in het beroep' voor het behalen van een bevoegdheid voor het primair onderwijs."
+            }
+          ]
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "id": 15,
+        "route_steps_id": "f8b2abfc-9b24-452f-a973-c6037db880d1",
+        "faqs_id": "b836d81e-a0aa-404b-8170-66f3c72611f6",
+        "sort": 1
+      }
+    ],
+    "articles": [
+      {
+        "id": 17,
+        "route_steps_id": "f8b2abfc-9b24-452f-a973-c6037db880d1",
+        "articles_id": "76da9cbf-9c2f-48f6-b34e-c502c63acb08",
+        "sort": 1
+      },
+      {
+        "id": 18,
+        "route_steps_id": "f8b2abfc-9b24-452f-a973-c6037db880d1",
+        "articles_id": "44049c8d-26b3-42f3-9e0c-71cc0fea3dd5",
+        "sort": 2
+      },
+      {
+        "id": 19,
+        "route_steps_id": "f8b2abfc-9b24-452f-a973-c6037db880d1",
+        "articles_id": "bda0dbbd-0fb5-41ac-8a64-5df010e33a7b",
+        "sort": 3
+      }
+    ]
+  }
+]

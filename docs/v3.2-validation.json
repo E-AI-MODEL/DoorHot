@@ -1,0 +1,45 @@
+{
+  "version": "3.2.0",
+  "learnedReranking": {
+    "modelType": "pointwise logistic linear reranker",
+    "featureCount": 10,
+    "trainingCases": 148,
+    "holdoutCases": 43,
+    "trainingMetrics": {
+      "caseCount": 148,
+      "recallAt5": 0.9189,
+      "meanReciprocalRank": 0.8439,
+      "ndcgAt5": 0.8629
+    },
+    "holdoutMetrics": {
+      "caseCount": 43,
+      "recallAt5": 0.9302,
+      "meanReciprocalRank": 0.8961,
+      "ndcgAt5": 0.9043
+    },
+    "runtimeEnabled": true,
+    "fallbackToRrfAvailable": true,
+    "modelArtifact": "datasets/learned-reranker-model.json"
+  },
+  "hybridBaseline": {
+    "caseCount": 191,
+    "overallAt5": {
+      "recallAtK": 0.9267,
+      "meanReciprocalRank": 0.7985,
+      "ndcgAtK": 0.8302,
+      "hitRateAtK": 0.9267
+    },
+    "remainingMissesAt5": 14
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "knowledgeTests": "5 files / 10 tests passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "migrations": "18/18 passed",
+    "publicTableCount": 79,
+    "npmAuditVulnerabilities": 0
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

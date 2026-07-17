@@ -1,0 +1,38 @@
+{
+  "version": "3.9.0",
+  "orchestrator": {
+    "package": "@door010/orchestration",
+    "deterministicIntentPlanner": true,
+    "explicitPlan": true,
+    "toolAllowlist": true,
+    "toolTimeouts": true,
+    "journeyTool": true,
+    "knowledgeTool": true,
+    "nextBestActionTool": true,
+    "deterministicAnswerComposer": true,
+    "coachSidecarIntegration": true,
+    "standaloneApi": true,
+    "persistentRuns": true,
+    "persistentEvents": true,
+    "backofficeTraceApi": true,
+    "modelAssistedPlanning": false,
+    "parallelToolExecution": false
+  },
+  "verification": {
+    "orchestrationTests": "1 file / 4 tests passed",
+    "domainTests": "7 files / 19 tests passed",
+    "knowledgeTests": "10 files / 23 tests passed",
+    "integrationTests": "4 files / 8 tests passed",
+    "apiTests": "2 files / 3 tests passed",
+    "typecheck": "passed",
+    "rerankerQualityGate": "passed",
+    "shadowQualityGate": "passed",
+    "build": "passed",
+    "migrations": "23/23 passed",
+    "publicTableCount": 95,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files"
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

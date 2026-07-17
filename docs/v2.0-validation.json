@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "backoffice": {
+    "statistics": true,
+    "alerts": true,
+    "candidateDetail": true,
+    "memoryImplementation": true,
+    "postgresImplementation": true,
+    "frontendDashboard": true,
+    "roleProtectedRoutes": true
+  },
+  "activePrompts": {
+    "generalCoachConnected": true,
+    "personalCoachConnected": true,
+    "approvedActiveVersionOnly": true,
+    "promptProviderBoundary": true,
+    "domainRulesUnaffected": true
+  },
+  "verification": {
+    "npmInstall": "passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "migrations": "14/14 passed",
+    "npmAuditVulnerabilities": 0,
+    "chatTests": "6 files / 8 tests passed",
+    "backofficeTests": "1 file / 2 tests passed",
+    "parityFlowTests": "6 files / 7 tests passed",
+    "apiTests": "1 file / 1 test passed",
+    "playwrightTestsDiscovered": 5,
+    "playwrightBrowserExecution": "environment blocked"
+  },
+  "supabaseSdkImports": [],
+  "passedWithEnvironmentLimitation": true
+}

@@ -1,0 +1,55 @@
+name: Featureverzoek
+description: Stel een verbetering of nieuwe mogelijkheid voor
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Gebruikersprobleem
+      description: Welk concreet probleem moet worden opgelost?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Gewenste uitkomst
+      description: Beschrijf het gewenste gedrag zonder de implementatie vast te leggen.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Gebied
+      options:
+        - Public Coach
+        - Personal Journey Coach
+        - Human Advisor Chat
+        - Journey Engine
+        - Retrieval
+        - Orchestration
+        - Backoffice
+        - Platform/DevOps
+        - Documentatie
+        - Anders
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatieven
+      description: Welke tijdelijke oplossingen of alternatieven zijn overwogen?
+  - type: textarea
+    id: impact
+    attributes:
+      label: Architectuur-, privacy- of securityimpact
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Controle
+      options:
+        - label: Ik heb gezocht naar bestaande verzoeken.
+          required: true
+        - label: Het voorstel respecteert de kanaal- en enginegrenzen uit AGENTS.md.
+          required: true

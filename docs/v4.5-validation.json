@@ -1,0 +1,55 @@
+{
+  "version": "4.5.0",
+  "playwrightCi": {
+    "officialContainer": "mcr.microsoft.com/playwright:v1.55.0-noble",
+    "testDiscovery": "11 tests / 3 files",
+    "reportArtifact": true,
+    "traceAndScreenshotDiagnostics": true,
+    "localFullBrowserRun": false,
+    "remoteWorkflowExecuted": false
+  },
+  "stagingLoadGate": {
+    "workflow": ".github/workflows/staging-load.yml",
+    "manualInputs": true,
+    "environmentProtected": true,
+    "jsonEvidence": true,
+    "successRateGate": true,
+    "p95Gate": true,
+    "stagingExecuted": false
+  },
+  "postgresRestoreDrill": {
+    "workflow": ".github/workflows/postgres-restore-drill.yml",
+    "databaseNameValidation": true,
+    "customFormatDump": true,
+    "temporaryRestoreDatabase": true,
+    "tableCountComparison": true,
+    "schemaFingerprintComparison": true,
+    "criticalTableSmoke": true,
+    "alwaysCleanup": true,
+    "stagingExecuted": false
+  },
+  "verification": {
+    "workflowYamlParsed": "3/3",
+    "restoreScriptSyntax": "passed",
+    "loadScriptSyntax": "passed",
+    "apiTests": "2 files / 3 tests passed",
+    "domainTests": "8 files / 22 tests passed",
+    "orchestrationTests": "3 files / 10 tests passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "migrations": "25/25 passed",
+    "publicTableCount": 100,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "11 tests / 3 files"
+  },
+  "readinessDecision": "CONDITIONAL_GO",
+  "remainingExternalGates": [
+    "execute Playwright workflow and retain green artifact",
+    "execute staging load workflow within agreed thresholds",
+    "execute PostgreSQL restore drill against staging",
+    "execute live provider acceptance",
+    "complete privacy and DPIA sign-off"
+  ],
+  "supabaseSdkImports": [],
+  "passed": true
+}

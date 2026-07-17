@@ -1,0 +1,40 @@
+{
+  "version": "4.1.0",
+  "graphMemory": {
+    "journeyProjection": true,
+    "nodeTypes": 10,
+    "edgeTypes": 12,
+    "memoryRepository": true,
+    "postgresRepository": true,
+    "boundedNeighborQueries": true,
+    "contextSummary": true,
+    "automaticIncrementalUpdates": false,
+    "externalGraphDatabase": false
+  },
+  "safeExecution": {
+    "reminderTool": true,
+    "notificationTool": true,
+    "explicitConfirmationRequired": true,
+    "confirmationTokenHashed": true,
+    "confirmationExpiry": true,
+    "userOwnershipCheck": true,
+    "outboxPattern": true,
+    "directExternalDelivery": false,
+    "backofficeOverview": true
+  },
+  "verification": {
+    "domainTests": "8 files / 21 tests passed",
+    "orchestrationTests": "3 files / 8 tests passed",
+    "apiTests": "2 files / 3 tests passed",
+    "typecheck": "passed",
+    "rerankerQualityGate": "passed",
+    "shadowRerankerQualityGate": "passed",
+    "build": "passed",
+    "migrations": "25/25 passed",
+    "publicTableCount": 100,
+    "npmAuditVulnerabilities": 0,
+    "playwrightDiscovery": "9 tests / 2 files"
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

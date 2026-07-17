@@ -1,0 +1,36 @@
+{
+  "version": "1.8.0",
+  "v1_7": {
+    "trustedSources": true,
+    "faqIngestion": true,
+    "hybridRetrieval": true,
+    "publicCoachRetrievalIntegration": true,
+    "postgresFullTextSearch": true,
+    "migration": "0014_knowledge_retrieval.sql"
+  },
+  "v1_8": {
+    "frontendWorkspace": "apps/web",
+    "publicChat": true,
+    "personalChat": true,
+    "authentication": true,
+    "profileCrud": true,
+    "knowledgeSearch": true,
+    "responsiveLayout": true,
+    "webDockerImage": true,
+    "nginxApiProxy": true,
+    "businessRulesDuplicatedInFrontend": false
+  },
+  "verification": {
+    "typecheck": "passed",
+    "backendBuild": "passed",
+    "frontendBuild": "passed",
+    "testFilesPassed": 24,
+    "testsPassed": 42,
+    "migrations": "14/14 passed",
+    "npmAuditVulnerabilities": 0,
+    "dockerBuildExecuted": false,
+    "dockerBuildReason": "Docker is unavailable in this execution environment; CI builds both API and web images."
+  },
+  "supabaseSdkImports": [],
+  "passed": true
+}

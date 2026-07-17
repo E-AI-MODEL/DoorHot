@@ -1,0 +1,14 @@
+{
+  "version": "0.7.0",
+  "checks": {
+    "preferenceResolverPresent": true,
+    "adaptiveDetectorPresent": true,
+    "scopePriorityImplemented": true,
+    "registryIntegrationPresent": true,
+    "transitionEvaluationPresent": true,
+    "apiRoutesPresent": true,
+    "migrationPresent": true,
+    "testsPresent": true
+  },
+  "passed": true
+}

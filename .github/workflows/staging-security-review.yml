@@ -1,0 +1,89 @@
+name: Door010 Staging Security Review
+
+on:
+  workflow_dispatch:
+    inputs:
+      staging_url:
+        description: HTTPS URL of the staging environment
+        required: true
+        type: string
+  schedule:
+    - cron: "17 3 * * 1"
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: door010-staging-security-review
+  cancel-in-progress: false
+
+jobs:
+  review:
+    name: Staging security and privacy review
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      STAGING_URL: >-
+        ${{ inputs.staging_url || secrets.STAGING_URL }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Validate staging target
+        run: |
+          test -n "$STAGING_URL"
+          case "$STAGING_URL" in
+            https://*) ;;
+            *) echo "STAGING_URL must use HTTPS"; exit 1 ;;
+          esac
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Run Door010 privacy and header review
+        continue-on-error: true
+        run: npm run security:review:staging
+
+      - name: Run OWASP ZAP baseline scan
+        continue-on-error: true
+        run: |
+          mkdir -p zap-report
+          chmod 777 zap-report
+          docker run --rm             -v "$PWD/zap-report:/zap/wrk/:rw"             --network host             zaproxy/zap-stable             zap-baseline.py             -t "$STAGING_URL"             -J zap-report.json             -w zap-report.md             -r zap-report.html             -m 3             -I
+
+      - name: Evaluate high-severity Door010 findings
+        run: |
+          node -e '
+            const fs = require("fs");
+            const report = JSON.parse(
+              fs.readFileSync("staging-security-review.json", "utf8")
+            );
+            const blocking = report.findings.filter(
+              ({ severity }) =>
+                severity === "critical" || severity === "high"
+            );
+            if (blocking.length) {
+              console.error(JSON.stringify(blocking, null, 2));
+              process.exit(1);
+            }
+          '
+
+      - name: Upload security reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: door010-staging-security-review
+          path: |
+            staging-security-review.json
+            staging-security-review.md
+            zap-report/
+          if-no-files-found: warn
+          retention-days: 30

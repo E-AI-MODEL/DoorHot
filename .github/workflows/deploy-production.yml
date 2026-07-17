@@ -1,0 +1,35 @@
+name: Deploy production
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: Immutable image tag, preferably a commit SHA
+        required: true
+      confirmation:
+        description: Type DEPLOY to confirm production deployment
+        required: true
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: door010-production
+  cancel-in-progress: false
+
+jobs:
+  validate-confirmation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate production confirmation
+        run: |
+          test "${{ inputs.confirmation }}" = "DEPLOY"
+
+  deploy:
+    needs: validate-confirmation
+    uses: ./.github/workflows/reusable-release.yml
+    with:
+      environment_name: production
+      image_tag: ${{ inputs.image_tag }}
+    secrets: inherit

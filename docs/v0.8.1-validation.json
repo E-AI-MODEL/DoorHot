@@ -1,0 +1,23 @@
+{
+  "version": "0.8.1",
+  "checks": {
+    "phaseSystemsLoaded": true,
+    "bootstrapLoadsDatasets": true,
+    "generalCoachBootstrapped": true,
+    "personalCoachBootstrapped": true,
+    "pendingMutationStore": true,
+    "confirmationService": true,
+    "pendingEndpoint": true,
+    "confirmationEndpoint": true,
+    "acceptanceRequired": true,
+    "migrationPresent": true,
+    "testsPresent": true
+  },
+  "passed": true,
+  "notExecuted": [
+    "npm install",
+    "npm run typecheck",
+    "npm test",
+    "npm run build"
+  ]
+}

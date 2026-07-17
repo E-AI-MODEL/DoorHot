@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "references": [
+    {
+      "path": "../chat"
+    },
+    {
+      "path": "../contracts"
+    },
+    {
+      "path": "../domain"
+    },
+    {
+      "path": "../parity-flows"
+    },
+    {
+      "path": "../database"
+    },
+    {
+      "path": "../knowledge"
+    }
+  ]
+}

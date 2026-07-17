@@ -1,0 +1,134 @@
+{
+  "migrationCount": 13,
+  "checks": {
+    "filesFound": true,
+    "uniqueNumericPrefixes": true,
+    "ascendingOrder": true,
+    "nonEmptyFiles": true,
+    "statementsTerminate": true,
+    "balancedParentheses": true,
+    "noSupabaseReferences": true
+  },
+  "passed": true,
+  "databaseApplyExecuted": false,
+  "databaseApplyReason": "DATABASE_URL was not provided; validation is static and compile-time only.",
+  "migrations": [
+    {
+      "file": "0001_initial.sql",
+      "prefix": 1,
+      "bytes": 4060,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0002_domain_schema.sql",
+      "prefix": 2,
+      "bytes": 20238,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0003_routes_and_journey.sql",
+      "prefix": 3,
+      "bytes": 1782,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0004_response_pipeline.sql",
+      "prefix": 4,
+      "bytes": 1532,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0005_phase_systems.sql",
+      "prefix": 5,
+      "bytes": 1672,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0006_phase_system_preferences.sql",
+      "prefix": 6,
+      "bytes": 907,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0007_persistent_journey_state.sql",
+      "prefix": 7,
+      "bytes": 521,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0008_pending_mutations.sql",
+      "prefix": 8,
+      "bytes": 920,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0009_parity_conversations.sql",
+      "prefix": 9,
+      "bytes": 1043,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0010_parity_flows_5_to_9.sql",
+      "prefix": 10,
+      "bytes": 1697,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0011_vacancy_parity.sql",
+      "prefix": 11,
+      "bytes": 1141,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0012_auth_profile_production.sql",
+      "prefix": 12,
+      "bytes": 1763,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    },
+    {
+      "file": "0013_persistent_parity_flows.sql",
+      "prefix": 13,
+      "bytes": 972,
+      "nonEmpty": true,
+      "terminatesWithSemicolon": true,
+      "balancedParentheses": true,
+      "containsSupabaseReference": false
+    }
+  ]
+}

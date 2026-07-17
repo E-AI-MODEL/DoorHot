@@ -1,0 +1,69 @@
+name: Bugrapport
+description: Meld reproduceerbaar foutgedrag
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bedankt voor je melding. Deel geen secrets of persoonsgegevens.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Samenvatting
+      description: Wat gaat er fout?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduceren
+      description: Geef minimale, genummerde stappen.
+      placeholder: |
+        1. Start ...
+        2. Open ...
+        3. Voer ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Verwacht gedrag
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actueel gedrag
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Door010-versie of commit
+      placeholder: 5.0.1 of commit-SHA
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Omgeving
+      description: OS, Node.js, browser, database en deploymenttype.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevante logs
+      description: Verwijder tokens, secrets en persoonsgegevens.
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Controle
+      options:
+        - label: Ik heb gezocht naar bestaande issues.
+          required: true
+        - label: Deze melding bevat geen secrets of persoonsgegevens.
+          required: true

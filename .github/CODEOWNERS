@@ -1,0 +1,7 @@
+# Security-sensitive and deployment changes require owner review.
+* @E-AI-MODEL
+/.github/ @E-AI-MODEL
+/migrations/ @E-AI-MODEL
+/apps/api/ @E-AI-MODEL
+/packages/identity-profile/ @E-AI-MODEL
+/packages/integrations/ @E-AI-MODEL

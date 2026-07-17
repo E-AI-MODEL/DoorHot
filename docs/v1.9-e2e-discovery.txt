@@ -1,0 +1,291 @@
+> door010-3@1.9.0 test:e2e
+> npm run test:e2e --workspace @door010/web --list
+
+
+> @door010/web@1.9.0 test:e2e
+> playwright test
+
+
+[2mRunning [22m5[2m tests using [22m2[2m workers[22m
+
+  [31m✘[39m  [2m1 [22m[31m[chromium] › e2e/core-flows.spec.ts:23:1 › publieke chat toont het antwoord van de algemene coach[39m[2m (2ms)[22m
+  [31m✘[39m  [2m2 [22m[31m[chromium] › e2e/core-flows.spec.ts:66:1 › gebruiker kan inloggen[39m[2m (2ms)[22m
+  [31m✘[39m  [2m4 [22m[31m[chromium] › e2e/core-flows.spec.ts:66:1 › gebruiker kan inloggen[39m[33m (retry #1)[39m[2m (2ms)[22m
+  [31m✘[39m  [2m3 [22m[31m[chromium] › e2e/core-flows.spec.ts:23:1 › publieke chat toont het antwoord van de algemene coach[39m[33m (retry #1)[39m[2m (2ms)[22m
+  [31m✘[39m  [2m5 [22m[31m[chromium] › e2e/core-flows.spec.ts:66:1 › gebruiker kan inloggen[39m[33m (retry #2)[39m[2m (2ms)[22m
+  [31m✘[39m  [2m6 [22m[31m[chromium] › e2e/core-flows.spec.ts:23:1 › publieke chat toont het antwoord van de algemene coach[39m[33m (retry #2)[39m[2m (2ms)[22m
+  [31m✘[39m  [2m7 [22m[31m[chromium] › e2e/core-flows.spec.ts:156:1 › persoonlijke chat gebruikt de ingelogde gebruiker[39m[2m (2ms)[22m
+  [31m✘[39m  [2m8 [22m[31m[chromium] › e2e/core-flows.spec.ts:108:1 › profiel kan worden geladen en opgeslagen[39m[2m (2ms)[22m
+  [31m✘[39m  [2m9 [22m[31m[chromium] › e2e/core-flows.spec.ts:156:1 › persoonlijke chat gebruikt de ingelogde gebruiker[39m[33m (retry #1)[39m[2m (2ms)[22m
+  [31m✘[39m  [2m10 [22m[31m[chromium] › e2e/core-flows.spec.ts:108:1 › profiel kan worden geladen en opgeslagen[39m[33m (retry #1)[39m[2m (2ms)[22m
+  [31m✘[39m  [2m11 [22m[31m[chromium] › e2e/core-flows.spec.ts:108:1 › profiel kan worden geladen en opgeslagen[39m[33m (retry #2)[39m[2m (2ms)[22m
+  [31m✘[39m  [2m12 [22m[31m[chromium] › e2e/core-flows.spec.ts:156:1 › persoonlijke chat gebruikt de ingelogde gebruiker[39m[33m (retry #2)[39m[2m (2ms)[22m
+  [31m✘[39m  [2m13 [22m[31m[chromium] › e2e/core-flows.spec.ts:192:1 › beheerder ziet kandidaten en promptbeheer[39m[2m (2ms)[22m
+  [31m✘[39m  [2m14 [22m[31m[chromium] › e2e/core-flows.spec.ts:192:1 › beheerder ziet kandidaten en promptbeheer[39m[33m (retry #1)[39m[2m (2ms)[22m
+  [31m✘[39m  [2m15 [22m[31m[chromium] › e2e/core-flows.spec.ts:192:1 › beheerder ziet kandidaten en promptbeheer[39m[33m (retry #2)[39m[2m (2ms)[22m
+
+
+[31m  1) [chromium] › e2e/core-flows.spec.ts:23:1 › publieke chat toont het antwoord van de algemene coach [39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-publieke-chat-t-3be2e-woord-van-de-algemene-coach-chromium/error-context.md[22m
+
+[90m    Retry #1 [2m───────────────────────────────────────────────────────────────────────────────────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-publieke-chat-t-3be2e-woord-van-de-algemene-coach-chromium-retry1/error-context.md[22m
+
+[2m    attachment #2: [1mtrace[2m (application/zip) [2m─────────────────────────────────────────────────────────[2m[22m
+[2m    test-results/core-flows-publieke-chat-t-3be2e-woord-van-de-algemene-coach-chromium-retry1/trace.zip[22m
+[2m    Usage:[22m
+
+[2m        npx playwright show-trace test-results/core-flows-publieke-chat-t-3be2e-woord-van-de-algemene-coach-chromium-retry1/trace.zip[22m
+
+[2m    [2m────────────────────────────────────────────────────────────────────────────────────────────────[2m[22m
+
+[90m    Retry #2 [2m───────────────────────────────────────────────────────────────────────────────────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-publieke-chat-t-3be2e-woord-van-de-algemene-coach-chromium-retry2/error-context.md[22m
+
+[31m  2) [chromium] › e2e/core-flows.spec.ts:66:1 › gebruiker kan inloggen [2m─────────────────────────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-gebruiker-kan-inloggen-chromium/error-context.md[22m
+
+[90m    Retry #1 [2m───────────────────────────────────────────────────────────────────────────────────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-gebruiker-kan-inloggen-chromium-retry1/error-context.md[22m
+
+[2m    attachment #2: [1mtrace[2m (application/zip) [2m─────────────────────────────────────────────────────────[2m[22m
+[2m    test-results/core-flows-gebruiker-kan-inloggen-chromium-retry1/trace.zip[22m
+[2m    Usage:[22m
+
+[2m        npx playwright show-trace test-results/core-flows-gebruiker-kan-inloggen-chromium-retry1/trace.zip[22m
+
+[2m    [2m────────────────────────────────────────────────────────────────────────────────────────────────[2m[22m
+
+[90m    Retry #2 [2m───────────────────────────────────────────────────────────────────────────────────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-gebruiker-kan-inloggen-chromium-retry2/error-context.md[22m
+
+[31m  3) [chromium] › e2e/core-flows.spec.ts:108:1 › profiel kan worden geladen en opgeslagen [2m──────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-profiel-kan-worden-geladen-en-opgeslagen-chromium/error-context.md[22m
+
+[90m    Retry #1 [2m───────────────────────────────────────────────────────────────────────────────────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-profiel-kan-worden-geladen-en-opgeslagen-chromium-retry1/error-context.md[22m
+
+[2m    attachment #2: [1mtrace[2m (application/zip) [2m─────────────────────────────────────────────────────────[2m[22m
+[2m    test-results/core-flows-profiel-kan-worden-geladen-en-opgeslagen-chromium-retry1/trace.zip[22m
+[2m    Usage:[22m
+
+[2m        npx playwright show-trace test-results/core-flows-profiel-kan-worden-geladen-en-opgeslagen-chromium-retry1/trace.zip[22m
+
+[2m    [2m────────────────────────────────────────────────────────────────────────────────────────────────[2m[22m
+
+[90m    Retry #2 [2m───────────────────────────────────────────────────────────────────────────────────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-profiel-kan-worden-geladen-en-opgeslagen-chromium-retry2/error-context.md[22m
+
+[31m  4) [chromium] › e2e/core-flows.spec.ts:156:1 › persoonlijke chat gebruikt de ingelogde gebruiker [2m─[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-persoonlijke-chat-gebruikt-de-ingelogde-gebruiker-chromium/error-context.md[22m
+
+[90m    Retry #1 [2m───────────────────────────────────────────────────────────────────────────────────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-persoonlijke-chat-gebruikt-de-ingelogde-gebruiker-chromium-retry1/error-context.md[22m
+
+[2m    attachment #2: [1mtrace[2m (application/zip) [2m─────────────────────────────────────────────────────────[2m[22m
+[2m    test-results/core-flows-persoonlijke-chat-gebruikt-de-ingelogde-gebruiker-chromium-retry1/trace.zip[22m
+[2m    Usage:[22m
+
+[2m        npx playwright show-trace test-results/core-flows-persoonlijke-chat-gebruikt-de-ingelogde-gebruiker-chromium-retry1/trace.zip[22m
+
+[2m    [2m────────────────────────────────────────────────────────────────────────────────────────────────[2m[22m
+
+[90m    Retry #2 [2m───────────────────────────────────────────────────────────────────────────────────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-persoonlijke-chat-gebruikt-de-ingelogde-gebruiker-chromium-retry2/error-context.md[22m
+
+[31m  5) [chromium] › e2e/core-flows.spec.ts:192:1 › beheerder ziet kandidaten en promptbeheer [2m─────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-beheerder-ziet-kandidaten-en-promptbeheer-chromium/error-context.md[22m
+
+[90m    Retry #1 [2m───────────────────────────────────────────────────────────────────────────────────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-beheerder-ziet-kandidaten-en-promptbeheer-chromium-retry1/error-context.md[22m
+
+[2m    attachment #2: [1mtrace[2m (application/zip) [2m─────────────────────────────────────────────────────────[2m[22m
+[2m    test-results/core-flows-beheerder-ziet-kandidaten-en-promptbeheer-chromium-retry1/trace.zip[22m
+[2m    Usage:[22m
+
+[2m        npx playwright show-trace test-results/core-flows-beheerder-ziet-kandidaten-en-promptbeheer-chromium-retry1/trace.zip[22m
+
+[2m    [2m────────────────────────────────────────────────────────────────────────────────────────────────[2m[22m
+
+[90m    Retry #2 [2m───────────────────────────────────────────────────────────────────────────────────────[22m[39m
+
+    Error: browserType.launch: Executable doesn't exist at /home/oai/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+[2m    Error Context: test-results/core-flows-beheerder-ziet-kandidaten-en-promptbeheer-chromium-retry2/error-context.md[22m
+
+[31m  5 failed[39m
+[31m    [chromium] › e2e/core-flows.spec.ts:23:1 › publieke chat toont het antwoord van de algemene coach [39m
+[31m    [chromium] › e2e/core-flows.spec.ts:66:1 › gebruiker kan inloggen [2m──────────────────────────────[22m[39m
+[31m    [chromium] › e2e/core-flows.spec.ts:108:1 › profiel kan worden geladen en opgeslagen [2m───────────[22m[39m
+[31m    [chromium] › e2e/core-flows.spec.ts:156:1 › persoonlijke chat gebruikt de ingelogde gebruiker [2m──[22m[39m
+[31m    [chromium] › e2e/core-flows.spec.ts:192:1 › beheerder ziet kandidaten en promptbeheer [2m──────────[22m[39m
+
+npm error Lifecycle script `test:e2e` failed with error:
+npm error code 1
+npm error path /mnt/data/door010-3-v1.9-work/door010-3-foundation/apps/web
+npm error workspace @door010/web@1.9.0
+npm error location /mnt/data/door010-3-v1.9-work/door010-3-foundation/apps/web
+npm error command failed
+npm error command sh -c playwright test

@@ -1,0 +1,107 @@
+name: Door010 CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: door010-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify Node.js workspace
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Audit dependencies
+        run: npm audit --audit-level=moderate
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Execute all migrations
+        run: npm run verify:migrations
+
+      - name: Guard learned reranker quality and drift
+        run: npm run benchmark:reranker:check
+
+      - name: Guard shadow reranker quality
+        run: npm run benchmark:shadow-reranker:check
+
+  e2e:
+    name: Run browser parity tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: verify
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Install managed Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Execute all Playwright scenarios
+        run: npm run test:e2e -- --workers=1
+
+  container:
+    name: Validate deployment image
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs:
+      - verify
+      - e2e
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Validate Compose configuration
+        env:
+          POSTGRES_PASSWORD: ci-postgres-password
+          AUTH_TOKEN_SECRET: ci-auth-token-secret-with-at-least-32-characters
+        run: docker compose config --quiet
+
+      - name: Build API image
+        run: docker build --tag door010-api:${{ github.sha }} .
+
+      - name: Build web image
+        run: docker build --file Dockerfile.web --tag door010-web:${{ github.sha }} .
+
+# Production acceptance runs in .github/workflows/acceptance.yml

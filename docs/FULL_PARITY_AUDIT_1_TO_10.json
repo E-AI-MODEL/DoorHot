@@ -1,0 +1,185 @@
+{
+  "version": "1.1.0",
+  "auditType": "feature-parity-flows-1-to-10",
+  "flows": [
+    {
+      "flow": 1,
+      "name": "Publieke algemene chatbot",
+      "status": "implemented",
+      "evidence": [
+        "GeneralCoach",
+        "POST /v1/chat/general",
+        "no phase or profile mutations",
+        "conversation persistence"
+      ],
+      "remaining": [
+        "live FAQ/search provider wiring",
+        "production trusted web provider"
+      ]
+    },
+    {
+      "flow": 2,
+      "name": "Registratie en authenticatie",
+      "status": "partial",
+      "evidence": [
+        "user/profile schema",
+        "role schema",
+        "authenticated personal coach boundary"
+      ],
+      "remaining": [
+        "auth adapter implementation",
+        "login/register endpoints",
+        "central authorization middleware"
+      ]
+    },
+    {
+      "flow": 3,
+      "name": "Persoonlijk profiel",
+      "status": "partial",
+      "evidence": [
+        "profile and profile-slot schema",
+        "slot persistence interfaces",
+        "saved events and vacancies",
+        "talent result linkage"
+      ],
+      "remaining": [
+        "profile CRUD API",
+        "avatar and CV storage adapter",
+        "personal notes API"
+      ]
+    },
+    {
+      "flow": 4,
+      "name": "Persoonlijke chatbot",
+      "status": "implemented",
+      "evidence": [
+        "PersonalJourneyCoach",
+        "AdaptivePhaseDetector",
+        "RouteEngine",
+        "detector snapshots",
+        "pending mutation confirmation",
+        "conversation and message persistence"
+      ],
+      "remaining": [
+        "production LLM/retrieval provider",
+        "production PostgreSQL bootstrap"
+      ]
+    },
+    {
+      "flow": 5,
+      "name": "Route bepalen",
+      "status": "implemented",
+      "evidence": [
+        "RouteFlowService",
+        "3378 routes",
+        "4 conditional questions",
+        "56 answers",
+        "66 route steps",
+        "route session endpoints"
+      ],
+      "remaining": [
+        "persistent route-session repository in API bootstrap"
+      ]
+    },
+    {
+      "flow": 6,
+      "name": "Fase bepalen",
+      "status": "implemented",
+      "evidence": [
+        "AdaptivePhaseDetector",
+        "4/5/9 phase systems",
+        "entry and exit criteria",
+        "snapshot debug endpoint",
+        "confirmation-required transitions"
+      ],
+      "remaining": [
+        "persistent snapshot repository in API bootstrap"
+      ]
+    },
+    {
+      "flow": 7,
+      "name": "Interesse- en talententest",
+      "status": "implemented",
+      "evidence": [
+        "8 reused questions",
+        "PO/VO/MBO/SO scoring",
+        "result endpoints",
+        "profile-linked result"
+      ],
+      "remaining": [
+        "persistent talent result repository in API bootstrap"
+      ]
+    },
+    {
+      "flow": 8,
+      "name": "Adviseursbackoffice",
+      "status": "implemented-core",
+      "evidence": [
+        "advisor chat",
+        "candidate service",
+        "advisor notes",
+        "appointments",
+        "detector debug feed"
+      ],
+      "remaining": [
+        "role authorization middleware",
+        "production repositories",
+        "backoffice UI"
+      ]
+    },
+    {
+      "flow": 9,
+      "name": "Evenementen",
+      "status": "implemented-core",
+      "evidence": [
+        "EventService",
+        "scraper adapter",
+        "3 reused source definitions",
+        "cache TTL",
+        "save and remove endpoints"
+      ],
+      "remaining": [
+        "live HTTP/Firecrawl scraper adapter",
+        "persistent event repository"
+      ]
+    },
+    {
+      "flow": 10,
+      "name": "Vacatures",
+      "status": "implemented-core",
+      "evidence": [
+        "VacancyProvider",
+        "VacancyService",
+        "search endpoint",
+        "save/remove endpoints",
+        "profile summary linkage"
+      ],
+      "remaining": [
+        "live vacancy source adapter",
+        "persistent vacancy repository"
+      ]
+    }
+  ],
+  "architecture": {
+    "supabaseSdkInDomain": false,
+    "lovableDependencyInDomain": false,
+    "adapterBased": true,
+    "portable": true,
+    "notes": [
+      "Original GitHub code was used only as a source for behavior and data patterns.",
+      "The new domain and parity-flow packages do not import Supabase SDKs."
+    ]
+  },
+  "summary": {
+    "implemented": 5,
+    "implementedCore": 3,
+    "partial": 2,
+    "total": 10,
+    "highestPriorityGaps": [
+      "authentication and authorization",
+      "profile CRUD and file storage",
+      "production PostgreSQL bootstrap",
+      "live retrieval and ingestion providers"
+    ]
+  }
+}

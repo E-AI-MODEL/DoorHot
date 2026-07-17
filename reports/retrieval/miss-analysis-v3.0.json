@@ -1,0 +1,446 @@
+{
+  "count": 21,
+  "items": [
+    {
+      "id": "alias-067",
+      "query": "Wat nu",
+      "queryType": "alias",
+      "relevantQuestions": [
+        "Wat zijn mijn volgende stappen na orientatie?"
+      ],
+      "retrievedTitles": [
+        "Wat is een Associate Degree (AD)?",
+        "Wat is de SOOL-subsidie?",
+        "Wat kost een reguliere lerarenopleiding?",
+        "Hoe is de arbeidsmarkt voor leraren in 2026?",
+        "Wat is een geschiktheidsonderzoek bij zij-instroom?",
+        "Wat zijn mijn volgende stappen na orientatie?",
+        "Wat is het salaris van een startende docent?",
+        "Wat is een PDG (Pedagogisch Didactisch Getuigschrift)?",
+        "Wat is het verschil tussen de verschillende onderwijssectoren?",
+        "Wat als ik geen verwant diploma heb voor zij-instroom?"
+      ],
+      "failureCategory": "underspecified_next_step"
+    },
+    {
+      "id": "paraphrase-096",
+      "query": "Hoe kan ik omscholen en meteen als leraar werken?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Wat is een zij-instroomtraject?"
+      ],
+      "retrievedTitles": [
+        "Wat is een lio-stage en hoe werkt die?",
+        "Wat is de Pabo?",
+        "Wat is de SOOL-subsidie?",
+        "Hoe vind ik een vacature in het onderwijs?",
+        "Wat is het salaris van een startende docent?",
+        "Kan ik als herintreder terugkeren in het onderwijs?",
+        "Hoe zorg ik voor inkomen tijdens het zij-instroomtraject?",
+        "Wat zijn de werktijden van een leraar?",
+        "Welke stappen moet ik nemen om voor de klas te staan?",
+        "Wat is een zij-instroomtraject?"
+      ],
+      "failureCategory": "implicit_route_mapping"
+    },
+    {
+      "id": "paraphrase-099",
+      "query": "Binnen hoeveel tijd kan ik via zij-instroom bevoegd zijn?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Hoe lang duurt een zij-instroomtraject?"
+      ],
+      "retrievedTitles": [
+        "Hoe zorg ik voor inkomen tijdens het zij-instroomtraject?",
+        "Hoeveel dagen moet ik werken en hoeveel dagen naar de opleiding tijdens zij-instroom?",
+        "Wat is een eerstegraads lerarenopleiding?",
+        "Ik kom uit het buitenland, kan ik zij-instromen in Nederland?",
+        "Wat is een geschiktheidsonderzoek bij zij-instroom?",
+        "Wat kost een zij-instroomtraject?",
+        "Wat als ik geen verwant diploma heb voor zij-instroom?",
+        "Wat zijn de toelatingseisen voor het zij-instroomtraject?",
+        "Hoe plan ik een gesprek met een adviseur?",
+        "Wat is de Pabo?"
+      ],
+      "failureCategory": "semantic_paraphrase_gap"
+    },
+    {
+      "id": "paraphrase-100",
+      "query": "Moet ik zelf betalen voor omscholing tot leraar?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Wat kost een zij-instroomtraject?"
+      ],
+      "retrievedTitles": [
+        "Wat is de Pabo?",
+        "Wat is de SOOL-subsidie?",
+        "Wat is een geschiktheidsonderzoek bij zij-instroom?",
+        "Wat zijn de toelatingseisen voor het zij-instroomtraject?",
+        "Krijg ik vakantiegeld en eindejaarsuitkering?",
+        "Heb ik een VOG nodig om voor de klas te staan?",
+        "Wat doet een onderwijsondersteuner?",
+        "Wat is een kopopleiding?",
+        "Kan ik lesgeven in het hoger onderwijs?",
+        "Wat is een tweedegraads lerarenopleiding?"
+      ],
+      "failureCategory": "semantic_paraphrase_gap"
+    },
+    {
+      "id": "paraphrase-102",
+      "query": "Hoe combineer ik werken op school met de opleiding?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Hoeveel dagen moet ik werken en hoeveel dagen naar de opleiding tijdens zij-instroom?"
+      ],
+      "retrievedTitles": [
+        "Welke handige bronnen en tools zijn er?",
+        "Hoe zorg ik voor inkomen tijdens het zij-instroomtraject?",
+        "Welke stappen moet ik nemen om voor de klas te staan?",
+        "Zijn er open dagen of meeloopdagen?",
+        "Wat is een lio-stage en hoe werkt die?",
+        "Wat is de Pabo?",
+        "Hoe vind ik een vacature in het onderwijs?",
+        "Wat zijn de werktijden van een leraar?",
+        "Wat is de subsidie zij-instroom en hoe werkt die?",
+        "Ik kom uit het buitenland, kan ik zij-instromen in Nederland?"
+      ],
+      "failureCategory": "semantic_paraphrase_gap"
+    },
+    {
+      "id": "paraphrase-107",
+      "query": "Voor welke schoolvakken zijn veel leraren nodig?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Hoeveel vraag is er naar docenten van een bepaald vak?"
+      ],
+      "retrievedTitles": [
+        "Welke vooropleiding is vakinhoudelijk verwant voor zij-instroom?",
+        "Hoe is de arbeidsmarkt voor leraren in 2026?",
+        "Welke subsidies bestaan er voor (aanstaande) leraren?",
+        "Wat is een tweedegraads lerarenopleiding?",
+        "Wat zijn de toelatingseisen voor het zij-instroomtraject?",
+        "Wat is de SOOL-subsidie?",
+        "Welke tekortvakken zijn er in het VO?",
+        "Wat zijn mijn volgende stappen na orientatie?",
+        "Wat is een zij-instroomtraject?",
+        "Wat is het verschil tussen de verschillende onderwijssectoren?"
+      ],
+      "failureCategory": "domain_synonym_gap"
+    },
+    {
+      "id": "paraphrase-108",
+      "query": "Kies ik beter voor deeltijd of werken en leren?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Wat is het verschil tussen deeltijd en zij-instroom?"
+      ],
+      "retrievedTitles": [
+        "Wat is de Pabo?",
+        "Hoe zorg ik voor inkomen tijdens het zij-instroomtraject?",
+        "Wat als ik geen verwant diploma heb voor zij-instroom?",
+        "Wat zijn de werktijden van een leraar?",
+        "Hoeveel dagen moet ik werken en hoeveel dagen naar de opleiding tijdens zij-instroom?",
+        "Wat kost een zij-instroomtraject?",
+        "Wat is een educatieve minor?",
+        "Kan ik lesgeven in het hoger onderwijs?",
+        "Wat is een zij-instroomtraject?",
+        "Wat zijn de toelatingseisen voor het zij-instroomtraject?"
+      ],
+      "failureCategory": "implicit_route_mapping"
+    },
+    {
+      "id": "paraphrase-110",
+      "query": "Welke route heb ik zonder passende vakopleiding?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Wat als ik geen verwant diploma heb voor zij-instroom?"
+      ],
+      "retrievedTitles": [
+        "Wat is een kopopleiding?",
+        "Welke handige bronnen en tools zijn er?",
+        "Hoe word ik schoolleider in het basisonderwijs?",
+        "Welke stappen moet ik nemen om voor de klas te staan?",
+        "Kan ik als herintreder terugkeren in het onderwijs?",
+        "Wat is de Pabo?",
+        "Hoeveel dagen moet ik werken en hoeveel dagen naar de opleiding tijdens zij-instroom?",
+        "Wat is een eerstegraads lerarenopleiding?",
+        "Wat is een tweedegraads lerarenopleiding?",
+        "Wat is een zij-instroomtraject?"
+      ],
+      "failureCategory": "semantic_paraphrase_gap"
+    },
+    {
+      "id": "paraphrase-111",
+      "query": "Waar begin ik als ik leraar wil worden?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Welke stappen moet ik nemen om voor de klas te staan?"
+      ],
+      "retrievedTitles": [
+        "Kan ik als herintreder terugkeren in het onderwijs?",
+        "Wat is de SOOL-subsidie?",
+        "Wat is het salaris van een startende docent?",
+        "Kan ik lesgeven in het hoger onderwijs?",
+        "Wat is de Pabo?",
+        "Wat is een geschiktheidsonderzoek bij zij-instroom?",
+        "Hoe word ik schoolleider in het basisonderwijs?",
+        "Wat is herregistratie in het lerarenregister?",
+        "Waar vind ik een regionaal onderwijsloket bij mij in de buurt?",
+        "Wat als ik geen verwant diploma heb voor zij-instroom?"
+      ],
+      "failureCategory": "underspecified_next_step"
+    },
+    {
+      "id": "paraphrase-112",
+      "query": "Hoe word ik docent in het mbo zonder lerarenopleiding?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Wat is een PDG (Pedagogisch Didactisch Getuigschrift)?"
+      ],
+      "retrievedTitles": [
+        "Hoe word ik schoolleider in het basisonderwijs?",
+        "Wat is de Pabo?",
+        "Wat is een Associate Degree (AD)?",
+        "Kan ik lesgeven in het hoger onderwijs?",
+        "Wat is het salaris van een startende docent?",
+        "Wat is de SOOL-subsidie?",
+        "Wat zijn de toelatingseisen voor het zij-instroomtraject?",
+        "Welke stappen moet ik nemen om voor de klas te staan?",
+        "Wat als ik geen verwant diploma heb voor zij-instroom?",
+        "Wat is een tweedegraads lerarenopleiding?"
+      ],
+      "failureCategory": "implicit_route_mapping"
+    },
+    {
+      "id": "paraphrase-125",
+      "query": "Heb ik een bevoegdheid nodig om op een hogeschool les te geven?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Kan ik lesgeven in het hoger onderwijs?"
+      ],
+      "retrievedTitles": [
+        "Welke bevoegdheid heb ik nodig om les te geven?",
+        "Wat is een tweedegraads lerarenopleiding?",
+        "Ik kom uit het buitenland, kan ik zij-instromen in Nederland?",
+        "Welke stappen moet ik nemen om voor de klas te staan?",
+        "Wat is een eerstegraads lerarenopleiding?",
+        "Wat zijn de toelatingseisen voor het zij-instroomtraject?",
+        "Kan ik lesgeven in het hoger onderwijs?",
+        "Kan ik als herintreder terugkeren in het onderwijs?",
+        "Wat is een zij-instroomtraject?",
+        "Heb ik een VOG nodig om voor de klas te staan?"
+      ],
+      "failureCategory": "semantic_paraphrase_gap"
+    },
+    {
+      "id": "paraphrase-129",
+      "query": "Wat doe ik nadat ik me heb georiënteerd op lesgeven?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Wat zijn mijn volgende stappen na orientatie?"
+      ],
+      "retrievedTitles": [
+        "Wat als ik geen verwant diploma heb voor zij-instroom?",
+        "Wat is een educatieve minor?",
+        "Hoe zorg ik voor inkomen tijdens het zij-instroomtraject?",
+        "Wat is een eerstegraads lerarenopleiding?",
+        "Wat is de Pabo?",
+        "Wat is een PDG (Pedagogisch Didactisch Getuigschrift)?",
+        "Wat is een tweedegraads lerarenopleiding?",
+        "Wat zijn de toelatingseisen voor het zij-instroomtraject?",
+        "Wat is een Associate Degree (AD)?",
+        "Hoeveel dagen moet ik werken en hoeveel dagen naar de opleiding tijdens zij-instroom?"
+      ],
+      "failureCategory": "underspecified_next_step"
+    },
+    {
+      "id": "paraphrase-137",
+      "query": "Hoe ziet een normale werkweek van een docent eruit?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Wat zijn de werktijden van een leraar?"
+      ],
+      "retrievedTitles": [
+        "Hoe vind ik een vacature in het onderwijs?",
+        "Hoeveel vraag is er naar docenten van een bepaald vak?",
+        "Hoe zorg ik voor inkomen tijdens het zij-instroomtraject?",
+        "Hoe weet ik of het onderwijs iets voor mij is?",
+        "Wat is een lio-stage en hoe werkt die?",
+        "Wat is het salaris van een startende docent?",
+        "Wat zijn mijn volgende stappen na orientatie?",
+        "Hoe plan ik een gesprek met een adviseur?",
+        "Ik kom uit het buitenland, kan ik zij-instromen in Nederland?",
+        "Welke tekortvakken zijn er in het VO?"
+      ],
+      "failureCategory": "domain_synonym_gap"
+    },
+    {
+      "id": "paraphrase-138",
+      "query": "Welke extra uitkeringen krijgt onderwijspersoneel?",
+      "queryType": "paraphrase",
+      "relevantQuestions": [
+        "Krijg ik vakantiegeld en eindejaarsuitkering?"
+      ],
+      "retrievedTitles": [
+        "Welke loketten zijn er in regio Rotterdam?",
+        "Welke tekortvakken zijn er in het VO?",
+        "Heb ik een VOG nodig om voor de klas te staan?",
+        "Welke subsidies bestaan er voor (aanstaande) leraren?",
+        "Hoe plan ik een gesprek met een adviseur?",
+        "Kan ik als herintreder terugkeren in het onderwijs?",
+        "Wat doet een onderwijsondersteuner?",
+        "Welke vooropleiding is vakinhoudelijk verwant voor zij-instroom?",
+        "Wat is het Onderwijsloket Rotterdam?",
+        "Hoe lang duurt een zij-instroomtraject?"
+      ],
+      "failureCategory": "domain_synonym_gap"
+    },
+    {
+      "id": "typo-144",
+      "query": "Wat is een zij instroom trajekt",
+      "queryType": "typo",
+      "relevantQuestions": [
+        "Wat is een zij-instroomtraject?"
+      ],
+      "retrievedTitles": [
+        "Wat is een eerstegraads lerarenopleiding?",
+        "Wat is de subsidie zij-instroom en hoe werkt die?",
+        "Wat als ik geen verwant diploma heb voor zij-instroom?",
+        "Wat is een Associate Degree (AD)?",
+        "Wat is het Onderwijsloket Rotterdam?",
+        "Wat is een kopopleiding?",
+        "Ik kom uit het buitenland, kan ik zij-instromen in Nederland?",
+        "Wat is de Pabo?",
+        "Wat is het salaris van een startende docent?",
+        "Wat kost een zij-instroomtraject?"
+      ],
+      "failureCategory": "orthography_or_compound"
+    },
+    {
+      "id": "typo-162",
+      "query": "tweede graads leraren oplijding",
+      "queryType": "typo",
+      "relevantQuestions": [
+        "Wat is een tweedegraads lerarenopleiding?"
+      ],
+      "retrievedTitles": [
+        "Wat is de SOOL-subsidie?",
+        "Kan ik als herintreder terugkeren in het onderwijs?",
+        "Wat is een lio-stage en hoe werkt die?",
+        "Wat zijn mijn volgende stappen na orientatie?",
+        "Wat is herregistratie in het lerarenregister?",
+        "Hoe word ik schoolleider in het basisonderwijs?",
+        "Wat is een kopopleiding?",
+        "Hoe is de arbeidsmarkt voor leraren in 2026?",
+        "Wat is een tweedegraads lerarenopleiding?",
+        "Hoe plan ik een gesprek met een adviseur?"
+      ],
+      "failureCategory": "orthography_or_compound"
+    },
+    {
+      "id": "typo-167",
+      "query": "kop oplijding docent",
+      "queryType": "typo",
+      "relevantQuestions": [
+        "Wat is een kopopleiding?"
+      ],
+      "retrievedTitles": [
+        "Wat is een PDG (Pedagogisch Didactisch Getuigschrift)?",
+        "Wat doet een onderwijsondersteuner?",
+        "Wat is herregistratie in het lerarenregister?",
+        "Hoe zorg ik voor inkomen tijdens het zij-instroomtraject?",
+        "Wat is het salaris van een startende docent?",
+        "Wat is de Pabo?",
+        "Hoeveel vraag is er naar docenten van een bepaald vak?",
+        "Kan ik lesgeven in het hoger onderwijs?",
+        "Ik kom uit het buitenland, kan ik zij-instromen in Nederland?",
+        "Wat is een Associate Degree (AD)?"
+      ],
+      "failureCategory": "orthography_or_compound"
+    },
+    {
+      "id": "typo-169",
+      "query": "onderwijs ondersteuner functie",
+      "queryType": "typo",
+      "relevantQuestions": [
+        "Wat doet een onderwijsondersteuner?"
+      ],
+      "retrievedTitles": [
+        "Wat is een Associate Degree (AD)?",
+        "Wat is de SOOL-subsidie?",
+        "Heb ik een VOG nodig om voor de klas te staan?",
+        "Wat is het Onderwijsloket Rotterdam?",
+        "Kan ik lesgeven in het hoger onderwijs?",
+        "Wat doet een onderwijsondersteuner?",
+        "Wat is een educatieve minor?",
+        "Hoe word ik schoolleider in het basisonderwijs?",
+        "Wat is een eerstegraads lerarenopleiding?",
+        "Hoe vind ik een vacature in het onderwijs?"
+      ],
+      "failureCategory": "orthography_or_compound"
+    },
+    {
+      "id": "typo-172",
+      "query": "handige bronne voor leraar worden",
+      "queryType": "typo",
+      "relevantQuestions": [
+        "Welke handige bronnen en tools zijn er?"
+      ],
+      "retrievedTitles": [
+        "Kan ik als herintreder terugkeren in het onderwijs?",
+        "Wat is de Pabo?",
+        "Wat is een eerstegraads lerarenopleiding?",
+        "Kan ik lesgeven in het hoger onderwijs?",
+        "Wat is een tweedegraads lerarenopleiding?",
+        "Wat doet een onderwijsondersteuner?",
+        "Wat is een geschiktheidsonderzoek bij zij-instroom?",
+        "Wat is de SOOL-subsidie?",
+        "Wat is een educatieve minor?",
+        "Wat is herregistratie in het lerarenregister?"
+      ],
+      "failureCategory": "orthography_or_compound"
+    },
+    {
+      "id": "typo-181",
+      "query": "onderwijs vakature vinden",
+      "queryType": "typo",
+      "relevantQuestions": [
+        "Hoe vind ik een vacature in het onderwijs?"
+      ],
+      "retrievedTitles": [
+        "Wat is het Onderwijsloket Rotterdam?",
+        "Welke tekortvakken zijn er in het VO?",
+        "Waar vind ik een regionaal onderwijsloket bij mij in de buurt?",
+        "Kan ik lesgeven in het hoger onderwijs?",
+        "Krijg ik vakantiegeld en eindejaarsuitkering?",
+        "Wat is een eerstegraads lerarenopleiding?",
+        "Kan ik als herintreder terugkeren in het onderwijs?",
+        "Hoe vind ik een vacature in het onderwijs?",
+        "Wat is een Associate Degree (AD)?",
+        "Wat is een educatieve minor?"
+      ],
+      "failureCategory": "orthography_or_compound"
+    },
+    {
+      "id": "typo-189",
+      "query": "her intreder onderwijs",
+      "queryType": "typo",
+      "relevantQuestions": [
+        "Kan ik als herintreder terugkeren in het onderwijs?"
+      ],
+      "retrievedTitles": [
+        "Wat is het Onderwijsloket Rotterdam?",
+        "Wat is een educatieve minor?",
+        "Wat is een Associate Degree (AD)?",
+        "Welke tekortvakken zijn er in het VO?",
+        "Kan ik lesgeven in het hoger onderwijs?",
+        "Kan ik als herintreder terugkeren in het onderwijs?",
+        "Wat is de SOOL-subsidie?",
+        "Waar vind ik een regionaal onderwijsloket bij mij in de buurt?",
+        "Wat doet een onderwijsondersteuner?",
+        "Krijg ik vakantiegeld en eindejaarsuitkering?"
+      ],
+      "failureCategory": "orthography_or_compound"
+    }
+  ]
+}
