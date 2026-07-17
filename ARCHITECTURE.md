@@ -205,9 +205,14 @@ Mogelijke uitbreidingen, uitsluitend achter stabiele contracten:
   dynamische content (hertrainen via de bestaande benchmarkgates);
 - benchmarkcases voor regionale loketten en routestappen plus
   hertraining, zodat niet-FAQ-kennistypen gelijkwaardig ranken
-  (relevant bij landelijke uitbreiding);
-- ingest van de CMS-collecties faqs en articles waarnaar de
-  routestappen verwijzen, via export of Directus-connector.
+  (relevant bij landelijke uitbreiding).
+
+Bewust niet gepland: ingest van de CMS-collecties faqs en articles
+waarnaar de routestappen verwijzen. De 62 CMS-FAQ's overlappen
+grotendeels met de bestaande 48 en de artikelen hebben beperkte
+houdbaarheid; de adaptieve webfallback dekt actualiteitsvragen al
+binnen de whitelist. De verwijzingen in route-steps.json zijn inert en
+worden nergens geconsumeerd.
 
 Deze uitbreidingen mogen de bestaande deterministische engines en kanaalgrenzen
 niet doorbreken.
