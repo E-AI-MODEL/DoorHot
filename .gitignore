@@ -9,3 +9,6 @@ coverage
 storage-data
 postgres-data
 redis-data
+*.tsbuildinfo
+test-results
+playwright-report
