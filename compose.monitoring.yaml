@@ -1,0 +1,23 @@
+services:
+  prometheus:
+    image: prom/prometheus:v3.5.0
+    restart: unless-stopped
+    profiles:
+      - monitoring
+    depends_on:
+      api:
+        condition: service_healthy
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.enable-lifecycle
+    volumes:
+      - ./deploy/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    networks:
+      - door010
+
+volumes:
+  prometheus_data:

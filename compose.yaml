@@ -1,0 +1,95 @@
+services:
+  database:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-door010}
+      POSTGRES_USER: ${POSTGRES_USER:-door010}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - door010
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: door010-api:${DOOR010_IMAGE_TAG:-local}
+    restart: unless-stopped
+    depends_on:
+      database:
+        condition: service_healthy
+        restart: true
+    environment:
+      NODE_ENV: production
+      APP_STORAGE_MODE: postgres
+      API_HOST: 0.0.0.0
+      API_PORT: 4000
+      DATABASE_URL: >-
+        postgresql://${POSTGRES_USER:-door010}:${POSTGRES_PASSWORD}@database:5432/${POSTGRES_DB:-door010}
+      DATABASE_SSL: "false"
+      AUTH_TOKEN_SECRET: ${AUTH_TOKEN_SECRET:?AUTH_TOKEN_SECRET is required}
+      DATASETS_DIRECTORY: /app/datasets
+      FILE_STORAGE_DIRECTORY: /app/var/storage
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    ports:
+      - "${DOOR010_API_PORT:-4000}:4000"
+    volumes:
+      - file_storage:/app/var/storage
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - >-
+          fetch('http://127.0.0.1:4000/health/ready')
+          .then(response => { if (!response.ok) process.exit(1); })
+          .catch(() => process.exit(1))
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    stop_grace_period: 30s
+    networks:
+      - door010
+
+
+web:
+  build:
+    context: .
+    dockerfile: Dockerfile.web
+  image: door010-web:${DOOR010_IMAGE_TAG:-local}
+  restart: unless-stopped
+  depends_on:
+    api:
+      condition: service_healthy
+  ports:
+    - "${DOOR010_WEB_PORT:-8080}:8080"
+  healthcheck:
+    test:
+      - CMD-SHELL
+      - wget --quiet --tries=1 --spider http://127.0.0.1:8080/web-health
+    interval: 30s
+    timeout: 5s
+    retries: 5
+    start_period: 15s
+  networks:
+    - door010
+
+
+volumes:
+  postgres_data:
+  file_storage:
+
+networks:
+  door010:
+    driver: bridge

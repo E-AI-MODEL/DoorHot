@@ -1,0 +1,93 @@
+{
+  "generatedAt": "2026-07-16T05:18:08.213Z",
+  "target": "http://localhost:42285",
+  "finalUrl": "http://localhost:42285/",
+  "passed": true,
+  "checks": [
+    {
+      "id": "http.status",
+      "passed": true,
+      "severity": "high",
+      "evidence": "HTTP 200",
+      "recommendation": "Staging must return a successful response."
+    },
+    {
+      "id": "header.x-content-type-options",
+      "passed": true,
+      "severity": "medium",
+      "evidence": "nosniff",
+      "recommendation": "Configure the x-content-type-options response header."
+    },
+    {
+      "id": "header.x-frame-options",
+      "passed": true,
+      "severity": "medium",
+      "evidence": "DENY",
+      "recommendation": "Configure the x-frame-options response header."
+    },
+    {
+      "id": "header.referrer-policy",
+      "passed": true,
+      "severity": "medium",
+      "evidence": "strict-origin-when-cross-origin",
+      "recommendation": "Configure the referrer-policy response header."
+    },
+    {
+      "id": "header.content-security-policy",
+      "passed": true,
+      "severity": "high",
+      "evidence": "default-src 'self'; frame-ancestors 'none'",
+      "recommendation": "Configure the content-security-policy response header."
+    },
+    {
+      "id": "header.permissions-policy",
+      "passed": true,
+      "severity": "medium",
+      "evidence": "camera=(), microphone=(), geolocation=()",
+      "recommendation": "Configure the permissions-policy response header."
+    },
+    {
+      "id": "body.secret-pattern-1",
+      "passed": true,
+      "severity": "critical",
+      "evidence": "No match.",
+      "recommendation": "Remove secrets from public responses and rotate exposed credentials."
+    },
+    {
+      "id": "body.secret-pattern-2",
+      "passed": true,
+      "severity": "critical",
+      "evidence": "No match.",
+      "recommendation": "Remove secrets from public responses and rotate exposed credentials."
+    },
+    {
+      "id": "body.secret-pattern-3",
+      "passed": true,
+      "severity": "critical",
+      "evidence": "No match.",
+      "recommendation": "Remove secrets from public responses and rotate exposed credentials."
+    },
+    {
+      "id": "body.secret-pattern-4",
+      "passed": true,
+      "severity": "critical",
+      "evidence": "No match.",
+      "recommendation": "Remove secrets from public responses and rotate exposed credentials."
+    },
+    {
+      "id": "privacy.noindex-staging",
+      "passed": true,
+      "severity": "low",
+      "evidence": "Checked meta robots and X-Robots-Tag.",
+      "recommendation": "Prevent staging from being indexed by search engines."
+    },
+    {
+      "id": "transport.hsts",
+      "passed": true,
+      "severity": "medium",
+      "evidence": "max-age=31536000; includeSubDomains",
+      "recommendation": "Enable HSTS after confirming HTTPS-only operation."
+    }
+  ],
+  "findings": []
+}

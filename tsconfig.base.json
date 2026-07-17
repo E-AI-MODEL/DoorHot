@@ -1,0 +1,71 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "sourceMap": true,
+    "composite": true,
+    "declarationMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@door010/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@door010/domain": [
+        "packages/domain/src/index.ts"
+      ],
+      "@door010/chat": [
+        "packages/chat/src/index.ts"
+      ],
+      "@door010/data-providers": [
+        "packages/data-providers/src/index.ts"
+      ],
+      "@door010/database": [
+        "packages/database/src/index.ts"
+      ],
+      "@door010/response-pipeline": [
+        "packages/response-pipeline/src/index.ts"
+      ],
+      "@door010/chat-persistence": [
+        "packages/chat-persistence/src/index.ts"
+      ],
+      "@door010/parity-flows": [
+        "packages/parity-flows/src/index.ts"
+      ],
+      "@door010/identity-profile": [
+        "packages/identity-profile/src/index.ts"
+      ],
+      "@door010/postgres": [
+        "packages/postgres/src/index.ts"
+      ],
+      "@door010/parity-persistence": [
+        "packages/parity-persistence/src/index.ts"
+      ],
+      "@door010/observability": [
+        "packages/observability/src/index.ts"
+      ],
+      "@door010/knowledge": [
+        "packages/knowledge/src/index.ts"
+      ],
+      "@door010/backoffice": [
+        "packages/backoffice/src/index.ts"
+      ],
+      "@door010/integrations": [
+        "packages/integrations/src/index.ts"
+      ],
+      "@door010/audit": [
+        "packages/audit/src/index.ts"
+      ],
+      "@door010/realtime": [
+        "packages/realtime/src/index.ts"
+      ]
+    }
+  }
+}

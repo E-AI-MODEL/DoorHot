@@ -1,0 +1,60 @@
+{
+  "name": "door010-3",
+  "version": "5.0.1",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @door010/api",
+    "build": "tsc -b && npm run build --workspace @door010/web",
+    "typecheck": "tsc -b --pretty false && npm run typecheck --workspace @door010/web",
+    "test": "npm run test --workspaces --if-present",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "verify:datasets": "tsx scripts/verify-dataset-parity.ts",
+    "clean": "tsc -b --clean",
+    "verify:compile-readiness": "tsx scripts/verify-compile-readiness.ts",
+    "verify:migrations": "node scripts/verify-migrations-pglite.mjs",
+    "migrate": "node scripts/migrate-postgres.mjs",
+    "start:production": "node scripts/start-production.mjs",
+    "ci": "npm audit --audit-level=moderate && npm run typecheck && npm test && npm run build && npm run verify:migrations",
+    "dev:web": "npm run dev --workspace @door010/web",
+    "test:e2e": "npm run test:e2e --workspace @door010/web",
+    "acceptance:providers": "node scripts/acceptance/provider-contracts.mjs",
+    "acceptance:realtime": "node scripts/acceptance/postgres-realtime.mjs",
+    "acceptance:browser": "npm run test:e2e -- --workers=1",
+    "acceptance:all": "npm run acceptance:providers && npm run acceptance:realtime && npm run acceptance:browser",
+    "github:protect-main": "node scripts/github/apply-main-protection.mjs",
+    "github:protect-main:dry-run": "node scripts/github/apply-main-protection.mjs --dry-run",
+    "security:review:staging": "node scripts/security/review-staging.mjs",
+    "benchmark:retrieval": "node scripts/evaluate-retrieval-baseline.mjs",
+    "benchmark:retrieval:check": "npm run benchmark:retrieval && node scripts/check-retrieval-quality.mjs",
+    "benchmark:hybrid": "tsx scripts/evaluate-hybrid-retrieval.ts",
+    "benchmark:hybrid:check": "npm run benchmark:retrieval && npm run benchmark:hybrid && node scripts/check-hybrid-retrieval-quality.mjs",
+    "benchmark:embeddings:external": "EMBEDDING_PROVIDER=external tsx scripts/evaluate-hybrid-retrieval.ts",
+    "benchmark:embeddings:compare": "npm run benchmark:hybrid && npm run benchmark:embeddings:external",
+    "train:reranker": "node scripts/train-learned-reranker.mjs",
+    "benchmark:learned-reranker": "npm run benchmark:hybrid && npm run train:reranker",
+    "benchmark:reranker:check": "npm run benchmark:learned-reranker && node scripts/check-learned-reranker-quality.mjs",
+    "benchmark:shadow-reranker": "npm run benchmark:hybrid && tsx scripts/evaluate-shadow-reranker.ts",
+    "benchmark:shadow-reranker:check": "npm run benchmark:shadow-reranker && node scripts/check-shadow-reranker.mjs",
+    "active-learning:export": "node scripts/export-active-learning-labels.mjs",
+    "test:load-smoke": "node scripts/reliability/http-load-smoke.mjs",
+    "test:e2e:ci": "npm run test:e2e --workspace @door010/web -- --workers=1",
+    "recovery:restore-drill": "bash scripts/reliability/postgres-restore-drill.sh"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.4",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
