@@ -1,4 +1,9 @@
+import { fileURLToPath } from "node:url";
 import { defineConfig, devices } from "@playwright/test";
+
+const datasetsDirectory = fileURLToPath(
+  new URL("../../datasets", import.meta.url)
+);
 
 export default defineConfig({
   testDir: "./e2e",
@@ -31,11 +36,22 @@ export default defineConfig({
       use: { ...devices["Desktop Chrome"] }
     }
   ],
-  webServer: {
-    command:
-      "npm run dev --workspace @door010/web -- --host 127.0.0.1",
-    url: "http://127.0.0.1:5173",
-    reuseExistingServer: !process.env.CI,
-    timeout: 120_000
-  }
+  webServer: [
+    {
+      command:
+        "npm run dev --workspace @door010/web -- --host 127.0.0.1",
+      url: "http://127.0.0.1:5173",
+      reuseExistingServer: !process.env.CI,
+      timeout: 120_000
+    },
+    {
+      command: "npm run dev --workspace @door010/api",
+      url: "http://127.0.0.1:4000/health/live",
+      env: {
+        DATASETS_DIRECTORY: datasetsDirectory
+      },
+      reuseExistingServer: !process.env.CI,
+      timeout: 120_000
+    }
+  ]
 });

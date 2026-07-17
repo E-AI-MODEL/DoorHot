@@ -49,6 +49,9 @@ jobs:
       - name: Execute all migrations
         run: npm run verify:migrations
 
+      - name: Verify seed idempotency
+        run: npm run verify:seed
+
       - name: Guard learned reranker quality and drift
         run: npm run benchmark:reranker:check
 

@@ -33,8 +33,14 @@ Installatie:
 cp .env.example .env
 npm install
 docker compose up -d
+npm run migrate
+npm run seed
 npm run dev
 ```
+
+`npm run seed` laadt de referentiedata (FAQ's en regionale
+onderwijsloketten) idempotent in de gemigreerde database; een tweede
+uitvoering verandert niets.
 
 ## Kwaliteitscontroles
 
@@ -46,6 +52,7 @@ npm run lint
 npm test
 npm run build
 npm run verify:migrations
+npm run verify:seed
 npm audit --audit-level=moderate
 ```
 
