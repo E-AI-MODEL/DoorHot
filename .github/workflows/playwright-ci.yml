@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     container:
-      image: mcr.microsoft.com/playwright:v1.55.0-noble
+      image: mcr.microsoft.com/playwright:v1.61.1-noble
 
     env:
       CI: "1"
@@ -79,6 +79,6 @@ jobs:
             echo
             echo "- Workflow run: $GITHUB_RUN_ID"
             echo "- Commit: $GITHUB_SHA"
-            echo "- Browser image: mcr.microsoft.com/playwright:v1.55.0-noble"
+            echo "- Browser image: mcr.microsoft.com/playwright:v1.61.1-noble"
             echo "- Expected scenarios: 11"
           } >> "$GITHUB_STEP_SUMMARY"
