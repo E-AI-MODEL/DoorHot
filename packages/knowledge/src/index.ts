@@ -1597,21 +1597,27 @@ const SEMANTIC_CONCEPTS: Readonly<Record<string, readonly string[]>> = {
     "opleiding", "studie", "leren", "college", "bachelor", "master"
   ],
   qualification: [
-    "bevoegd", "bevoegdheid", "bekwaam", "diploma", "toelating"
+    "bevoegd", "bevoegdheid", "bekwaam", "diploma", "toelating",
+    "lesbevoegdheid", "bevoegd zijn"
   ],
   career_change: [
-    "omscholen", "overstap", "zij-instroom", "zijinstroom",
-    "werken en leren", "meteen werken", "direct werken"
+    "omscholen", "omscholing", "overstap", "zij-instroom",
+    "zijinstroom", "werken en leren", "meteen werken",
+    "direct werken", "meteen als leraar"
   ],
   next_step: [
     "wat nu", "volgende stap", "volgende stappen", "waar begin ik",
-    "na orientatie", "na oriëntatie"
+    "na orientatie", "na oriëntatie", "vervolgstap",
+    "vervolgstappen", "georiënteerd", "georienteerd", "hierna"
   ],
   salary: [
-    "salaris", "loon", "verdienen", "inkomen", "uitbetaling"
+    "salaris", "loon", "verdienen", "inkomen", "uitbetaling",
+    "beloning", "beloningen"
   ],
   cost: [
-    "kosten", "kost", "betalen", "collegegeld", "gratis"
+    "kosten", "kost", "betalen", "collegegeld", "gratis",
+    "betaal", "uitgaven", "prijs", "zelf betalen",
+    "rekening houden"
   ],
   subsidy: [
     "subsidie", "vergoeding", "regeling", "financieel", "steun"
@@ -1634,17 +1640,20 @@ const SEMANTIC_CONCEPTS: Readonly<Record<string, readonly string[]>> = {
   ],
   work_schedule: [
     "werkweek", "werktijden", "dagen werken", "combineren",
-    "opleiding naast werk"
+    "opleiding naast werk", "werkdag", "normale werktijden",
+    "combineer", "weekindeling", "opleidingsdagen", "werkdagen"
   ],
   extra_pay: [
     "vakantiegeld", "eindejaarsuitkering", "extra uitkering",
-    "extra uitkeringen"
+    "extra uitkeringen", "extra beloning"
   ],
   guidance: [
     "advies", "adviseur", "loket", "begeleiding", "gesprek"
   ],
   duration: [
-    "duur", "hoelang", "hoe lang", "tijd", "jaar"
+    "duur", "hoelang", "hoe lang", "tijd", "jaar",
+    "doorlooptijd", "hoeveel tijd", "binnen hoeveel",
+    "hoe snel", "klaar ben", "tijd reserveren"
   ],
   suitability: [
     "geschikt", "past bij mij", "oriëntatie", "verkennen"
@@ -1659,15 +1668,65 @@ const SEMANTIC_CONCEPTS: Readonly<Record<string, readonly string[]>> = {
     "schoolleider", "directeur", "leidinggeven"
   ],
   internship: [
-    "stage", "lio", "meelopen", "open dag"
+    "stage", "lio", "meelopen", "open dag", "meeloopdag",
+    "meeloopdagen", "open dagen", "schooldag ervaren",
+    "schooldag eruitziet", "schooldag eruit"
   ],
   route_comparison: [
     "deeltijd", "werken en leren", "verschil", "kiezen"
   ],
   pedagogy_certificate: [
-    "pdg", "mbo zonder lerarenopleiding", "pedagogisch didactisch"
+    "pdg", "mbo zonder lerarenopleiding", "pedagogisch didactisch",
+    "getuigschrift", "zonder lerarenopleiding"
+  ],
+  definition: [
+    "wat is", "uitleg", "wat houdt", "betekenis", "precies in",
+    "wat betekent"
+  ],
+  resources: [
+    "bronnen", "bronne", "tools", "websites", "hulpmiddelen",
+    "links", "informatiebronnen"
+  ],
+  screening: [
+    "vog", "verklaring omtrent gedrag", "verklaring omtrent het gedrag"
+  ],
+  degree_level: [
+    "eerstegraads", "tweedegraads", "eerste graads",
+    "tweede graads", "onderbouw", "bovenbouw",
+    "eerste- en tweedegraads"
+  ],
+  admission: [
+    "toelatingseisen", "voorwaarden", "voldoen", "eisen",
+    "toegelaten", "starten met"
+  ],
+  subject_match: [
+    "verwant", "vooropleiding", "aansluit", "aansluiten",
+    "vakinhoudelijk", "passende vakopleiding", "huidige studie",
+    "geschikt voor een schoolvak", "mijn studie"
+  ],
+  regional: [
+    "regio", "regionaal", "buurt", "rotterdam", "in de buurt",
+    "eigen regio"
   ]
 };
+
+const DUTCH_STOPWORDS: ReadonlySet<string> = new Set([
+  "de", "het", "een", "en", "of", "maar", "want", "dus", "als",
+  "dan", "dat", "die", "dit", "deze", "er", "hier", "daar",
+  "waar", "wat", "wie", "hoe", "waarom", "wanneer", "welke",
+  "welk", "ik", "je", "jij", "jouw", "jou", "mijn", "mij", "me",
+  "u", "uw", "we", "wij", "ons", "onze", "ze", "hun", "hen",
+  "is", "ben", "bent", "zijn", "was", "waren", "word", "wordt",
+  "worden", "heb", "hebt", "heeft", "hebben", "had", "hadden",
+  "kan", "kun", "kunt", "kunnen", "kon", "moet", "moeten",
+  "mag", "mogen", "wil", "wilt", "willen", "zal", "zul", "zou",
+  "zouden", "ga", "gaat", "gaan", "doe", "doet", "doen", "aan",
+  "af", "bij", "in", "op", "uit", "van", "voor", "naar", "met",
+  "over", "onder", "tussen", "door", "om", "te", "tot", "per",
+  "niet", "geen", "wel", "ook", "nog", "al", "alleen", "zelf",
+  "zo", "heel", "erg", "even", "vaak", "soms", "altijd",
+  "nooit", "iets", "iemand", "kun je", "mijzelf"
+]);
 
 const TYPO_NORMALIZATIONS: Readonly<Record<string, string>> = {
   trajekt: "traject",
@@ -1698,17 +1757,70 @@ function normalizeSemanticText(value: string): string {
   return normalized;
 }
 
-function semanticTokens(value: string): readonly string[] {
-  const normalized = normalizeSemanticText(value);
-  const tokens = new Set(normalized.split(" ").filter(Boolean));
+const CONCEPT_FEATURE_WEIGHT = 2.5;
+const WORD_FEATURE_WEIGHT = 1;
+const SUBWORD_FEATURE_WEIGHT = 0.2;
+const SUBWORD_MIN_GRAM = 4;
+const SUBWORD_MAX_GRAM = 5;
 
-  for (const [concept, phrases] of Object.entries(SEMANTIC_CONCEPTS)) {
-    if (phrases.some((phrase) => normalized.includes(phrase))) {
-      tokens.add(`concept:${concept}`);
+function subwordGrams(word: string): readonly string[] {
+  const padded = `<${word}>`;
+  const grams: string[] = [];
+
+  for (
+    let size = SUBWORD_MIN_GRAM;
+    size <= SUBWORD_MAX_GRAM;
+    size += 1
+  ) {
+    for (
+      let start = 0;
+      start + size <= padded.length;
+      start += 1
+    ) {
+      grams.push(`gram:${padded.slice(start, start + size)}`);
     }
   }
 
-  return [...tokens];
+  return grams;
+}
+
+function semanticFeatures(
+  value: string
+): ReadonlyMap<string, number> {
+  const normalized = normalizeSemanticText(value);
+  const features = new Map<string, number>();
+  const add = (feature: string, weight: number) => {
+    features.set(feature, (features.get(feature) ?? 0) + weight);
+  };
+
+  for (const [concept, phrases] of Object.entries(SEMANTIC_CONCEPTS)) {
+    if (phrases.some((phrase) => normalized.includes(phrase))) {
+      add(`concept:${concept}`, CONCEPT_FEATURE_WEIGHT);
+    }
+  }
+
+  const contentWords = normalized
+    .split(" ")
+    .filter(Boolean)
+    .filter((word) => !DUTCH_STOPWORDS.has(word));
+
+  for (const word of contentWords) {
+    add(word, WORD_FEATURE_WEIGHT);
+  }
+
+  for (const word of new Set(contentWords)) {
+    if (word.length >= SUBWORD_MIN_GRAM + 1) {
+      for (const gram of subwordGrams(word)) {
+        add(gram, SUBWORD_FEATURE_WEIGHT);
+      }
+    }
+  }
+
+  return features;
+}
+
+function semanticTokens(value: string): readonly string[] {
+  return [...semanticFeatures(value).keys()];
 }
 
 function normalizeVector(vector: number[]): readonly number[] {
@@ -1723,7 +1835,7 @@ function normalizeVector(vector: number[]): readonly number[] {
 export class LocalSemanticEmbeddingProvider
   implements EmbeddingProvider
 {
-  readonly modelKey = "door010-local-semantic-v1";
+  readonly modelKey = "door010-local-semantic-v2";
   readonly dimensions: number;
 
   constructor(dimensions = 384) {
@@ -1735,13 +1847,12 @@ export class LocalSemanticEmbeddingProvider
   ): Promise<readonly number[][]> {
     return texts.map((text) => {
       const vector = Array<number>(this.dimensions).fill(0);
-      const tokens = semanticTokens(text);
 
-      for (const token of tokens) {
-        const hash = fnv1a(token);
+      for (const [feature, weight] of semanticFeatures(text)) {
+        const hash = fnv1a(feature);
         const index = hash % this.dimensions;
         const sign = (hash & 1) === 0 ? 1 : -1;
-        vector[index] = (vector[index] ?? 0) + sign;
+        vector[index] = (vector[index] ?? 0) + sign * weight;
       }
 
       return [...normalizeVector(vector)];
@@ -1773,9 +1884,11 @@ function cosineSimilarity(
   return dot / Math.sqrt(leftNorm * rightNorm);
 }
 
+const TITLE_EMPHASIS = 3;
+
 function recordText(record: KnowledgeRecord): string {
   return [
-    record.title,
+    ...Array<string>(TITLE_EMPHASIS).fill(record.title),
     record.body,
     record.category ?? "",
     ...record.tags

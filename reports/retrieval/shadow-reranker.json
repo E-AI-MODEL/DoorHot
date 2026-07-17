@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-07-16T19:43:13.201Z",
+  "generatedAt": "2026-07-17T13:57:05.403Z",
   "providerKey": "local-concept-cross-encoder-v1",
   "mode": "shadow",
   "caseCount": 333,
   "failures": 0,
-  "averageLatencyMs": 0.73,
+  "averageLatencyMs": 0.21,
   "changedTopRate": 0,
   "baseline": {
-    "recallAt5": 0.8604,
-    "mrrAt5": 0.729,
-    "ndcgAt5": 0.7559
+    "recallAt5": 0.9039,
+    "mrrAt5": 0.7794,
+    "ndcgAt5": 0.8047
   },
   "shadow": {
-    "recallAt5": 0.8664,
-    "mrrAt5": 0.7305,
-    "ndcgAt5": 0.7585
+    "recallAt5": 0.9129,
+    "mrrAt5": 0.7818,
+    "ndcgAt5": 0.8087
   },
   "delta": {
-    "recallAt5": 0.006,
-    "mrrAt5": 0.0015,
-    "ndcgAt5": 0.0026
+    "recallAt5": 0.009,
+    "mrrAt5": 0.0024,
+    "ndcgAt5": 0.004
   }
 }

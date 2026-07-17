@@ -221,9 +221,10 @@ const questionToId = new Map(
     stableId(`faq:${faq.question}`)
   ])
 );
+const titleEmphasis = 3;
 const faqTexts = faqDataset.faqs.map((faq) =>
   [
-    faq.question,
+    ...Array<string>(titleEmphasis).fill(faq.question),
     faq.answer,
     faq.category ?? "",
     ...(faq.tags ?? [])

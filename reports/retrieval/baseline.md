@@ -2,28 +2,32 @@
 
 - Engine: PGlite PostgreSQL FTS
 - FAQ's: 48
-- Testvragen: 191
-- Benchmarkversie: 1.0.0
+- Testvragen: 333
+- Benchmarkversie: 2.0.0
 
 ## Totale scores
 
 | k | Recall@k | MRR | nDCG@k | Hit rate |
 |---:|---:|---:|---:|---:|
-| 1 | 0.5183 | 0.5183 | 0.5183 | 0.5183 |
-| 3 | 0.5445 | 0.5305 | 0.5342 | 0.5445 |
-| 5 | 0.555 | 0.5329 | 0.5384 | 0.555 |
-| 10 | 0.555 | 0.5329 | 0.5384 | 0.555 |
+| 1 | 0.3634 | 0.3634 | 0.3634 | 0.3634 |
+| 3 | 0.3784 | 0.3704 | 0.3724 | 0.3784 |
+| 5 | 0.3844 | 0.3717 | 0.3749 | 0.3844 |
+| 10 | 0.3844 | 0.3717 | 0.3749 | 0.3844 |
 
 ## Scores per querytype bij k=5
 
 | Type | Cases | Recall@5 | MRR | nDCG@5 | Hit rate |
 |---|---:|---:|---:|---:|---:|
-| exact | 48 | 1 | 0.9861 | 0.9896 | 1 |
 | alias | 47 | 0.9787 | 0.9032 | 0.9222 | 0.9787 |
+| conversational | 48 | 0 | 0 | 0 | 0 |
+| exact | 48 | 1 | 0.9861 | 0.9896 | 1 |
+| hard_negative | 24 | 0 | 0 | 0 | 0 |
+| multi_intent | 24 | 0 | 0 | 0 | 0 |
 | paraphrase | 48 | 0.0208 | 0.0208 | 0.0208 | 0.0208 |
+| short | 46 | 0.4783 | 0.4783 | 0.4783 | 0.4783 |
 | typo | 48 | 0.2292 | 0.2292 | 0.2292 | 0.2292 |
 
-## Gemiste vragen bij k=5 (85)
+## Gemiste vragen bij k=5 (205)
 
 - **alias** — Wat nu
   - Verwacht: Wat zijn mijn volgende stappen na orientatie?
@@ -279,4 +283,364 @@
   - Gevonden: geen resultaten
 - **typo** — subsidies aanstaande leeraaren
   - Verwacht: Welke subsidies bestaan er voor (aanstaande) leraren?
+  - Gevonden: geen resultaten
+- **short** — zij-instroom uitleg
+  - Verwacht: Wat is een zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **conversational** — Ik hoor vaak over zij-instroom, wat houdt dat precies in?
+  - Verwacht: Wat is een zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **short** — eisen zij-instroom
+  - Verwacht: Wat zijn de toelatingseisen voor het zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **conversational** — Aan welke voorwaarden moet ik voldoen voordat ik met zij-instroom kan starten?
+  - Verwacht: Wat zijn de toelatingseisen voor het zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **conversational** — Hoe weet ik of mijn huidige studie genoeg aansluit bij het vak dat ik wil geven?
+  - Verwacht: Welke vooropleiding is vakinhoudelijk verwant voor zij-instroom?
+  - Gevonden: geen resultaten
+- **conversational** — Hoeveel tijd moet ik ongeveer reserveren voordat ik via zij-instroom klaar ben?
+  - Verwacht: Hoe lang duurt een zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **conversational** — Met welke uitgaven moet ik rekening houden als ik voor zij-instroom kies?
+  - Verwacht: Wat kost een zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **conversational** — Wat kan ik ongeveer verdienen in mijn eerste jaar als docent?
+  - Verwacht: Wat is het salaris van een startende docent?
+  - Gevonden: geen resultaten
+- **short** — werk- en opleidingsdagen
+  - Verwacht: Hoeveel dagen moet ik werken en hoeveel dagen naar de opleiding tijdens zij-instroom?
+  - Gevonden: geen resultaten
+- **conversational** — Hoe verdeel ik mijn week tussen school en opleiding tijdens zij-instroom?
+  - Verwacht: Hoeveel dagen moet ik werken en hoeveel dagen naar de opleiding tijdens zij-instroom?
+  - Gevonden: geen resultaten
+- **short** — inkomen tijdens traject
+  - Verwacht: Hoe zorg ik voor inkomen tijdens het zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **conversational** — Kan ik financieel rondkomen terwijl ik het zij-instroomtraject volg?
+  - Verwacht: Hoe zorg ik voor inkomen tijdens het zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **short** — welke lesbevoegdheid
+  - Verwacht: Welke bevoegdheid heb ik nodig om les te geven?
+  - Gevonden: geen resultaten
+- **conversational** — Welke officiële papieren heb ik nodig voordat ik zelfstandig les mag geven?
+  - Verwacht: Welke bevoegdheid heb ik nodig om les te geven?
+  - Gevonden: geen resultaten
+- **conversational** — Ik twijfel tussen po, vo en mbo; wat zijn de belangrijkste verschillen?
+  - Verwacht: Wat is het verschil tussen de verschillende onderwijssectoren?
+  - Gevonden: geen resultaten
+- **conversational** — Hoe kan ik testen of een baan in het onderwijs echt bij mij past?
+  - Verwacht: Hoe weet ik of het onderwijs iets voor mij is?
+  - Gevonden: geen resultaten
+- **short** — vraag naar mijn schoolvak
+  - Verwacht: Hoeveel vraag is er naar docenten van een bepaald vak?
+  - Gevonden: geen resultaten
+- **conversational** — Hoe groot is de kans op werk als ik een specifiek vak wil geven?
+  - Verwacht: Hoeveel vraag is er naar docenten van een bepaald vak?
+  - Gevonden: geen resultaten
+- **short** — deeltijd versus zij-instroom
+  - Verwacht: Wat is het verschil tussen deeltijd en zij-instroom?
+  - Gevonden: geen resultaten
+- **conversational** — Wat verandert er voor mij als ik deeltijd studeer in plaats van zij-instroom?
+  - Verwacht: Wat is het verschil tussen deeltijd en zij-instroom?
+  - Gevonden: geen resultaten
+- **conversational** — Kan ik met een buitenlands diploma in Nederland via zij-instroom docent worden?
+  - Verwacht: Ik kom uit het buitenland, kan ik zij-instromen in Nederland?
+  - Gevonden: geen resultaten
+- **conversational** — Welke alternatieven heb ik wanneer mijn diploma niet bij een schoolvak aansluit?
+  - Verwacht: Wat als ik geen verwant diploma heb voor zij-instroom?
+  - Gevonden: geen resultaten
+- **conversational** — Kun je de route van eerste oriëntatie tot daadwerkelijk voor de klas staan uitleggen?
+  - Verwacht: Welke stappen moet ik nemen om voor de klas te staan?
+  - Gevonden: geen resultaten
+- **short** — pdg uitleg
+  - Verwacht: Wat is een PDG (Pedagogisch Didactisch Getuigschrift)?
+  - Gevonden: geen resultaten
+- **conversational** — Ik wil in het mbo lesgeven; wanneer heb ik een PDG nodig?
+  - Verwacht: Wat is een PDG (Pedagogisch Didactisch Getuigschrift)?
+  - Gevonden: geen resultaten
+- **short** — pabo uitleg
+  - Verwacht: Wat is de Pabo?
+  - Gevonden: geen resultaten
+- **conversational** — Welke opleiding leidt mij op tot juf of meester in het basisonderwijs?
+  - Verwacht: Wat is de Pabo?
+  - Gevonden: geen resultaten
+- **conversational** — Voor welke klassen en vakken geeft een tweedegraads opleiding bevoegdheid?
+  - Verwacht: Wat is een tweedegraads lerarenopleiding?
+  - Gevonden: geen resultaten
+- **short** — eerstegraads opleiding
+  - Verwacht: Wat is een eerstegraads lerarenopleiding?
+  - Gevonden: Welke vooropleiding is vakinhoudelijk verwant voor zij-instroom?
+- **conversational** — Wanneer heb ik een eerstegraads bevoegdheid nodig?
+  - Verwacht: Wat is een eerstegraads lerarenopleiding?
+  - Gevonden: geen resultaten
+- **conversational** — Wat betaal ik gemiddeld voor een gewone lerarenopleiding?
+  - Verwacht: Wat kost een reguliere lerarenopleiding?
+  - Gevonden: geen resultaten
+- **short** — zij-instroomsubsidie
+  - Verwacht: Wat is de subsidie zij-instroom en hoe werkt die?
+  - Gevonden: Wat kost een zij-instroomtraject?
+- **conversational** — Hoe vraagt een school subsidie aan voor iemand die via zij-instroom begint?
+  - Verwacht: Wat is de subsidie zij-instroom en hoe werkt die?
+  - Gevonden: geen resultaten
+- **conversational** — Voor wie is de SOOL-subsidie bedoeld en wat wordt ermee betaald?
+  - Verwacht: Wat is de SOOL-subsidie?
+  - Gevonden: geen resultaten
+- **short** — kopopleiding uitleg
+  - Verwacht: Wat is een kopopleiding?
+  - Gevonden: geen resultaten
+- **conversational** — Ik heb al een bachelor; kan een kopopleiding mij sneller docent maken?
+  - Verwacht: Wat is een kopopleiding?
+  - Gevonden: geen resultaten
+- **short** — educatieve minor uitleg
+  - Verwacht: Wat is een educatieve minor?
+  - Gevonden: geen resultaten
+- **conversational** — Kan ik naast mijn bachelor een educatieve minor volgen om lesbevoegdheid te halen?
+  - Verwacht: Wat is een educatieve minor?
+  - Gevonden: geen resultaten
+- **short** — functie onderwijsondersteuner
+  - Verwacht: Wat doet een onderwijsondersteuner?
+  - Gevonden: geen resultaten
+- **conversational** — Welke taken heeft iemand die de docent ondersteunt in en rond de klas?
+  - Verwacht: Wat doet een onderwijsondersteuner?
+  - Gevonden: geen resultaten
+- **conversational** — Waarvoor kan ik terecht bij het Onderwijsloket Rotterdam?
+  - Verwacht: Wat is het Onderwijsloket Rotterdam?
+  - Gevonden: geen resultaten
+- **conversational** — Waar vind ik persoonlijk advies over leraar worden in mijn eigen regio?
+  - Verwacht: Waar vind ik een regionaal onderwijsloket bij mij in de buurt?
+  - Gevonden: geen resultaten
+- **short** — goede onderwijsbronnen
+  - Verwacht: Welke handige bronnen en tools zijn er?
+  - Gevonden: geen resultaten
+- **conversational** — Welke betrouwbare websites en hulpmiddelen helpen mij bij de overstap naar onderwijs?
+  - Verwacht: Welke handige bronnen en tools zijn er?
+  - Gevonden: geen resultaten
+- **conversational** — Mag ik zonder gewone lerarenopleiding lesgeven op een hogeschool of universiteit?
+  - Verwacht: Kan ik lesgeven in het hoger onderwijs?
+  - Gevonden: geen resultaten
+- **short** — associate degree uitleg
+  - Verwacht: Wat is een Associate Degree (AD)?
+  - Gevonden: geen resultaten
+- **conversational** — Wat kun je met een Associate Degree en hoe verschilt die van een bachelor?
+  - Verwacht: Wat is een Associate Degree (AD)?
+  - Gevonden: geen resultaten
+- **conversational** — Welke adviespunten voor onderwijsloopbanen zijn er in Rotterdam en omgeving?
+  - Verwacht: Welke loketten zijn er in regio Rotterdam?
+  - Gevonden: geen resultaten
+- **short** — adviesgesprek plannen
+  - Verwacht: Hoe plan ik een gesprek met een adviseur?
+  - Gevonden: geen resultaten
+- **conversational** — Hoe regel ik een persoonlijk gesprek met iemand die mijn route kan beoordelen?
+  - Verwacht: Hoe plan ik een gesprek met een adviseur?
+  - Gevonden: geen resultaten
+- **conversational** — Ik heb me georiënteerd; wat is nu de logische vervolgstap?
+  - Verwacht: Wat zijn mijn volgende stappen na orientatie?
+  - Gevonden: geen resultaten
+- **short** — meeloopdag onderwijs
+  - Verwacht: Zijn er open dagen of meeloopdagen?
+  - Gevonden: geen resultaten
+- **conversational** — Waar kan ik ervaren hoe een schooldag eruitziet voordat ik een opleiding kies?
+  - Verwacht: Zijn er open dagen of meeloopdagen?
+  - Gevonden: geen resultaten
+- **conversational** — Hoe gunstig is de arbeidsmarkt momenteel voor mensen die docent willen worden?
+  - Verwacht: Hoe is de arbeidsmarkt voor leraren in 2026?
+  - Gevonden: geen resultaten
+- **conversational** — Bij welke vakken in het voortgezet onderwijs zijn de tekorten het meest urgent?
+  - Verwacht: Welke tekortvakken zijn er in het VO?
+  - Gevonden: geen resultaten
+- **short** — onderwijsvacatures
+  - Verwacht: Hoe vind ik een vacature in het onderwijs?
+  - Gevonden: geen resultaten
+- **conversational** — Waar kan ik gericht zoeken naar banen bij scholen en onderwijsinstellingen?
+  - Verwacht: Hoe vind ik een vacature in het onderwijs?
+  - Gevonden: geen resultaten
+- **short** — lio-stage uitleg
+  - Verwacht: Wat is een lio-stage en hoe werkt die?
+  - Gevonden: geen resultaten
+- **conversational** — Hoe werkt een lio-stage en wanneer mag ik als leraar in opleiding zelfstandig lesgeven?
+  - Verwacht: Wat is een lio-stage en hoe werkt die?
+  - Gevonden: geen resultaten
+- **conversational** — Wat wordt onderzocht om te bepalen of ik geschikt ben voor zij-instroom?
+  - Verwacht: Wat is een geschiktheidsonderzoek bij zij-instroom?
+  - Gevonden: geen resultaten
+- **conversational** — Wanneer moet ik een VOG aanvragen als ik op een school ga werken?
+  - Verwacht: Heb ik een VOG nodig om voor de klas te staan?
+  - Gevonden: geen resultaten
+- **short** — werktijden docent
+  - Verwacht: Wat zijn de werktijden van een leraar?
+  - Gevonden: geen resultaten
+- **conversational** — Hoe ziet de werkdag en werkweek van een gemiddelde leraar eruit?
+  - Verwacht: Wat zijn de werktijden van een leraar?
+  - Gevonden: geen resultaten
+- **short** — extra uitkeringen onderwijs
+  - Verwacht: Krijg ik vakantiegeld en eindejaarsuitkering?
+  - Gevonden: geen resultaten
+- **conversational** — Welke jaarlijkse toeslagen of extra betalingen krijgt een leraar naast het salaris?
+  - Verwacht: Krijg ik vakantiegeld en eindejaarsuitkering?
+  - Gevonden: geen resultaten
+- **conversational** — Welke opleiding en ervaring heb ik nodig om directeur van een basisschool te worden?
+  - Verwacht: Hoe word ik schoolleider in het basisonderwijs?
+  - Gevonden: geen resultaten
+- **short** — lerarenregister vernieuwen
+  - Verwacht: Wat is herregistratie in het lerarenregister?
+  - Gevonden: geen resultaten
+- **conversational** — Moet ik mijn registratie als leraar periodiek vernieuwen en hoe werkt dat?
+  - Verwacht: Wat is herregistratie in het lerarenregister?
+  - Gevonden: geen resultaten
+- **conversational** — Ik heb vroeger lesgegeven; welke stappen moet ik zetten om terug te keren?
+  - Verwacht: Kan ik als herintreder terugkeren in het onderwijs?
+  - Gevonden: geen resultaten
+- **conversational** — Kan iemand vakinhoudelijk goed lesgeven zonder formeel bevoegd te zijn?
+  - Verwacht: Wat is het verschil tussen bevoegd en bekwaam?
+  - Gevonden: geen resultaten
+- **short** — subsidies toekomstige leraren
+  - Verwacht: Welke subsidies bestaan er voor (aanstaande) leraren?
+  - Gevonden: geen resultaten
+- **conversational** — Welke subsidies kunnen mij helpen om de overstap naar het lerarenberoep te betalen?
+  - Verwacht: Welke subsidies bestaan er voor (aanstaande) leraren?
+  - Gevonden: geen resultaten
+- **multi_intent** — Wat is zij-instroom en aan welke eisen moet ik voldoen?
+  - Verwacht: Wat is een zij-instroomtraject?; Wat zijn de toelatingseisen voor het zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **multi_intent** — Hoe lang duurt zij-instroom en wat kost het mij?
+  - Verwacht: Hoe lang duurt een zij-instroomtraject?; Wat kost een zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **multi_intent** — Wat verdien ik als starter en welke extra uitkeringen krijg ik?
+  - Verwacht: Wat is het salaris van een startende docent?; Krijg ik vakantiegeld en eindejaarsuitkering?
+  - Gevonden: geen resultaten
+- **multi_intent** — Hoe combineer ik werkdagen met opleiding en behoud ik inkomen?
+  - Verwacht: Hoeveel dagen moet ik werken en hoeveel dagen naar de opleiding tijdens zij-instroom?; Hoe zorg ik voor inkomen tijdens het zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **multi_intent** — Welke bevoegdheid heb ik nodig en wat betekent bekwaam zijn?
+  - Verwacht: Welke bevoegdheid heb ik nodig om les te geven?; Wat is het verschil tussen bevoegd en bekwaam?
+  - Gevonden: geen resultaten
+- **multi_intent** — Welke onderwijssector past het beste bij mij?
+  - Verwacht: Wat is het verschil tussen de verschillende onderwijssectoren?; Hoe weet ik of het onderwijs iets voor mij is?
+  - Gevonden: geen resultaten
+- **multi_intent** — In welke vakken is veel vraag en waar zijn de grootste tekorten?
+  - Verwacht: Hoeveel vraag is er naar docenten van een bepaald vak?; Welke tekortvakken zijn er in het VO?
+  - Gevonden: geen resultaten
+- **multi_intent** — Kies ik deeltijd of zij-instroom als mijn diploma niet goed aansluit?
+  - Verwacht: Wat is het verschil tussen deeltijd en zij-instroom?; Wat als ik geen verwant diploma heb voor zij-instroom?
+  - Gevonden: geen resultaten
+- **multi_intent** — Wat zijn mijn eerste én volgende stappen richting de klas?
+  - Verwacht: Welke stappen moet ik nemen om voor de klas te staan?; Wat zijn mijn volgende stappen na orientatie?
+  - Gevonden: geen resultaten
+- **multi_intent** — Heb ik voor mbo en hoger onderwijs een PDG of andere bevoegdheid nodig?
+  - Verwacht: Wat is een PDG (Pedagogisch Didactisch Getuigschrift)?; Kan ik lesgeven in het hoger onderwijs?
+  - Gevonden: geen resultaten
+- **multi_intent** — Welke opleiding heb ik nodig voor de basisschool en hoeveel kost die?
+  - Verwacht: Wat is de Pabo?; Wat kost een reguliere lerarenopleiding?
+  - Gevonden: geen resultaten
+- **multi_intent** — Wat is het verschil tussen eerste- en tweedegraads bevoegdheid?
+  - Verwacht: Wat is een tweedegraads lerarenopleiding?; Wat is een eerstegraads lerarenopleiding?
+  - Gevonden: geen resultaten
+- **multi_intent** — Welke subsidies zijn er specifiek voor zij-instroom en in het algemeen?
+  - Verwacht: Wat is de subsidie zij-instroom en hoe werkt die?; Welke subsidies bestaan er voor (aanstaande) leraren?
+  - Gevonden: geen resultaten
+- **multi_intent** — Kan SOOL ook gebruikt worden voor onderwijsondersteuners?
+  - Verwacht: Wat is de SOOL-subsidie?; Wat doet een onderwijsondersteuner?
+  - Gevonden: geen resultaten
+- **multi_intent** — Kies ik beter voor een kopopleiding of een educatieve minor?
+  - Verwacht: Wat is een kopopleiding?; Wat is een educatieve minor?
+  - Gevonden: geen resultaten
+- **multi_intent** — Welke loketten in Rotterdam kunnen mij helpen?
+  - Verwacht: Wat is het Onderwijsloket Rotterdam?; Welke loketten zijn er in regio Rotterdam?
+  - Gevonden: geen resultaten
+- **multi_intent** — Waar vind ik een regionaal loket en hoe plan ik daar een gesprek?
+  - Verwacht: Waar vind ik een regionaal onderwijsloket bij mij in de buurt?; Hoe plan ik een gesprek met een adviseur?
+  - Gevonden: geen resultaten
+- **multi_intent** — Welke bronnen helpen mij ook bij het zoeken naar vacatures?
+  - Verwacht: Welke handige bronnen en tools zijn er?; Hoe vind ik een vacature in het onderwijs?
+  - Gevonden: geen resultaten
+- **multi_intent** — Wat is een Associate Degree en kan ik daarmee in het hoger onderwijs lesgeven?
+  - Verwacht: Wat is een Associate Degree (AD)?; Kan ik lesgeven in het hoger onderwijs?
+  - Gevonden: geen resultaten
+- **multi_intent** — Kan ik eerst meelopen en daarna een lio-stage doen?
+  - Verwacht: Zijn er open dagen of meeloopdagen?; Wat is een lio-stage en hoe werkt die?
+  - Gevonden: geen resultaten
+- **multi_intent** — Hoe is de arbeidsmarkt en waar vind ik actuele vacatures?
+  - Verwacht: Hoe is de arbeidsmarkt voor leraren in 2026?; Hoe vind ik een vacature in het onderwijs?
+  - Gevonden: geen resultaten
+- **multi_intent** — Heb ik voor het geschiktheidsonderzoek al een VOG nodig?
+  - Verwacht: Wat is een geschiktheidsonderzoek bij zij-instroom?; Heb ik een VOG nodig om voor de klas te staan?
+  - Gevonden: Wat zijn de toelatingseisen voor het zij-instroomtraject?
+- **multi_intent** — Hoe zien werktijden en extra beloningen in het onderwijs eruit?
+  - Verwacht: Wat zijn de werktijden van een leraar?; Krijg ik vakantiegeld en eindejaarsuitkering?
+  - Gevonden: geen resultaten
+- **multi_intent** — Hoe word ik schoolleider en moet ik daarna geregistreerd blijven?
+  - Verwacht: Hoe word ik schoolleider in het basisonderwijs?; Wat is herregistratie in het lerarenregister?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik wil werken en leren, maar zoek uitleg over de officiële zij-instroomroute.
+  - Verwacht: Wat is een zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **hard_negative** — Mijn diploma sluit aan; welke formele toelatingseisen blijven nog over?
+  - Verwacht: Wat zijn de toelatingseisen voor het zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **hard_negative** — Niet de weekindeling, maar de totale doorlooptijd van zij-instroom.
+  - Verwacht: Hoe lang duurt een zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik bedoel niet regulier collegegeld, maar de kosten van zij-instroom.
+  - Verwacht: Wat kost een zij-instroomtraject?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik zoek het startsalaris, niet vakantiegeld of de eindejaarsuitkering.
+  - Verwacht: Wat is het salaris van een startende docent?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik wil weten welk bewijs wettelijk nodig is, niet alleen of ik bekwaam ben.
+  - Verwacht: Welke bevoegdheid heb ik nodig om les te geven?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik zoek vraag naar één vak, niet de algemene lijst met tekortvakken.
+  - Verwacht: Hoeveel vraag is er naar docenten van een bepaald vak?
+  - Gevonden: geen resultaten
+- **hard_negative** — Mijn buitenlandse diploma is relevant; kan ik daarmee in Nederland zij-instromen?
+  - Verwacht: Ik kom uit het buitenland, kan ik zij-instromen in Nederland?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik bedoel een PDG voor mbo, niet lesgeven in het hoger onderwijs.
+  - Verwacht: Wat is een PDG (Pedagogisch Didactisch Getuigschrift)?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik wil juf worden op de basisschool, niet docent in de onderbouw van het vo.
+  - Verwacht: Wat is de Pabo?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik wil bovenbouw vwo geven, dus niet de tweedegraads route.
+  - Verwacht: Wat is een tweedegraads lerarenopleiding?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik zoek de zij-instroomsubsidie, niet de regeling voor ondersteuners.
+  - Verwacht: Wat is de subsidie zij-instroom en hoe werkt die?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik heb al een bachelor en zoek de kopopleiding, niet de educatieve minor.
+  - Verwacht: Wat is een kopopleiding?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik zoek het centrale Onderwijsloket Rotterdam, niet een overzicht van alle loketten.
+  - Verwacht: Wat is het Onderwijsloket Rotterdam?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik zoek een loket bij mij in de buurt, nog niet direct een adviesgesprek.
+  - Verwacht: Waar vind ik een regionaal onderwijsloket bij mij in de buurt?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik vraag naar een Associate Degree, niet naar een verkorte lerarenopleiding.
+  - Verwacht: Wat is een Associate Degree (AD)?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik ben klaar met oriënteren en zoek vervolgstappen, niet het hele traject vanaf nul.
+  - Verwacht: Wat zijn mijn volgende stappen na orientatie?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik wil eerst een open dag bezoeken, niet meteen een lio-stage starten.
+  - Verwacht: Zijn er open dagen of meeloopdagen?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik vraag naar de algemene arbeidsmarkt, niet alleen de tekortvakken.
+  - Verwacht: Hoe is de arbeidsmarkt voor leraren in 2026?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik zoek vacatures, niet alleen algemene bronnen over leraar worden.
+  - Verwacht: Hoe vind ik een vacature in het onderwijs?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik wil weten wat het geschiktheidsonderzoek inhoudt, niet de toelatingseisen.
+  - Verwacht: Wat is een geschiktheidsonderzoek bij zij-instroom?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik vraag naar normale werktijden, niet naar de verdeling tijdens zij-instroom.
+  - Verwacht: Wat zijn de werktijden van een leraar?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik wil schoolleider worden, niet onderwijsondersteuner.
+  - Verwacht: Hoe word ik schoolleider in het basisonderwijs?
+  - Gevonden: geen resultaten
+- **hard_negative** — Ik vraag naar herregistratie, niet naar het verschil tussen bevoegd en bekwaam.
+  - Verwacht: Wat is herregistratie in het lerarenregister?
   - Gevonden: geen resultaten
