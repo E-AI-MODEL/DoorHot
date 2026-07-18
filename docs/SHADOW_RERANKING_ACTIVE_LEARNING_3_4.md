@@ -86,8 +86,17 @@ wordt niet opgeslagen.
   en schrijft iedere voltooide of mislukte evaluatie duurzaam naar
   `reranker_shadow_evaluations`.
 
-De API-bootstraptest voert een echte kennisvraag uit en controleert dat de
-shadowevaluatie inclusief kandidaat-ID's via de actieve repository terugkomt.
+De API-bootstraptest maakt eerst een nulmeting, voert daarna via de persoonlijke
+coach een echte kennisvraag uit en controleert uitsluitend het nieuw toegevoegde
+shadowrecord, inclusief kandidaat-ID's. Zo kan een eerdere evaluatie van de
+algemene coach deze assertion niet onterecht laten slagen.
+
+Een afzonderlijke PGlite-test past de relevante productiemigraties toe, schrijft
+via `PostgresShadowEvaluationRepository`, sluit de embedded PostgreSQL-database
+en leest het record na heropening via een nieuwe repository-instantie terug.
+Dit bewijst de SQL-wiring en opslag over database- en repository-instanties. Het
+is geen bewijs van de configuratie of beschikbaarheid van een live
+PostgreSQL-omgeving.
 
 ### Lokale shadowbenchmark
 

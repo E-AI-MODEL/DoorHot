@@ -30,6 +30,7 @@
     "@door010/orchestration": "5.0.1"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.4",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0",
     "vitest": "3.2.6"
