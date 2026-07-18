@@ -84,7 +84,10 @@ import {
   InMemoryAuditEventRepository
 } from "@door010/audit";
 import { InMemoryRealtimeBroker } from "@door010/realtime";
-import { LocalConceptCrossEncoder } from "@door010/integrations";
+import {
+  LocalConceptCrossEncoder,
+  OpenAiCompatibleAnswerDraftProvider
+} from "@door010/integrations";
 import {
   InAppNotificationDeliveryProvider,
   InMemoryExecutionRepository,
@@ -378,16 +381,29 @@ await routeStepIngestion.ingest({ steps: routeStepContent });
     undefined,
     pipelineEvents
   );
+  const llmGenerator =
+    process.env.LLM_BASE_URL &&
+    process.env.LLM_API_KEY &&
+    process.env.LLM_MODEL
+      ? new OpenAiCompatibleAnswerDraftProvider({
+          baseUrl: process.env.LLM_BASE_URL,
+          apiKey: process.env.LLM_API_KEY,
+          model: process.env.LLM_MODEL,
+          timeoutMs: Number(
+            process.env.LLM_TIMEOUT_MS ?? 30_000
+          )
+        })
+      : undefined;
   const retrievalDraftProvider =
     new AdaptiveRetrievalAnswerDraftProvider(
       retrievalPipeline,
-      draftProvider,
+      llmGenerator ?? draftProvider,
       new AnswerValidationPipeline(
         undefined,
         undefined,
         pipelineEvents
       ),
-      { preferExtractiveAnswer: true }
+      { preferExtractiveAnswer: !llmGenerator }
     );
   const mutationStore =
     new InMemoryPendingMutationStore();
