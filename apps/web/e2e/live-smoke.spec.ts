@@ -53,3 +53,20 @@ test("volledige keten: registreren, vraag stellen, herladen", async ({
     page.getByRole("main").getByText(email)
   ).toBeVisible();
 });
+
+test("inloggen zonder wachtwoord maakt een demo-account", async ({
+  page
+}) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Inloggen" }).click();
+
+  const demoButton = page.getByTestId("demo-login");
+  await expect(demoButton).toBeVisible();
+  await demoButton.click();
+
+  await expect(
+    page
+      .getByRole("navigation")
+      .getByRole("button", { name: /demo-.+@demo\.door010\.local/ })
+  ).toBeVisible();
+});

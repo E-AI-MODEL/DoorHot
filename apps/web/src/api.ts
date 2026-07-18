@@ -403,6 +403,24 @@ export class Door010Api {
     });
   }
 
+  demoLogin(): Promise<AuthSessionDto> {
+    return this.request("/v1/auth/demo-login", {
+      method: "POST",
+      body: "{}"
+    });
+  }
+
+  async demoLoginEnabled(): Promise<boolean> {
+    try {
+      const capabilities = await this.request<{
+        demoLogin?: boolean;
+      }>("/v1/system/capabilities");
+      return capabilities.demoLogin === true;
+    } catch {
+      return false;
+    }
+  }
+
   login(email: string, password: string): Promise<AuthSessionDto> {
     return this.request("/v1/auth/login", {
       method: "POST",

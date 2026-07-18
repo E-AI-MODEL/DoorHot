@@ -143,6 +143,11 @@ server.setErrorHandler((error: unknown, request, reply) => {
   });
 });
 const storageMode = process.env.APP_STORAGE_MODE ?? "memory";
+// Passwordless demo login: default on for the in-memory demo, off in
+// production unless explicitly enabled via DEMO_LOGIN_ENABLED=true.
+const demoLoginEnabled = process.env.DEMO_LOGIN_ENABLED
+  ? process.env.DEMO_LOGIN_ENABLED === "true"
+  : storageMode === "memory";
 const services = storageMode === "postgres"
   ? await createProductionServices()
   : await createApplicationServices();
@@ -169,7 +174,8 @@ await registerAuthProfileRoutes(server, {
   auth: services.auth,
   authorization: services.authorization,
   profileService: services.profileService,
-  tokenService: services.tokenService
+  tokenService: services.tokenService,
+  demoLoginEnabled
 });
 
 const parityFlows = await createParityFlowServices({
@@ -354,6 +360,7 @@ server.get("/v1/system/capabilities", async () => ({
   mutationConfirmation: true,
   humanChannels: ["advisor-messaging"],
   retrievalModes: ["lexical", "hybrid"],
+  demoLogin: demoLoginEnabled,
   providers: {
     manualImport: true,
     llm: Boolean(process.env.LLM_BASE_URL),

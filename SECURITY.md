@@ -46,3 +46,11 @@ waarvoor je expliciete toestemming hebt.
 - testen met echte persoonsgegevens;
 - misbruik van externe providers;
 - rapporten zonder reproduceerbare technische impact.
+
+## Demo-login
+
+`POST /v1/auth/demo-login` ("Inloggen zonder wachtwoord") maakt een
+tijdelijk demo-account aan zonder wachtwoordinvoer. De route staat
+standaard alleen aan bij in-memory opslag en is in productie
+uitgeschakeld tenzij `DEMO_LOGIN_ENABLED=true` expliciet is gezet.
+Schakel dit nooit in op een omgeving met echte gebruikersgegevens.

@@ -383,6 +383,23 @@ function accountView(notice?: string): string {
           </button>
         </div>
       </form>
+      <div
+        id="demo-login-container"
+        data-testid="demo-login-container"
+        hidden
+      >
+        <button
+          id="demo-login"
+          data-testid="demo-login"
+          class="secondary"
+          type="button"
+        >
+          Inloggen zonder wachtwoord
+        </button>
+        <p class="hint">
+          Maakt direct een tijdelijk demo-account aan.
+        </p>
+      </div>
     </section>
   `;
 }
@@ -394,6 +411,34 @@ async function bindAccount(): Promise<void> {
     state.view = "public-chat";
     void render();
   });
+
+  const demoContainer = document.querySelector<HTMLDivElement>(
+    "#demo-login-container"
+  );
+  const demoButton = document.querySelector<HTMLButtonElement>(
+    "#demo-login"
+  );
+  if (demoContainer && demoButton) {
+    void api.demoLoginEnabled().then((enabled) => {
+      if (enabled) demoContainer.hidden = false;
+    });
+    demoButton.addEventListener("click", async () => {
+      demoButton.disabled = true;
+      try {
+        const session = await api.demoLogin();
+        setSession(session);
+        state.view = "profile";
+        await render();
+      } catch (error) {
+        demoButton.disabled = false;
+        await render(
+          error instanceof ApiError
+            ? `Inloggen mislukt: ${error.code}.`
+            : "Inloggen mislukt."
+        );
+      }
+    });
+  }
 
   const form = document.querySelector<HTMLFormElement>("#account-form");
   if (!form) return;

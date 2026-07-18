@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import type { FastifyInstance, FastifyRequest } from "fastify";
 import { z } from "zod";
 import { enforceOwnership } from "./security.js";
@@ -27,6 +28,7 @@ export async function registerAuthProfileRoutes(
     authorization: AuthorizationService;
     profileService: ProfileService;
     tokenService: TokenService;
+    demoLoginEnabled?: boolean;
   }
 ): Promise<void> {
   server.addHook("preHandler", async (request, reply) => {
@@ -37,6 +39,7 @@ export async function registerAuthProfileRoutes(
       "/metrics",
       "/v1/auth/register",
       "/v1/auth/login",
+      "/v1/auth/demo-login",
       "/v1/chat/general",
       "/v1/system/capabilities",
       "/v1/knowledge/search"
@@ -83,6 +86,27 @@ export async function registerAuthProfileRoutes(
     } catch (error) {
       return reply.code(409).send({
         error: error instanceof Error ? error.message : "register_failed"
+      });
+    }
+  });
+
+  server.post("/v1/auth/demo-login", async (_request, reply) => {
+    if (!services.demoLoginEnabled) {
+      return reply.code(403).send({
+        error: "demo_login_disabled"
+      });
+    }
+
+    try {
+      return await services.auth.register({
+        email: `demo-${randomUUID().slice(0, 8)}@demo.door010.local`,
+        password: `${randomUUID()}${randomUUID()}`
+      });
+    } catch (error) {
+      return reply.code(500).send({
+        error: error instanceof Error
+          ? error.message
+          : "demo_login_failed"
       });
     }
   });
