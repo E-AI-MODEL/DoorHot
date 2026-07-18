@@ -1,48 +1,100 @@
-# Door010 Foundation 5.0
+Door010 5.0
 
 Portable, provider-neutraal AI-platform voor onderwijsloopbaanbegeleiding,
-persoonlijke journeys, kennisretrieval en samenwerking met menselijke
-adviseurs.
+persoonlijke journeys, kennisretrieval en samenwerking met menselijke adviseurs.
 
-## Status
+Status
 
-Versie 5.0 bundelt de volledige cumulatieve foundation met:
+Versie 5.0 bundelt de volledige cumulatieve foundation. De huidige readinessstatus
+is CONDITIONAL_GO totdat staging- en go-live-evidence extern is uitgevoerd.
 
-- drie gescheiden chatkanalen;
-- deterministische fase-, route- en journey-engines;
-- lexicale en hybride retrieval met conditionele reranking;
-- graph memory als afgeleide projectie;
-- parallelle orchestration en shadow planning;
-- bevestigde execution tools en notification delivery;
-- persoonlijk journey-dashboard;
-- CI-, browser-, load- en recoverygates;
-- projectrichtlijnen voor ontwikkelaars en AI-agents.
+Demo in een klik (GitHub Codespaces)
 
-De huidige readinessstatus blijft `CONDITIONAL_GO` totdat staging- en
-go-live-evidence extern is uitgevoerd.
 
-## Demo in een klik (GitHub Codespaces)
 
-De snelste manier om Door010 te zien werken, zonder installatie:
 
-1. klik op **Code -> Codespaces -> Create codespace on main**;
-2. wacht tot de omgeving is gebouwd (eenmalig enkele minuten) - de
-   demo start daarna automatisch via `npm run demo`;
-3. open de doorgestuurde poort **5173** (Door010 webapp).
 
-De demo draait volledig in-memory in de codespace: de API seedt bij het
-opstarten alle referentiedata (FAQ's, regionale loketten,
-routestap-uitleg) en de webapp praat via de Vite-proxy met de echte
-API. Registreren, chatten met de coach, de route- en talentflows en het
-journey-dashboard werken allemaal. Zet de poort op *Public* om de demo
-tijdelijk met anderen te delen; met het stoppen van de codespace
-verdwijnt alles.
+Klik op Code → Codespaces → Create codespace on main.
 
-Lokaal werkt hetzelfde met `npm ci && npx tsc -b && npm run demo`.
 
-## Repositorystructuur
 
-```text
+Wacht tot de omgeving is gebouwd (eenmalig enkele minuten) — de demo start
+
+daarna automatisch via npm run demo.
+
+
+
+Open de doorgestuurde poort 5173 (Door010 webapp).
+
+De demo draait volledig in-memory in de codespace: de API seedt bij het opstarten
+alle referentiedata (FAQ's, regionale loketten, routestap-uitleg) en de webapp
+praat via de Vite-proxy met de echte API. Registreren, chatten met de coach, de
+route- en talentflows en het journey-dashboard werken allemaal. Zet de poort op
+Public om de demo tijdelijk met anderen te delen; met het stoppen van de
+codespace verdwijnt alles.
+
+Lokaal werkt hetzelfde met npm ci && npx tsc -b && npm run demo.
+
+Snel starten
+
+Vereisten: Node.js 22+, npm, Docker en Docker Compose.
+
+cp .env.example .env
+npm install
+docker compose up -d
+npm run dev
+
+Webapp en API gebruiken de configuratie uit .env. Gebruik uitsluitend lokale
+testsecrets en commit het bestand nooit.
+
+Belangrijkste controles
+
+npm run typecheck
+npm test
+npm run build
+npm run verify:migrations
+npm audit --audit-level=moderate
+npm run test:e2e
+
+
+
+Architectuur in één oogopslag
+
+Public General Coach ─┐
+Personal Journey Coach ├─ API → Orchestrator → Retrieval/Engines/Tools
+Human Advisor Chat ───┘                         │
+                                                ▼
+                                            PostgreSQL
+
+
+
+
+
+Journey Engine beheert journey-state.
+
+
+
+Graph Memory is een projectie.
+
+
+
+Providers zijn verwisselbaar via adapters.
+
+
+
+Gevoelige schrijfacties vereisen bevestiging en audit.
+
+
+
+PostgreSQL is de primaire opslag.
+
+Lees vóór bijdragen: [AGENTS.md](AGENTS.md), [CONTRIBUTING.md](CONTRIBUTING.md),
+[ARCHITECTURE.md](ARCHITECTURE.md).
+
+
+
+Repositorystructuur
+
 .github/       GitHub Actions en deploymentgates
 apps/api/      HTTP API, security en bootstrapping
 apps/web/      webapp en Playwrighttests
@@ -51,496 +103,438 @@ datasets/      fase-, route- en kennisdatasets
 migrations/    append-only PostgreSQL-migraties
 scripts/       verificatie, acceptance, load en recovery
 docs/          ontwerp-, validatie- en runbookdocumentatie
-```
-
-## Snel starten
-
-Vereisten:
-
-- Node.js 22 of nieuwer;
-- npm;
-- Docker en Docker Compose.
-
-```bash
-cp .env.example .env
-npm install
-docker compose up -d
-npm run dev
-```
-
-Webapp en API gebruiken de configuratie uit `.env`. Gebruik uitsluitend lokale
-testsecrets en commit het bestand nooit.
-
-## Belangrijkste controles
-
-```bash
-npm run typecheck
-npm test
-npm run build
-npm run verify:migrations
-npm audit --audit-level=moderate
-npm run test:e2e
-```
-
-## Architectuur in één oogopslag
-
-```text
-Public General Coach ─┐
-Personal Journey Coach ├─ API → Orchestrator → Retrieval/Engines/Tools
-Human Advisor Chat ───┘                         │
-                                                ▼
-                                            PostgreSQL
-```
-
-- Journey Engine beheert journey-state.
-- Graph Memory is een projectie.
-- Providers zijn verwisselbaar via adapters.
-- Gevoelige schrijfacties vereisen bevestiging en audit.
-- PostgreSQL is de primaire opslag.
-
-Lees vóór bijdragen:
-
-- [`AGENTS.md`](AGENTS.md)
-- [`CONTRIBUTING.md`](CONTRIBUTING.md)
-- [`ARCHITECTURE.md`](ARCHITECTURE.md)
-
-## Roadmap na 5.0
-
-De eerstvolgende prioriteiten zijn:
-
-1. groene Playwright-, load- en restore-evidence vanuit staging;
-2. live provideracceptatie en privacy/DPIA-sign-off;
-3. realtime graph- en browsernotificaties;
-4. incrementele graphupdates en GraphRAG-contextretrieval;
-5. execution providerplugins en memory compression;
-6. multi-tenant deployment- en governanceondersteuning.
 
 
-## Open-source governance
 
-Dit project gebruikt de Apache License 2.0.
+API-endpoints (foundation)
 
-- [`LICENSE`](LICENSE)
-- [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)
-- [`SECURITY.md`](SECURITY.md)
-- [`SUPPORT.md`](SUPPORT.md)
-- [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
-Issues en pull requests gebruiken vaste GitHub-templates in `.github/`.
 
-## Historie en gedetailleerde documentatie
 
-De onderstaande secties behouden de cumulatieve ontwikkelhistorie. Actuele
-runbooks en validatiebestanden staan in `docs/`.
 
-## Scope van deze foundation
+GET  http://localhost:4000/health
 
-- twee expliciete chatbotcontracten:
-  - `GeneralCoach`
-  - `PersonalJourneyCoach`
-- menselijk adviseurskanaal als apart gesprekstype;
-- provider-neutrale domeincontracten;
-- API-providerframework voor onderwijsdata;
-- PostgreSQL-basisschema;
-- Docker Compose met PostgreSQL, Redis en MinIO;
-- bestaande kernsets uit `presentatie-door010`;
-- baseline- en paritydocumentatie.
 
-## Starten
 
-```bash
-cp .env.example .env
-npm install
-docker compose up -d
-npm run dev
-```
+GET  http://localhost:4000/v1/system/capabilities
 
-API:
 
-- `GET http://localhost:4000/health`
-- `GET http://localhost:4000/v1/system/capabilities`
-- `POST http://localhost:4000/v1/chat/general`
-- `POST http://localhost:4000/v1/chat/personal`
+
+POST http://localhost:4000/v1/chat/general
+
+
+
+POST http://localhost:4000/v1/chat/personal
 
 De chat-endpoints gebruiken in deze foundation een deterministische mock-orchestrator.
-Echte LLM-, retrieval- en persistente repository-adapters volgen in de volgende bouwfase.
+Echte LLM-, retrieval- en persistente repository-adapters volgen in de volgende
+bouwfase.
 
-## Bronnen
 
-De functionele baseline wordt gecontroleerd tegen:
 
-- `E-AI-MODEL/door010`
-- `E-AI-MODEL/presentatie-door010`
+Scope van deze foundation
 
-Zie `docs/BASELINE.md` en `docs/DECISIONS.md`.
 
-## Datamodelstatus
 
-Fase A is toegevoegd in `migrations/0002_domain_schema.sql`.
+
+
+Twee expliciete chatbotcontracten: GeneralCoach en PersonalJourneyCoach.
+
+
+
+Menselijk adviseurskanaal als apart gesprekstype.
+
+
+
+Provider-neutrale domeincontracten.
+
+
+
+API-providerframework voor onderwijsdata.
+
+
+
+PostgreSQL-basisschema.
+
+
+
+Docker Compose met PostgreSQL, Redis en MinIO.
+
+
+
+Bestaande kernsets uit presentatie-door010.
+
+
+
+Baseline- en paritydocumentatie.
+
+
+
+Datamodelstatus
+
+Fase A is toegevoegd in migrations/0002_domain_schema.sql.
 
 Het schema bevat nu de structurele basis voor:
 
-- slots en slothistorie;
-- fase-evaluaties en bevestigde overgangen;
-- route-evaluaties en aanbevelingen;
-- kennis en ingest;
-- onderwijsproviders en opleidingen;
-- events, vacatures en afspraken;
-- promptversies, feature flags en providers;
-- artifacts, bronnen, validatie en pipeline-events.
 
-Zie `docs/DATA_MODEL.md`.
 
-## Engine-status v0.3
 
-De deterministische fase- en route-engine zijn toegevoegd aan
-`packages/domain`.
 
-Validatie:
+slots en slothistorie;
 
-```bash
-npm run verify:datasets
-npm test
-```
 
-## Route-engine v0.4
 
-De volledige route-mapping is toegevoegd via `datasets/routes.json`.
+fase-evaluaties en bevestigde overgangen;
 
-De engine ondersteunt nu:
 
-- conditionele vragen;
-- volledige route matching;
-- specificiteitsranking;
-- geordende route steps;
-- verrijkte route-inhoud;
-- 5 detectorfases naast 9 journeyfases.
 
-Zie `docs/ROUTES_AND_JOURNEY.md`.
+route-evaluaties en aanbevelingen;
 
-## v0.4.1-validatie
 
-Zie `docs/TEST_REPORT.md`.
 
+kennis en ingest;
 
-## v0.5 Phase Detector en response pipeline
 
-Toegevoegd:
 
-- SSOT Phase Detector;
-- confidence fallback;
-- gevalideerde next-slot-selectie;
-- gegarandeerde vraag-ID en vraagtekst;
-- intake batches;
-- antwoordtypes;
-- bronplicht;
-- reflectie;
-- directe en inklapbare antwoorddelen.
+onderwijsproviders en opleidingen;
 
-Zie `docs/PHASE_AND_RESPONSE_PIPELINE.md`.
 
-## v0.5.1
 
-Compile-readiness en het canonieke slotmodel zijn gerepareerd. Zie `docs/COMPILE_READINESS.md`.
+events, vacatures en afspraken;
 
-## v0.6 wisselbare fasesystemen
 
-Ondersteunt configuratiegestuurd 4, 5 en 9 fases met entry-, exit- en mappinglogica. Zie `docs/PHASE_SYSTEMS.md`.
 
-## v0.7 actieve fasesysteemkeuze
+promptversies, feature flags en providers;
 
-De Phase Detector gebruikt nu `PhaseSystemRegistry` en kan per organisatie, gebruiker of gesprek tussen 4, 5 en 9 fases wisselen. Zie `docs/ACTIVE_PHASE_SYSTEM.md`.
 
-## v0.8 coaches en persistence
 
-Beide coaches gebruiken nu de gedeelde responseflow. PostgreSQL-repositories bewaren fasevoorkeuren, journey state en evaluaties. Zie `docs/COACHES_AND_PERSISTENCE.md`.
+artifacts, bronnen, validatie en pipeline-events.
 
-## v0.8.1 API-bootstrap en mutaties
+Zie docs/DATA_MODEL.md.
 
-De API laadt nu echte datasets en instantieert beide coaches. Fase- en profielmutaties vereisen een expliciete acceptatie via de mutatie-endpoints. Zie `docs/API_BOOTSTRAP_AND_MUTATIONS.md`.
 
-## v0.9 parity-herstel
 
-Correcties 1 t/m 4 zijn samen uitgevoerd: publieke chatbotgrens, volledige persoonlijke coachcontext, adviseurschat en persistente gesprekken/berichten. Zie `docs/PARITY_RESTORATION_1_TO_4.md`.
+Roadmap na 5.0
 
-## v1.0 parityflows 5–9
 
-Routeflow, faseflow, talententest, adviseursbackoffice en evenementen zijn end-to-end toegevoegd met hergebruik van bestaande engines en Door010-broncode. Zie `docs/PARITY_FLOWS_5_TO_9.md`.
 
-## v1.1 vacatures en parity-audit
 
-Flow 10 is toegevoegd met zoeken, opslaan, verwijderen en profielkoppeling. De volledige audit over flows 1 t/m 10 staat in `docs/FULL_PARITY_AUDIT_1_TO_10.md`.
 
-## v1.2 auth, profiel en productieopslag
+Groene Playwright-, load- en restore-evidence vanuit staging.
 
-Authenticatie, centrale autorisatie, profiel-CRUD en een PostgreSQL-productiebootstrap zijn toegevoegd. Zie `docs/AUTH_PROFILE_POSTGRES.md`.
 
 
-## v1.3 volledige PostgreSQL-flowpersistence
+Live provideracceptatie en privacy/DPIA-sign-off.
 
-Ook route-, talent-, fase-, backoffice-, evenement- en vacatureflows gebruiken
-nu PostgreSQL in productiemodus. Typecheck, 40 tests en build zijn geslaagd.
 
-Zie `docs/POSTGRES_FLOW_PERSISTENCE.md`.
 
+Realtime graph- en browsernotificaties.
 
-## v1.4 dependencybeveiliging en migraties
 
-De dependency-audit staat op nul kwetsbaarheden. Alle 13 migraties zijn
-succesvol uitgevoerd tegen een tijdelijke embedded PostgreSQL-database.
 
-Zie `docs/SECURITY_AND_MIGRATION_VERIFICATION.md`.
+Incrementele graphupdates en GraphRAG-contextretrieval.
 
 
-## v1.5 CI en containerdeployment
 
-GitHub Actions voert audit, typecheck, tests, build en migraties uit. Een
-multi-stage Docker-image en Docker Compose-configuratie met PostgreSQL en
-healthchecks zijn toegevoegd.
+Execution providerplugins en memory compression.
 
-Zie `docs/CI_AND_DEPLOYMENT.md`.
 
 
-## v1.6 deploymentpromotie en observability
+Multi-tenant deployment- en governanceondersteuning.
 
-Handmatig goedgekeurde staging- en productieworkflows, gestructureerde logging,
-healthchecks, Prometheus-metrics en een repo-/plandriftcontrole zijn toegevoegd.
 
-Zie:
 
-- `docs/DEPLOYMENT_AND_OBSERVABILITY.md`
-- `docs/REPO_AND_PLAN_DRIFT_AUDIT.md`
+Open-source governance
 
+Dit project gebruikt de Apache License 2.0.
 
-## v1.8 kennislaag en frontend-shell
 
-Trusted sources, FAQ-ingest, hybride retrieval en een zelfstandige
-frontend-shell zijn toegevoegd.
 
-Zie `docs/KNOWLEDGE_AND_FRONTEND.md`.
 
 
-## v1.9 backoffice en end-to-endtests
+[LICENSE](LICENSE)
 
-Kandidatenoverzicht, promptversiebeheer en Playwrighttests voor de belangrijkste
-frontendflows zijn toegevoegd.
 
-Zie `docs/BACKOFFICE_AND_E2E.md`.
 
+[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 
-## v2.0 backoffice-inzichten en actieve coachprompts
 
-Alerts, statistieken en kandidaatdetail zijn toegevoegd. De actieve
-goedgekeurde promptversies worden nu daadwerkelijk aan beide coachproviders
-doorgegeven.
 
-Zie `docs/BACKOFFICE_INSIGHTS_AND_ACTIVE_PROMPTS.md`.
+[SECURITY.md](SECURITY.md)
 
 
-## v2.1 live providers en audittrail
 
-OpenAI-compatible LLM-, JSON-vacature-, JSON-event- en
-webhooknotificatieproviders zijn toegevoegd achter bestaande adapters.
-Profielwijzigingen, promptactivaties en backofficeacties worden in een
-PostgreSQL-audittrail opgeslagen.
+[SUPPORT.md](SUPPORT.md)
 
-Zie `docs/LIVE_PROVIDERS_AND_AUDIT.md`.
 
 
-## v2.2 klikbare parityflows
+[CONTRIBUTING.md](CONTRIBUTING.md)
 
-Routeverkenning, fasebevestiging, talententest, menselijke adviseurschat,
-evenementen en vacatures hebben nu volledige frontendingangen.
+Issues en pull requests gebruiken vaste GitHub-templates in .github/.
 
-Zie `docs/CLICKABLE_PARITY_FLOWS.md`.
 
 
-## v2.3 providerresilience en realtime chat
+Versiegeschiedenis (v4.0 – v4.5)
 
-Live providers hebben retries, circuit breakers en een PostgreSQL dead-letter
-queue. De menselijke adviseurschat gebruikt nu een beveiligde SSE-stream.
+v4.5 CI-, load- en recoverygates
 
-Zie `docs/PROVIDER_RESILIENCE_AND_REALTIME_CHAT.md`.
+Officiële Playwright-CI, een configureerbare staging-loadgate en een PostgreSQL
+backup/restore-drill zijn toegevoegd. Zie docs/CI_LOAD_RESTORE_4_5.md.
 
+v4.4 Browseracceptatie en production readiness
 
-## v2.4 PostgreSQL realtime en providerdashboard
+Dedicated journey-dashboard-E2E is toegevoegd. Het production-readinessbesluit
+is CONDITIONAL_GO, met expliciete go-liveblokkades voor browser, load,
+recovery, providers en privacy. Zie docs/PRODUCTION_READINESS_4_4.md.
 
-De proceslokale realtime broker is vervangen door een PostgreSQL
-`LISTEN/NOTIFY`-adapter met memory fallback. De backoffice toont nu
-providerconfiguratie, circuit states en dead letters.
+v4.3 Journey-dashboard en alignmentcheckpoint
 
-Zie `docs/POSTGRES_REALTIME_AND_PROVIDER_DASHBOARD.md`.
+Gebruikers hebben nu een persoonlijk trajectdashboard. De architectuur en
+oorspronkelijke parityflows zijn opnieuw gecontroleerd.
+Zie docs/JOURNEY_DASHBOARD_ALIGNMENT_4_3.md.
 
+v4.2 Event-driven graphcontext en delivery workers
 
-## v2.5 dead-letterbeheer
+Journey-mutaties synchroniseren de graph memory automatisch. De persoonlijke
+coach ontvangt graphcontext en de notification outbox heeft workers voor in-app
+en optionele HTTP-providerdelivery. Zie docs/EVENT_DRIVEN_GRAPH_NOTIFICATION_DELIVERY_4_2.md.
 
-Provider-dead-letters kunnen vanuit de backoffice opnieuw worden uitgevoerd,
-handmatig worden afgehandeld en daarna worden verwijderd.
+v4.1 Graph memory en veilige execution
 
-Zie `docs/DEAD_LETTER_MANAGEMENT.md`.
+Journey-state kan nu als domeingraph worden bevraagd. Reminders en notificaties
+gebruiken expliciete bevestiging en een transactionele outbox.
+Zie docs/GRAPH_MEMORY_SAFE_EXECUTION_4_1.md.
 
+v4.0 Parallel orchestration en shadow planning
 
-## v2.6 security en productieacceptatie
+Onafhankelijke tools draaien parallel. Een provider-onafhankelijke planner
+draait in shadow mode en de backoffice toont verklaarbare plannen en traces.
+Zie docs/PARALLEL_ORCHESTRATION_SHADOW_PLANNING_4_0.md.
 
-Cross-user autorisatie, gespreksdeelnemerschap, securityheaders, rate limiting,
-privacyvriendelijke dead-letterretentie en een echte PostgreSQL/provider/browser
-acceptatiesuite zijn toegevoegd.
+Eerder (v3.0 – v3.9)
 
-Zie `docs/SECURITY_AND_PRODUCTION_ACCEPTANCE.md`.
+v3.9 AI Orchestrator
 
+Intent, journey, knowledge, planning, tools en observability zijn samengebracht
+in @door010/orchestration. Zie docs/AI_ORCHESTRATOR_3_9.md.
 
-## v2.7 verplichte checks en stagingreview
+v3.8 Journey Engine 2.0
 
-Een GitHub-branch-protectioninstaller, CODEOWNERS en een wekelijkse
-security/privacyreview voor staging zijn toegevoegd.
+Persistente doelen, milestones, blockers, acties, evidence, beslissingen,
+voortgang en next-best-action zijn toegevoegd.
+Zie docs/JOURNEY_ENGINE_2_3_8.md.
 
-Zie `docs/BRANCH_PROTECTION_AND_STAGING_REVIEW.md`.
+v3.7 Distributed scheduling en snapshots
 
+Connectorruns gebruiken nu databaseleases met heartbeat en herstel van verlopen
+leases. Volledige snapshots archiveren records die uit een bron verdwijnen.
+Zie docs/DISTRIBUTED_SCHEDULING_SNAPSHOTS_3_7.md.
 
-## v2.8 AI-paritypipeline
+v3.6 Connector runtime en domeinconnectors
 
-Intentrouting, gewogen Nederlandse PostgreSQL FTS, conditionele LLM-reranking,
-adaptieve trusted-source webfallback, bronhiërarchie, antwoordrepair,
-pipeline-events en retrievalmetrics zijn toegevoegd.
+Retries, environment secrets, scheduling, healthmonitoring en de eerste
+opleidingen-, subsidie-, event- en vacatureconnectors zijn toegevoegd.
+Zie docs/CONNECTOR_RUNTIME_DOMAIN_CONNECTORS_3_6.md.
 
-Zie `docs/AI_PARITY_PIPELINE.md`.
+v3.5 Capability architecture en connectors
 
+De capability-architectuur en een generiek JSON-, CSV- en HTTP-connectorframework
+zijn toegevoegd. Zie docs/CAPABILITY_ARCHITECTURE_CONNECTORS_3_5.md.
 
-## v2.9 retrievalbenchmark
+v3.4 Shadow reranking en active learning
 
-Een gelabelde benchmark met 191 Nederlandse testvragen, echte PostgreSQL
-FTS-baseline, foutanalyse en CI-regressiegate is toegevoegd.
+Een provider-onafhankelijke cross-encoderadapter draait nu in shadow mode.
+Lage-confidencevragen worden privacyvriendelijk naar een menselijke labelqueue
+gestuurd. Zie docs/SHADOW_RERANKING_ACTIVE_LEARNING_3_4.md.
 
-Zie `docs/RETRIEVAL_BENCHMARK_BASELINE.md`.
-
-
-## v3.0 hybrid retrieval
-
-FTS, portable fuzzy retrieval en embeddings worden nu met reciprocal-rank
-fusion gecombineerd. De benchmark recall@5 steeg van 0,5550 naar 0,8901.
-
-Zie `docs/HYBRID_RETRIEVAL_3_0.md`.
-
-
-## v3.1 embeddingvalidatie en miss-analyse
-
-Een externe embeddingbenchmarkmodus, gerichte miss-classificatie en verbeterde
-Nederlandse normalisatie zijn toegevoegd. De lokale recall@5 steeg naar 0,9267.
-
-Zie `docs/EMBEDDING_VALIDATION_AND_MISS_ANALYSIS_3_1.md`.
-
-
-## v3.2 learned reranking
-
-Een holdout-gevalideerde lineaire learned reranker is toegevoegd bovenop de
-hybride RRF-laag.
-
-Zie `docs/LEARNED_RERANKING_3_2.md`.
-
-
-## v3.3 uitgebreide retrievalbenchmark
+v3.3 Uitgebreide retrievalbenchmark
 
 De benchmark bevat nu 333 gegroepeerde queries, inclusief hard negatives en
 multi-intentvragen. De reranker gebruikt validation-based early stopping,
 Brier-calibratie en een CI-driftgate.
+Zie docs/EXPANDED_RETRIEVAL_BENCHMARK_3_3.md.
 
-Zie `docs/EXPANDED_RETRIEVAL_BENCHMARK_3_3.md`.
+v3.2 Learned reranking
 
+Een holdout-gevalideerde lineaire learned reranker is toegevoegd bovenop de
+hybride RRF-laag. Zie docs/LEARNED_RERANKING_3_2.md.
 
-## v3.4 shadow reranking en active learning
+v3.1 Embeddingvalidatie en miss-analyse
 
-Een provider-onafhankelijke cross-encoderadapter draait nu in shadow mode.
-Lage-confidencevragen worden privacyvriendelijk naar een menselijke labelqueue
-gestuurd.
+Een externe embeddingbenchmarkmodus, gerichte miss-classificatie en verbeterde
+Nederlandse normalisatie zijn toegevoegd. De lokale recall@5 steeg naar 0,9267.
+Zie docs/EMBEDDING_VALIDATION_AND_MISS_ANALYSIS_3_1.md.
 
-Zie `docs/SHADOW_RERANKING_ACTIVE_LEARNING_3_4.md`.
+v3.0 Hybrid retrieval
 
+FTS, portable fuzzy retrieval en embeddings worden nu met reciprocal-rank
+fusion gecombineerd. De benchmark recall@5 steeg van 0,5550 naar 0,8901.
+Zie docs/HYBRID_RETRIEVAL_3_0.md.
 
-## v3.5 capability architecture en connectors
+Eerder (v2.0 – v2.9)
 
-De capability-architectuur en een generiek JSON-, CSV- en HTTP-connectorframework
-zijn toegevoegd.
+v2.9 Retrievalbenchmark
 
-Zie `docs/CAPABILITY_ARCHITECTURE_CONNECTORS_3_5.md`.
+Een gelabelde benchmark met 191 Nederlandse testvragen, echte PostgreSQL
+FTS-baseline, foutanalyse en CI-regressiegate is toegevoegd.
+Zie docs/RETRIEVAL_BENCHMARK_BASELINE.md.
 
+v2.8 AI-paritypipeline
 
-## v3.6 connector runtime en domeinconnectors
+Intentrouting, gewogen Nederlandse PostgreSQL FTS, conditionele LLM-reranking,
+adaptieve trusted-source webfallback, bronhiërarchie, antwoordrepair,
+pipeline-events en retrievalmetrics zijn toegevoegd.
+Zie docs/AI_PARITY_PIPELINE.md.
 
-Retries, environment secrets, scheduling, healthmonitoring en de eerste
-opleidingen-, subsidie-, event- en vacatureconnectors zijn toegevoegd.
+v2.7 Verplichte checks en stagingreview
 
-Zie `docs/CONNECTOR_RUNTIME_DOMAIN_CONNECTORS_3_6.md`.
+Een GitHub-branch-protectioninstaller, CODEOWNERS en een wekelijkse
+security/privacyreview voor staging zijn toegevoegd.
+Zie docs/BRANCH_PROTECTION_AND_STAGING_REVIEW.md.
 
+v2.6 Security en productieacceptatie
 
-## v3.7 distributed scheduling en snapshots
+Cross-user autorisatie, gespreksdeelnemerschap, securityheaders, rate limiting,
+privacyvriendelijke dead-letterretentie en een echte PostgreSQL/provider/browser
+acceptatiesuite zijn toegevoegd.
+Zie docs/SECURITY_AND_PRODUCTION_ACCEPTANCE.md.
 
-Connectorruns gebruiken nu databaseleases met heartbeat en herstel van verlopen
-leases. Volledige snapshots archiveren records die uit een bron verdwijnen.
+v2.5 Dead-letterbeheer
 
-Zie `docs/DISTRIBUTED_SCHEDULING_SNAPSHOTS_3_7.md`.
+Provider-dead-letters kunnen vanuit de backoffice opnieuw worden uitgevoerd,
+handmatig worden afgehandeld en daarna worden verwijderd.
+Zie docs/DEAD_LETTER_MANAGEMENT.md.
 
+v2.4 PostgreSQL realtime en providerdashboard
 
-## v3.8 Journey Engine 2.0
+De proceslokale realtime broker is vervangen door een PostgreSQL
+LISTEN/NOTIFY-adapter met memory fallback. De backoffice toont nu
+providerconfiguratie, circuit states en dead letters.
+Zie docs/POSTGRES_REALTIME_AND_PROVIDER_DASHBOARD.md.
 
-Persistente doelen, milestones, blockers, acties, evidence, beslissingen,
-voortgang en next-best-action zijn toegevoegd.
+v2.3 Providerresilience en realtime chat
 
-Zie `docs/JOURNEY_ENGINE_2_3_8.md`.
+Live providers hebben retries, circuit breakers en een PostgreSQL dead-letter
+queue. De menselijke adviseurschat gebruikt nu een beveiligde SSE-stream.
+Zie docs/PROVIDER_RESILIENCE_AND_REALTIME_CHAT.md.
 
+v2.2 Klikbare parityflows
 
-## v3.9 AI Orchestrator
+Routeverkenning, fasebevestiging, talententest, menselijke adviseurschat,
+evenementen en vacatures hebben nu volledige frontendingangen.
+Zie docs/CLICKABLE_PARITY_FLOWS.md.
 
-Intent, journey, knowledge, planning, tools en observability zijn samengebracht
-in `@door010/orchestration`.
+v2.1 Live providers en audittrail
 
-Zie `docs/AI_ORCHESTRATOR_3_9.md`.
+OpenAI-compatible LLM-, JSON-vacature-, JSON-event- en webhooknotificatie-
+providers zijn toegevoegd achter bestaande adapters. Profielwijzigingen,
+promptactivaties en backofficeacties worden in een PostgreSQL-audittrail
+opgeslagen. Zie docs/LIVE_PROVIDERS_AND_AUDIT.md.
 
+v2.0 Backoffice-inzichten en actieve coachprompts
 
-## v4.0 parallel orchestration en shadow planning
+Alerts, statistieken en kandidaatdetail zijn toegevoegd. De actieve goedgekeurde
+promptversies worden nu daadwerkelijk aan beide coachproviders doorgegeven.
+Zie docs/BACKOFFICE_INSIGHTS_AND_ACTIVE_PROMPTS.md.
 
-Onafhankelijke tools draaien parallel. Een provider-onafhankelijke planner
-draait in shadow mode en de backoffice toont verklaarbare plannen en traces.
+Eerder (v0.3 – v1.9)
 
-Zie `docs/PARALLEL_ORCHESTRATION_SHADOW_PLANNING_4_0.md`.
+v1.9 Backoffice en end-to-endtests
 
+Kandidatenoverzicht, promptversiebeheer en Playwrighttests voor de belangrijkste
+frontendflows zijn toegevoegd. Zie docs/BACKOFFICE_AND_E2E.md.
 
-## v4.1 graph memory en veilige execution
+v1.8 Kennislaag en frontend-shell
 
-Journey-state kan nu als domeingraph worden bevraagd. Reminders en notificaties
-gebruiken expliciete bevestiging en een transactionele outbox.
+Trusted sources, FAQ-ingest, hybride retrieval en een zelfstandige frontend-shell
+zijn toegevoegd. Zie docs/KNOWLEDGE_AND_FRONTEND.md.
 
-Zie `docs/GRAPH_MEMORY_SAFE_EXECUTION_4_1.md`.
+v1.6 Deploymentpromotie en observability
 
+Handmatig goedgekeurde staging- en productieworkflows, gestructureerde logging,
+healthchecks, Prometheus-metrics en een repo-/plandriftcontrole zijn toegevoegd.
+Zie docs/DEPLOYMENT_AND_OBSERVABILITY.md en
+docs/REPO_AND_PLAN_DRIFT_AUDIT.md.
 
-## v4.2 event-driven graphcontext en delivery workers
+v1.5 CI en containerdeployment
 
-Journey-mutaties synchroniseren de graph memory automatisch. De persoonlijke
-coach ontvangt graphcontext en de notification outbox heeft workers voor
-in-app en optionele HTTP-providerdelivery.
+GitHub Actions voert audit, typecheck, tests, build en migraties uit. Een
+multi-stage Docker-image en Docker Compose-configuratie met PostgreSQL en
+healthchecks zijn toegevoegd. Zie docs/CI_AND_DEPLOYMENT.md.
 
-Zie `docs/EVENT_DRIVEN_GRAPH_NOTIFICATION_DELIVERY_4_2.md`.
+v1.4 Dependencybeveiliging en migraties
 
+De dependency-audit staat op nul kwetsbaarheden. Alle 13 migraties zijn
+succesvol uitgevoerd tegen een tijdelijke embedded PostgreSQL-database.
+Zie docs/SECURITY_AND_MIGRATION_VERIFICATION.md.
 
-## v4.3 journey-dashboard en alignmentcheckpoint
+v1.3 Volledige PostgreSQL-flowpersistence
 
-Gebruikers hebben nu een persoonlijk trajectdashboard. De architectuur en
-oorspronkelijke parityflows zijn opnieuw gecontroleerd.
+Route-, talent-, fase-, backoffice-, evenement- en vacatureflows gebruiken nu
+PostgreSQL in productiemodus. Typecheck, 40 tests en build zijn geslaagd.
+Zie docs/POSTGRES_FLOW_PERSISTENCE.md.
 
-Zie `docs/JOURNEY_DASHBOARD_ALIGNMENT_4_3.md`.
+v1.2 Auth, profiel en productieopslag
 
+Authenticatie, centrale autorisatie, profiel-CRUD en een PostgreSQL-productie-
+bootstrap zijn toegevoegd. Zie docs/AUTH_PROFILE_POSTGRES.md.
 
-## v4.4 browseracceptatie en production readiness
+v1.1 Vacatures en parity-audit
 
-Dedicated journey-dashboard-E2E is toegevoegd. Het production-readinessbesluit
-is `CONDITIONAL_GO`, met expliciete go-liveblokkades voor browser, load,
-recovery, providers en privacy.
+Flow 10 is toegevoegd met zoeken, opslaan, verwijderen en profielkoppeling.
+De volledige audit over flows 1 t/m 10 staat in
+docs/FULL_PARITY_AUDIT_1_TO_10.md.
 
-Zie `docs/PRODUCTION_READINESS_4_4.md`.
+v1.0 Parityflows 5–9
 
+Routeflow, faseflow, talententest, adviseursbackoffice en evenementen zijn
+end-to-end toegevoegd met hergebruik van bestaande engines en Door010-broncode.
+Zie docs/PARITY_FLOWS_5_TO_9.md.
 
-## v4.5 CI-, load- en recoverygates
+v0.9 Parity-herstel
 
-Officiële Playwright-CI, een configureerbare staging-loadgate en een
-PostgreSQL backup/restore-drill zijn toegevoegd.
+Correcties 1 t/m 4 zijn samen uitgevoerd: publieke chatbotgrens, volledige
+persoonlijke coachcontext, adviseurschat en persistente gesprekken/berichten.
+Zie docs/PARITY_RESTORATION_1_TO_4.md.
 
-Zie `docs/CI_LOAD_RESTORE_4_5.md`.
+v0.8.1 API-bootstrap en mutaties
+
+De API laadt nu echte datasets en instantieert beide coaches. Fase- en
+profielmutaties vereisen een expliciete acceptatie via de mutatie-endpoints.
+Zie docs/API_BOOTSTRAP_AND_MUTATIONS.md.
+
+v0.8 Coaches en persistence
+
+Beide coaches gebruiken nu de gedeelde responseflow. PostgreSQL-repositories
+bewaren fasevoorkeuren, journey state en evaluaties.
+Zie docs/COACHES_AND_PERSISTENCE.md.
+
+v0.7 Actieve fasesysteemkeuze
+
+De Phase Detector gebruikt nu PhaseSystemRegistry en kan per organisatie,
+gebruiker of gesprek tussen 4, 5 en 9 fases wisselen.
+Zie docs/ACTIVE_PHASE_SYSTEM.md.
+
+v0.6 Wisselbare fasesystemen
+
+Ondersteunt configuratiegestuurd 4, 5 en 9 fases met entry-, exit- en
+mappinglogica. Zie docs/PHASE_SYSTEMS.md.
+
+v0.5 Phase Detector en response pipeline
+
+SSOT Phase Detector, confidence fallback, gevalideerde next-slot-selectie,
+gegarandeerde vraag-ID en vraagtekst, intake batches, antwoordtypes,
+bronplicht, reflectie, directe en inklapbare antwoorddelen.
+Zie docs/PHASE_AND_RESPONSE_PIPELINE.md.
+
+v0.4 Route-engine
+
+Volledige route-mapping via datasets/routes.json met conditionele vragen,
+volledige route matching, specificiteitsranking, geordende route steps,
+verrijkte route-inhoud en 5 detectorfases naast 9 journeyfases.
+Zie docs/ROUTES_AND_JOURNEY.md.
+
+v0.3 Eerste datamodel
+
+Fase A toegevoegd in migrations/0002_domain_schema.sql.
+
