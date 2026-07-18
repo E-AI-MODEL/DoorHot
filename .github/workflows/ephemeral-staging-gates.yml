@@ -61,6 +61,7 @@ jobs:
       AUTH_TOKEN_SECRET: >-
         ephemeral-staging-token-secret-with-at-least-32-characters
       APP_STORAGE_MODE: postgres
+      DEMO_ACCOUNTS_ENABLED: "true"
       API_PORT: "4000"
       # The load gate measures capacity and latency, not the abuse
       # limiter; with the default of 180/minute the gate is capped by

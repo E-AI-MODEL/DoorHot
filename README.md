@@ -24,6 +24,30 @@ route- en talentflows en het journey-dashboard werken allemaal. Zet de poort op
 *Public* om de demo tijdelijk met anderen te delen; met het stoppen van de
 codespace verdwijnt alles.
 
+### Demo-inloggegevens
+
+Door010 bevat in deze testfase twee vaste, openbare testaccounts:
+
+| Rol | E-mailadres | Wachtwoord |
+| --- | --- | --- |
+| Kandidaat | `test21@doorai.nl` | `admin010` |
+| Administrator | `admin@doorai.nl` | `admin010` |
+
+Daarnaast blijft **Inloggen zonder wachtwoord** beschikbaar voor een nieuw,
+tijdelijk kandidaataccount in de in-memory demo. De twee vaste accounts worden
+bij het opstarten aangemaakt of hersteld. Dit staat standaard aan bij in-memory
+opslag. Een PostgreSQL-testomgeving moet dit expliciet activeren met
+`DEMO_ACCOUNTS_ENABLED=true`.
+
+Dit zijn bewust openbare demogegevens, geen secrets. Gebruik deze accounts nooit
+voor echte gebruikersdata en hergebruik het wachtwoord nergens anders. Iedereen
+met toegang tot de applicatie kan het administratoraccount gebruiken. Beperk de
+toegang daarom tot de beoogde testgroep en zet de accounts uit zodra deze
+testfase is afgerond met `DEMO_ACCOUNTS_ENABLED=false`.
+
+Registratie vereist geen minimale wachtwoordlengte of complexiteitsregels. Een
+wachtwoord moet alleen ingevuld zijn.
+
 Lokaal werkt hetzelfde met `npm ci && npx tsc -b && npm run demo`.
 
 ## Snel starten

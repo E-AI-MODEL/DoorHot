@@ -118,11 +118,13 @@ import {
   SafeExecutionService,
   createDefaultOrchestrator
 } from "@door010/orchestration";
+import { provisionPublicDemoAccounts } from "./demo-accounts.js";
 
 export async function createProductionServices(
   datasetsDirectory =
     process.env.DATASETS_DIRECTORY ??
-    resolve(process.cwd(), "datasets")
+    resolve(process.cwd(), "datasets"),
+  options: { seedDemoAccounts?: boolean } = {}
 ) {
   const executor = createPgExecutorFromEnvironment();
   const realtime =
@@ -471,9 +473,11 @@ await routeStepIngestion.ingest({ steps: routeStepContent });
   );
 
   const profiles = new PostgresProfileRepository(executor);
+  const userAccounts = new PostgresUserAccountRepository(executor);
+  const userRoles = new PostgresUserRoleRepository(executor);
   const auth = new AuthService(
-    new PostgresUserAccountRepository(executor),
-    new PostgresUserRoleRepository(executor),
+    userAccounts,
+    userRoles,
     profiles,
     new PasswordHasher(),
     new HmacTokenService(
@@ -481,6 +485,9 @@ await routeStepIngestion.ingest({ steps: routeStepContent });
         "development-secret-change-this-value-before-production"
     )
   );
+  if (options.seedDemoAccounts ?? false) {
+    await provisionPublicDemoAccounts(auth);
+  }
   const profileService = new ProfileService(
     profiles,
     new PostgresUserNoteRepository(executor),

@@ -112,6 +112,22 @@ Wijzigingen moeten:
 - tests toevoegen of aanpassen;
 - documentatie bijwerken wanneer gedrag of architectuur verandert.
 
+## Openbare demoaccounts
+
+De vaste inloggegevens in de sectie `Demo-inloggegevens` van `README.md` zijn
+uitsluitend openbare fixtures voor de huidige testfase.
+
+- Houd README, de accountseed en tests synchroon.
+- Provisioning moet idempotent werken met in-memory opslag en PostgreSQL.
+- PostgreSQL mag deze accounts alleen na expliciete activatie met
+  `DEMO_ACCOUNTS_ENABLED=true` provisionen.
+- `DEMO_ACCOUNTS_ENABLED=false` moet de provisioning volledig uitschakelen.
+- Gebruik de accounts nooit voor echte gebruikersdata.
+- Nieuwe of gewijzigde demoaccounts moeten herkenbaar als demo zijn en mogen
+  alleen na expliciete toestemming in Git worden opgenomen.
+- Alle andere wachtwoorden, tokens en sleutels blijven secrets en horen in
+  environmentvariabelen of een secret store, nooit in Git.
+
 ## Vereiste controles
 
 Voer minimaal uit:
@@ -140,7 +156,8 @@ Voor retrievalwijzigingen ook de relevante benchmarkgates uitvoeren.
 - Journey-state buiten Journey Engine muteren.
 - Graph Memory als primaire opslag gebruiken.
 - Autorisatie, validatie of bevestiging omzeilen.
-- Secrets, tokens of persoonsgegevens in logs, fixtures of commits opnemen.
+- Echte secrets, tokens of persoonsgegevens in logs, fixtures of commits
+  opnemen. Alleen de hierboven afgebakende openbare demoaccounts zijn toegestaan.
 - Een provider hardcoderen in de domeinlaag.
 - Bestaande migraties herschrijven.
 - Tests verwijderen om een wijziging groen te maken.

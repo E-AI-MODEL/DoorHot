@@ -369,7 +369,6 @@ function accountView(notice?: string): string {
           <input
             name="password"
             type="password"
-            minlength="12"
             autocomplete="current-password"
             required
           />
