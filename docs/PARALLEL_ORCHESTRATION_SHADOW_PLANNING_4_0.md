@@ -79,6 +79,17 @@ Nieuwe tabel:
 planner_shadow_evaluations
 ```
 
+### Opslagduur
+
+- `APP_STORAGE_MODE=memory` gebruikt `InMemoryPlannerShadowRepository`.
+  Evaluaties verdwijnen bij een herstart van het API-proces.
+- `APP_STORAGE_MODE=postgres` gebruikt `PostgresPlannerShadowRepository` en
+  schrijft voor iedere orchestrationrun een voltooide of mislukte evaluatie
+  naar `planner_shadow_evaluations`.
+
+De API-bootstraptest voert de orchestrator end-to-end uit en controleert dat de
+shadowevaluatie op het bijbehorende run-ID kan worden teruggelezen.
+
 ## Explainability
 
 Nieuwe API:

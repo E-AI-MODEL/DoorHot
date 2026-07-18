@@ -428,7 +428,7 @@ await routeStepIngestion.ingest({ steps: routeStepContent });
     ),
     personalCoach: new PersonalJourneyCoach(
       contextProvider,
-      draftProvider,
+      retrievalDraftProvider,
       detector,
       new (await import("@door010/domain")).RouteEngine(
         datasets.routeQuestions,
