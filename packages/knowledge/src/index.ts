@@ -1386,6 +1386,11 @@ export interface AdaptiveRetrievalResult {
   webFallbackReason?: "sparse" | "time-sensitive" | "stale";
 }
 
+export interface AdaptiveRetrievalOptions {
+  messages?: readonly { role: string; content: string }[];
+  allowWebFallback?: boolean;
+}
+
 export class AdaptiveRetrievalPipeline {
   constructor(
     private readonly search: KnowledgeSearch,
@@ -1399,10 +1404,11 @@ export class AdaptiveRetrievalPipeline {
 
   async retrieve(
     query: string,
-    messages: readonly { role: string; content: string }[] = [
-      { role: "user", content: query }
-    ]
+    options: AdaptiveRetrievalOptions = {}
   ): Promise<AdaptiveRetrievalResult> {
+    const messages = options.messages ?? [
+      { role: "user", content: query }
+    ];
     const intent = await this.intentRouter.classify(messages);
     if (intent === "greeting") {
       return {
@@ -1446,7 +1452,9 @@ export class AdaptiveRetrievalPipeline {
           : undefined;
 
     const external =
-      reason && allowedDomains.length > 0
+      options.allowWebFallback !== false &&
+      reason &&
+      allowedDomains.length > 0
         ? await this.web.search(query, allowedDomains, 3)
         : [];
 
@@ -1461,7 +1469,8 @@ export class AdaptiveRetrievalPipeline {
         candidates: candidates.length,
         internal: internal.length,
         external: external.length,
-        reason
+        reason,
+        webFallbackAllowed: options.allowWebFallback !== false
       },
       createdAt: new Date().toISOString()
     });
@@ -1512,7 +1521,8 @@ export class AnswerValidationPipeline {
 
   async validateAndRepair(
     draft: string,
-    intent: ConversationIntent
+    intent: ConversationIntent,
+    options: { additionalSentences?: number } = {}
   ): Promise<AnswerValidationResult> {
     const maxSentences: Record<ConversationIntent, number> = {
       greeting: 2,
@@ -1520,7 +1530,9 @@ export class AnswerValidationPipeline {
       exploration: 3,
       followup: 3
     };
-    const maximum = maxSentences[intent];
+    const maximum =
+      maxSentences[intent] +
+      Math.max(0, Math.min(options.additionalSentences ?? 0, 2));
     const initialIssues = this.validate(draft, maximum);
     let answer = this.localRepair(draft, maximum);
 
@@ -1724,9 +1736,12 @@ export class AdaptiveRetrievalAnswerDraftProvider
     route?: RouteEngineResult,
     systemPrompt?: string
   ): Promise<AnswerDraft> {
-    const retrieval = await this.retrieval.retrieve(
-      request.message
-    );
+    const retrieval = await this.retrieval.retrieve(request.message, {
+      // Personal messages may contain profile, health or other sensitive
+      // context. They remain on the configured internal retrieval path and
+      // never use the optional web-search adapter.
+      allowWebFallback: chatbotKey === "general-coach"
+    });
     const contextSections = [
       retrieval.external.length > 0
         ? [
@@ -1770,9 +1785,27 @@ export class AdaptiveRetrievalAnswerDraftProvider
           : undefined
       : undefined;
 
+    const answerToValidate = extractiveAnswer
+      ? chatbotKey === "personal-journey-coach"
+        ? combinePersonalAndGroundedAnswer(
+            generated.directAnswer,
+            extractiveAnswer
+          )
+        : extractiveAnswer
+      : generated.directAnswer;
+
     const validated = await this.validator.validateAndRepair(
-      extractiveAnswer ?? generated.directAnswer,
-      retrieval.intent
+      answerToValidate,
+      retrieval.intent,
+      {
+        // The compact journey summary occupies one sentence. Keep the
+        // original intent budget available for the grounded answer.
+        additionalSentences:
+          extractiveAnswer &&
+          chatbotKey === "personal-journey-coach"
+            ? 1
+            : 0
+      }
     );
 
     const sources: SourceReference[] = [
@@ -1820,6 +1853,23 @@ export class AdaptiveRetrievalAnswerDraftProvider
       sources
     };
   }
+}
+
+function combinePersonalAndGroundedAnswer(
+  personalDraft: string,
+  groundedAnswer: string
+): string {
+  const compactPersonalDraft = personalDraft
+    .split(/(?<=[.!?])\s+/)
+    .map((sentence) =>
+      sentence.trim().replace(/[.!?]+$/, "")
+    )
+    .filter(Boolean)
+    .join("; ");
+
+  return compactPersonalDraft
+    ? `${compactPersonalDraft}. ${groundedAnswer}`
+    : groundedAnswer;
 }
 
 export interface EmbeddingProvider {

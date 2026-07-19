@@ -39,6 +39,7 @@ describe("createApplicationServices", () => {
 
     expect(general.chatbotKey).toBe("general-coach");
     expect(personal.chatbotKey).toBe("personal-journey-coach");
+    expect(personal.message).toContain("Je bevindt je in");
     expect(personal.message).toContain("tweejarig versneld traject");
     expect(
       personal.sources.some(
