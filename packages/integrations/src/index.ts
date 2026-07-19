@@ -525,6 +525,11 @@ export interface OpenAiCompatibleConfig {
   temperature?: number;
 }
 
+const PERSONAL_COACH_OUTPUT_BOUNDARY =
+  "Gebruik de trajectcontext alleen om het antwoord persoonlijk en " +
+  "handelingsgericht te maken. Noem nooit interne fase- of procesmodellen, " +
+  "fasecodes, werknamen, veldnamen of technische labels in het antwoord.";
+
 export class OpenAiCompatibleAnswerDraftProvider
   implements AnswerDraftProvider
 {
@@ -555,8 +560,15 @@ export class OpenAiCompatibleAnswerDraftProvider
           messages: [
             {
               role: "system",
-              content: systemPrompt ??
-                "Geef een correct, duidelijk en beknopt antwoord in het Nederlands."
+              content: [
+                systemPrompt ??
+                  "Geef een correct, duidelijk en beknopt antwoord in het Nederlands.",
+                chatbotKey === "personal-journey-coach"
+                  ? PERSONAL_COACH_OUTPUT_BOUNDARY
+                  : undefined
+              ]
+                .filter((value): value is string => Boolean(value))
+                .join("\n\n")
             },
             {
               role: "user",
@@ -564,8 +576,23 @@ export class OpenAiCompatibleAnswerDraftProvider
                 chatbotKey,
                 question: request.message,
                 profileSlots: context.slots,
-                phase: phase?.currentPhaseTitle,
-                route: route?.bestRoute?.title
+                journeyContext:
+                  chatbotKey === "personal-journey-coach"
+                    ? {
+                        suggestedRoute: route?.bestRoute?.title,
+                        nextQuestion: phase?.nextQuestion,
+                        activeGoal:
+                          context.graphMemory?.activeGoals[0],
+                        nextAction:
+                          context.graphMemory?.pendingActions[0],
+                        blocker:
+                          context.graphMemory?.openBlockers[0]
+                      }
+                    : undefined,
+                route:
+                  chatbotKey === "general-coach"
+                    ? route?.bestRoute?.title
+                    : undefined
               })
             }
           ]

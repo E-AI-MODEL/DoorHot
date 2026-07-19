@@ -66,6 +66,11 @@ Human Advisor Chat ───┘                         │
 - Providers zijn verwisselbaar via adapters.
 - Gevoelige schrijfacties vereisen bevestiging en audit.
 - PostgreSQL is de primaire opslag.
+- De 4/5/9-processen en hun werknamen blijven interne metadata; de chat vertaalt
+  ze naar relevante informatie, een concrete vervolgstap of een natuurlijke
+  vervolgvraag.
+- Persoonlijke coachvragen gebruiken geen externe webfallback. Interne
+  retrieval en gecontroleerde bronnen blijven wel beschikbaar.
 
 Lees vóór bijdragen: [`AGENTS.md`](AGENTS.md), [`CONTRIBUTING.md`](CONTRIBUTING.md),
 [`ARCHITECTURE.md`](ARCHITECTURE.md).

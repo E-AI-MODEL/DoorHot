@@ -1504,6 +1504,12 @@ export interface AnswerValidationResult {
   answer: string;
 }
 
+export interface AnswerValidationOptions {
+  additionalSentences?: number;
+  /** Internal journey labels that must never be presented as chat status. */
+  internalJourneyLabels?: readonly string[];
+}
+
 const DEFAULT_FORBIDDEN_TERMS = [
   "achtergrondinformatie",
   "dynamische context",
@@ -1512,6 +1518,37 @@ const DEFAULT_FORBIDDEN_TERMS = [
 ] as const;
 
 const BACKEND_PHASE_SYSTEM_PATTERN = /\bphase-[459]\b/gi;
+
+function escapePattern(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function internalJourneyStatusPatterns(
+  labels: readonly string[]
+): readonly RegExp[] {
+  return [...new Set(labels.map((label) => label.trim()).filter(Boolean))]
+    .flatMap((label) => {
+      const escaped = escapePattern(label);
+      const quotedLabel = `["'“”‘’]?${escaped}\\b["'“”‘’]?`;
+      return [
+        new RegExp(
+          `\\b(?:de\\s+)?stap\\s*(?:[:=\\-]\\s*)?${quotedLabel}`,
+          "gi"
+        ),
+        new RegExp(
+          `\\b(?:de\\s+)?(?:fase|proces)\\s*` +
+            `(?:[:=\\-]\\s*)?${quotedLabel}`,
+          "gi"
+        ),
+        new RegExp(
+          `\\bje\\s+(?:bevindt\\s+je|bent|zit)\\s+` +
+            `(?:nu\\s+)?(?:in|binnen)\\s+${quotedLabel}` +
+            `(?:\\s+binnen\\s+phase-[459])?`,
+          "gi"
+        )
+      ];
+    });
+}
 
 export class AnswerValidationPipeline {
   constructor(
@@ -1524,7 +1561,7 @@ export class AnswerValidationPipeline {
   async validateAndRepair(
     draft: string,
     intent: ConversationIntent,
-    options: { additionalSentences?: number } = {}
+    options: AnswerValidationOptions = {}
   ): Promise<AnswerValidationResult> {
     const maxSentences: Record<ConversationIntent, number> = {
       greeting: 2,
@@ -1535,8 +1572,17 @@ export class AnswerValidationPipeline {
     const maximum =
       maxSentences[intent] +
       Math.max(0, Math.min(options.additionalSentences ?? 0, 2));
-    const initialIssues = this.validate(draft, maximum);
-    let answer = this.localRepair(draft, maximum);
+    const internalJourneyLabels = options.internalJourneyLabels ?? [];
+    const initialIssues = this.validate(
+      draft,
+      maximum,
+      internalJourneyLabels
+    );
+    let answer = this.localRepair(
+      draft,
+      maximum,
+      internalJourneyLabels
+    );
 
     if (
       initialIssues.some((issue) =>
@@ -1555,8 +1601,16 @@ export class AnswerValidationPipeline {
       }
     }
 
-    answer = this.localRepair(answer, maximum);
-    const finalIssues = this.validate(answer, maximum);
+    answer = this.localRepair(
+      answer,
+      maximum,
+      internalJourneyLabels
+    );
+    const finalIssues = this.validate(
+      answer,
+      maximum,
+      internalJourneyLabels
+    );
 
     await this.events?.append({
       id: crypto.randomUUID(),
@@ -1585,7 +1639,8 @@ export class AnswerValidationPipeline {
 
   private validate(
     draft: string,
-    maxSentences: number
+    maxSentences: number,
+    internalJourneyLabels: readonly string[]
   ): readonly string[] {
     const issues: string[] = [];
     const lower = draft.toLocaleLowerCase("nl");
@@ -1606,6 +1661,12 @@ export class AnswerValidationPipeline {
       issues.push("backend-identifier:phase-system");
     }
     BACKEND_PHASE_SYSTEM_PATTERN.lastIndex = 0;
+    if (
+      internalJourneyStatusPatterns(internalJourneyLabels)
+        .some((pattern) => pattern.test(draft))
+    ) {
+      issues.push("backend-label:journey-status");
+    }
 
     const sentences = draft
       .split(/[.!?]+/)
@@ -1620,12 +1681,26 @@ export class AnswerValidationPipeline {
 
   private localRepair(
     value: string,
-    maxSentences: number
+    maxSentences: number,
+    internalJourneyLabels: readonly string[]
   ): string {
     let answer = value
       .replace(/\[[A-Z][^\]]{1,30}\]\s*/g, "")
       .replace(/[\u2014\u2013]/g, "-")
       .replace(BACKEND_PHASE_SYSTEM_PATTERN, "je traject");
+
+    const statusPatterns = internalJourneyStatusPatterns(
+      internalJourneyLabels
+    );
+    for (let index = 0; index < statusPatterns.length; index += 3) {
+      answer = answer
+        .replace(statusPatterns[index]!, "je volgende stap")
+        .replace(statusPatterns[index + 1]!, "je traject")
+        .replace(
+          statusPatterns[index + 2]!,
+          "je krijgt begeleiding die aansluit op wat je nu nodig hebt"
+        );
+    }
 
     for (const phrase of this.forbiddenTerms) {
       answer = answer.replace(
@@ -1811,7 +1886,17 @@ export class AdaptiveRetrievalAnswerDraftProvider
           extractiveAnswer &&
           chatbotKey === "personal-journey-coach"
             ? 1
-            : 0
+            : 0,
+        internalJourneyLabels: phase
+          ? [
+              phase.currentPhaseTitle,
+              phase.phaseCurrent,
+              phase.phaseEvaluation.currentPhaseCode,
+              phase.phaseEvaluation.proposedNextPhase,
+              phase.nextPhaseTarget,
+              phase.mappedDetectorPhase
+            ].filter((value): value is string => Boolean(value))
+          : []
       }
     );
 
@@ -1875,7 +1960,7 @@ function combinePersonalAndGroundedAnswer(
     .join("; ");
 
   return compactPersonalDraft
-    ? `${compactPersonalDraft}. ${groundedAnswer}`
+    ? `${groundedAnswer} ${compactPersonalDraft}.`
     : groundedAnswer;
 }
 

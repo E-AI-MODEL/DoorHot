@@ -39,14 +39,22 @@ describe("createApplicationServices", () => {
 
     expect(general.chatbotKey).toBe("general-coach");
     expect(personal.chatbotKey).toBe("personal-journey-coach");
-    expect(personal.message).toContain("stap 'Interesseren'");
     expect(personal.message).not.toMatch(/\bphase-[459]\b/i);
+    expect(personal.message).not.toMatch(
+      /\b(?:stap|fase|proces)\s*['"“”‘’]?(?:Interesseren|Oriënteren)/i
+    );
+    expect(personal.message).toContain("Om je gerichter te helpen:");
     expect(personal.message).toContain("tweejarig versneld traject");
+    expect(
+      personal.artifacts.find(
+        (artifact) => artifact.type === "phase-proposal"
+      )?.label
+    ).toBe("Voorstel voor je volgende stap");
     expect(
       personal.sources.some(
         (source) =>
-          source.provider === "external-onderwijsloket-com" &&
-          source.sourceUrl?.includes("onderwijsloket.com")
+          source.sourceUrl?.includes("onderwijsloket.com") &&
+          source.externalId.length > 0
       )
     ).toBe(true);
     expect(personalRerankerShadow?.status).toBe("completed");

@@ -94,15 +94,18 @@ Firecrawl wordt gedeeld.
 
 Wanneer zonder LLM een intern kennisrecord wordt gevonden, wordt het canonieke
 antwoord gecombineerd met een compacte versie van de deterministische
-journeydraft. Fase, geselecteerde route, volgende actie en blocker blijven zo in
-het zichtbare antwoord aanwezig. Het extractieve kennisantwoord vervangt de
-persoonlijke trajectcontext niet.
+journeydraft. De geselecteerde route, concrete vervolgactie, blocker en
+natuurlijke vervolgvraag kunnen zo in het zichtbare antwoord terugkomen. Het
+extractieve kennisantwoord vervangt de persoonlijke trajectcontext niet.
 
-Zichtbare coachtekst gebruikt uitsluitend de gebruikersvriendelijke fasetitel,
-zoals `Interesseren` of `Oriënteren`. Interne identifiers zoals `phase-5` en
-ruwe fasecodes blijven beperkt tot machineleesbare metadata. De
-antwoordvalidator verwijdert een phase-systemidentifier alsnog wanneer een
-externe provider die in gegenereerde tekst terugstuurt.
+De 4-, 5- en 9-fasenmodellen, hun codes en titels zijn interne procesmetadata.
+Ook titels zoals `Interesseren` en `Oriënteren` zijn werknamen en worden niet als
+status in coachtekst of zichtbare artifactlabels gebruikt. Ze blijven wel
+beschikbaar in machineleesbare metadata voor engines, persistence, bevestigde
+mutaties en toekomstige koppelingen. De LLM-adapter ontvangt bruikbare
+journeycontext zonder de interne fasenaam. De antwoordvalidator repareert als
+laatste grens zowel phase-systemidentifiers als statusconstructies waarin een
+interne fasenaam alsnog wordt getoond.
 
 ### Trusted sources
 
@@ -133,6 +136,7 @@ tegenspraak gemarkeerd.
 De antwoordcontrole detecteert:
 
 - verboden interne termen;
+- interne journey-identifiers en fasenamen die als chatstatus worden gebruikt;
 - bracketlabels;
 - em-dashes en en-dashes;
 - een intentspecifieke overschrijding van het aantal zinnen.

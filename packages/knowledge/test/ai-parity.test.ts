@@ -314,10 +314,10 @@ describe("AI parity pipeline", () => {
         async createDraft() {
           return {
             directAnswer:
-              "Je bent nu bezig met de stap 'Interesseren'. " +
-              "Je gekozen route is pabo. " +
-              "Volgende actie: vergelijk opleidingen. " +
-              "Open blokkade: toelatingseisen controleren."
+              "Op basis van je antwoorden lijkt pabo een passende route. " +
+              "Je kunt nu verder met: vergelijk opleidingen. " +
+              "Daarbij moeten we nog rekening houden met: " +
+              "toelatingseisen controleren."
           };
         }
       },
@@ -331,29 +331,38 @@ describe("AI parity pipeline", () => {
       { slots: [] }
     );
 
-    expect(draft.directAnswer).toContain("stap 'Interesseren'");
-    expect(draft.directAnswer).toContain("gekozen route is pabo");
+    expect(draft.directAnswer).toContain("passende route");
     expect(draft.directAnswer).toContain(
-      "Volgende actie: vergelijk opleidingen"
+      "Je kunt nu verder met: vergelijk opleidingen"
     );
     expect(draft.directAnswer).toContain(
-      "Open blokkade: toelatingseisen controleren"
+      "rekening houden met: toelatingseisen controleren"
     );
     expect(draft.directAnswer).toContain(
       "De pabo past bij een route naar het basisonderwijs"
     );
     expect(draft.directAnswer).not.toMatch(/\bphase-[459]\b/i);
+    expect(draft.directAnswer).not.toMatch(
+      /\b(?:stap|fase|proces)\s*['"“”‘’]?(?:Interesseren|Oriënteren)/i
+    );
   });
 
-  it("repairs backend phase-system identifiers", async () => {
+  it("repairs internal journey identifiers and status labels", async () => {
     const pipeline = new AnswerValidationPipeline();
     const result = await pipeline.validateAndRepair(
-      "Je bevindt je binnen phase-5. Dit is je volgende stap.",
-      "question"
+      "Je bevindt je in 'interesse' binnen phase-5. " +
+        "Je bent nu bezig met de stap 'Interesseren'. " +
+        "Dit is relevante informatie.",
+      "question",
+      {
+        internalJourneyLabels: ["interesse", "Interesseren"]
+      }
     );
 
     expect(result.answer).not.toContain("phase-5");
-    expect(result.answer).toContain("je traject");
+    expect(result.answer).not.toContain("'interesse'");
+    expect(result.answer).not.toContain("'Interesseren'");
+    expect(result.answer).toContain("je volgende stap");
     expect(result.pass).toBe(true);
   });
 

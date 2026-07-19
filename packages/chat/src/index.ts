@@ -131,24 +131,29 @@ export class DeterministicAnswerDraftProvider
       };
     }
 
-    const routeText = route?.bestRoute
-      ? ` De best passende route is '${route.bestRoute.title}'.`
-      : "";
-    const graphText = context.graphMemory
-      ? [
-          context.graphMemory.pendingActions[0]
-            ? ` Volgende actie: ${context.graphMemory.pendingActions[0]}.`
-            : "",
-          context.graphMemory.openBlockers[0]
-            ? ` Open blokkade: ${context.graphMemory.openBlockers[0]}.`
-            : ""
-        ].join("")
-      : "";
+    const personalContext = [
+      route?.bestRoute
+        ? `Op basis van je antwoorden lijkt '${route.bestRoute.title}' ` +
+          "een passende route."
+        : undefined,
+      context.graphMemory?.pendingActions[0]
+        ? `Je kunt nu verder met: ${context.graphMemory.pendingActions[0]}.`
+        : undefined,
+      context.graphMemory?.openBlockers[0]
+        ? "Daarbij moeten we nog rekening houden met: " +
+          `${context.graphMemory.openBlockers[0]}.`
+        : undefined,
+      phase?.nextQuestion
+        ? `Om je gerichter te helpen: ${phase.nextQuestion}`
+        : undefined
+    ].filter((value): value is string => Boolean(value));
 
     return {
-      directAnswer: phase
-        ? `Je bent nu bezig met de stap '${phase.currentPhaseTitle}' in je traject.${routeText}${graphText}`
-        : `Je persoonlijke trajectcontext is geladen.${routeText}${graphText}`,
+      // Phase-system keys, codes and titles are internal routing metadata.
+      // Personalization is expressed through the useful consequence of that
+      // state, never by naming the internal process model in the chat.
+      directAnswer: personalContext.join(" ") ||
+        "Ik gebruik wat je hebt gedeeld om je gericht verder te helpen.",
       supportingDetail:
         `${systemPrompt ? `Actieve coachinstructie: ${systemPrompt}\n\n` : ""}` +
         (
@@ -187,7 +192,9 @@ function buildArtifacts(
   if (phase) {
     artifacts.push({
       type: "phase-proposal",
-      label: `Stap: ${phase.currentPhaseTitle}`,
+      // Clients may render artifact labels. Keep the label user-facing while
+      // retaining the 4/5/9 model in the machine-readable payload below.
+      label: "Voorstel voor je volgende stap",
       payload: {
         phaseSystemKey: phase.phaseSystem.phaseSystemKey,
         phaseSystemSource: phase.phaseSystem.source,
