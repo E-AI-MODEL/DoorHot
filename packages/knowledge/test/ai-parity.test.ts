@@ -314,7 +314,8 @@ describe("AI parity pipeline", () => {
         async createDraft() {
           return {
             directAnswer:
-              "Je fase is interesse. Route: pabo. " +
+              "Je bent nu bezig met de stap 'Interesseren'. " +
+              "Je gekozen route is pabo. " +
               "Volgende actie: vergelijk opleidingen. " +
               "Open blokkade: toelatingseisen controleren."
           };
@@ -330,8 +331,8 @@ describe("AI parity pipeline", () => {
       { slots: [] }
     );
 
-    expect(draft.directAnswer).toContain("Je fase is interesse");
-    expect(draft.directAnswer).toContain("Route: pabo");
+    expect(draft.directAnswer).toContain("stap 'Interesseren'");
+    expect(draft.directAnswer).toContain("gekozen route is pabo");
     expect(draft.directAnswer).toContain(
       "Volgende actie: vergelijk opleidingen"
     );
@@ -341,6 +342,19 @@ describe("AI parity pipeline", () => {
     expect(draft.directAnswer).toContain(
       "De pabo past bij een route naar het basisonderwijs"
     );
+    expect(draft.directAnswer).not.toMatch(/\bphase-[459]\b/i);
+  });
+
+  it("repairs backend phase-system identifiers", async () => {
+    const pipeline = new AnswerValidationPipeline();
+    const result = await pipeline.validateAndRepair(
+      "Je bevindt je binnen phase-5. Dit is je volgende stap.",
+      "question"
+    );
+
+    expect(result.answer).not.toContain("phase-5");
+    expect(result.answer).toContain("je traject");
+    expect(result.pass).toBe(true);
   });
 
   it("repairs leakage and sentence overflow", async () => {

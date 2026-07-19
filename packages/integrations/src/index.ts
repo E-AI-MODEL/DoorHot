@@ -564,7 +564,7 @@ export class OpenAiCompatibleAnswerDraftProvider
                 chatbotKey,
                 question: request.message,
                 profileSlots: context.slots,
-                phase: phase?.phaseEvaluation.currentPhaseCode,
+                phase: phase?.currentPhaseTitle,
                 route: route?.bestRoute?.title
               })
             }

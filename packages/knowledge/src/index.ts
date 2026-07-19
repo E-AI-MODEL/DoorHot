@@ -1511,6 +1511,8 @@ const DEFAULT_FORBIDDEN_TERMS = [
   "interne instructie"
 ] as const;
 
+const BACKEND_PHASE_SYSTEM_PATTERN = /\bphase-[459]\b/gi;
+
 export class AnswerValidationPipeline {
   constructor(
     private readonly repairModel?: AnswerRepairModel,
@@ -1600,6 +1602,10 @@ export class AnswerValidationPipeline {
     if (/[\u2014\u2013]/.test(draft)) {
       issues.push("dash");
     }
+    if (BACKEND_PHASE_SYSTEM_PATTERN.test(draft)) {
+      issues.push("backend-identifier:phase-system");
+    }
+    BACKEND_PHASE_SYSTEM_PATTERN.lastIndex = 0;
 
     const sentences = draft
       .split(/[.!?]+/)
@@ -1618,7 +1624,8 @@ export class AnswerValidationPipeline {
   ): string {
     let answer = value
       .replace(/\[[A-Z][^\]]{1,30}\]\s*/g, "")
-      .replace(/[\u2014\u2013]/g, "-");
+      .replace(/[\u2014\u2013]/g, "-")
+      .replace(BACKEND_PHASE_SYSTEM_PATTERN, "je traject");
 
     for (const phrase of this.forbiddenTerms) {
       answer = answer.replace(

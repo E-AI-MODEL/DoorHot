@@ -147,7 +147,7 @@ export class DeterministicAnswerDraftProvider
 
     return {
       directAnswer: phase
-        ? `Je bevindt je in '${phase.phaseEvaluation.currentPhaseCode}' binnen ${phase.phaseSystem.phaseSystemKey}.${routeText}${graphText}`
+        ? `Je bent nu bezig met de stap '${phase.currentPhaseTitle}' in je traject.${routeText}${graphText}`
         : `Je persoonlijke trajectcontext is geladen.${routeText}${graphText}`,
       supportingDetail:
         `${systemPrompt ? `Actieve coachinstructie: ${systemPrompt}\n\n` : ""}` +
@@ -187,7 +187,7 @@ function buildArtifacts(
   if (phase) {
     artifacts.push({
       type: "phase-proposal",
-      label: `Fase: ${phase.phaseEvaluation.currentPhaseCode}`,
+      label: `Stap: ${phase.currentPhaseTitle}`,
       payload: {
         phaseSystemKey: phase.phaseSystem.phaseSystemKey,
         phaseSystemSource: phase.phaseSystem.source,

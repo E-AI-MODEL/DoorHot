@@ -98,6 +98,12 @@ journeydraft. Fase, geselecteerde route, volgende actie en blocker blijven zo in
 het zichtbare antwoord aanwezig. Het extractieve kennisantwoord vervangt de
 persoonlijke trajectcontext niet.
 
+Zichtbare coachtekst gebruikt uitsluitend de gebruikersvriendelijke fasetitel,
+zoals `Interesseren` of `Oriënteren`. Interne identifiers zoals `phase-5` en
+ruwe fasecodes blijven beperkt tot machineleesbare metadata. De
+antwoordvalidator verwijdert een phase-systemidentifier alsnog wanneer een
+externe provider die in gegenereerde tekst terugstuurt.
+
 ### Trusted sources
 
 De actieve `trusted_sources.allowed_domains` bepalen welke domeinen gebruikt

@@ -37,6 +37,7 @@ export interface AdaptivePhaseDetectorResult
   extends PhaseDetectorResult {
   phaseSystem: PhaseSystemResolution;
   phaseEvaluation: PhaseEvaluation;
+  currentPhaseTitle: string;
   mappedDetectorPhase: string;
 }
 
@@ -97,6 +98,15 @@ export class AdaptivePhaseDetector {
       );
     }
 
+    const currentPhase = system.phases.find(
+      (candidate) => candidate.code === currentPhaseCode
+    );
+    if (!currentPhase) {
+      throw new Error(
+        `Unknown phase '${currentPhaseCode}' for ${phaseSystem.phaseSystemKey}.`
+      );
+    }
+
     const mappedDetectorPhase = mapToDetectorPhase(
       this.registry,
       phaseSystem.phaseSystemKey,
@@ -127,6 +137,7 @@ export class AdaptivePhaseDetector {
       ...detectorResult,
       phaseSystem,
       phaseEvaluation,
+      currentPhaseTitle: currentPhase.title,
       mappedDetectorPhase
     };
   }
