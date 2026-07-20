@@ -89,6 +89,30 @@ Nieuwe retrieval- of generatiecomponenten moeten:
 - bronverwijzingen en validatie respecteren;
 - meetbaar geëvalueerd worden.
 
+### Chatpresentatie en privacy
+
+- De 4-, 5- en 9-fasenmodellen, fasecodes en fasetitels zijn interne
+  procesmetadata. Ze mogen niet verschijnen in coachberichten of zichtbare
+  artifactlabels. Bewaar ze wel in machineleesbare metadata voor engines,
+  persistence, mutaties en toekomstige koppelingen.
+- Vertaal journey-state naar een nuttige consequentie voor de gebruiker: een
+  relevant antwoord, passende route, concrete vervolgactie, aandachtspunt of
+  natuurlijke vervolgvraag. Benoem het interne model zelf niet.
+- Een kennisantwoord in de persoonlijke coach vult de journeycontext aan en
+  vervangt die niet.
+- Ruwe persoonlijke coachvragen mogen niet naar een optionele externe
+  websearchprovider. Externe fallback vereist een afzonderlijk, expliciet
+  privacybeleid met toestemming en querysanitisatie; standaard blijft deze uit.
+- Een systeemprompt is geen afdoende technische grens. Dwing bovenstaande
+  regels ook af in compositie, providerinput, validatie en tests.
+- Phase, Route en Journey Engine leveren hun deterministische uitkomst vóór
+  antwoordgeneratie. De eindgenerator mag die uitkomst semantisch formuleren en
+  verbinden, maar niet opnieuw beslissen.
+- Optionele modeltaken voor intentclassificatie, conditionele retrieval-
+  reranking en antwoordrepair blijven begrensde hulptaken. Ze mogen de
+  journey-state niet muteren. Shadow-reranking en shadow-planning beïnvloeden
+  de actieve uitkomst nooit.
+
 ## Database en migraties
 
 - Bestaande migraties worden nooit aangepast.

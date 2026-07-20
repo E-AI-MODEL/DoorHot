@@ -78,6 +78,26 @@ GET /v1/backoffice/reranker-shadow
 De opgeslagen query is uitsluitend een stabiele hash. De ruwe gebruikersvraag
 wordt niet opgeslagen.
 
+### Opslagduur
+
+- `APP_STORAGE_MODE=memory` gebruikt `InMemoryShadowEvaluationRepository`.
+  Evaluaties blijven alleen beschikbaar zolang het API-proces draait.
+- `APP_STORAGE_MODE=postgres` gebruikt `PostgresShadowEvaluationRepository`
+  en schrijft iedere voltooide of mislukte evaluatie duurzaam naar
+  `reranker_shadow_evaluations`.
+
+De API-bootstraptest maakt eerst een nulmeting, voert daarna via de persoonlijke
+coach een echte kennisvraag uit en controleert uitsluitend het nieuw toegevoegde
+shadowrecord, inclusief kandidaat-ID's. Zo kan een eerdere evaluatie van de
+algemene coach deze assertion niet onterecht laten slagen.
+
+Een afzonderlijke PGlite-test past de relevante productiemigraties toe, schrijft
+via `PostgresShadowEvaluationRepository`, sluit de embedded PostgreSQL-database
+en leest het record na heropening via een nieuwe repository-instantie terug.
+Dit bewijst de SQL-wiring en opslag over database- en repository-instanties. Het
+is geen bewijs van de configuratie of beschikbaarheid van een live
+PostgreSQL-omgeving.
+
 ### Lokale shadowbenchmark
 
 | Metric | Baseline | Shadow | Delta |

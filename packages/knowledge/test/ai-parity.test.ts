@@ -171,6 +171,66 @@ describe("AI parity pipeline", () => {
     expect(calls).toHaveLength(1);
   });
 
+  it("never sends personal questions to the web fallback", async () => {
+    const knowledge = new InMemoryKnowledgeRepository();
+    const sources = new InMemoryTrustedSourceRepository();
+    const now = new Date().toISOString();
+
+    await sources.upsert({
+      id: "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+      sourceKey: "official-example",
+      label: "Official",
+      baseUrl: "https://example.nl",
+      authority: 1,
+      active: true,
+      allowedDomains: ["example.nl"],
+      createdAt: now,
+      updatedAt: now
+    });
+    await knowledge.upsert(
+      record(
+        "11111111-1111-4111-8111-111111111111",
+        "Salaris docent",
+        "Het salaris staat in de cao."
+      )
+    );
+
+    const webQueries: string[] = [];
+    const web: TrustedWebSearch = {
+      async search(query) {
+        webQueries.push(query);
+        return [];
+      }
+    };
+    const provider = new AdaptiveRetrievalAnswerDraftProvider(
+      new AdaptiveRetrievalPipeline(
+        new HybridKnowledgeSearch(knowledge, sources),
+        sources,
+        new IntentRouter(),
+        new ConditionalFaqReranker(),
+        web
+      ),
+      {
+        async createDraft() {
+          return { directAnswer: "Persoonlijke context." };
+        }
+      },
+      new AnswerValidationPipeline(),
+      { preferExtractiveAnswer: true }
+    );
+
+    await provider.createDraft(
+      "personal-journey-coach",
+      {
+        message:
+          "Wat verdien ik in 2026 met mijn medische situatie?"
+      },
+      { slots: [] }
+    );
+
+    expect(webQueries).toEqual([]);
+  });
+
   it("answers extractively from the best record without an LLM", async () => {
     const knowledge = new InMemoryKnowledgeRepository();
     const sources = new InMemoryTrustedSourceRepository();
@@ -230,6 +290,80 @@ describe("AI parity pipeline", () => {
     expect(canned.directAnswer).toBe(
       "Ik help je met algemene informatie."
     );
+  });
+
+  it("combines personal journey context with an extractive answer", async () => {
+    const knowledge = new InMemoryKnowledgeRepository();
+    const sources = new InMemoryTrustedSourceRepository();
+    await knowledge.upsert(
+      record(
+        "11111111-1111-4111-8111-111111111111",
+        "Welke opleiding past?",
+        "De pabo past bij een route naar het basisonderwijs."
+      )
+    );
+
+    const provider = new AdaptiveRetrievalAnswerDraftProvider(
+      new AdaptiveRetrievalPipeline(
+        new HybridKnowledgeSearch(knowledge, sources),
+        sources,
+        new IntentRouter(),
+        new ConditionalFaqReranker()
+      ),
+      {
+        async createDraft() {
+          return {
+            directAnswer:
+              "Op basis van je antwoorden lijkt pabo een passende route. " +
+              "Je kunt nu verder met: vergelijk opleidingen. " +
+              "Daarbij moeten we nog rekening houden met: " +
+              "toelatingseisen controleren."
+          };
+        }
+      },
+      new AnswerValidationPipeline(),
+      { preferExtractiveAnswer: true }
+    );
+
+    const draft = await provider.createDraft(
+      "personal-journey-coach",
+      { message: "Welke opleiding past bij mij?" },
+      { slots: [] }
+    );
+
+    expect(draft.directAnswer).toContain("passende route");
+    expect(draft.directAnswer).toContain(
+      "Je kunt nu verder met: vergelijk opleidingen"
+    );
+    expect(draft.directAnswer).toContain(
+      "rekening houden met: toelatingseisen controleren"
+    );
+    expect(draft.directAnswer).toContain(
+      "De pabo past bij een route naar het basisonderwijs"
+    );
+    expect(draft.directAnswer).not.toMatch(/\bphase-[459]\b/i);
+    expect(draft.directAnswer).not.toMatch(
+      /\b(?:stap|fase|proces)\s*['"“”‘’]?(?:Interesseren|Oriënteren)/i
+    );
+  });
+
+  it("repairs internal journey identifiers and status labels", async () => {
+    const pipeline = new AnswerValidationPipeline();
+    const result = await pipeline.validateAndRepair(
+      "Je bevindt je in 'interesse' binnen phase-5. " +
+        "Je bent nu bezig met de stap 'Interesseren'. " +
+        "Dit is relevante informatie.",
+      "question",
+      {
+        internalJourneyLabels: ["interesse", "Interesseren"]
+      }
+    );
+
+    expect(result.answer).not.toContain("phase-5");
+    expect(result.answer).not.toContain("'interesse'");
+    expect(result.answer).not.toContain("'Interesseren'");
+    expect(result.answer).toContain("je volgende stap");
+    expect(result.pass).toBe(true);
   });
 
   it("repairs leakage and sentence overflow", async () => {
