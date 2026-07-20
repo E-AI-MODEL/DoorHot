@@ -1,0 +1,24 @@
+name: Complete Door010 version metadata
+
+on:
+  push:
+    branches:
+      - agent/complete-version-501
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/complete-version-501
+          fetch-depth: 0
+
+      - name: Apply direct product version wiring
+        shell: bash
+        run: |
+          node
