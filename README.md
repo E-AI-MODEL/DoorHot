@@ -1,467 +1,738 @@
 # Door010
 
-<p>
-  <img alt="Versie 5.0.1" src="https://img.shields.io/badge/version-5.0.1-2f6f5e">
-  <img alt="Node.js 22+" src="https://img.shields.io/badge/Node.js-22%2B-339933">
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-workspaces-3178c6">
-  <img alt="Licentie Apache 2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue">
+<p align="center">
+  <strong>Een digitale route naar werken en leren in het onderwijs.</strong>
+</p>
+
+<p align="center">
+  <img alt="Repositoryversie 5.0.1" src="https://img.shields.io/badge/repository-5.0.1-2f6f5e">
+  <img alt="Node.js 22 of hoger" src="https://img.shields.io/badge/Node.js-22%2B-339933">
+  <img alt="TypeScript workspaces" src="https://img.shields.io/badge/TypeScript-workspaces-3178c6">
+  <img alt="Lokale LLM mogelijk" src="https://img.shields.io/badge/lokale_LLM-optioneel-7c3aed">
+  <img alt="Apache License 2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue">
   <img alt="Readiness conditional go" src="https://img.shields.io/badge/readiness-CONDITIONAL__GO-c88719">
 </p>
 
-**Door010 helpt mensen hun weg te vinden naar werk en opleiding in het onderwijs.**
+<p align="center">
+  <a href="https://codespaces.new/E-AI-MODEL/door010?quickstart=1">
+    <img
+      src="https://github.com/codespaces/badge.svg"
+      alt="Open Door010 in GitHub Codespaces"
+    >
+  </a>
+</p>
 
-De gebruiker kan zelf informatie en routes bekijken, algemene vragen stellen aan een coach, persoonlijk worden begeleid of rechtstreeks contact hebben met een menselijke adviseur. Deze repository bevat de doorontwikkeling van de oorspronkelijke Lovable-app tot een testbare, overdraagbare en providerneutrale foundation.
+<p align="center">
+  <a href="https://door010.lovable.app/">
+    <img
+      src="https://img.shields.io/badge/Bekijk-versie_1-8A2BE2"
+      alt="Bekijk Door010 versie 1"
+    >
+  </a>
+  &nbsp;
+  <a href="https://github.com/E-AI-MODEL/door0101">
+    <img
+      src="https://img.shields.io/badge/GitHub-code_versie_1-181717"
+      alt="Bekijk de code van Door010 versie 1"
+    >
+  </a>
+  &nbsp;
+  <a href="https://demo-regio.lovable.app/">
+    <img
+      src="https://img.shields.io/badge/Bekijk-versie_2-8A2BE2"
+      alt="Bekijk Door010 versie 2"
+    >
+  </a>
+  &nbsp;
+  <a href="https://github.com/E-AI-MODEL/presentatie-door010">
+    <img
+      src="https://img.shields.io/badge/GitHub-code_versie_2-181717"
+      alt="Bekijk de code van Door010 versie 2"
+    >
+  </a>
+</p>
 
-[![Open Door010 in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/E-AI-MODEL/door010?quickstart=1)
+Door010 helpt mensen bij vragen over werken en leren in het onderwijs.
+
+Een bezoeker kan zelf informatie bekijken, een route verkennen, vacatures en evenementen zoeken, een algemene vraag stellen, met een persoonlijke coach werken of contact opnemen met een medewerker.
+
+Deze repository is een poging om twee met Lovable gebouwde versies verder te brengen. Minder logica die alleen in een vibecodeplatform zichtbaar is, meer losse onderdelen, tests, gegevensopslag, migraties, autorisatie en documentatie.
 
 > [!IMPORTANT]
-> Deze README is de eerste werkdag in de repository. Volg hem van boven naar beneden wanneer je Door010 nog niet kent. Verdiepende informatie staat in uitklapbare delen, zodat de hoofdroute leesbaar blijft.
+> Door010 is nog geen bewezen productieomgeving.
+>
+> De repository bevat onderdelen die nodig zijn om verder richting productie te werken. De uiteindelijke doelomgeving, echte koppelingen, privacybeoordeling, belasting en herstel moeten nog afzonderlijk worden getest.
+
+> [!NOTE]
+> Nieuw in de repository? Begin bij **Kies je route**. Technische uitleg staat waar mogelijk in uitklapbare delen.
+
+---
 
 ## Kies je route
 
 | Ik wil... | Begin hier |
 | --- | --- |
-| Door010 direct bekijken | [Open de demo in Codespaces](https://codespaces.new/E-AI-MODEL/door010?quickstart=1) |
-| Begrijpen wat het platform doet | [Eén gebruiker, vier kanalen](#één-gebruiker-vier-kanalen) |
-| Lokaal ontwikkelen zonder infrastructuur | [Lokale demo](#lokale-demo-zonder-database-of-llm) |
-| Met PostgreSQL ontwikkelen | [Volledige ontwikkelomgeving](#volledige-ontwikkelomgeving-met-postgresql) |
-| Een eerste wijziging maken | [Je eerste kleine wijziging](#je-eerste-kleine-wijziging) |
-| De juiste code vinden | [Waar moet ik zijn?](#waar-moet-ik-zijn) |
-| Een pull request voorbereiden | [Controleer je werk](#controleer-je-werk) |
+| De ontwikkeling van Door010 bekijken | [Van vibecode naar deze repository](#van-vibecode-naar-deze-repository) |
+| Door010 direct starten | [Open Door010 in Codespaces](https://codespaces.new/E-AI-MODEL/door010?quickstart=1) |
+| Begrijpen wat een gebruiker kan doen | [Vier ingangen](#vier-ingangen) |
+| Begrijpen hoe vragen worden verwerkt | [Het uitgangspunt](#het-uitgangspunt) |
+| Begrijpen wat zonder LLM gebeurt | [De route zonder LLM](#de-route-zonder-llm) |
+| Begrijpen wat Codespaces met Ollama doet | [Codespaces](#codespaces) |
+| De retrievalcode bekijken | [Retrieval en antwoordopbouw](#retrieval-en-antwoordopbouw) |
+| Lokaal starten zonder database | [Lokale demo](#lokale-demo) |
+| Met PostgreSQL ontwikkelen | [PostgreSQL-omgeving](#postgresql-omgeving) |
+| Een eerste wijziging maken | [Eerste wijziging](#eerste-wijziging) |
+| De juiste map vinden | [Waar staat wat?](#waar-staat-wat) |
+| Een wijziging controleren | [Controles](#controles) |
 
-## Door010 in gewone taal
+---
 
-Stel dat Sam wil werken in het onderwijs, maar nog niet weet als wat, in welke sector of via welke opleiding.
+# Van vibecode naar deze repository
 
-Door010 kan Sam op vier manieren helpen:
-
-1. Sam bekijkt zelf informatie, routes, vacatures en evenementen.
-2. Sam praat met een menselijke adviseur.
-3. Sam stelt een algemene vraag aan de algemene coach.
-4. Sam werkt met een persoonlijke coach die rekening houdt met het eigen profiel en traject.
-
-Door010 is daarom niet alleen een chatbot. Het is een platform met vaste routes, gecontroleerde kennis, persoonlijke voortgang en menselijke begeleiding. AI kan onderdelen ondersteunen, maar is niet de bron van waarheid voor routes, fasen of trajectbeslissingen.
-
-<details>
-<summary><strong>Hoe is Door010 ontstaan?</strong></summary>
-
-Door010 begon als een applicatie die met Lovable is ontwikkeld. Die toepassing maakte snel zichtbaar welke schermen, vragen, routes en gebruikersstromen nodig waren.
-
-Deze repository is de technische doorontwikkeling daarvan. De waardevolle productlogica is behouden, maar de nieuwe foundation brengt verantwoordelijkheden onder in afzonderlijke applicaties, packages, datasets en adapters.
-
-In de documentatie heet dit vaak <em>parity</em>: aantonen dat belangrijk gedrag uit de eerdere applicatie ook in de nieuwe foundation aanwezig is.
-
-<details>
-<summary><strong>Wat is wel en niet overgenomen?</strong></summary>
-
-Wel als functioneel vertrekpunt:
-
-- gebruikersstromen en schermpatronen;
-- vragen, routegegevens en scoring;
-- gegevensmodellen;
-- bronlijsten;
-- bestaand gedrag dat behouden moest blijven.
-
-Niet als vaste technische afhankelijkheid:
-
-- één specifieke databaseleverancier;
-- één authenticatieleverancier;
-- één LLM-provider;
-- één zoekprovider;
-- één frontendplatform.
-
-**Beslissende documentatie**
-
-- [`docs/FULL_PARITY_AUDIT_1_TO_10.md`](docs/FULL_PARITY_AUDIT_1_TO_10.md)
-- [`docs/PARITY_RESTORATION_1_TO_4.md`](docs/PARITY_RESTORATION_1_TO_4.md)
-- [`docs/CLICKABLE_PARITY_FLOWS.md`](docs/CLICKABLE_PARITY_FLOWS.md)
-
-</details>
-</details>
-
-## Eén gebruiker, vier kanalen
+Door010 is in drie stappen ontstaan.
 
 ```mermaid
 flowchart LR
-    U["Gebruiker"] --> W["1. Website en vaste flows"]
-    U --> H["2. Menselijke adviseur"]
-    U --> G["3. Algemene AI-coach"]
-    U --> P["4. Persoonlijke AI-coach"]
+    V1["Versie 1<br/>eerste Lovable-app"]
+    V2["Versie 2<br/>regionale demo"]
+    V3["Deze repository<br/>losse apps, packages en datasets"]
 
-    W --> C["Informatie, route, talent, events en vacatures"]
-    H --> A["Gesprek gebruiker en medewerker"]
-    G --> K["Algemene kennis, zonder persoonlijk traject"]
-    P --> J["Profiel, route, fase, doelen en vervolgstappen"]
+    V1 --> V2
+    V2 --> V3
 ```
 
-De vier productkanalen zijn niet hetzelfde als de drie gesprekstypen in de code. De website en vaste flows vormen een productkanaal, maar geen chatgesprek. Gesprekken worden technisch opgeslagen als `general-ai`, `personal-ai` of `advisor`.
+| Stap | App | Code |
+| --- | --- | --- |
+| Versie 1 | [door010.lovable.app](https://door010.lovable.app/) | [`E-AI-MODEL/door0101`](https://github.com/E-AI-MODEL/door0101) |
+| Versie 2 | [demo-regio.lovable.app](https://demo-regio.lovable.app/) | [`E-AI-MODEL/presentatie-door010`](https://github.com/E-AI-MODEL/presentatie-door010) |
+| Huidige repo | lokaal of via Codespaces | [`E-AI-MODEL/door010`](https://github.com/E-AI-MODEL/door010) |
+
+## Versie 1
+
+De eerste app maakte het basisidee zichtbaar: bezoekers helpen bij vragen over werken en leren in het onderwijs.
+
+De app liet snel zien welke schermen, vragen en routes bruikbaar konden zijn. De snelheid van Lovable hielp daarbij. Tegelijk bleef veel technische werking verbonden aan de gekozen vibecodeomgeving.
+
+## Versie 2
+
+De tweede app werkte het idee verder uit voor een regionale demonstratie.
+
+Er kwamen meer schermen en gebruikersstromen bij. Deze versie vormde een belangrijk functioneel vertrekpunt voor de huidige repository.
+
+## Deze repository
+
+De huidige repo probeert niet alleen de schermen opnieuw te bouwen.
+
+Er is ook gekeken naar:
+
+- welke functies uit de eerdere apps behouden moesten blijven;
+- welke vragen bezoekers waarschijnlijk stellen;
+- welke informatie al vooraf kan worden vastgelegd;
+- welke keuzes met gewone regels kunnen worden afgehandeld;
+- welke gegevens per gebruiker nodig zijn;
+- welke wijzigingen eerst moeten worden bevestigd;
+- wanneer een medewerker nodig blijft;
+- waar een taalmodel iets kan toevoegen;
+- wat zonder taalmodel al werkt;
+- hoe een volgende ontwikkelaar de code kan vinden en controleren.
+
+<details>
+<summary><strong>Wat betekent parity in deze repository?</strong></summary>
+
+`Parity` betekent hier dat per onderdeel is nagegaan of belangrijk gedrag uit de eerdere apps terugkomt in de huidige repo.
+
+De parity-audit behandelt tien onderdelen:
+
+1. publieke chatbot;
+2. authenticatie;
+3. profiel;
+4. persoonlijke chatbot;
+5. route;
+6. fase;
+7. talent;
+8. backoffice;
+9. evenementen;
+10. vacatures.
+
+Lees:
+
+- [`docs/FULL_PARITY_AUDIT_1_TO_10.md`](docs/FULL_PARITY_AUDIT_1_TO_10.md)
+- [`docs/PARITY_RESTORATION_1_TO_4.md`](docs/PARITY_RESTORATION_1_TO_4.md)
+- [`docs/PARITY_FLOWS_5_TO_9.md`](docs/PARITY_FLOWS_5_TO_9.md)
+- [`docs/CLICKABLE_PARITY_FLOWS.md`](docs/CLICKABLE_PARITY_FLOWS.md)
+
+Parity betekent niet dat de oude en nieuwe code gelijk zijn. Het betekent ook niet dat ieder onderdeel al productieklaar is.
+
+</details>
+
+<details>
+<summary><strong>Wat is uit de eerdere versies meegenomen?</strong></summary>
+
+Als vertrekpunt zijn onder andere gebruikt:
+
+- schermen en gebruikersstromen;
+- vragen en antwoordmogelijkheden;
+- routegegevens;
+- talentvragen;
+- scoring;
+- gegevensmodellen;
+- bronlijsten;
+- gedrag dat behouden moest blijven.
+
+In de huidige repo zijn deze onderdelen verdeeld over apps, packages, datasets en adapters.
+
+Begin bij:
+
+- [`apps/web/`](apps/web/)
+- [`apps/api/`](apps/api/)
+- [`packages/`](packages/)
+- [`datasets/`](datasets/)
+- [`docs/FULL_PARITY_AUDIT_1_TO_10.md`](docs/FULL_PARITY_AUDIT_1_TO_10.md)
+
+</details>
+
+---
+
+# Persoonlijk vertrekpunt
+
+Ik heb geen informatica gestudeerd.
+
+Door010 is begonnen bij de inhoud en het proces, niet bij de keuze voor een AI-model.
+
+De eerste vragen waren:
+
+- Waar komen bezoekers voor?
+- Welke vragen keren waarschijnlijk terug?
+- Welke informatie kunnen we vooraf vastleggen?
+- Welke route volgt uit een combinatie van antwoorden?
+- Welke informatie ontbreekt nog?
+- Wanneer kan de bezoeker zelf verder?
+- Wanneer moet een medewerker het overnemen?
+- Welke wijziging mag nooit ongemerkt worden uitgevoerd?
+
+De huidige repo is mijn poging om die inhoudelijke keuzes ook technisch zichtbaar te maken.
+
+Dat betekent niet dat iedere technische keuze de beste keuze is. Het betekent wel dat de werking steeds minder afhankelijk moet zijn van uitleg die alleen bij de maker zit.
+
+---
+
+# Het uitgangspunt
+
+Het ontwerp vertrekt vanuit de aanname dat een deel van de bezoekersvragen vooraf te voorzien is.
+
+Dat is nog geen bewijs dat de huidige dataset alle echte vragen goed dekt. Het verklaart wel waarom vragen, alternatieve formuleringen, routes en bronnen expliciet in de repo staan.
+
+```mermaid
+flowchart LR
+    Q["Vraag van bezoeker"]
+    K["Bekende vraag, alias of context"]
+    R["Kennis, route of vaste flow"]
+    A["Antwoord of vervolgvraag"]
+    H["Medewerker wanneer nodig"]
+
+    Q --> K
+    K --> R
+    R --> A
+    A --> H
+```
+
+## Vragen en alternatieve formuleringen
+
+In [`datasets/faq-seed.json`](datasets/faq-seed.json) staan vragen, aliases, antwoorden, categorieën, tags en bronverwijzingen.
+
+Hierdoor hoeft een bezoeker niet altijd exact dezelfde woorden te gebruiken als in de hoofdvraag.
+
+<details>
+<summary><strong>Waar wordt dit gebruikt?</strong></summary>
+
+Begin bij:
+
+- [`datasets/faq-seed.json`](datasets/faq-seed.json)
+- [`packages/knowledge/`](packages/knowledge/)
+- [`scripts/evaluate-hybrid-retrieval.ts`](scripts/evaluate-hybrid-retrieval.ts)
+- [`docs/HYBRID_RETRIEVAL_3_0.md`](docs/HYBRID_RETRIEVAL_3_0.md)
+
+De aanwezigheid van aliases bewijst niet dat iedere bezoekersvraag goed wordt gevonden. Daarvoor zijn onafhankelijke testvragen en gebruikerstests nodig.
+
+</details>
+
+## Routes en fases
+
+Route- en fasekeuzes zijn niet uitsluitend afhankelijk van vrije tekstgeneratie.
+
+De repo bevat aparte domeinonderdelen voor:
+
+- routebepaling;
+- fasebepaling;
+- profielvelden;
+- doelen en acties;
+- persoonlijke voortgang.
+
+Begin bij:
+
+- [`packages/domain/`](packages/domain/)
+- [`datasets/routes.json`](datasets/routes.json)
+- [`packages/chat/src/index.ts`](packages/chat/src/index.ts)
+- [`packages/orchestration/`](packages/orchestration/)
+
+Zoek naar:
+
+- `RouteEngine`
+- `AdaptivePhaseDetector`
+- `JourneyEngine`
+- `PersonalJourneyCoach`
+
+---
+
+# Vier ingangen
+
+Een gebruiker kan Door010 op vier manieren gebruiken.
+
+```mermaid
+flowchart LR
+    U["Gebruiker"]
+
+    U --> W["1. Website en vaste flows"]
+    U --> M["2. Menselijke adviseur"]
+    U --> G["3. Algemene coach"]
+    U --> P["4. Persoonlijke coach"]
+
+    W --> W1["Kennis, route, talent, events en vacatures"]
+    M --> M1["Gesprek met een medewerker"]
+    G --> G1["Algemene vragen"]
+    P --> P1["Profiel- en trajectcontext"]
+```
+
+De website is een ingang, maar geen gesprekstype.
+
+In de code bestaan drie gesprekstypen:
+
+- `general-ai`
+- `personal-ai`
+- `advisor`
 
 <details>
 <summary><strong>1. Website en vaste flows</strong></summary>
 
-De gebruiker kan onderdelen zelfstandig doorlopen. Denk aan de kennisbank, routeverkenning, talententest, evenementen en vacatures.
+De gebruiker kan zonder chat verschillende onderdelen openen:
 
-Dit kanaal is geschikt wanneer iemand gericht wil zoeken of een vaste reeks vragen wil doorlopen, zonder eerst een gesprek te beginnen.
+- algemene coach;
+- persoonlijke coach;
+- persoonlijk traject;
+- profiel;
+- kennisbank;
+- routeverkenning;
+- talententest;
+- evenementen;
+- vacatures;
+- adviseurschat;
+- backoffice;
+- account.
 
-<details>
-<summary><strong>Hoe werkt dit technisch?</strong></summary>
-
-De webapp heeft afzonderlijke views voor de verschillende onderdelen:
+**Letterlijk fragment uit [`apps/web/src/main.ts`](apps/web/src/main.ts):**
 
 ```ts
 type View =
+  | "public-chat"
+  | "personal-chat"
+  | "journey-dashboard"
+  | "profile"
   | "knowledge"
   | "route"
   | "talent"
   | "events"
   | "vacancies"
-  | "journey-dashboard"
-  | "advisor-chat";
+  | "advisor-chat"
+  | "backoffice"
+  | "account";
 ```
 
-De API registreert hiervoor aparte route-, fase-, talent-, event-, vacature- en backofficeflows. Daardoor is de websitekant geen dunne schil rond een chatbot.
+De verschillende views hebben aparte API-routes en services. De webapp is dus niet alleen een scherm rond één chatbotendpoint.
 
-**Beslissende code**
+Code:
 
-- [`apps/web/src/main.ts`](apps/web/src/main.ts), zoek naar `type View`
+- [`apps/web/src/main.ts`](apps/web/src/main.ts)
 - [`apps/api/src/parity-flow-routes.ts`](apps/api/src/parity-flow-routes.ts)
 - [`packages/parity-flows/`](packages/parity-flows/)
 - [`datasets/`](datasets/)
 
-**Waarom dit overdraagbaar is**
-
-De flows communiceren via contracten en services. Een andere frontend kan dezelfde API en domeinlogica gebruiken. Routevragen en inhoud staan bovendien niet hard in één scherm ingebakken, maar worden voor een belangrijk deel uit datasets geladen.
-
-</details>
 </details>
 
 <details>
 <summary><strong>2. Menselijke adviseur</strong></summary>
 
-Een gebruiker kan rechtstreeks met een medewerker of adviseur praten. Dit is een echt menselijk gesprek. Door010 doet niet alsof een AI-antwoord door een medewerker is geschreven.
+De adviseurschat is bedoeld voor communicatie tussen een gebruiker en een medewerker.
 
-<details>
-<summary><strong>Hoe werkt dit technisch?</strong></summary>
+Dit kanaal staat los van de algemene en persoonlijke coach.
 
-Het adviseurskanaal gebruikt een eigen service, berichtrollen, autorisatie en gesprekstype.
-
-```ts
-type: "general-ai" | "personal-ai" | "advisor";
-```
-
-Een bericht van de kandidaat binnen dit kanaal krijgt expliciet mee:
-
-```ts
-metadata: {
-  candidateUserId: input.candidateUserId,
-  channel: "human-advisor"
-}
-```
-
-**Beslissende code**
+Code:
 
 - [`packages/chat/src/index.ts`](packages/chat/src/index.ts), zoek naar `AdvisorChatService`
-- [`apps/api/src/server.ts`](apps/api/src/server.ts), zoek naar advisor routes
+- [`apps/api/src/server.ts`](apps/api/src/server.ts), zoek naar `/v1/chat/candidate` en `/v1/chat/advisor`
 - [`packages/backoffice/`](packages/backoffice/)
 - [`packages/realtime/`](packages/realtime/)
 
-**Waarom dit overdraagbaar is**
+De API bevat daarnaast een beveiligde berichtenhistorie en een SSE-stream voor realtimeberichten.
 
-De menselijke chat staat los van beide AI-coaches. Een organisatie kan daarom een andere berichteninterface, realtimebroker of backoffice aansluiten zonder de coachlogica te herschrijven.
-
-</details>
 </details>
 
 <details>
-<summary><strong>3. Algemene AI-coach</strong></summary>
+<summary><strong>3. Algemene coach</strong></summary>
 
-De algemene coach beantwoordt algemene vragen over werken en leren in het onderwijs. De gebruiker hoeft daarvoor geen persoonlijk traject te hebben.
+De algemene coach is bedoeld voor algemene vragen over werken en leren in het onderwijs.
 
-Voorbeeld:
+Hij hoort geen persoonlijke journey-state nodig te hebben.
 
-> Welke routes zijn er om docent in het voortgezet onderwijs te worden?
-
-De algemene coach gebruikt gecontroleerde kennis, maar geen persoonlijke journey-state.
-
-<details>
-<summary><strong>Hoe werkt dit technisch?</strong></summary>
-
-`GeneralCoach` begint bewust met een lege persoonlijke context:
-
-```ts
-const context: ChatContext = { slots: [] };
-```
-
-Het gesprek wordt opgeslagen als:
-
-```ts
-type: "general-ai"
-```
-
-De coach kan een deterministische antwoordprovider of een aangesloten LLM-provider gebruiken.
-
-**Beslissende code**
+Code:
 
 - [`packages/chat/src/index.ts`](packages/chat/src/index.ts), zoek naar `GeneralCoach`
 - [`packages/knowledge/`](packages/knowledge/)
 - [`packages/response-pipeline/`](packages/response-pipeline/)
-- [`apps/api/src/server.ts`](apps/api/src/server.ts), endpoint `/v1/chat/general`
+- [`apps/api/src/server.ts`](apps/api/src/server.ts), zoek naar `/v1/chat/general`
 
-**Waarom dit overdraagbaar is**
+De antwoordprovider wordt als afhankelijkheid aan de coach meegegeven. Daardoor kan de chatlaag met verschillende antwoordproviders werken.
 
-De antwoordprovider wordt geïnjecteerd. De algemene coach kan daardoor zonder LLM werken, met een lokale provider werken of een OpenAI-compatible endpoint gebruiken.
+De kwaliteit van iedere mogelijke provider moet afzonderlijk worden getest.
 
-</details>
 </details>
 
 <details>
-<summary><strong>4. Persoonlijke AI-coach</strong></summary>
+<summary><strong>4. Persoonlijke coach</strong></summary>
 
-De persoonlijke coach kijkt naar waar de gebruiker in het traject staat. Deze coach kan rekening houden met profielgegevens, route-antwoorden, doelen, blokkades en eerdere stappen.
+De persoonlijke coach gebruikt gegevens van een ingelogde gebruiker.
 
-De coach kan een volgende vraag of wijziging voorstellen, maar mag persoonlijke gegevens of trajectstatus niet stilzwijgend aanpassen.
+Dat kan gaan om:
 
-<details>
-<summary><strong>Hoe werkt dit technisch?</strong></summary>
+- profielgegevens;
+- route-antwoorden;
+- fase;
+- doelen;
+- milestones;
+- blockers;
+- acties;
+- eerder opgeslagen context.
 
-De persoonlijke coach vereist een ingelogde gebruiker:
+De coach kan een wijziging voorstellen. Gevoelige wijzigingen horen niet stilzwijgend te worden uitgevoerd.
 
-```ts
-if (!request.userId) {
-  throw new Error(
-    "PersonalJourneyCoach requires an authenticated user."
-  );
-}
-```
-
-Daarna worden context en deterministische uitkomsten verzameld:
-
-```ts
-const phase = await this.detector.evaluate(detectorInput);
-
-const route = this.routeEngine.evaluate({
-  selectedAnswerIds: context.routeAnswerIds ?? []
-});
-```
-
-Een mogelijke faseovergang wordt alleen als voorstel teruggegeven:
-
-```ts
-{
-  type: "phase-transition",
-  requiresConfirmation: true,
-  payload: { from, to }
-}
-```
-
-**Beslissende code**
+Code:
 
 - [`packages/chat/src/index.ts`](packages/chat/src/index.ts), zoek naar `PersonalJourneyCoach`
 - [`packages/domain/`](packages/domain/)
 - [`packages/orchestration/`](packages/orchestration/)
 - [`apps/api/src/graph-execution-routes.ts`](apps/api/src/graph-execution-routes.ts)
-- [`apps/api/src/server.ts`](apps/api/src/server.ts), endpoint `/v1/chat/personal`
-
-**Waarom dit overdraagbaar is**
-
-Profielcontext, fasesystemen, routebepaling, graphprojectie en antwoordgeneratie zijn afzonderlijke verantwoordelijkheden. Een organisatie kan eigen routes, fasen, datasets en providers gebruiken zonder het volledige platform opnieuw te bouwen.
+- [`apps/api/src/server.ts`](apps/api/src/server.ts), zoek naar `/v1/chat/personal`
 
 </details>
-</details>
 
-## Effectief zonder LLM
+---
 
-Door010 heeft geen LLM nodig om zijn belangrijkste domeinfuncties uit te voeren.
+# LLM: aanwezig, maar nog niet inhoudelijk doorgetest
 
-Zonder LLM kan het platform al:
+De repo bevat meerdere aansluitpunten voor een taalmodel.
 
-- routevragen verwerken en routes bepalen;
-- een fase evalueren;
-- profielvelden en confidence bijhouden;
-- doelen, milestones, blockers en acties beheren;
-- lokale kennis doorzoeken;
-- gecontroleerde bronresultaten teruggeven;
-- persoonlijke vervolgstappen bepalen;
-- mutaties als bevestigbaar voorstel aanbieden;
-- gesprekken met menselijke adviseurs opslaan;
-- de website, backoffice en dashboards laten werken.
+De Codespaces-configuratie probeert automatisch een klein lokaal model via Ollama te installeren. Een OpenAI-compatible endpoint kan ook via environmentvariabelen worden aangesloten.
 
-Een LLM kan de interactie natuurlijker maken, intent helpen herkennen, resultaten herschikken of een antwoord formuleren. Het taalmodel mag de deterministische route-, fase- en journeylogica niet vervangen.
+De invloed van die LLM-route is nog niet voldoende doorgetest.
 
-```mermaid
-flowchart LR
-    Q["Vraag of gebruikersactie"] --> V["Validatie en autorisatie"]
-    V --> D{"Benodigde capability"}
+Daarom doet deze README geen uitspraken als:
 
-    D --> R["Route, Phase en Journey Engines"]
-    D --> K["Lokale kennisretrieval"]
-    D --> H["Menselijke adviseursflow"]
+- antwoorden met LLM zijn beter;
+- antwoorden met LLM zijn natuurlijker;
+- retrieval met LLM is aantoonbaar nauwkeuriger;
+- een model verbetert de gekozen route;
+- de modeluitvoer is geschikt voor productie.
 
-    R --> S["Gestructureerd resultaat"]
-    K --> S
-    H --> S
+Daarvoor is eerst een gecontroleerde vergelijking nodig.
 
-    S -. "optioneel" .-> L["LLM voor formulering, intent of reranking"]
-    L --> O["Gevalideerd antwoord"]
-    S --> O
-```
+## Wat moet nog worden vergeleken?
 
-<details>
-<summary><strong>Bewijs in de uitvoerroute</strong></summary>
+Minimaal:
 
-De demoscript controleert of Ollama beschikbaar is. Is dat niet zo, dan stopt de demo niet:
+1. dezelfde onafhankelijke testvragen;
+2. dezelfde datasets en bronnen;
+3. uitvoering zonder LLM;
+4. uitvoering met de lokale LLM;
+5. eventueel uitvoering met een externe provider;
+6. juistheid van het antwoord;
+7. ongewenste toevoegingen;
+8. brongebruik;
+9. latency;
+10. kosten;
+11. privacy en gegevensdeling.
+
+---
+
+# De route zonder LLM
+
+Door010 kan ook starten wanneer geen LLM beschikbaar is.
+
+In dat geval gebruikt de coach de extractieve en deterministische route uit de code.
+
+**Letterlijk fragment uit [`scripts/demo.mjs`](scripts/demo.mjs):**
 
 ```js
 if (!hasOllama) {
   console.log(
     "[llm] Ollama niet gevonden - de coach antwoordt " +
-    "extractief uit de kennisbank"
+    "extractief uit de kennisbank (bash " +
+    "scripts/setup-demo-llm.sh installeert de demo-LLM)"
   );
   return {};
 }
 ```
 
-Vervolgens worden API en webapp gewoon gestart:
+Na deze controle starten de API en webapp nog steeds.
+
+**Letterlijk fragment uit [`scripts/demo.mjs`](scripts/demo.mjs):**
 
 ```js
-start("api", "npm", [
-  "run", "dev", "--workspace", "@door010/api"
-]);
-
+start("api", "npm", ["run", "dev", "--workspace", "@door010/api"], {
+  env: {
+    DATASETS_DIRECTORY:
+      process.env.DATASETS_DIRECTORY ?? resolve(root, "datasets"),
+    ...llmEnv
+  }
+});
 start("web", "npm", [
-  "run", "dev", "--workspace", "@door010/web"
+  "run",
+  "dev",
+  "--workspace",
+  "@door010/web",
+  "--",
+  "--host",
+  "127.0.0.1"
 ]);
 ```
 
-De standaard antwoordprovider bevat daarnaast een deterministische implementatie:
+Zonder actieve LLM blijven onder andere beschikbaar:
 
-```ts
-export class DeterministicAnswerDraftProvider
-  implements AnswerDraftProvider {
-  // Maakt een antwoord zonder externe LLM-call.
-}
-```
+- de website;
+- route- en fasecode;
+- profielvelden;
+- journeygegevens;
+- lokale kennisretrieval;
+- deterministische antwoordopbouw;
+- adviseurschat;
+- evenementen- en vacatureflows;
+- backoffice;
+- het persoonlijke dashboard.
 
-**Beslissende code**
+Actuele data uit externe event- of vacatureproviders vereist wel een geconfigureerde koppeling.
 
-- [`scripts/demo.mjs`](scripts/demo.mjs)
-- [`packages/chat/src/index.ts`](packages/chat/src/index.ts), zoek naar `DeterministicAnswerDraftProvider`
-- [`packages/domain/`](packages/domain/)
-- [`packages/knowledge/`](packages/knowledge/)
-- [`packages/orchestration/`](packages/orchestration/)
+<details>
+<summary><strong>Waar staat de deterministische antwoordprovider?</strong></summary>
+
+Bekijk:
+
+- [`packages/chat/src/index.ts`](packages/chat/src/index.ts)
+- zoek naar `DeterministicAnswerDraftProvider`
+
+Deze class bouwt voor de algemene coach een vast antwoord op en gebruikt voor de persoonlijke coach onder andere route-, graph- en fasegegevens.
+
+De volledige class is niet in deze README gekopieerd, omdat een verkorte versie geen letterlijke kopie van het origineel zou zijn.
 
 </details>
 
 <details>
-<summary><strong>Wat verandert er wanneer je wel een LLM aansluit?</strong></summary>
+<summary><strong>Hoe krijg je bewust de route zonder LLM?</strong></summary>
 
-| Onderdeel | Zonder LLM | Met LLM |
-| --- | --- | --- |
-| Routebepaling | Deterministische Route Engine | Dezelfde Route Engine |
-| Fasebepaling | Deterministische Phase Engine | Dezelfde Phase Engine |
-| Journey-state | Journey Engine | Dezelfde Journey Engine |
-| Kenniszoeken | FTS, fuzzy en lokale semantische fallback | Optioneel embeddings, intent en reranking |
-| Antwoord | Extractief of deterministisch | Natuurlijker geformuleerd |
-| Mutaties | Voorstel plus bevestiging | Nog steeds voorstel plus bevestiging |
-| Menselijke chat | Volledig beschikbaar | Ongewijzigd |
-| Broncontrole | Verplicht | Blijft verplicht |
+De fallback zonder LLM wordt gebruikt wanneer:
 
-De LLM-laag voegt dus vooral taal- en rangschikkingsmogelijkheden toe. De beslissende domeinlogica blijft buiten het model.
+- `LLM_BASE_URL` niet is ingesteld;
+- Ollama niet beschikbaar is.
+
+De huidige demo heeft nog geen aparte environmentvariabele waarmee de LLM-route expliciet kan worden uitgezet.
+
+Daarom is een toekomstige instelling zoals `DEMO_LLM_ENABLED=false` wenselijk voor zuivere A/B-tests. Die instelling bestaat nu nog niet en wordt hier dus niet als werkend commando gepresenteerd.
 
 </details>
 
-<details>
-<summary><strong>Hoe moeten de retrievalpercentages worden gelezen?</strong></summary>
+---
 
-De retrievalbenchmark in deze repository is nuttig als **interne regressietest**. Hij laat zien of een codewijziging op dezelfde dataset slechter of beter scoort.
+# Codespaces
 
-De cijfers zijn geen onafhankelijke productvalidatie.
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/E-AI-MODEL/door010?quickstart=1)
 
-Een deel van de benchmark bestaat uit exacte FAQ-vragen en aliases uit de brondata. Diezelfde vragen, aliases en tags worden ook gebruikt om de zoekindex en lokale embeddings op te bouwen. Hoge scores op de categorieën `exact` en `alias` zijn daardoor te verwachten.
+De Codespaces-configuratie probeert automatisch een lokaal taalmodel te installeren.
 
-Vereenvoudigd ziet de overlap er zo uit:
-
-```ts
-const faqTexts = [
-  faq.question,
-  ...(faq.aliases ?? []),
-  faq.answer,
-  ...(faq.tags ?? [])
-].join(" ");
-```
-
-Terwijl benchmarkcases bijvoorbeeld zijn gemarkeerd als:
+**Letterlijk bestand [`.devcontainer/devcontainer.json`](.devcontainer/devcontainer.json):**
 
 ```json
 {
-  "query": "Wat heb ik nodig voor zij-instroom",
-  "queryType": "alias",
-  "notes": "Alias uit de brondata."
+  "name": "Door010 demo",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
+  "containerEnv": {
+    "DATASETS_DIRECTORY": "${containerWorkspaceFolder}/datasets"
+  },
+  "postCreateCommand": "npm ci && npx tsc -b && (bash scripts/setup-demo-llm.sh || true)",
+  "forwardPorts": [5173, 4000],
+  "portsAttributes": {
+    "5173": {
+      "label": "Door010 webapp",
+      "onAutoForward": "openPreview"
+    },
+    "4000": {
+      "label": "Door010 API",
+      "onAutoForward": "silent"
+    }
+  },
+  "postAttachCommand": {
+    "demo": "npm run demo"
+  }
 }
 ```
 
-Gebruik de percentages daarom niet als bewijs dat echte gebruikers in een onafhankelijke praktijktest hetzelfde resultaat behalen.
+Hieruit volgt:
 
-**Wel geschikt voor**
+1. de Codespace gebruikt Node.js 22;
+2. `npm ci` wordt uitgevoerd;
+3. TypeScript wordt gebouwd;
+4. `scripts/setup-demo-llm.sh` wordt uitgevoerd;
+5. fouten bij de LLM-installatie blokkeren de Codespace niet;
+6. poorten `5173` en `4000` worden doorgestuurd;
+7. `npm run demo` start automatisch.
 
-- regressies tussen twee codeversies;
-- vergelijking van retrievalconfiguraties op dezelfde set;
-- het vinden van concrete misses;
-- het bewaken van afgesproken minimumgrenzen.
+## Wat installeert het LLM-script?
 
-**Nog nodig voor een sterke kwaliteitsclaim**
+`scripts/setup-demo-llm.sh`:
 
-- een afgeschermde hold-outset die niet uit indexvelden is afgeleid;
-- vragen van echte gebruikers;
-- onafhankelijke relevantiebeoordeling;
-- aparte beoordeling van route-, loket- en meerstapsvragen;
-- rapportage van onzekerheid en fouttypen.
+- controleert of Ollama aanwezig is;
+- installeert Ollama wanneer dat niet zo is;
+- start de Ollama-server;
+- haalt het ingestelde demomodel op.
 
-Zie ook:
+Het standaardmodel is:
 
-- [`datasets/retrieval-benchmark.json`](datasets/retrieval-benchmark.json)
-- [`datasets/faq-seed.json`](datasets/faq-seed.json)
+```text
+hf.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF:Q4_K_M
+```
+
+Wanneer dat lukt, gebruikt de demo een lokaal OpenAI-compatible endpoint.
+
+**Letterlijk fragment uit [`scripts/demo.mjs`](scripts/demo.mjs):**
+
+```js
+return {
+  LLM_BASE_URL: `${endpoint}/v1`,
+  LLM_API_KEY: "ollama-demo",
+  LLM_MODEL: model,
+  LLM_TIMEOUT_MS: process.env.LLM_TIMEOUT_MS ?? "120000"
+};
+```
+
+> [!IMPORTANT]
+> Een Codespaces-demo is dus niet automatisch een test zonder LLM.
+>
+> Wanneer Ollama en het model beschikbaar zijn, wordt de lokale LLM-route gebruikt. Wanneer de installatie mislukt of Ollama niet beschikbaar is, valt de demo terug op de route zonder LLM.
+
+Er is voor het lokale Ollama-model geen externe commerciële LLM-provider of externe API-sleutel nodig.
+
+Dat zegt nog niets over de inhoudelijke kwaliteit van het model. Die moet apart worden getest.
+
+---
+
+# Retrieval en antwoordopbouw
+
+De repo bevat een eigen retrieval- en antwoordpipeline.
+
+De huidige retrievallaag kan verschillende zoekresultaten combineren:
+
+- PostgreSQL full-text search;
+- fuzzy search;
+- lokale semantische representatie;
+- optionele externe embeddings;
+- reciprocal-rank fusion;
+- bronselectie;
+- conditionele reranking;
+- antwoordopbouw en validatie.
+
+Lees:
+
+- [`packages/knowledge/`](packages/knowledge/)
+- [`packages/response-pipeline/`](packages/response-pipeline/)
 - [`scripts/evaluate-hybrid-retrieval.ts`](scripts/evaluate-hybrid-retrieval.ts)
 - [`docs/HYBRID_RETRIEVAL_3_0.md`](docs/HYBRID_RETRIEVAL_3_0.md)
+- [`docs/AI_PARITY_PIPELINE.md`](docs/AI_PARITY_PIPELINE.md)
 
-</details>
+## Is dit RAG?
 
-## Probeer Door010
+Zonder generatief model is dit vooral een retrieval- en antwoordpipeline.
 
-### Codespaces
+Wanneer een aangesloten taalmodel de opgehaalde informatie gebruikt om een antwoord te genereren, kan deze route als RAG worden gebruikt.
 
-1. Open [Door010 in Codespaces](https://codespaces.new/E-AI-MODEL/door010?quickstart=1).
-2. Maak een codespace op `main`.
-3. De dependencies, TypeScript-build en optionele lokale demo-LLM worden voorbereid.
-4. `npm run demo` start bij het koppelen automatisch.
-5. Open de doorgestuurde poort `5173`.
+De standaardcode ondersteunt dus een RAG-route, maar de inhoudelijke werking van de LLM-stap is nog niet voldoende getest.
 
-De API draait op poort `4000`.
+---
 
-<details>
-<summary><strong>Wat gebeurt er in Codespaces?</strong></summary>
+## Let op met de retrievalpercentages
 
-De configuratie staat in [`.devcontainer/devcontainer.json`](.devcontainer/devcontainer.json).
+De huidige benchmark is bruikbaar als interne regressietest.
 
-Bij het aanmaken wordt uitgevoerd:
+Hij kan bijvoorbeeld laten zien of een codewijziging op dezelfde dataset slechter scoort dan de vorige versie.
 
-```bash
-npm ci
-npx tsc -b
-bash scripts/setup-demo-llm.sh || true
+De percentages zijn geen onafhankelijke productvalidatie.
+
+Een deel van de benchmark gebruikt exacte vragen en aliases uit de brondata. Diezelfde velden worden ook gebruikt om de zoekrepresentatie op te bouwen.
+
+**Letterlijk fragment uit [`scripts/evaluate-hybrid-retrieval.ts`](scripts/evaluate-hybrid-retrieval.ts):**
+
+```ts
+const titleEmphasis = 3;
+const faqTexts = faqDataset.faqs.map((faq) =>
+  [
+    ...Array<string>(titleEmphasis).fill(faq.question),
+    ...(faq.aliases ?? []),
+    faq.answer,
+    faq.category ?? "",
+    ...(faq.tags ?? [])
+  ].join(" ")
+);
 ```
 
-Bij het koppelen start:
+De benchmark bevat tegelijk vragen die expliciet als alias uit de brondata zijn gemarkeerd.
 
-```bash
-npm run demo
+**Letterlijk fragment uit [`datasets/retrieval-benchmark.json`](datasets/retrieval-benchmark.json):**
+
+```json
+{
+  "id": "alias-004",
+  "query": "Wat heb ik nodig voor zij-instroom",
+  "queryType": "alias",
+  "relevantQuestions": [
+    "Wat zijn de toelatingseisen voor het zij-instroomtraject?"
+  ],
+  "notes": "Alias uit de brondata.",
+  "groupId": "aef0c77be3b7"
+}
 ```
 
-De lokale LLM is optioneel. Mislukt de installatie of is Ollama niet beschikbaar, dan blijft de demo werken met extractieve en deterministische antwoorden.
+Hoge scores bij `exact` en `alias` zijn daardoor niet verrassend.
 
-</details>
+### De benchmark is wel bruikbaar voor
 
-### Lokale demo zonder database of LLM
+- regressies tussen codeversies;
+- vergelijking van instellingen op dezelfde dataset;
+- het vinden van misses;
+- het controleren van minimumgrenzen;
+- het onderzoeken van fouttypen.
+
+### Voor een sterkere kwaliteitsclaim is nog nodig
+
+- een afgeschermde hold-outset;
+- vragen die niet uit de indexvelden zijn afgeleid;
+- vragen van echte bezoekers;
+- onafhankelijke relevantiebeoordeling;
+- aparte tests voor route-, loket- en meerstapsvragen;
+- rapportage van twijfelgevallen;
+- gescheiden resultaten met en zonder LLM.
+
+---
+
+# Starten
+
+## Lokale demo
+
+Gebruik deze route om de webapp en API zonder PostgreSQL te starten.
 
 Vereisten:
 
@@ -477,12 +748,18 @@ npx tsc -b
 npm run demo
 ```
 
-Open daarna:
+De demo meldt bij het starten:
 
-- webapp: `http://127.0.0.1:5173`
-- API: `http://127.0.0.1:4000`
+```text
+Webapp: http://127.0.0.1:5173  |  API: http://127.0.0.1:4000
+```
 
 Stop beide processen met <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+
+> [!NOTE]
+> `npm run demo` controleert of Ollama beschikbaar is.
+>
+> Is Ollama beschikbaar, dan probeert de demo het lokale model te gebruiken. Is Ollama niet beschikbaar en is `LLM_BASE_URL` niet ingesteld, dan gebruikt de coach de route zonder LLM.
 
 <details>
 <summary><strong>Openbare demoaccounts</strong></summary>
@@ -492,41 +769,26 @@ Stop beide processen met <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 | Kandidaat | `test21@doorai.nl` | `admin010` |
 | Administrator | `admin@doorai.nl` | `admin010` |
 
-Dit zijn openbare testfixtures, geen secrets.
+Dit zijn openbare testaccounts.
 
-Gebruik uitsluitend fictieve gegevens. Iedereen met toegang tot de demo kan het administratoraccount gebruiken. Hergebruik het wachtwoord nergens anders.
+Gebruik alleen fictieve gegevens. Iedereen met toegang tot de demo kan het administratoraccount gebruiken.
 
-Bij in-memory opslag worden de accounts bij het starten aangemaakt of hersteld. De gegevens verdwijnen wanneer de demo stopt.
+Bij in-memory opslag worden de accounts tijdens het starten aangemaakt of hersteld. De gegevens verdwijnen wanneer de demo stopt.
 
-Een PostgreSQL-testomgeving maakt deze accounts alleen aan als:
+Een PostgreSQL-testomgeving maakt deze accounts alleen aan wanneer dit expliciet is ingesteld:
 
 ```bash
 DEMO_ACCOUNTS_ENABLED=true
 ```
 
-Gebruik dit nooit in een omgeving met echte gebruikersgegevens.
+Gebruik deze instelling niet met echte gebruikersgegevens.
 
 </details>
 
 <details>
-<summary><strong>De demo optioneel met een lokale LLM uitvoeren</strong></summary>
+<summary><strong>Een andere OpenAI-compatible provider aansluiten</strong></summary>
 
-De demoscript gebruikt Ollama wanneer dat beschikbaar is.
-
-Handmatig voorbereiden:
-
-```bash
-bash scripts/setup-demo-llm.sh
-npm run demo
-```
-
-Standaardmodel:
-
-```text
-hf.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF:Q4_K_M
-```
-
-Een andere OpenAI-compatible provider kan via environmentvariabelen worden aangesloten:
+Voorbeeld voor bash of zsh:
 
 ```bash
 export LLM_BASE_URL="https://provider.example/v1"
@@ -535,20 +797,34 @@ export LLM_MODEL="replace-me"
 npm run demo
 ```
 
-Een LLM is niet nodig om de demo te starten.
+De waarden in dit voorbeeld zijn placeholders.
+
+Een werkende aansluiting bewijst nog niet dat de provider inhoudelijk, juridisch of technisch geschikt is voor productie.
 
 </details>
 
-### Volledige ontwikkelomgeving met PostgreSQL
+---
 
-Gebruik deze route wanneer je persistence, migraties, realtimefunctionaliteit of provideradapters wilt ontwikkelen.
+## PostgreSQL-omgeving
+
+Gebruik deze route wanneer je wilt werken aan:
+
+- persistente opslag;
+- migraties;
+- autorisatie;
+- realtimefunctionaliteit;
+- providers;
+- databasegedrag.
 
 Vereisten:
 
 - Node.js 22 of hoger;
 - npm;
-- Docker en Docker Compose;
-- bij voorkeur een PostgreSQL-client voor herstel- en acceptancechecks.
+- Docker;
+- Docker Compose;
+- bij voorkeur een PostgreSQL-client voor hersteltests.
+
+Start eerst de ondersteunende diensten:
 
 ```bash
 git clone https://github.com/E-AI-MODEL/door010.git
@@ -557,13 +833,20 @@ npm ci
 docker compose up -d
 ```
 
-De lokale Docker-configuratie start PostgreSQL, Redis en MinIO.
+Docker Compose start:
+
+- PostgreSQL;
+- Redis;
+- MinIO.
+
+Docker Compose start niet automatisch de lokale Node-API en webapp. Die start je apart.
 
 > [!NOTE]
-> `npm run dev` start in deze repository alleen de API. Start de webapp in een tweede terminal met `npm run dev:web`.
+> `npm run dev` start alleen de API.
+>
+> `npm run dev:web` start de webapp.
 
-<details>
-<summary><strong>Bash of zsh</strong></summary>
+### Bash of zsh
 
 Terminal 1:
 
@@ -583,10 +866,7 @@ Terminal 2:
 npm run dev:web
 ```
 
-</details>
-
-<details>
-<summary><strong>PowerShell</strong></summary>
+### PowerShell
 
 Terminal 1:
 
@@ -606,16 +886,19 @@ Terminal 2:
 npm run dev:web
 ```
 
-</details>
-
 <details>
-<summary><strong>Waarom wordt niet alleen naar <code>.env</code> verwezen?</strong></summary>
+<summary><strong>Waarom niet alleen verwijzen naar .env?</strong></summary>
 
-Docker Compose gebruikt automatisch waarden uit een lokaal `.env`-bestand. De Node-processen in deze repository laden `.env` niet zelfstandig in.
+Docker Compose leest automatisch waarden uit een lokaal `.env`-bestand.
 
-Zorg er daarom voor dat de benodigde waarden werkelijk als environmentvariabelen beschikbaar zijn. Dat kan via de shell, een IDE-runconfiguratie, een process manager of een deploymentplatform.
+De Node-processen in deze repo laden `.env` niet zelfstandig. De benodigde variabelen moeten dus echt beschikbaar zijn in:
 
-De minimale PostgreSQL-ontwikkeling gebruikt:
+- de shell;
+- een IDE-runconfiguratie;
+- een process manager;
+- een deploymentomgeving.
+
+Minimaal nodig voor PostgreSQL:
 
 ```text
 APP_STORAGE_MODE=postgres
@@ -623,14 +906,16 @@ DATABASE_URL=postgresql://...
 AUTH_TOKEN_SECRET=...
 ```
 
-Kopieer `.env.example` gerust als inventarisatie van beschikbare instellingen, maar commit lokale secrets nooit.
+`.env.example` laat zien welke andere instellingen beschikbaar zijn.
+
+Commit nooit echte sleutels, tokens, wachtwoorden of persoonsgegevens.
 
 </details>
 
 <details>
 <summary><strong>Stoppen en opnieuw beginnen</strong></summary>
 
-Stop de ontwikkelservers met <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+Stop de Node-processen met <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 Stop de containers:
 
@@ -638,27 +923,28 @@ Stop de containers:
 docker compose down
 ```
 
-Verwijder ook de lokale volumes en alle testgegevens:
+Verwijder ook de lokale volumes en testgegevens:
 
 ```bash
 docker compose down -v
 ```
 
-Gebruik `-v` alleen wanneer de lokale gegevens echt mogen verdwijnen.
+Gebruik `-v` alleen wanneer de opgeslagen lokale gegevens echt mogen verdwijnen.
 
 </details>
 
-## Je eerste kleine wijziging
+---
+
+# Eerste wijziging
 
 Begin met iets dat direct zichtbaar is.
 
-1. Start de lokale demo.
+1. Start de demo.
 2. Open [`apps/web/src/main.ts`](apps/web/src/main.ts).
-3. Zoek naar `Waarmee kan ik je helpen?`.
+3. Zoek naar een zichtbare tekst in de webapp.
 4. Pas de tekst aan.
-5. Sla het bestand op.
-6. Controleer de wijziging in de browser.
-7. Voer de snelle kwaliteitscontroles uit.
+5. Controleer de wijziging in de browser.
+6. Voer de basiscontroles uit.
 
 ```bash
 npm run typecheck
@@ -667,66 +953,57 @@ npm test
 npm run build
 ```
 
-<details>
-<summary><strong>Waarom is dit een goede eerste wijziging?</strong></summary>
+Voor wijzigingen aan database, flows of retrieval zijn aanvullende controles nodig. Zie [Controles](#controles).
 
-Je doorloopt meteen de hele ontwikkellus:
+---
 
-```mermaid
-flowchart LR
-    C["Code vinden"] --> W["Wijzigen"]
-    W --> B["In browser bekijken"]
-    B --> T["Typecheck en tests"]
-    T --> D["Diff beoordelen"]
-```
+# Waar staat wat?
 
-Je raakt nog niet aan database-, autorisatie- of journeylogica. Daardoor kun je eerst leren hoe workspaces, hot reload en controles samenwerken.
-
-</details>
-
-## Waar moet ik zijn?
-
-| Ik wil iets wijzigen aan... | Begin hier | Zoek naar |
+| Ik wil iets aanpassen aan... | Begin hier | Zoek naar |
 | --- | --- | --- |
-| Schermen, navigatie of zichtbare tekst | [`apps/web/`](apps/web/) | `type View`, `renderShell`, `render` |
+| Schermen, navigatie of tekst | [`apps/web/`](apps/web/) | `type View`, `renderShell` |
 | API-routes en invoervalidatie | [`apps/api/`](apps/api/) | `register...Routes`, Zod-schema's |
 | Algemene coach | [`packages/chat/`](packages/chat/) | `GeneralCoach` |
 | Persoonlijke coach | [`packages/chat/`](packages/chat/) | `PersonalJourneyCoach` |
 | Menselijke adviseurschat | [`packages/chat/`](packages/chat/) | `AdvisorChatService` |
+| Deterministische antwoorden | [`packages/chat/`](packages/chat/) | `DeterministicAnswerDraftProvider` |
 | Antwoordstructuur | [`packages/response-pipeline/`](packages/response-pipeline/) | `createStructuredResponse` |
-| Profielvelden en identiteit | [`packages/identity-profile/`](packages/identity-profile/) | profile services en token services |
-| Routebepaling | [`packages/domain/`](packages/domain/) en [`datasets/routes.json`](datasets/routes.json) | `RouteEngine` |
+| Profiel en authenticatie | [`packages/identity-profile/`](packages/identity-profile/) | profiel- en tokenservices |
+| Routebepaling | [`packages/domain/`](packages/domain/) | `RouteEngine` |
+| Routegegevens | [`datasets/routes.json`](datasets/routes.json) | route-ID's en stappen |
 | Fasebepaling | [`packages/domain/`](packages/domain/) | `AdaptivePhaseDetector` |
-| Doelen, acties en voortgang | [`packages/domain/`](packages/domain/) | `JourneyEngine` |
+| Doelen, blockers en acties | [`packages/domain/`](packages/domain/) | `JourneyEngine` |
 | Graphcontext | [`packages/domain/`](packages/domain/) | `GraphMemory` |
 | Kenniszoeken en bronnen | [`packages/knowledge/`](packages/knowledge/) | retrieval en ingestion |
-| Capabilities combineren | [`packages/orchestration/`](packages/orchestration/) | orchestrator en planner |
-| Databasecontracten | [`packages/database/`](packages/database/) | repositories en interfaces |
-| PostgreSQL-adapters | [`packages/postgres/`](packages/postgres/) | `PgSqlExecutor` |
-| Schemawijzigingen | [`migrations/`](migrations/) | eerstvolgend migratienummer |
-| Providers en externe koppelingen | [`packages/integrations/`](packages/integrations/) | adapters en resilience |
+| Aansturing van onderdelen | [`packages/orchestration/`](packages/orchestration/) | orchestrator en planner |
+| Databasecontracten | [`packages/database/`](packages/database/) | repositoryinterfaces |
+| PostgreSQL | [`packages/postgres/`](packages/postgres/) | `PgSqlExecutor` |
+| Schemawijzigingen | [`migrations/`](migrations/) | volgend migratienummer |
+| Externe koppelingen | [`packages/integrations/`](packages/integrations/) | adapters, retries en circuit breakers |
 | Backoffice | [`packages/backoffice/`](packages/backoffice/) | prompts, alerts en kandidaatdetail |
 | Realtimeberichten | [`packages/realtime/`](packages/realtime/) | broker en subscriptions |
 | Browsertests | [`apps/web/`](apps/web/) | Playwright |
-| CI, load en recovery | [`.github/`](.github/) en [`scripts/`](scripts/) | workflows en acceptance |
+| CI en hersteltests | [`.github/`](.github/) en [`scripts/`](scripts/) | workflows en acceptance |
 
 <details>
 <summary><strong>Repositorystructuur</strong></summary>
 
 ```text
-.github/       CI, deploymentgates en GitHub-templates
+.github/       GitHub Actions, templates en deploymentcontroles
 .devcontainer/ Codespaces-configuratie
-apps/api/      HTTP API, security en bootstrapping
-apps/web/      Browserapp en Playwrighttests
-packages/      Domein, contracten, persistence en orchestration
-datasets/      Route-, fase- en kennisdata
-migrations/    Append-only PostgreSQL-migraties
-scripts/       Demo, verificatie, benchmarks, load en recovery
-docs/          Ontwerpbesluiten, audits en runbooks
+apps/api/      API, routes, security en opstartcode
+apps/web/      Webapp en browsertests
+packages/      Domeinlogica, contracten, opslag en koppelingen
+datasets/      Vragen, routes, fases en kennisdata
+migrations/    PostgreSQL-migraties
+scripts/       Demo, verificatie, benchmarks en hersteltests
+docs/          Audits, ontwerpkeuzes en technische uitleg
 ```
 
+</details>
+
 <details>
-<summary><strong>Hoe lopen de belangrijkste afhankelijkheden?</strong></summary>
+<summary><strong>Belangrijkste samenhang</strong></summary>
 
 ```mermaid
 flowchart TD
@@ -741,20 +1018,17 @@ flowchart TD
     ORCH --> DOMAIN
     ORCH --> KNOW
 
-    API --> DBI["packages/database"]
-    DBI --> PG["packages/postgres"]
-    PG --> DB[("PostgreSQL")]
-
-    INTEGRATIONS["packages/integrations"] --> KNOW
-    INTEGRATIONS --> ORCH
+    API --> DATABASE["databasecontracten en adapters"]
+    DATABASE --> POSTGRES[("PostgreSQL")]
 ```
 
-De pijlen geven de belangrijkste samenwerkingsrichting weer, niet iedere TypeScript-import.
+Dit diagram toont de hoofdroute. Het is geen volledige weergave van iedere TypeScript-import.
 
 </details>
-</details>
 
-## Architectuurregels
+---
+
+# Regels die je niet zomaar moet doorbreken
 
 Lees vóór grotere wijzigingen:
 
@@ -763,94 +1037,88 @@ Lees vóór grotere wijzigingen:
 - [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
 <details>
-<summary><strong>1. Houd de kanalen gescheiden</strong></summary>
+<summary><strong>Houd de kanalen uit elkaar</strong></summary>
 
-De algemene coach, persoonlijke coach en menselijke adviseurschat zijn afzonderlijke gesprekstypen. De website en vaste flows vormen daarnaast een zelfstandig productkanaal.
+De algemene coach, persoonlijke coach en menselijke adviseurschat hebben elk een eigen functie.
 
-Voeg persoonlijke journeycontext nooit ongemerkt toe aan de algemene coach. Presenteer een AI-antwoord nooit als bericht van een adviseur.
+Voeg persoonlijke journeycontext niet ongemerkt toe aan de algemene coach.
+
+Presenteer een AI-antwoord niet als bericht van een medewerker.
 
 </details>
 
 <details>
-<summary><strong>2. Respecteer de bronnen van waarheid</strong></summary>
+<summary><strong>Laat de domeincode de route bepalen</strong></summary>
 
-| Onderwerp | Bron van waarheid |
+De vastgelegde bronnen van waarheid zijn:
+
+| Onderwerp | Bron |
 | --- | --- |
 | Persistente gegevens | PostgreSQL |
 | Routebepaling | Route Engine |
 | Fasebepaling | Phase Engine |
 | Persoonlijk traject | Journey Engine |
 | Graphcontext | Afgeleide projectie |
-| Coördinatie | Orchestrator, niet de domeinbeslisser |
-| LLM-output | Advies dat gevalideerd moet worden |
+| Aansturing | Orchestrator |
+| LLM-output | Te valideren uitvoer |
 
-<details>
-<summary><strong>Waarom is Graph Memory niet leidend?</strong></summary>
+Een taalmodel hoort route-, fase- of journey-uitkomsten niet zelfstandig opnieuw te bepalen.
 
-Graph Memory projecteert bestaande journeygegevens naar nodes en relaties. Dat is nuttig voor context en toekomstige graph retrieval, maar een projectie kan achterlopen of opnieuw worden opgebouwd.
-
-Mutaties horen daarom via de Journey Engine en primaire repositories te lopen, niet rechtstreeks via de graph.
-
-</details>
 </details>
 
 <details>
-<summary><strong>3. Schrijfacties vragen bevestiging en audit</strong></summary>
+<summary><strong>Graph Memory is niet de primaire opslag</strong></summary>
 
-Een model, agent of gebruiker kan een actie voorstellen. Gevoelige wijzigingen worden pas uitgevoerd na de vereiste authenticatie, autorisatie, validatie en expliciete bevestiging.
+Graph Memory is een projectie van bestaande journeygegevens.
 
-De basisroute is:
+Een projectie kan opnieuw worden opgebouwd of tijdelijk achterlopen. Wijzigingen horen daarom via de Journey Engine en primaire repositories te lopen.
 
-```mermaid
-flowchart LR
-    P["Voorstel"] --> C["Bevestigingstoken"]
-    C --> D{"Goedkeuren?"}
-    D -->|Ja| E["Uitvoeren"]
-    D -->|Nee| R["Afwijzen"]
-    E --> A["Audit en outbox"]
-```
+</details>
+
+<details>
+<summary><strong>Persoonlijke wijzigingen vragen controle</strong></summary>
+
+Een model, agent of gebruiker kan een wijziging voorstellen.
+
+Gevoelige wijzigingen vragen waar nodig:
+
+1. authenticatie;
+2. autorisatie;
+3. invoervalidatie;
+4. expliciete bevestiging;
+5. auditregistratie;
+6. foutafhandeling.
 
 Sla deze stappen niet over om een demo sneller te laten werken.
 
 </details>
 
 <details>
-<summary><strong>4. Houd providers vervangbaar</strong></summary>
+<summary><strong>Houd externe providers buiten de domeinlogica</strong></summary>
 
-Plaats provider-specifieke logica achter een bestaand contract of een nieuwe adapter.
+Plaats code voor een specifieke LLM-, zoek-, event-, vacature- of notificatieprovider achter een adapter.
 
-Niet hardcoderen in:
+Hardcode die logica niet in:
 
 - domeinmodellen;
 - engines;
-- generieke orchestrationcontracten;
-- generieke API-contracten.
-
-Een provider moet uitschakelbaar en vervangbaar blijven.
+- generieke API-contracten;
+- generieke orchestrationcontracten.
 
 </details>
 
 <details>
-<summary><strong>5. Behandel persoonlijke coachvragen als gevoelige context</strong></summary>
+<summary><strong>Wijzig bestaande migraties niet</strong></summary>
 
-De persoonlijke coach gebruikt profiel-, route-, fase- en journeycontext. Ruwe persoonlijke vragen gaan standaard niet naar een optionele externe webzoekprovider.
+Iedere databasewijziging krijgt een nieuwe, oplopende migratie.
 
-Een systeemprompt is geen beveiligingsgrens. Dwing privacy- en kanaalregels af in compositie, providerinput, validatie, autorisatie en tests.
-
-</details>
-
-<details>
-<summary><strong>6. Wijzig bestaande migraties nooit</strong></summary>
-
-Iedere schemawijziging krijgt een nieuwe, oplopende migratie.
-
-Bestaande migraties hebben checksums. Een wijziging aan een al toegepaste migratie veroorzaakt bewust een fout:
+Bestaande migraties hebben checksums. Een wijziging aan een al toegepaste migratie veroorzaakt bewust:
 
 ```text
 Migration checksum mismatch
 ```
 
-Voer na databasewijzigingen altijd uit:
+Controleer databasewijzigingen met:
 
 ```bash
 npm run verify:migrations
@@ -859,9 +1127,22 @@ npm run verify:seed
 
 </details>
 
-## Controleer je werk
+<details>
+<summary><strong>Persoonlijke coachvragen zijn gevoelige context</strong></summary>
 
-### Snelle ontwikkellus
+De persoonlijke coach kan profiel-, route-, fase- en journeygegevens gebruiken.
+
+Ruwe persoonlijke coachvragen gaan standaard niet naar de optionele externe webzoekprovider.
+
+Een systeemprompt is geen beveiligingsgrens. Privacy- en kanaalregels moeten ook in code, validatie, autorisatie en tests worden afgedwongen.
+
+</details>
+
+---
+
+# Controles
+
+## Basiscontroles
 
 ```bash
 npm run typecheck
@@ -870,55 +1151,61 @@ npm test
 npm run build
 ```
 
-### Voor iedere pull request
+## Voor een pull request
+
+Het rootproject bevat hiervoor ook:
 
 ```bash
-npm run typecheck
-npm run lint
-npm test
-npm run build
-npm run verify:migrations
-npm run verify:seed
-npm audit --audit-level=moderate
+npm run ci
 ```
 
-### Voor frontend- en flowwijzigingen
+Dit script voert uit:
+
+- dependency-audit;
+- typecheck;
+- tests;
+- build;
+- migratiecontrole;
+- seedcontrole.
+
+## Frontend- en flowwijzigingen
 
 ```bash
 npm run test:e2e
 ```
 
-### Voor retrieval- en rerankingwijzigingen
+## Retrievalwijzigingen
 
 ```bash
+npm run benchmark:hybrid:check
 npm run benchmark:reranker:check
 npm run benchmark:shadow-reranker:check
 ```
 
-Behandel benchmarkuitkomsten als regressie-evidence binnen de bekende dataset, niet als onafhankelijke gebruikersvalidatie.
+Behandel benchmarkresultaten als regressie-evidence binnen de gebruikte dataset. Niet als onafhankelijke gebruikerstest.
 
 <details>
-<summary><strong>Definition of Done</strong></summary>
+<summary><strong>Wanneer is een wijziging klaar?</strong></summary>
 
 Een wijziging is klaar wanneer:
 
-- het gevraagde gedrag aantoonbaar werkt;
-- relevante tests groen zijn;
+- het bedoelde gedrag aantoonbaar werkt;
+- relevante tests slagen;
 - typecheck, lint en build slagen;
-- migraties en seedcontrole slagen wanneer die geraakt zijn;
+- migraties en seedcontrole slagen wanneer die zijn geraakt;
 - documentatie is bijgewerkt;
 - geen secrets of echte persoonsgegevens zijn toegevoegd;
-- architectuur-, security- en privacyimpact zijn beoordeeld;
-- resterende beperkingen expliciet zijn vastgelegd.
+- security- en privacygevolgen zijn bekeken;
+- bekende beperkingen zijn vastgelegd.
 
 </details>
 
 <details>
-<summary><strong>Veilige Git-werkwijze</strong></summary>
+<summary><strong>Git-werkwijze</strong></summary>
 
 1. Beschrijf het probleem in een issue of pull request.
 2. Werk op een korte branch.
-3. Houd de wijziging klein en gericht.
+3. Houd de wijziging gericht.
 4. Voeg tests en documentatie toe.
 5. Voer de relevante controles uit.
 6. Open een pull request naar `main`.
@@ -932,70 +1219,152 @@ docs/<onderwerp>
 chore/<onderwerp>
 ```
 
-Zie [`CONTRIBUTING.md`](CONTRIBUTING.md) voor de volledige werkwijze.
+Zie [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 </details>
 
-## Status en productiegrens
+---
 
-Door010 Foundation staat op versie `5.0.1`.
+# API-startpunten
 
-De readinessstatus is `CONDITIONAL_GO`. De repository bevat productiegerichte architectuur, securitymaatregelen, CI, browsertests, loadchecks en herstelprocedures. Dat betekent niet dat iedere externe staging- of go-livevoorwaarde al is bewezen.
+De API-paden veranderen niet door het besturingssysteem of de hardware.
 
-Nog buiten de codebase te bevestigen zijn onder andere:
+De basis-URL hangt wel af van:
 
-- staging-evidence;
-- live provideracceptatie;
-- load- en herstelbewijs in de doelomgeving;
-- privacy- en DPIA-goedkeuring;
-- operationele go-livebeslissing.
+- de ingestelde host en poort;
+- Docker-portmapping;
+- Codespaces port forwarding;
+- de staging- of productieomgeving.
 
-<details>
-<summary><strong>Wat betekent dit voor een ontwikkelaar?</strong></summary>
-
-Je mag lokaal ontwikkelen en de beschikbare controles uitvoeren. Schrijf in documentatie of pull requests niet dat de toepassing productieklaar is wanneer de vereiste externe evidence niet is verzameld.
-
-Lokale groene tests zijn bewijs voor de geteste code en omgeving. Ze zijn geen automatische productiegoedkeuring.
-
-</details>
-
-## API-startpunten
-
-<details>
-<summary><strong>Veelgebruikte endpoints</strong></summary>
+Bij de standaard lokale demo is de basis-URL:
 
 ```text
-GET  http://localhost:4000/health
-GET  http://localhost:4000/v1/system/capabilities
-POST http://localhost:4000/v1/chat/general
-POST http://localhost:4000/v1/chat/personal
+http://127.0.0.1:4000
 ```
 
-De API bevat daarnaast routes voor authenticatie, profiel, route, fase, talent, kennis, journeys, adviseurschat, backoffice, providers, orchestration, graph en gecontroleerde uitvoering.
+Veelgebruikte paden:
 
-Begin bij [`apps/api/src/server.ts`](apps/api/src/server.ts) om te zien welke routes tijdens het opstarten worden geregistreerd.
+```text
+GET  /health/live
+GET  /health/ready
+GET  /health
+GET  /v1/system/capabilities
+POST /v1/chat/general
+POST /v1/chat/personal
+```
+
+Voorbeelden bij de standaard lokale demo:
+
+```text
+http://127.0.0.1:4000/health
+http://127.0.0.1:4000/v1/system/capabilities
+```
+
+In Codespaces gebruik je de doorgestuurde URL van poort `4000`.
+
+**Letterlijk fragment uit [`apps/api/src/server.ts`](apps/api/src/server.ts):**
+
+```ts
+const host = process.env.API_HOST ?? "0.0.0.0";
+const port = Number(process.env.API_PORT ?? 4000);
+```
+
+`0.0.0.0` is het adres waarop de server luistert. Het is niet het adres dat je normaal in de browser invoert.
+
+<details>
+<summary><strong>Meer API-routes</strong></summary>
+
+De API bevat daarnaast routes voor:
+
+- authenticatie;
+- profiel;
+- route;
+- fase;
+- talent;
+- kennis;
+- journeys;
+- adviseurschat;
+- backoffice;
+- providers;
+- orchestration;
+- graph;
+- bevestigbare wijzigingen;
+- metrics.
+
+Begin bij [`apps/api/src/server.ts`](apps/api/src/server.ts) om te zien welke routes tijdens het starten worden geregistreerd.
 
 </details>
 
-## Verder lezen
+---
+
+# Status en bekende grenzen
+
+De rootpackage van deze repository staat op versie `5.0.1`.
+
+De readinessstatus is `CONDITIONAL_GO`.
+
+Dat betekent dat de repo veel technische onderdelen bevat, maar dat de uiteindelijke productieomgeving nog niet volledig is bewezen.
+
+Nog apart te testen of goed te keuren:
+
+- de LLM-route;
+- staging in de doelomgeving;
+- echte externe providers;
+- belasting in de doelomgeving;
+- databaseherstel in de doelomgeving;
+- privacy en DPIA;
+- beheer en monitoring;
+- een formeel go-livebesluit.
+
+## Bekende versie-inconsistentie
+
+De rootpackage staat op `5.0.1`.
+
+De API-healthresponses bevatten momenteel nog `4.1.0` en de webfooter bevat nog `Door010 3.0`.
+
+Deze labels moeten vanuit één centrale versiebron gelijk worden getrokken.
+
+Behandel `5.0.1` daarom als repositoryversie, niet als bewijs dat ieder zichtbaar versielabel al is bijgewerkt.
+
+<details>
+<summary><strong>Wat betekent CONDITIONAL_GO hier?</strong></summary>
+
+Lokale groene tests laten zien dat de geteste code in de geteste omgeving werkt.
+
+Ze zijn geen automatische productiegoedkeuring.
+
+Schrijf daarom niet dat Door010 productieklaar is wanneer de tests in de uiteindelijke omgeving en de vereiste privacy- en beheerbesluiten nog ontbreken.
+
+Lees:
+
+- [`docs/PRODUCTION_READINESS_4_4.md`](docs/PRODUCTION_READINESS_4_4.md)
+- [`docs/CI_LOAD_RESTORE_4_5.md`](docs/CI_LOAD_RESTORE_4_5.md)
+- [`CHANGELOG.md`](CHANGELOG.md)
+
+</details>
+
+---
+
+# Verder lezen
 
 | Vraag | Document |
 | --- | --- |
-| Hoe zit het hele systeem in elkaar? | [`ARCHITECTURE.md`](ARCHITECTURE.md) |
-| Welke regels gelden voor mens en AI-agent? | [`AGENTS.md`](AGENTS.md) |
+| Hoe zit het systeem in elkaar? | [`ARCHITECTURE.md`](ARCHITECTURE.md) |
+| Welke regels gelden voor ontwikkelaars en agents? | [`AGENTS.md`](AGENTS.md) |
 | Hoe lever ik een wijziging aan? | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
 | Hoe meld ik een kwetsbaarheid? | [`SECURITY.md`](SECURITY.md) |
 | Waar krijg ik ondersteuning? | [`SUPPORT.md`](SUPPORT.md) |
 | Hoe ziet het datamodel eruit? | [`docs/DATA_MODEL.md`](docs/DATA_MODEL.md) |
-| Hoe is parity met de eerdere app gecontroleerd? | [`docs/FULL_PARITY_AUDIT_1_TO_10.md`](docs/FULL_PARITY_AUDIT_1_TO_10.md) |
-| Hoe werkt de AI-orchestrator? | [`docs/AI_ORCHESTRATOR_3_9.md`](docs/AI_ORCHESTRATOR_3_9.md) |
+| Hoe is het gedrag uit eerdere apps gecontroleerd? | [`docs/FULL_PARITY_AUDIT_1_TO_10.md`](docs/FULL_PARITY_AUDIT_1_TO_10.md) |
+| Hoe werkt de orchestrator? | [`docs/AI_ORCHESTRATOR_3_9.md`](docs/AI_ORCHESTRATOR_3_9.md) |
 | Hoe werkt de Journey Engine? | [`docs/JOURNEY_ENGINE_2_3_8.md`](docs/JOURNEY_ENGINE_2_3_8.md) |
 | Hoe werkt retrieval? | [`docs/HYBRID_RETRIEVAL_3_0.md`](docs/HYBRID_RETRIEVAL_3_0.md) |
-| Welke productieblokkades zijn er? | [`docs/PRODUCTION_READINESS_4_4.md`](docs/PRODUCTION_READINESS_4_4.md) |
+| Welke productieblokkades zijn vastgelegd? | [`docs/PRODUCTION_READINESS_4_4.md`](docs/PRODUCTION_READINESS_4_4.md) |
 | Wat veranderde per versie? | [`CHANGELOG.md`](CHANGELOG.md) |
 
-<details>
-<summary><strong>Open-source governance</strong></summary>
+---
+
+# Licentie en bijdragen
 
 Door010 gebruikt de Apache License 2.0.
 
@@ -1006,5 +1375,3 @@ Door010 gebruikt de Apache License 2.0.
 - [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
 Issues en pull requests gebruiken templates in [`.github/`](.github/).
-
-</details>
