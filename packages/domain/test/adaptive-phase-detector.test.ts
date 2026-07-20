@@ -183,6 +183,7 @@ describe("AdaptivePhaseDetector", () => {
     });
 
     expect(result.phaseSystem.phaseSystemKey).toBe("phase-4");
+    expect(result.currentPhaseTitle).toBe("Verkennen");
     expect(result.mappedDetectorPhase).toBe("orientatie");
     expect(result.nextQuestionId).toBe("S1");
   });

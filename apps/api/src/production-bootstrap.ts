@@ -514,7 +514,7 @@ await routeStepIngestion.ingest({ steps: routeStepContent });
     ),
     personalCoach: new PersonalJourneyCoach(
       contextProvider,
-      draftProvider,
+      retrievalDraftProvider,
       detector,
       new RouteEngine(
         datasets.routeQuestions,

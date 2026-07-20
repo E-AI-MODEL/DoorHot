@@ -7,7 +7,10 @@ import {
 
 class FakeFetch implements FetchClient {
   constructor(private readonly payload: unknown) {}
-  async fetch(): Promise<Response> {
+  lastInit?: RequestInit;
+
+  async fetch(_input: string, init?: RequestInit): Promise<Response> {
+    this.lastInit = init;
     return new Response(JSON.stringify(this.payload), {
       status: 200,
       headers: { "Content-Type": "application/json" }
@@ -31,6 +34,56 @@ describe("live integrations", () => {
     );
 
     expect(draft.directAnswer).toBe("Een antwoord.");
+  });
+
+  it("sends useful journey context without internal phase labels", async () => {
+    const client = new FakeFetch({
+      choices: [{ message: { content: "Een persoonlijk antwoord." } }]
+    });
+    const provider = new OpenAiCompatibleAnswerDraftProvider(
+      { baseUrl: "https://llm.test/v1", apiKey: "key", model: "model" },
+      client
+    );
+
+    await provider.createDraft(
+      "personal-journey-coach",
+      { message: "Welke opleiding past bij mij?" },
+      {
+        slots: [],
+        graphMemory: {
+          activeGoals: ["een passende opleiding vinden"],
+          pendingActions: ["opleidingen vergelijken"],
+          openBlockers: ["toelatingseisen controleren"],
+          evidenceClaims: []
+        }
+      },
+      {
+        currentPhaseTitle: "Interesseren",
+        nextQuestion: "Welke onderwijssector spreekt je aan?"
+      } as never,
+      { bestRoute: { title: "Pabo" } } as never
+    );
+
+    const body = JSON.parse(String(client.lastInit?.body)) as {
+      messages: readonly { role: string; content: string }[];
+    };
+    const userPayload = JSON.parse(body.messages[1]!.content) as {
+      phase?: unknown;
+      journeyContext?: Readonly<Record<string, unknown>>;
+    };
+
+    expect(userPayload).not.toHaveProperty("phase");
+    expect(userPayload.journeyContext).toMatchObject({
+      suggestedRoute: "Pabo",
+      nextQuestion: "Welke onderwijssector spreekt je aan?",
+      nextAction: "opleidingen vergelijken",
+      blocker: "toelatingseisen controleren"
+    });
+    expect(body.messages[1]!.content).not.toContain("Interesseren");
+    expect(body.messages[1]!.content).not.toMatch(/\bphase-[459]\b/i);
+    expect(body.messages[0]!.content).toContain(
+      "Noem nooit interne fase- of procesmodellen"
+    );
   });
 
   it("maps vacancy JSON into canonical vacancies", async () => {

@@ -1386,6 +1386,11 @@ export interface AdaptiveRetrievalResult {
   webFallbackReason?: "sparse" | "time-sensitive" | "stale";
 }
 
+export interface AdaptiveRetrievalOptions {
+  messages?: readonly { role: string; content: string }[];
+  allowWebFallback?: boolean;
+}
+
 export class AdaptiveRetrievalPipeline {
   constructor(
     private readonly search: KnowledgeSearch,
@@ -1399,10 +1404,11 @@ export class AdaptiveRetrievalPipeline {
 
   async retrieve(
     query: string,
-    messages: readonly { role: string; content: string }[] = [
-      { role: "user", content: query }
-    ]
+    options: AdaptiveRetrievalOptions = {}
   ): Promise<AdaptiveRetrievalResult> {
+    const messages = options.messages ?? [
+      { role: "user", content: query }
+    ];
     const intent = await this.intentRouter.classify(messages);
     if (intent === "greeting") {
       return {
@@ -1446,7 +1452,9 @@ export class AdaptiveRetrievalPipeline {
           : undefined;
 
     const external =
-      reason && allowedDomains.length > 0
+      options.allowWebFallback !== false &&
+      reason &&
+      allowedDomains.length > 0
         ? await this.web.search(query, allowedDomains, 3)
         : [];
 
@@ -1461,7 +1469,8 @@ export class AdaptiveRetrievalPipeline {
         candidates: candidates.length,
         internal: internal.length,
         external: external.length,
-        reason
+        reason,
+        webFallbackAllowed: options.allowWebFallback !== false
       },
       createdAt: new Date().toISOString()
     });
@@ -1495,12 +1504,51 @@ export interface AnswerValidationResult {
   answer: string;
 }
 
+export interface AnswerValidationOptions {
+  additionalSentences?: number;
+  /** Internal journey labels that must never be presented as chat status. */
+  internalJourneyLabels?: readonly string[];
+}
+
 const DEFAULT_FORBIDDEN_TERMS = [
   "achtergrondinformatie",
   "dynamische context",
   "system prompt",
   "interne instructie"
 ] as const;
+
+const BACKEND_PHASE_SYSTEM_PATTERN = /\bphase-[459]\b/gi;
+
+function escapePattern(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function internalJourneyStatusPatterns(
+  labels: readonly string[]
+): readonly RegExp[] {
+  return [...new Set(labels.map((label) => label.trim()).filter(Boolean))]
+    .flatMap((label) => {
+      const escaped = escapePattern(label);
+      const quotedLabel = `["'“”‘’]?${escaped}\\b["'“”‘’]?`;
+      return [
+        new RegExp(
+          `\\b(?:de\\s+)?stap\\s*(?:[:=\\-]\\s*)?${quotedLabel}`,
+          "gi"
+        ),
+        new RegExp(
+          `\\b(?:de\\s+)?(?:fase|proces)\\s*` +
+            `(?:[:=\\-]\\s*)?${quotedLabel}`,
+          "gi"
+        ),
+        new RegExp(
+          `\\bje\\s+(?:bevindt\\s+je|bent|zit)\\s+` +
+            `(?:nu\\s+)?(?:in|binnen)\\s+${quotedLabel}` +
+            `(?:\\s+binnen\\s+phase-[459])?`,
+          "gi"
+        )
+      ];
+    });
+}
 
 export class AnswerValidationPipeline {
   constructor(
@@ -1512,7 +1560,8 @@ export class AnswerValidationPipeline {
 
   async validateAndRepair(
     draft: string,
-    intent: ConversationIntent
+    intent: ConversationIntent,
+    options: AnswerValidationOptions = {}
   ): Promise<AnswerValidationResult> {
     const maxSentences: Record<ConversationIntent, number> = {
       greeting: 2,
@@ -1520,9 +1569,20 @@ export class AnswerValidationPipeline {
       exploration: 3,
       followup: 3
     };
-    const maximum = maxSentences[intent];
-    const initialIssues = this.validate(draft, maximum);
-    let answer = this.localRepair(draft, maximum);
+    const maximum =
+      maxSentences[intent] +
+      Math.max(0, Math.min(options.additionalSentences ?? 0, 2));
+    const internalJourneyLabels = options.internalJourneyLabels ?? [];
+    const initialIssues = this.validate(
+      draft,
+      maximum,
+      internalJourneyLabels
+    );
+    let answer = this.localRepair(
+      draft,
+      maximum,
+      internalJourneyLabels
+    );
 
     if (
       initialIssues.some((issue) =>
@@ -1541,8 +1601,16 @@ export class AnswerValidationPipeline {
       }
     }
 
-    answer = this.localRepair(answer, maximum);
-    const finalIssues = this.validate(answer, maximum);
+    answer = this.localRepair(
+      answer,
+      maximum,
+      internalJourneyLabels
+    );
+    const finalIssues = this.validate(
+      answer,
+      maximum,
+      internalJourneyLabels
+    );
 
     await this.events?.append({
       id: crypto.randomUUID(),
@@ -1571,7 +1639,8 @@ export class AnswerValidationPipeline {
 
   private validate(
     draft: string,
-    maxSentences: number
+    maxSentences: number,
+    internalJourneyLabels: readonly string[]
   ): readonly string[] {
     const issues: string[] = [];
     const lower = draft.toLocaleLowerCase("nl");
@@ -1588,6 +1657,16 @@ export class AnswerValidationPipeline {
     if (/[\u2014\u2013]/.test(draft)) {
       issues.push("dash");
     }
+    if (BACKEND_PHASE_SYSTEM_PATTERN.test(draft)) {
+      issues.push("backend-identifier:phase-system");
+    }
+    BACKEND_PHASE_SYSTEM_PATTERN.lastIndex = 0;
+    if (
+      internalJourneyStatusPatterns(internalJourneyLabels)
+        .some((pattern) => pattern.test(draft))
+    ) {
+      issues.push("backend-label:journey-status");
+    }
 
     const sentences = draft
       .split(/[.!?]+/)
@@ -1602,11 +1681,26 @@ export class AnswerValidationPipeline {
 
   private localRepair(
     value: string,
-    maxSentences: number
+    maxSentences: number,
+    internalJourneyLabels: readonly string[]
   ): string {
     let answer = value
       .replace(/\[[A-Z][^\]]{1,30}\]\s*/g, "")
-      .replace(/[\u2014\u2013]/g, "-");
+      .replace(/[\u2014\u2013]/g, "-")
+      .replace(BACKEND_PHASE_SYSTEM_PATTERN, "je traject");
+
+    const statusPatterns = internalJourneyStatusPatterns(
+      internalJourneyLabels
+    );
+    for (let index = 0; index < statusPatterns.length; index += 3) {
+      answer = answer
+        .replace(statusPatterns[index]!, "je volgende stap")
+        .replace(statusPatterns[index + 1]!, "je traject")
+        .replace(
+          statusPatterns[index + 2]!,
+          "je krijgt begeleiding die aansluit op wat je nu nodig hebt"
+        );
+    }
 
     for (const phrase of this.forbiddenTerms) {
       answer = answer.replace(
@@ -1724,9 +1818,12 @@ export class AdaptiveRetrievalAnswerDraftProvider
     route?: RouteEngineResult,
     systemPrompt?: string
   ): Promise<AnswerDraft> {
-    const retrieval = await this.retrieval.retrieve(
-      request.message
-    );
+    const retrieval = await this.retrieval.retrieve(request.message, {
+      // Personal messages may contain profile, health or other sensitive
+      // context. They remain on the configured internal retrieval path and
+      // never use the optional web-search adapter.
+      allowWebFallback: chatbotKey === "general-coach"
+    });
     const contextSections = [
       retrieval.external.length > 0
         ? [
@@ -1770,9 +1867,37 @@ export class AdaptiveRetrievalAnswerDraftProvider
           : undefined
       : undefined;
 
+    const answerToValidate = extractiveAnswer
+      ? chatbotKey === "personal-journey-coach"
+        ? combinePersonalAndGroundedAnswer(
+            generated.directAnswer,
+            extractiveAnswer
+          )
+        : extractiveAnswer
+      : generated.directAnswer;
+
     const validated = await this.validator.validateAndRepair(
-      extractiveAnswer ?? generated.directAnswer,
-      retrieval.intent
+      answerToValidate,
+      retrieval.intent,
+      {
+        // The compact journey summary occupies one sentence. Keep the
+        // original intent budget available for the grounded answer.
+        additionalSentences:
+          extractiveAnswer &&
+          chatbotKey === "personal-journey-coach"
+            ? 1
+            : 0,
+        internalJourneyLabels: phase
+          ? [
+              phase.currentPhaseTitle,
+              phase.phaseCurrent,
+              phase.phaseEvaluation.currentPhaseCode,
+              phase.phaseEvaluation.proposedNextPhase,
+              phase.nextPhaseTarget,
+              phase.mappedDetectorPhase
+            ].filter((value): value is string => Boolean(value))
+          : []
+      }
     );
 
     const sources: SourceReference[] = [
@@ -1820,6 +1945,23 @@ export class AdaptiveRetrievalAnswerDraftProvider
       sources
     };
   }
+}
+
+function combinePersonalAndGroundedAnswer(
+  personalDraft: string,
+  groundedAnswer: string
+): string {
+  const compactPersonalDraft = personalDraft
+    .split(/(?<=[.!?])\s+/)
+    .map((sentence) =>
+      sentence.trim().replace(/[.!?]+$/, "")
+    )
+    .filter(Boolean)
+    .join("; ");
+
+  return compactPersonalDraft
+    ? `${groundedAnswer} ${compactPersonalDraft}.`
+    : groundedAnswer;
 }
 
 export interface EmbeddingProvider {

@@ -49,4 +49,37 @@ describe("coaches", () => {
       coach.respond({ message: "Wat is mijn volgende stap?" })
     ).rejects.toThrow("authenticated user");
   });
+
+  it("uses journey context without exposing internal process labels", async () => {
+    const provider = new DeterministicAnswerDraftProvider();
+    const draft = await provider.createDraft(
+      "personal-journey-coach",
+      { message: "Wat kan ik nu doen?", userId: "user-1" },
+      {
+        slots: [],
+        graphMemory: {
+          activeGoals: ["een passende opleiding vinden"],
+          pendingActions: ["opleidingen vergelijken"],
+          openBlockers: ["toelatingseisen controleren"],
+          evidenceClaims: []
+        }
+      },
+      {
+        currentPhaseTitle: "Interesseren",
+        nextQuestion: "Welke onderwijssector spreekt je aan?"
+      } as never,
+      {
+        bestRoute: { title: "Pabo" }
+      } as never
+    );
+
+    expect(draft.directAnswer).toContain("Pabo");
+    expect(draft.directAnswer).toContain("opleidingen vergelijken");
+    expect(draft.directAnswer).toContain("toelatingseisen controleren");
+    expect(draft.directAnswer).toContain(
+      "Welke onderwijssector spreekt je aan?"
+    );
+    expect(draft.directAnswer).not.toContain("Interesseren");
+    expect(draft.directAnswer).not.toMatch(/\bphase-[459]\b/i);
+  });
 });

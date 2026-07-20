@@ -1,5 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
+import { requireBackofficeRole } from "./backoffice-guard.js";
 import type {
   ConnectorHealthService,
   ConnectorRepository,
@@ -33,6 +34,8 @@ export async function registerKnowledgeRoutes(
     request,
     reply
   ) => {
+    if (!requireBackofficeRole(request, reply)) return;
+
     const parsed = z.object({
       limit: z.coerce.number().int().min(1).max(500).optional()
     }).safeParse(request.query);
@@ -50,20 +53,31 @@ export async function registerKnowledgeRoutes(
     };
   });
 
-  server.get("/v1/backoffice/connectors", async () => ({
-    connectors: await services.connectors?.list() ?? []
-  }));
+  server.get("/v1/backoffice/connectors", async (request, reply) => {
+    if (!requireBackofficeRole(request, reply)) return;
 
-  server.get("/v1/backoffice/connectors/health", async () => ({
-    health: await services.connectorHealth?.summarize() ?? [],
-    activeScheduleCount:
-      services.connectorScheduler?.activeScheduleCount ?? 0
-  }));
+    return { connectors: await services.connectors?.list() ?? [] };
+  });
+
+  server.get(
+    "/v1/backoffice/connectors/health",
+    async (request, reply) => {
+      if (!requireBackofficeRole(request, reply)) return;
+
+      return {
+        health: await services.connectorHealth?.summarize() ?? [],
+        activeScheduleCount:
+          services.connectorScheduler?.activeScheduleCount ?? 0
+      };
+    }
+  );
 
   server.get("/v1/backoffice/connectors/runs", async (
     request,
     reply
   ) => {
+    if (!requireBackofficeRole(request, reply)) return;
+
     const parsed = z.object({
       connectorId: z.string().uuid().optional(),
       limit: z.coerce.number().int().min(1).max(500).optional()
@@ -85,6 +99,8 @@ export async function registerKnowledgeRoutes(
     request,
     reply
   ) => {
+    if (!requireBackofficeRole(request, reply)) return;
+
     const parsed = z.object({
       connectorKey: z.string().trim().min(2).max(150),
       connectorType: z.enum(["json", "csv", "http-json"]),
@@ -120,6 +136,8 @@ export async function registerKnowledgeRoutes(
   server.post(
     "/v1/backoffice/connectors/:connectorKey/sync",
     async (request, reply) => {
+      if (!requireBackofficeRole(request, reply)) return;
+
       const parsed = z.object({
         connectorKey: z.string().trim().min(2).max(150)
       }).safeParse(request.params);
@@ -150,6 +168,8 @@ export async function registerKnowledgeRoutes(
     request,
     reply
   ) => {
+    if (!requireBackofficeRole(request, reply)) return;
+
     const parsed = z.object({
       limit: z.coerce.number().int().min(1).max(500).optional()
     }).safeParse(request.query);
@@ -169,6 +189,8 @@ export async function registerKnowledgeRoutes(
     request,
     reply
   ) => {
+    if (!requireBackofficeRole(request, reply)) return;
+
     const parsed = z.object({
       status: z.enum([
         "pending",
@@ -194,6 +216,8 @@ export async function registerKnowledgeRoutes(
   server.post(
     "/v1/backoffice/retrieval-label-queue/:id/claim",
     async (request, reply) => {
+      if (!requireBackofficeRole(request, reply)) return;
+
       const parsed = z.object({
         id: z.string().uuid()
       }).safeParse(request.params);
@@ -222,6 +246,8 @@ export async function registerKnowledgeRoutes(
   server.post(
     "/v1/backoffice/retrieval-label-queue/:id/label",
     async (request, reply) => {
+      if (!requireBackofficeRole(request, reply)) return;
+
       const parsed = z.object({
         id: z.string().uuid()
       }).safeParse(request.params);

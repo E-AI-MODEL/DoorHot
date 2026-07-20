@@ -84,6 +84,29 @@ Webretrieval wordt overwogen wanneer:
 Tijdgevoelige onderwerpen omvatten onder meer salaris, cao, collegegeld,
 kosten, subsidie, vacatures, tekorten en expliciete jaartallen.
 
+### Kanaalgrens voor persoonlijke vragen
+
+De trusted-source webfallback is uitsluitend actief voor de publieke algemene
+coach. De persoonlijke journeycoach gebruikt wel interne knowledge retrieval,
+maar stuurt de ruwe persoonlijke vraag nooit naar de optionele websearchadapter.
+Dit voorkomt dat profiel-, gezondheids- of andere persoonlijke context via
+Firecrawl wordt gedeeld.
+
+Wanneer zonder LLM een intern kennisrecord wordt gevonden, wordt het canonieke
+antwoord gecombineerd met een compacte versie van de deterministische
+journeydraft. De geselecteerde route, concrete vervolgactie, blocker en
+natuurlijke vervolgvraag kunnen zo in het zichtbare antwoord terugkomen. Het
+extractieve kennisantwoord vervangt de persoonlijke trajectcontext niet.
+
+De 4-, 5- en 9-fasenmodellen, hun codes en titels zijn interne procesmetadata.
+Ook titels zoals `Interesseren` en `Oriënteren` zijn werknamen en worden niet als
+status in coachtekst of zichtbare artifactlabels gebruikt. Ze blijven wel
+beschikbaar in machineleesbare metadata voor engines, persistence, bevestigde
+mutaties en toekomstige koppelingen. De LLM-adapter ontvangt bruikbare
+journeycontext zonder de interne fasenaam. De antwoordvalidator repareert als
+laatste grens zowel phase-systemidentifiers als statusconstructies waarin een
+interne fasenaam alsnog wordt getoond.
+
 ### Trusted sources
 
 De actieve `trusted_sources.allowed_domains` bepalen welke domeinen gebruikt
@@ -113,6 +136,7 @@ tegenspraak gemarkeerd.
 De antwoordcontrole detecteert:
 
 - verboden interne termen;
+- interne journey-identifiers en fasenamen die als chatstatus worden gebruikt;
 - bracketlabels;
 - em-dashes en en-dashes;
 - een intentspecifieke overschrijding van het aantal zinnen.

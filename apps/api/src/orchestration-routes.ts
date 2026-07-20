@@ -1,5 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
+import { requireBackofficeRole } from "./backoffice-guard.js";
 import {
   explainOrchestrationRun,
   type AiOrchestrator,
@@ -66,15 +67,7 @@ export async function registerOrchestrationRoutes(
     request,
     reply
   ) => {
-    const auth = (request as RequestWithAuth).auth;
-    if (
-      !auth ||
-      !auth.roles.some((role) =>
-        ["administrator", "superuser"].includes(role)
-      )
-    ) {
-      return reply.code(403).send({ error: "forbidden" });
-    }
+    if (!requireBackofficeRole(request, reply)) return;
 
     const parsed = z.object({
       limit: z.coerce.number().int().min(1).max(500).optional()
@@ -92,15 +85,7 @@ export async function registerOrchestrationRoutes(
   server.get(
     "/v1/backoffice/orchestration-runs/:runId",
     async (request, reply) => {
-      const auth = (request as RequestWithAuth).auth;
-      if (
-        !auth ||
-        !auth.roles.some((role) =>
-          ["administrator", "superuser"].includes(role)
-        )
-      ) {
-        return reply.code(403).send({ error: "forbidden" });
-      }
+      if (!requireBackofficeRole(request, reply)) return;
 
       const parsed = z.object({
         runId: z.string().uuid()
@@ -124,15 +109,7 @@ export async function registerOrchestrationRoutes(
   server.get(
     "/v1/backoffice/orchestration-runs/:runId/explanation",
     async (request, reply) => {
-      const auth = (request as RequestWithAuth).auth;
-      if (
-        !auth ||
-        !auth.roles.some((role) =>
-          ["administrator", "superuser"].includes(role)
-        )
-      ) {
-        return reply.code(403).send({ error: "forbidden" });
-      }
+      if (!requireBackofficeRole(request, reply)) return;
 
       const parsed = z.object({
         runId: z.string().uuid()
@@ -160,15 +137,7 @@ export async function registerOrchestrationRoutes(
   server.get(
     "/v1/backoffice/planner-shadow",
     async (request, reply) => {
-      const auth = (request as RequestWithAuth).auth;
-      if (
-        !auth ||
-        !auth.roles.some((role) =>
-          ["administrator", "superuser"].includes(role)
-        )
-      ) {
-        return reply.code(403).send({ error: "forbidden" });
-      }
+      if (!requireBackofficeRole(request, reply)) return;
 
       const parsed = z.object({
         limit: z.coerce.number().int().min(1).max(500).optional()
