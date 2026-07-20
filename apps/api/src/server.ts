@@ -10,6 +10,7 @@ import { registerPromptRoutes } from "./prompt-routes.js";
 import { registerAuditTrail } from "./audit-routes.js";
 import { registerProviderRoutes } from "./provider-routes.js";
 import { registerSecurityControls } from "./security.js";
+import { PRODUCT_VERSION } from "./product-version.js";
 import { registerJourneyRoutes } from "./journey-routes.js";
 import { registerOrchestrationRoutes } from "./orchestration-routes.js";
 import { registerGraphExecutionRoutes } from "./graph-execution-routes.js";
@@ -274,7 +275,7 @@ const mutationConfirmationSchema = z.object({
 server.get("/health/live", async () => ({
   status: "ok",
   service: "door010-api",
-  version: "4.1.0"
+  version: PRODUCT_VERSION
 }));
 
 server.get("/health/ready", async (_request, reply) => {
@@ -288,20 +289,20 @@ server.get("/health/ready", async (_request, reply) => {
       ? {
           status: "ready",
           service: "door010-api",
-          version: "4.1.0",
+          version: PRODUCT_VERSION,
           storageMode: services.storageMode
         }
       : reply.code(503).send({
           status: "not_ready",
           service: "door010-api",
-          version: "4.1.0"
+          version: PRODUCT_VERSION
         });
   } catch (error) {
     server.log.error(error);
     return reply.code(503).send({
       status: "not_ready",
       service: "door010-api",
-      version: "4.1.0"
+      version: PRODUCT_VERSION
     });
   }
 });
@@ -338,7 +339,7 @@ server.get("/health", async (_request, reply) => {
       return reply.code(503).send({
         status: "unhealthy",
         service: "door010-api",
-        version: "4.1.0",
+        version: PRODUCT_VERSION,
         storageMode: services.storageMode
       });
     }
@@ -346,7 +347,7 @@ server.get("/health", async (_request, reply) => {
     return {
       status: "ok",
       service: "door010-api",
-      version: "4.1.0",
+      version: PRODUCT_VERSION,
       storageMode: services.storageMode,
       datasetsDirectory: services.datasetsDirectory
     };
@@ -355,13 +356,14 @@ server.get("/health", async (_request, reply) => {
     return reply.code(503).send({
       status: "unhealthy",
       service: "door010-api",
-      version: "4.1.0",
+      version: PRODUCT_VERSION,
       storageMode: services.storageMode
     });
   }
 });
 
 server.get("/v1/system/capabilities", async () => ({
+  version: PRODUCT_VERSION,
   chatbots: ["general-coach", "personal-journey-coach"],
   phaseSystems: ["phase-4", "phase-5", "phase-9"],
   mutationConfirmation: true,
