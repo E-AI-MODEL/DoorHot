@@ -39,15 +39,31 @@
   &nbsp;
   <a href="https://demo-regio.lovable.app/">
     <img
-      src="https://img.shields.io/badge/Bekijk-versie_2-8A2BE2"
-      alt="Bekijk Door010 versie 2"
+      src="https://img.shields.io/badge/Bekijk-presentatieversie-8A2BE2"
+      alt="Bekijk de presentatieversie van Door010"
     >
   </a>
   &nbsp;
   <a href="https://github.com/E-AI-MODEL/presentatie-door010">
     <img
-      src="https://img.shields.io/badge/GitHub-code_versie_2-181717"
-      alt="Bekijk de code van Door010 versie 2"
+      src="https://img.shields.io/badge/GitHub-presentatieversie-181717"
+      alt="Bekijk de code van de presentatieversie"
+    >
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/E-AI-MODEL/-rag-eat-starter-kit">
+    <img
+      src="https://img.shields.io/badge/GitHub-RAG_EAT_starter_kit-181717"
+      alt="Bekijk de RAG EAT Starter Kit"
+    >
+  </a>
+  &nbsp;
+  <a href="https://door-datamodel-explorer.ai.studio">
+    <img
+      src="https://img.shields.io/badge/Bekijk-DOOR_datamodel_explorer-4285F4"
+      alt="Bekijk de DOOR datamodel explorer"
     >
   </a>
 </p>
@@ -56,7 +72,7 @@ Door010 helpt mensen bij vragen over werken en leren in het onderwijs.
 
 Een bezoeker kan zelf informatie bekijken, een route verkennen, vacatures en evenementen zoeken, een algemene vraag stellen, met een persoonlijke coach werken of contact opnemen met een medewerker.
 
-Deze repository is een poging om twee met Lovable gebouwde versies verder te brengen. Minder logica die alleen in een vibecodeplatform zichtbaar is, meer losse onderdelen, tests, gegevensopslag, migraties, autorisatie en documentatie.
+Deze repository is niet het begin van het project. Zij is het resultaat van een langer traject waarin een werkgroepvraag, een afgebroken leveranciersroute, twee werkende vibecodeversies, een A/B-test, honderden procesvragen, verschillende databronnen en een apart RAG-experiment bij elkaar zijn gekomen.
 
 > [!IMPORTANT]
 > Door010 is nog geen bewezen productieomgeving.
@@ -64,7 +80,7 @@ Deze repository is een poging om twee met Lovable gebouwde versies verder te bre
 > De repository bevat onderdelen die nodig zijn om verder richting productie te werken. De uiteindelijke doelomgeving, echte koppelingen, privacybeoordeling, belasting en herstel moeten nog afzonderlijk worden getest.
 
 > [!NOTE]
-> Nieuw in de repository? Begin bij **Kies je route**. Technische uitleg staat waar mogelijk in uitklapbare delen.
+> Nieuw in de repository? Begin bij **Hoe dit project hier terechtkwam**. Technische uitleg staat waar mogelijk in uitklapbare delen.
 
 ---
 
@@ -72,7 +88,8 @@ Deze repository is een poging om twee met Lovable gebouwde versies verder te bre
 
 | Ik wil... | Begin hier |
 | --- | --- |
-| De ontwikkeling van Door010 bekijken | [Van vibecode naar deze repository](#van-vibecode-naar-deze-repository) |
+| Begrijpen waarom dit project is gebouwd | [Hoe dit project hier terechtkwam](#hoe-dit-project-hier-terechtkwam) |
+| De verschillende openbare versies bekijken | [Openbare projectonderdelen](#openbare-projectonderdelen) |
 | Door010 direct starten | [Open Door010 in Codespaces](https://codespaces.new/E-AI-MODEL/door010?quickstart=1) |
 | Begrijpen wat een gebruiker kan doen | [Vier ingangen](#vier-ingangen) |
 | Begrijpen hoe vragen worden verwerkt | [Het uitgangspunt](#het-uitgangspunt) |
@@ -87,132 +104,229 @@ Deze repository is een poging om twee met Lovable gebouwde versies verder te bre
 
 ---
 
-# Van vibecode naar deze repository
+# Hoe dit project hier terechtkwam
 
-Door010 is in drie stappen ontstaan.
+## 1. Eerst adviseur in de werkgroep
 
-```mermaid
-flowchart LR
-    V1["Versie 1<br/>eerste Lovable-app"]
-    V2["Versie 2<br/>regionale demo"]
-    V3["Deze repository<br/>losse apps, packages en datasets"]
+Mijn betrokkenheid begon niet als softwareontwikkelaar, maar als adviseur in een werkgroep rond de inrichting van digitale ondersteuning voor mensen die in het onderwijs willen werken of leren.
 
-    V1 --> V2
-    V2 --> V3
-```
+Binnen die werkgroep was via CM.com een omgeving ingericht. Die route is gestopt omdat de gekozen inrichting niet goed genoeg aansloot op de eisen en zorgen rond de AVG en de Europese AI Act.
 
-| Stap | App | Code |
-| --- | --- | --- |
-| Versie 1 | [door010.lovable.app](https://door010.lovable.app/) | [`E-AI-MODEL/door0101`](https://github.com/E-AI-MODEL/door0101) |
-| Versie 2 | [demo-regio.lovable.app](https://demo-regio.lovable.app/) | [`E-AI-MODEL/presentatie-door010`](https://github.com/E-AI-MODEL/presentatie-door010) |
-| Huidige repo | lokaal of via Codespaces | [`E-AI-MODEL/door010`](https://github.com/E-AI-MODEL/door010) |
+De behoefte verdween daarmee niet. Er bleef behoefte aan een omgeving die vragen kon beantwoorden, routes kon helpen ordenen, beschikbare gegevens kon benutten en waar nodig kon doorverwijzen naar een mens.
 
-## Versie 1
+> [!NOTE]
+> De CM.com-fase is onderdeel van de projectgeschiedenis, maar is niet als openbare code-repository beschikbaar. De openbare technische lijn begint bij de eerste Door010-repo hieronder.
 
-De eerste app maakte het basisidee zichtbaar: bezoekers helpen bij vragen over werken en leren in het onderwijs.
-
-De app liet snel zien welke schermen, vragen en routes bruikbaar konden zijn. De snelheid van Lovable hielp daarbij. Tegelijk bleef veel technische werking verbonden aan de gekozen vibecodeomgeving.
-
-## Versie 2
-
-De tweede app werkte het idee verder uit voor een regionale demonstratie.
-
-Er kwamen meer schermen en gebruikersstromen bij. Deze versie vormde een belangrijk functioneel vertrekpunt voor de huidige repository.
-
-## Deze repository
-
-De huidige repo probeert niet alleen de schermen opnieuw te bouwen.
-
-Er is ook gekeken naar:
-
-- welke functies uit de eerdere apps behouden moesten blijven;
-- welke vragen bezoekers waarschijnlijk stellen;
-- welke informatie al vooraf kan worden vastgelegd;
-- welke keuzes met gewone regels kunnen worden afgehandeld;
-- welke gegevens per gebruiker nodig zijn;
-- welke wijzigingen eerst moeten worden bevestigd;
-- wanneer een medewerker nodig blijft;
-- waar een taalmodel iets kan toevoegen;
-- wat zonder taalmodel al werkt;
-- hoe een volgende ontwikkelaar de code kan vinden en controleren.
-
-<details>
-<summary><strong>Wat betekent parity in deze repository?</strong></summary>
-
-`Parity` betekent hier dat per onderdeel is nagegaan of belangrijk gedrag uit de eerdere apps terugkomt in de huidige repo.
-
-De parity-audit behandelt tien onderdelen:
-
-1. publieke chatbot;
-2. authenticatie;
-3. profiel;
-4. persoonlijke chatbot;
-5. route;
-6. fase;
-7. talent;
-8. backoffice;
-9. evenementen;
-10. vacatures.
-
-Lees:
-
-- [`docs/FULL_PARITY_AUDIT_1_TO_10.md`](docs/FULL_PARITY_AUDIT_1_TO_10.md)
-- [`docs/PARITY_RESTORATION_1_TO_4.md`](docs/PARITY_RESTORATION_1_TO_4.md)
-- [`docs/PARITY_FLOWS_5_TO_9.md`](docs/PARITY_FLOWS_5_TO_9.md)
-- [`docs/CLICKABLE_PARITY_FLOWS.md`](docs/CLICKABLE_PARITY_FLOWS.md)
-
-Parity betekent niet dat de oude en nieuwe code gelijk zijn. Het betekent ook niet dat ieder onderdeel al productieklaar is.
-
-</details>
-
-<details>
-<summary><strong>Wat is uit de eerdere versies meegenomen?</strong></summary>
-
-Als vertrekpunt zijn onder andere gebruikt:
-
-- schermen en gebruikersstromen;
-- vragen en antwoordmogelijkheden;
-- routegegevens;
-- talentvragen;
-- scoring;
-- gegevensmodellen;
-- bronlijsten;
-- gedrag dat behouden moest blijven.
-
-In de huidige repo zijn deze onderdelen verdeeld over apps, packages, datasets en adapters.
-
-Begin bij:
-
-- [`apps/web/`](apps/web/)
-- [`apps/api/`](apps/api/)
-- [`packages/`](packages/)
-- [`datasets/`](datasets/)
-- [`docs/FULL_PARITY_AUDIT_1_TO_10.md`](docs/FULL_PARITY_AUDIT_1_TO_10.md)
-
-</details>
-
----
-
-# Persoonlijk vertrekpunt
+## 2. Zelf gaan bouwen
 
 Ik heb geen informatica gestudeerd.
 
-Door010 is begonnen bij de inhoud en het proces, niet bij de keuze voor een AI-model.
+Toen de oorspronkelijke route stopte, ben ik zelf gaan bouwen. Niet omdat ik dacht dat ik direct een productiesysteem kon maken, maar omdat ik zichtbaar wilde maken wat er binnen mijn kennis, tijd en visie op het gebruik van AI maximaal mogelijk was.
 
-De eerste vragen waren:
+Bij iedere versie heb ik geprobeerd om meer te laten zien dan een losse chatbot:
 
-- Waar komen bezoekers voor?
-- Welke vragen keren waarschijnlijk terug?
-- Welke informatie kunnen we vooraf vastleggen?
-- Welke route volgt uit een combinatie van antwoorden?
-- Welke informatie ontbreekt nog?
-- Wanneer kan de bezoeker zelf verder?
-- Wanneer moet een medewerker het overnemen?
-- Welke wijziging mag nooit ongemerkt worden uitgevoerd?
+- welke vragen vooraf te verwachten zijn;
+- welke gegevens hard beschikbaar kunnen zijn;
+- welke routekeuzes met gewone code kunnen worden uitgevoerd;
+- welke informatie nog ontbreekt;
+- waar een menselijke adviseur nodig blijft;
+- wat een taalmodel wel en niet zou moeten doen;
+- hoe fouten, onzekerheid en brongebruik zichtbaar kunnen worden gemaakt.
 
-De huidige repo is mijn poging om die inhoudelijke keuzes ook technisch zichtbaar te maken.
+De versies moeten daarom gelezen worden als opeenvolgende proefopstellingen. Iedere versie maakte iets nieuws mogelijk en maakte tegelijk zichtbaar waar de vorige opzet tekortschiet.
 
-Dat betekent niet dat iedere technische keuze de beste keuze is. Het betekent wel dat de werking steeds minder afhankelijk moet zijn van uitleg die alleen bij de maker zit.
+## 3. Februari 2026: eerste testversie en A/B-test
+
+In februari 2026 stond de eerste werkende testversie klaar:
+
+- app: [door010.lovable.app](https://door010.lovable.app/)
+- code: [`E-AI-MODEL/door0101`](https://github.com/E-AI-MODEL/door0101)
+
+Deze Lovable-versie was variant B in een A/B-test. De andere variant was een Replit-versie.
+
+De openbare Lovable-repo bevat de testopzet voor variant B. In de onboardingcode staat onder andere:
+
+- dat het om een A/B-test gaat;
+- dat variant B wordt getest;
+- dat testers ook de andere variant moesten testen;
+- dat de werksessie op 23 februari plaatsvond;
+- dat werd gekeken naar rolvastheid, fasegevoeligheid, betrouwbaarheid en tone of voice;
+- dat automatisch testaccounts van `test2@doorai.nl` tot en met `test50@doorai.nl` werden toegewezen.
+
+Code:
+
+- [`TestOnboardingPopup.tsx`](https://github.com/E-AI-MODEL/door0101/blob/main/src/components/onboarding/TestOnboardingPopup.tsx)
+- [`TestInfoModal.tsx`](https://github.com/E-AI-MODEL/door0101/blob/main/src/components/onboarding/TestInfoModal.tsx)
+
+> [!NOTE]
+> De openbare repo bewijst de A/B-opzet en variant B. De Replit-variant zelf is niet als openbare repository aan dit project gekoppeld.
+
+## 4. Niet alleen antwoorden verzamelen, maar het proces uit elkaar halen
+
+Na en tijdens de eerste test zijn honderden procesvragen verzameld.
+
+Het doel daarvan was niet om simpelweg zoveel mogelijk teksten in een systeemprompt te stoppen. Ik heb geprobeerd om vragen te ontleden naar terugkerende informatiebehoeften, ontbrekende gegevens en mogelijke vervolgstappen.
+
+Voorbeelden van terugkerende onderdelen zijn:
+
+- onderwijssector;
+- vooropleiding;
+- gewenste rol;
+- bevoegdheidsdoel;
+- toelatingseisen;
+- duur;
+- kosten;
+- salaris;
+- regio;
+- eerstvolgende stap.
+
+De presentatie-repo bevat een vragenset die in februari 2026 is gegenereerd en waarin vraag-ID's tot in de zeshonderd voorkomen. De set bevat daarnaast bron-, route- en meta-items.
+
+Bekijk:
+
+- [`src/data/phase-detector-questions.json`](https://github.com/E-AI-MODEL/presentatie-door010/blob/main/src/data/phase-detector-questions.json)
+- [`src/data/route-steps.json`](https://github.com/E-AI-MODEL/presentatie-door010/blob/main/src/data/route-steps.json)
+
+## 5. Zoeken naar bestaande datasets
+
+Bij het verzamelen en ordenen van de vragen is ook gezocht naar bestaande gegevens die niet opnieuw handmatig bedacht hoefden te worden.
+
+Daarbij is onder andere gekeken naar:
+
+- HOVI, Hoger Onderwijs Voorlichtings Informatie;
+- route- en opleidingsinformatie uit de Onderwijsin-dataset en API;
+- landelijke en regionale vraag-antwoordinformatie;
+- bestaande routebeschrijvingen;
+- informatie over toelating, duur, bevoegdheden, kosten en vervolgstappen.
+
+In de presentatie-repo is HOVI expliciet als bronitem opgenomen in de vragenset. De routegegevens uit de eerdere omgeving zijn terug te vinden in `route-steps.json`.
+
+Deze bronnen zijn niet automatisch een complete of actuele bron van waarheid. Ze waren materiaal om te onderzoeken wat al gestructureerd beschikbaar was en wat nog ontbrak.
+
+## 6. Doorontwikkeling naar de presentatieversie
+
+De eerste testversie is daarna doorontwikkeld tot een uitgebreidere presentatieversie:
+
+- app: [demo-regio.lovable.app](https://demo-regio.lovable.app/)
+- code: [`E-AI-MODEL/presentatie-door010`](https://github.com/E-AI-MODEL/presentatie-door010)
+
+Deze versie is gebruikt voor een presentatie voor Onderwijsregio's Nederland.
+
+De presentatieversie bracht meer onderdelen bij elkaar:
+
+- een algemene en persoonlijke AI-component;
+- een deterministische phasedetector;
+- een vaste vraag- en slotstructuur;
+- testaccounts en rolgebaseerde flows;
+- landelijke en regionale inhoud;
+- routegegevens;
+- logging, validatie en promptbeheer;
+- zichtbare onzekerheid en terugvalroutes.
+
+De repo bevat een aparte toelichting op die opzet:
+
+- [`data-talents-ai-doorai-definitief-met-visuals.md`](https://github.com/E-AI-MODEL/presentatie-door010/blob/main/data-talents-ai-doorai-definitief-met-visuals.md)
+
+## 7. Het datamodel zichtbaar proberen te maken
+
+Naast de chat- en routeomgeving ontstond de vraag hoe alle gegevens logisch bij elkaar horen.
+
+Daarom is een aparte datamodelverkenning gemaakt:
+
+- [door-datamodel-explorer.ai.studio](https://door-datamodel-explorer.ai.studio)
+
+Deze explorer is bedoeld om zichtbaar te maken hoe onder andere personen, profielen, vragen, antwoorden, routes, opleidingen, instellingen, regio's en bronnen zich tot elkaar kunnen verhouden.
+
+De explorer staat buiten deze repository. De link is hier opgenomen omdat het datamodel onderdeel is van dezelfde zoektocht, niet omdat de inhoud automatisch gelijkstaat aan het huidige databaseschema.
+
+Het huidige technische datamodel staat in:
+
+- [`docs/DATA_MODEL.md`](docs/DATA_MODEL.md)
+- [`migrations/`](migrations/)
+
+## 8. Een aparte zoektocht naar retrieval, bronnen en begrenzing
+
+Door mijn niet-technische achtergrond was ook de technische route zelf een zoektocht.
+
+Een van de aparte experimenten daarin is:
+
+- [`E-AI-MODEL/-rag-eat-starter-kit`](https://github.com/E-AI-MODEL/-rag-eat-starter-kit)
+
+Deze repo onderzoekt een kleine, lokale en controleerbare retrieve-then-answer-route. De starter kit:
+
+- zoekt eerst in documenten;
+- geeft bronverwijzingen terug;
+- gebruikt toegangsgroepen;
+- geeft geen inhoudelijk antwoord wanneer de gevonden bronnen de vraag niet ondersteunen;
+- kan standaard zonder externe LLM draaien;
+- maakt gedrag en beperkingen controleerbaar via een apart EAT-profiel.
+
+De RAG-EAT-repo is geen eerdere versie van Door010 en de code is niet één-op-één overgenomen. Het is een apart technisch experiment dat dezelfde ontwerpvragen onderzoekt: wat moet hard in data en code staan, wat mag een model doen en wanneer moet het systeem stoppen of teruggeven dat bewijs ontbreekt?
+
+## 9. Waarom niet alles in een systeemprompt?
+
+Mijn uitgangspunt is niet dat een LLM zoveel mogelijk vrijheid moet krijgen.
+
+Mijn uitgangspunt is ook niet dat alle kennis, regels, routes, uitzonderingen en veiligheidsafspraken in één steeds grotere systeemprompt moeten worden gepropt.
+
+Wat vooraf bekend en voorspelbaar is, probeer ik waar mogelijk expliciet vast te leggen in:
+
+- datasets;
+- domeinmodellen;
+- routes;
+- fases;
+- profielvelden;
+- validatieregels;
+- bronhiërarchie;
+- autorisatie;
+- bevestigingsstappen;
+- tests.
+
+Daardoor hoeft een LLM niet iedere keer opnieuw te verzinnen:
+
+- welke route bestaat;
+- welke gegevens ontbreken;
+- welke gebruiker iets mag wijzigen;
+- welke fase geldt;
+- welke bron voorrang heeft;
+- wanneer een medewerker nodig is.
+
+De LLM kan dan, wanneer die route inhoudelijk is getest, een beperktere taak krijgen: taal begrijpen, informatie helpen ordenen, resultaten formuleren en de finishing touch verzorgen.
+
+Dat is een ontwerpdoel. De huidige LLM-route is nog niet voldoende doorgetest om te beweren dat dit doel al aantoonbaar is behaald.
+
+## 10. Het probleem is niet opgelost door alleen meer of minder AI te gebruiken
+
+Het [Onderzoek gemeentelijke chatbots 2026](https://www.digimonitor.nl/onderzoek/onderzoek-chatbot-2026/gespreksanalyse/) van Digimonitor onderzocht 39 gemeentelijke chatbots met in totaal 312 antwoorden.
+
+Het onderzoek rapporteert onder andere:
+
+- 64% fout beantwoorde vragen;
+- 10% goed beantwoorde vragen;
+- veel chatbots die vooral als gescripte zoekmachine werken;
+- vaste antwoordsets en sleutelwoordherkenning;
+- verouderde of dubbel beheerde content;
+- foutieve links;
+- wisselende resultaten bij chatbots die wel tekst genereren.
+
+Ik lees dit onderzoek niet als bewijs dat één specifieke architectuur automatisch werkt.
+
+Een volledig gescripte chatbot kan vastlopen in verkeerd onderhouden antwoordsets. Een vrij genererend taalmodel kan overtuigend klinken terwijl het antwoord niet klopt. Een grote systeemprompt lost slechte data, onduidelijke routes of ontbrekend contentbeheer niet vanzelf op.
+
+Mijn antwoord op dat probleem is daarom niet simpelweg meer AI of minder AI. Ik probeer voorspelbare gegevens en beslissingen zo veel mogelijk controleerbaar in data en code te zetten, en een taalmodel alleen te gebruiken voor het deel waar taal en flexibiliteit werkelijk nodig zijn.
+
+---
+
+# Openbare projectonderdelen
+
+| Onderdeel | Functie in het project | Link |
+| --- | --- | --- |
+| Eerste Lovable-testversie | Variant B van de A/B-test | [App](https://door010.lovable.app/) · [Code](https://github.com/E-AI-MODEL/door0101) |
+| Replit-variant | Variant A van de A/B-test | Niet openbaar aan deze repo gekoppeld |
+| Presentatieversie | Uitgebreide test- en demonstratieomgeving | [App](https://demo-regio.lovable.app/) · [Code](https://github.com/E-AI-MODEL/presentatie-door010) |
+| Datamodel explorer | Visuele verkenning van de gegevenssamenhang | [Explorer](https://door-datamodel-explorer.ai.studio) |
+| RAG-EAT Starter Kit | Apart experiment met retrieval-first, bronnen en onthouding | [Code](https://github.com/E-AI-MODEL/-rag-eat-starter-kit) |
+| Door010 huidige repo | Doorontwikkeling richting losse, testbare onderdelen | [Code](https://github.com/E-AI-MODEL/door010) |
 
 ---
 
@@ -751,7 +865,8 @@ npm run demo
 De demo meldt bij het starten:
 
 ```text
-Webapp: http://127.0.0.1:5173  |  API: http://127.0.0.1:4000
+Webapp: http://127.0.0.1:5173
+API: http://127.0.0.1:4000
 ```
 
 Stop beide processen met <kbd>Ctrl</kbd> + <kbd>C</kbd>.
