@@ -4,6 +4,7 @@ import type {
   FastifyRequest
 } from "fastify";
 import type { TokenClaims } from "@door010/identity-profile";
+import { applyProductVersionMetadata } from "./product-version-metadata.js";
 
 type AuthenticatedRequest = FastifyRequest & {
   auth?: TokenClaims;
@@ -129,6 +130,11 @@ export function registerSecurityControls(
         error: "rate_limit_exceeded"
       });
     }
+  });
+
+  server.addHook("preSerialization", async (request, _reply, payload) => {
+    const route = request.routeOptions.url ?? request.url;
+    return applyProductVersionMetadata(route, payload);
   });
 
   const cleanup = setInterval(() => {
