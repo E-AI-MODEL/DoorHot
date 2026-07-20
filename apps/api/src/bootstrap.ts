@@ -102,6 +102,7 @@ import {
   type OrchestrationRepository,
   type PlannerShadowRepository
 } from "@door010/orchestration";
+import { provisionPublicDemoAccounts } from "./demo-accounts.js";
 
 export interface ApplicationServices {
   generalCoach: GeneralCoach;
@@ -149,7 +150,8 @@ export interface ApplicationServices {
 export async function createApplicationServices(
   datasetsDirectory =
     process.env.DATASETS_DIRECTORY ??
-    resolve(process.cwd(), "datasets")
+    resolve(process.cwd(), "datasets"),
+  options: { seedDemoAccounts?: boolean } = {}
 ): Promise<ApplicationServices> {
   const datasets = await loadDomainDatasets(datasetsDirectory);
   const registry = new PhaseSystemRegistry(
@@ -180,6 +182,9 @@ const auth = new AuthService(
   new PasswordHasher(),
   tokenService
 );
+if (options.seedDemoAccounts ?? true) {
+  await provisionPublicDemoAccounts(auth);
+}
 const profileService = new ProfileService(
   profiles,
   notes,

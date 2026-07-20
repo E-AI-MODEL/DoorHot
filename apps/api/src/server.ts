@@ -148,9 +148,16 @@ const storageMode = process.env.APP_STORAGE_MODE ?? "memory";
 const demoLoginEnabled = process.env.DEMO_LOGIN_ENABLED
   ? process.env.DEMO_LOGIN_ENABLED === "true"
   : storageMode === "memory";
+const demoAccountsEnabled = process.env.DEMO_ACCOUNTS_ENABLED
+  ? process.env.DEMO_ACCOUNTS_ENABLED === "true"
+  : storageMode === "memory";
 const services = storageMode === "postgres"
-  ? await createProductionServices()
-  : await createApplicationServices();
+  ? await createProductionServices(undefined, {
+      seedDemoAccounts: demoAccountsEnabled
+    })
+  : await createApplicationServices(undefined, {
+      seedDemoAccounts: demoAccountsEnabled
+    });
 
 await registerAuditTrail(server, services.audit);
 

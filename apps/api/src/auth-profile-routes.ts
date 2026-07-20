@@ -72,7 +72,7 @@ export async function registerAuthProfileRoutes(
   server.post("/v1/auth/register", async (request, reply) => {
     const parsed = z.object({
       email: z.string().email(),
-      password: z.string().min(12).max(200)
+      password: z.string().min(1).max(200)
     }).safeParse(request.body);
     if (!parsed.success) {
       return reply.code(400).send({

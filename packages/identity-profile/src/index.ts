@@ -32,6 +32,14 @@ export interface UserAccountRepository {
   create(record: UserAccountRecord): Promise<void>;
   findByEmail(email: string): Promise<UserAccountRecord | null>;
   findById(id: string): Promise<UserAccountRecord | null>;
+  updateCredentials(
+    userId: string,
+    input: {
+      passwordHash: string;
+      active: boolean;
+      updatedAt: string;
+    }
+  ): Promise<void>;
 }
 
 export interface UserRoleRepository {
@@ -153,9 +161,6 @@ export class HmacTokenService implements TokenService {
 
 export class PasswordHasher {
   async hash(password: string): Promise<string> {
-    if (password.length < 12) {
-      throw new Error("password_too_short");
-    }
     const salt = randomBytes(16);
     const derived = await scrypt(password, salt, 64) as Buffer;
     return `scrypt:${salt.toString("base64url")}:${derived.toString("base64url")}`;
@@ -242,6 +247,51 @@ export class AuthService {
       email: user.email,
       roles: await this.roles.listByUserId(user.id)
     });
+  }
+
+  async provisionPublicDemoAccount(input: {
+    email: string;
+    password: string;
+    roles: readonly UserRole[];
+  }): Promise<AuthSessionDto> {
+    const email = input.email.trim().toLowerCase();
+    const now = new Date().toISOString();
+    let user = await this.users.findByEmail(email);
+
+    if (user) {
+      await this.users.updateCredentials(user.id, {
+        passwordHash: await this.hasher.hash(input.password),
+        active: true,
+        updatedAt: now
+      });
+    } else {
+      user = {
+        id: globalThis.crypto.randomUUID(),
+        email,
+        passwordHash: await this.hasher.hash(input.password),
+        active: true,
+        createdAt: now,
+        updatedAt: now
+      };
+      await this.users.create(user);
+    }
+
+    if (!(await this.profiles.findByUserId(user.id))) {
+      await this.profiles.create({
+        id: globalThis.crypto.randomUUID(),
+        userId: user.id,
+        knownSlots: {},
+        testCompleted: false,
+        createdAt: now,
+        updatedAt: now
+      });
+    }
+
+    for (const role of input.roles) {
+      await this.roles.assign(user.id, role);
+    }
+
+    return this.login({ email, password: input.password });
   }
 
   async me(token: string): Promise<AuthenticatedUserDto> {
@@ -458,6 +508,19 @@ export class InMemoryUserAccountRepository
 
   async findById(id: string): Promise<UserAccountRecord | null> {
     return this.records.get(id) ?? null;
+  }
+
+  async updateCredentials(
+    userId: string,
+    input: {
+      passwordHash: string;
+      active: boolean;
+      updatedAt: string;
+    }
+  ): Promise<void> {
+    const current = this.records.get(userId);
+    if (!current) throw new Error("user_not_found");
+    this.records.set(userId, { ...current, ...input });
   }
 }
 

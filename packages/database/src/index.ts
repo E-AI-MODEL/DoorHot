@@ -678,6 +678,14 @@ export interface UserAccountDataRepository {
   create(record: UserAccountRowRecord): Promise<void>;
   findByEmail(email: string): Promise<UserAccountRowRecord | null>;
   findById(id: string): Promise<UserAccountRowRecord | null>;
+  updateCredentials(
+    userId: string,
+    input: {
+      passwordHash: string;
+      active: boolean;
+      updatedAt: string;
+    }
+  ): Promise<void>;
 }
 
 export interface UserRoleDataRepository {
@@ -789,6 +797,27 @@ export class PostgresUserAccountRepository
       [id]
     );
     return mapUserAccount(result.rows[0]);
+  }
+
+  async updateCredentials(
+    userId: string,
+    input: {
+      passwordHash: string;
+      active: boolean;
+      updatedAt: string;
+    }
+  ): Promise<void> {
+    await this.executor.query(
+      `UPDATE users
+       SET password_hash = $2, active = $3, updated_at = $4
+       WHERE id = $1`,
+      [
+        userId,
+        input.passwordHash,
+        input.active,
+        input.updatedAt
+      ]
+    );
   }
 }
 

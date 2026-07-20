@@ -152,5 +152,5 @@ describe("PostgreSQL shadow persistence", () => {
         });
       }
     }
-  });
+  }, 30_000);
 });

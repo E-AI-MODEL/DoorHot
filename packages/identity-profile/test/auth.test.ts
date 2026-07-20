@@ -24,13 +24,50 @@ describe("AuthService", () => {
 
     const session = await service.register({
       email: "Test@Example.nl",
-      password: "sterk-wachtwoord-123"
+      password: "admin010"
     });
 
     expect(session.user.email).toBe("test@example.nl");
     expect(session.user.roles).toEqual(["candidate"]);
     expect(tokenService.verify(session.accessToken).sub)
       .toBe(session.user.id);
+  });
+
+  it("restores an existing public demo account and its role", async () => {
+    const users = new InMemoryUserAccountRepository();
+    const roles = new InMemoryUserRoleRepository();
+    const service = new AuthService(
+      users,
+      roles,
+      new InMemoryProfileRepository(),
+      new PasswordHasher(),
+      new HmacTokenService("12345678901234567890123456789012")
+    );
+
+    await service.register({
+      email: "admin@doorai.nl",
+      password: "oud"
+    });
+    const session = await service.provisionPublicDemoAccount({
+      email: "admin@doorai.nl",
+      password: "admin010",
+      roles: ["administrator"]
+    });
+
+    expect(session.user.roles).toEqual([
+      "candidate",
+      "administrator"
+    ]);
+    await expect(service.login({
+      email: "admin@doorai.nl",
+      password: "oud"
+    })).rejects.toThrow("invalid_credentials");
+    await expect(service.login({
+      email: "admin@doorai.nl",
+      password: "admin010"
+    })).resolves.toMatchObject({
+      user: { email: "admin@doorai.nl" }
+    });
   });
 });
 
