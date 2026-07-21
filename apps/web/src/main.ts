@@ -113,10 +113,10 @@ function renderShell(content: string): void {
   app.innerHTML = `
     <header class="site-header">
       <a class="brand" href="#" data-view="public-chat">
-        <span class="brand-mark">D</span>
+        <span class="brand-mark">⇥</span>
         <span>
-          <strong>Door010</strong>
-          <small>Werken en leren in het onderwijs</small>
+          <small>Onderwijsloket</small>
+          <strong>Rotterdam</strong>
         </span>
       </a>
       <nav aria-label="Hoofdnavigatie">
@@ -142,7 +142,7 @@ function renderShell(content: string): void {
     </header>
     <main>${content}</main>
     <footer>
-      <span>Door010 3.0</span>
+      <span>Onderwijsloket Rotterdam · DOORai</span>
       <a href="/health/live" target="_blank" rel="noreferrer">
         Systeemstatus
       </a>
@@ -172,27 +172,45 @@ function messagePanel(
   intro: string,
   personal: boolean
 ): string {
-  return `
+  const hero = personal
+    ? `
     <section class="hero">
       <div>
-        <span class="eyebrow">${personal ? "Persoonlijk traject" : "Vrij toegankelijk"}</span>
+        <span class="eyebrow">Persoonlijk traject</span>
         <h1>${escapeHtml(title)}</h1>
         <p>${escapeHtml(intro)}</p>
       </div>
       <div class="hero-card">
-        <strong>${personal ? "Jouw volgende stap" : "Eén vraag tegelijk"}</strong>
-        <p>
-          ${personal
-            ? "Je coach gebruikt je profiel, route en fase."
-            : "Je krijgt een direct antwoord met gecontroleerde bronnen."}
-        </p>
+        <strong>Jouw volgende stap</strong>
+        <p>Je coach gebruikt je profiel, route en fase.</p>
       </div>
-    </section>
+    </section>`
+    : `
+    <section class="hero-visual">
+      <h1 class="hero-marker">
+        <span class="on-light">Ontdek</span>
+        <span class="on-brand">jouw route</span>
+        <span class="on-light">naar het onderwijs</span>
+      </h1>
+      <div class="hero-cta">
+        <span>Je eerste stap richting het Rotterdamse onderwijs</span>
+        <span aria-hidden="true">→</span>
+      </div>
+    </section>`;
+
+  return `
+    ${hero}
     <section class="panel chat-panel">
+      <div class="chat-heading">
+        <strong>DOORai</strong>
+        <small>Je gids naar het onderwijs</small>
+      </div>
       <div id="conversation" class="conversation" aria-live="polite">
         <article class="message assistant">
-          <strong>Door010</strong>
-          <p>Waarmee kan ik je helpen?</p>
+          <strong>DOORai</strong>
+          <p>${personal
+            ? "Ik gebruik wat je hebt gedeeld om je gericht verder te helpen."
+            : "Welkom bij het Onderwijsloket Rotterdam. Heb je een vraag over werken in het onderwijs? Ik help je graag verder."}</p>
         </article>
       </div>
       ${personal ? "" : `
@@ -273,7 +291,7 @@ function appendChatMessage(
   `).join("");
 
   article.innerHTML = `
-    <strong>${role === "user" ? "Jij" : "Door010"}</strong>
+    <strong>${role === "user" ? "Jij" : "DOORai"}</strong>
     <p>${escapeHtml(content)}</p>
     ${links ? `<div class="source-links">${links}</div>` : ""}
     ${mutationActions}
