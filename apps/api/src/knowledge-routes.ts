@@ -300,6 +300,7 @@ export async function registerKnowledgeRoutes(
   });
 
   server.get("/v1/knowledge/items", async (request, reply) => {
+    if (!requireBackofficeRole(request, reply)) return;
     const parsed = z.object({
       reviewStatus: z.enum([
         "draft",
@@ -323,6 +324,7 @@ export async function registerKnowledgeRoutes(
   });
 
   server.get("/v1/trusted-sources", async (request, reply) => {
+    if (!requireBackofficeRole(request, reply)) return;
     const parsed = z.object({
       activeOnly: z.coerce.boolean().optional()
     }).safeParse(request.query);
@@ -342,6 +344,7 @@ export async function registerKnowledgeRoutes(
   });
 
   server.post("/v1/trusted-sources", async (request, reply) => {
+    if (!requireBackofficeRole(request, reply)) return;
     const parsed = z.object({
       sourceKey: z.string().trim().min(2).max(150),
       label: z.string().trim().min(2).max(200),
@@ -375,6 +378,7 @@ export async function registerKnowledgeRoutes(
     request,
     reply
   ) => {
+    if (!requireBackofficeRole(request, reply)) return;
     const parsed = z.object({
       faqs: z.array(z.object({
         question: z.string().trim().min(2),
