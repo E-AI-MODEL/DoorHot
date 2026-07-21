@@ -292,6 +292,60 @@ describe("AI parity pipeline", () => {
     );
   });
 
+  it("declines off-topic questions and still answers in-scope ones", async () => {
+    const knowledge = new InMemoryKnowledgeRepository();
+    const sources = new InMemoryTrustedSourceRepository();
+    await knowledge.upsert(
+      record(
+        "11111111-1111-4111-8111-111111111111",
+        "Wat is de Pabo?",
+        "De pabo leidt op tot leraar in het basisonderwijs."
+      )
+    );
+
+    const provider = new AdaptiveRetrievalAnswerDraftProvider(
+      new AdaptiveRetrievalPipeline(
+        new HybridKnowledgeSearch(knowledge, sources),
+        sources,
+        new IntentRouter(),
+        new ConditionalFaqReranker()
+      ),
+      {
+        async createDraft() {
+          return {
+            directAnswer: "Ik help je met algemene informatie.",
+            supportingDetail: "generiek"
+          };
+        }
+      },
+      new AnswerValidationPipeline(),
+      { preferExtractiveAnswer: true }
+    );
+
+    const offTopic = await provider.createDraft(
+      "general-coach",
+      { message: "Wat is de hoofdstad van Frankrijk?" },
+      { slots: [] }
+    );
+
+    expect(offTopic.directAnswer).toContain(
+      "werken en leren in het onderwijs"
+    );
+    expect(offTopic.sources).toEqual([]);
+    expect(offTopic.verifiedLinks).toEqual([]);
+    expect(offTopic.directAnswer).not.toContain("basisonderwijs");
+
+    const inScope = await provider.createDraft(
+      "general-coach",
+      { message: "Wat is de pabo?" },
+      { slots: [] }
+    );
+
+    expect(inScope.directAnswer).toContain(
+      "leidt op tot leraar in het basisonderwijs"
+    );
+  });
+
   it("combines personal journey context with an extractive answer", async () => {
     const knowledge = new InMemoryKnowledgeRepository();
     const sources = new InMemoryTrustedSourceRepository();

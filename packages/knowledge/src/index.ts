@@ -1824,6 +1824,21 @@ export class AdaptiveRetrievalAnswerDraftProvider
       // never use the optional web-search adapter.
       allowWebFallback: chatbotKey === "general-coach"
     });
+
+    // Answerability gate for the public coach: retrieval always returns
+    // a best record, but a record is only a real answer when it shares
+    // an education concept or content word with the question. Trusted
+    // web results (webfallback) count as in-scope. Otherwise decline
+    // gracefully instead of presenting the least-bad record with
+    // confidence.
+    if (
+      chatbotKey === "general-coach" &&
+      retrieval.external.length === 0 &&
+      !hasDomainRelevantAnswer(request.message, retrieval.internal[0])
+    ) {
+      return outOfScopeDraft();
+    }
+
     const contextSections = [
       retrieval.external.length > 0
         ? [
@@ -1945,6 +1960,94 @@ export class AdaptiveRetrievalAnswerDraftProvider
       sources
     };
   }
+}
+
+const OUT_OF_SCOPE_ANSWER =
+  "Ik help met vragen over werken en leren in het onderwijs, " +
+  "zoals opleidingen, routes, bevoegdheden, kosten, salaris, " +
+  "subsidies en het onderwijsloket bij jou in de buurt. Deze vraag " +
+  "lijkt daar niet over te gaan. Stel je vraag gerust opnieuw binnen " +
+  "dat onderwerp.";
+
+// Graceful decline when the question falls outside the education domain.
+// It carries no sources or links on purpose: presenting a "least-bad"
+// record as if it answered the question is exactly the failure mode this
+// gate exists to prevent.
+function outOfScopeDraft(): AnswerDraft {
+  return {
+    directAnswer: OUT_OF_SCOPE_ANSWER,
+    supportingDetail:
+      "Stel bijvoorbeeld een vraag over zij-instroom, de pabo, " +
+      "bevoegdheden of het salaris van een leraar.",
+    verifiedLinks: [],
+    sources: []
+  };
+}
+
+// Concepts that describe the SHAPE of a question ("wat is ...", "hoe lang
+// ...", "geschikt", "wat nu") rather than the education topic itself. They
+// fire on arbitrary phrasing — "wat is de hoofdstad van Frankrijk" hits
+// `definition` — so the answerability gate must not treat them as evidence
+// that a record is on-topic. They still help retrieval rank facets; only
+// the gate ignores them.
+const GENERIC_FACET_CONCEPTS: ReadonlySet<string> = new Set([
+  "definition",
+  "duration",
+  "suitability",
+  "next_step",
+  "admission",
+  "resources"
+]);
+
+// Which education-domain concepts a piece of text touches, reusing the
+// same SEMANTIC_CONCEPTS lexicon the retriever scores against so the gate
+// and the ranking agree on what "on-topic" means. Generic question-shape
+// facets are excluded so they cannot make an off-topic question look
+// answerable.
+function domainConceptsOf(value: string): ReadonlySet<string> {
+  const normalized = normalizeSemanticText(value);
+  const concepts = new Set<string>();
+  for (const [concept, phrases] of Object.entries(SEMANTIC_CONCEPTS)) {
+    if (GENERIC_FACET_CONCEPTS.has(concept)) continue;
+    if (phrases.some((phrase) => normalized.includes(phrase))) {
+      concepts.add(concept);
+    }
+  }
+  return concepts;
+}
+
+// A retrieved record only counts as a real answer when it shares an
+// education concept OR a substantive content word with the question.
+// Retrieval always returns a nearest record, so without this check an
+// off-topic question ("hoofdstad van Frankrijk") would still be answered
+// with confident but irrelevant content.
+function hasDomainRelevantAnswer(
+  query: string,
+  top: KnowledgeSearchResult | undefined
+): boolean {
+  if (!top) return false;
+
+  const recordText = [
+    top.record.title,
+    ...(top.record.aliases ?? []),
+    top.record.body,
+    top.record.category ?? "",
+    ...top.record.tags
+  ].join(" ");
+
+  const queryConcepts = domainConceptsOf(query);
+  const recordConcepts = domainConceptsOf(recordText);
+  for (const concept of queryConcepts) {
+    if (recordConcepts.has(concept)) return true;
+  }
+
+  const recordNormalized = normalizeSemanticText(recordText);
+  const queryTokens = normalizeSemanticText(query)
+    .split(" ")
+    .filter(
+      (token) => token.length >= 3 && !DUTCH_STOPWORDS.has(token)
+    );
+  return queryTokens.some((token) => recordNormalized.includes(token));
 }
 
 function combinePersonalAndGroundedAnswer(
