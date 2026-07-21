@@ -1,0 +1,141 @@
+{
+  "generatedAt": "2026-07-21T23:19:19.683Z",
+  "indexedTotal": 166,
+  "rows": [
+    {
+      "file": "phase-detector-questions.json",
+      "recordType": "intake-vragen + catalogus",
+      "count": 654,
+      "chatIndexed": false,
+      "usedBy": "Persoonlijke coach (Phase Detector)",
+      "consumer": "packages/domain/src/phase-engine.ts",
+      "status": "Actief na contractfix: slot/fase-verwijzingen worden genormaliseerd naar question_id en resolven in de catalogus."
+    },
+    {
+      "file": "phase-detector-rules.json",
+      "recordType": "fase-regels",
+      "count": 5,
+      "chatIndexed": false,
+      "usedBy": "Persoonlijke coach (Phase Detector)",
+      "consumer": "packages/domain/src/phase-engine.ts",
+      "status": "Actief: bepaalt vereiste/optionele slots per fase."
+    },
+    {
+      "file": "phase-system-4.json",
+      "recordType": "fasesysteem (4)",
+      "count": 4,
+      "chatIndexed": false,
+      "usedBy": "Persoonlijke coach (fasesysteem)",
+      "consumer": "packages/domain/src/phase-systems.ts",
+      "status": "Actief."
+    },
+    {
+      "file": "phase-system-5.json",
+      "recordType": "fasesysteem (5)",
+      "count": 5,
+      "chatIndexed": false,
+      "usedBy": "Persoonlijke coach (fasesysteem)",
+      "consumer": "packages/domain/src/phase-systems.ts",
+      "status": "Actief."
+    },
+    {
+      "file": "phase-system-9.json",
+      "recordType": "fasesysteem (9)",
+      "count": 9,
+      "chatIndexed": false,
+      "usedBy": "Persoonlijke coach (fasesysteem)",
+      "consumer": "packages/domain/src/phase-systems.ts",
+      "status": "Actief."
+    },
+    {
+      "file": "journey-phases.json",
+      "recordType": "journeyfasen",
+      "count": 9,
+      "chatIndexed": false,
+      "usedBy": "Persoonlijke coach (journeycontext)",
+      "consumer": "packages/domain/src/journey-phases.ts",
+      "status": "Actief."
+    },
+    {
+      "file": "routes.json",
+      "recordType": "routes",
+      "count": 3378,
+      "chatIndexed": false,
+      "usedBy": "Persoonlijke coach (Route Engine)",
+      "consumer": "packages/domain/src/route-engine.ts",
+      "status": "Actief voor routebepaling."
+    },
+    {
+      "file": "route-questions.json",
+      "recordType": "routevragen + antwoorden",
+      "count": 4,
+      "chatIndexed": false,
+      "usedBy": "Persoonlijke coach (Route Engine)",
+      "consumer": "packages/domain/src/route-engine.ts",
+      "status": "Actief voor routebepaling."
+    },
+    {
+      "file": "route-steps.json",
+      "recordType": "routestappen",
+      "count": 66,
+      "chatIndexed": true,
+      "usedBy": "Beide coaches (kennisretrieval) + Route Engine",
+      "consumer": "apps/api/src/bootstrap.ts (routeStepIngestion) + packages/domain/src/route-engine.ts",
+      "status": "Geindexeerd in chatretrieval. LET OP: de faqs/articles-CMS-verwijzingen op een routestap worden nog niet geconsumeerd."
+    },
+    {
+      "file": "faq-seed.json",
+      "recordType": "FAQ-kennisrecords",
+      "count": 48,
+      "chatIndexed": true,
+      "usedBy": "Beide coaches (kennisretrieval) + benchmark",
+      "consumer": "apps/api/src/bootstrap.ts (knowledgeIngestion)",
+      "status": "Geindexeerd in chatretrieval. Enige bron in de benchmark."
+    },
+    {
+      "file": "regional-education-desks.json",
+      "recordType": "regionale loketten",
+      "count": 52,
+      "chatIndexed": true,
+      "usedBy": "Beide coaches (kennisretrieval)",
+      "consumer": "apps/api/src/bootstrap.ts (regionalDeskIngestion)",
+      "status": "Geindexeerd in chatretrieval, maar NIET in de benchmark-collectie."
+    },
+    {
+      "file": "interest-talent-test.json",
+      "recordType": "talententest-vragen",
+      "count": 8,
+      "chatIndexed": false,
+      "usedBy": "Talententest",
+      "consumer": "apps/api (talent-test route)",
+      "status": "Actief voor de talententest."
+    },
+    {
+      "file": "retrieval-benchmark.json",
+      "recordType": "benchmarkvragen",
+      "count": 333,
+      "chatIndexed": false,
+      "usedBy": "Benchmark",
+      "consumer": "scripts/evaluate-retrieval-baseline.mjs + scripts/evaluate-hybrid-retrieval.ts",
+      "status": "Alleen benchmark. Meet tegen FAQ-only, niet tegen de volledige runtime-collectie (loketten + routestappen ontbreken)."
+    },
+    {
+      "file": "learned-reranker-model.json",
+      "recordType": "reranker-gewichten",
+      "count": 10,
+      "chatIndexed": false,
+      "usedBy": "Kennisretrieval (reranking)",
+      "consumer": "packages/knowledge (LearnedLinearKnowledgeReranker)",
+      "status": "Actief. Titelfeatures getraind op canonieke titel; aliases niet in de vier titelfeatures."
+    },
+    {
+      "file": "manifest.json",
+      "recordType": "dataset-manifest",
+      "count": 2,
+      "chatIndexed": false,
+      "usedBy": "Pariteitscontrole",
+      "consumer": "scripts/verify-dataset-parity.ts",
+      "status": "Actief als verwachte-aantallen-manifest."
+    }
+  ]
+}

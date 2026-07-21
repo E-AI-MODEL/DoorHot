@@ -3,12 +3,41 @@ import { readFile } from "node:fs/promises";
 export interface PhaseQuestionDefinition {
   question_id: string;
   question_text: string;
-  phase_code: string;
+  phase_code: string | null;
   theme?: string | null;
   subtheme?: string | null;
   fills_slots: readonly string[];
 }
 
+// The real phase-detector-questions.json lists slot/phase questions as
+// objects carrying the question_id (plus a question_text or a reason). The
+// detector only needs the id, so we normalize these to a plain id string at
+// load time. Plain strings are also accepted so hand-written test fixtures
+// can keep using the simpler shape.
+export interface PhaseQuestionReference {
+  question_id: string;
+  question_text?: string;
+  reason?: string;
+}
+
+export type RawPhaseQuestionReference = string | PhaseQuestionReference;
+
+export interface RawPhaseQuestionDataset {
+  schema_version: string;
+  generated_at: string;
+  slots: Readonly<Record<string, unknown>>;
+  slot_to_questions: Readonly<
+    Record<string, readonly RawPhaseQuestionReference[]>
+  >;
+  phase_to_questions: Readonly<
+    Record<string, readonly RawPhaseQuestionReference[]>
+  >;
+  question_catalog: Readonly<Record<string, PhaseQuestionDefinition>>;
+}
+
+// Runtime shape the detector consumes: question references reduced to their
+// ids. Kept string-only so the selection logic can index question_catalog
+// directly.
 export interface PhaseQuestionDataset {
   schema_version: string;
   generated_at: string;
@@ -16,6 +45,36 @@ export interface PhaseQuestionDataset {
   slot_to_questions: Readonly<Record<string, readonly string[]>>;
   phase_to_questions: Readonly<Record<string, readonly string[]>>;
   question_catalog: Readonly<Record<string, PhaseQuestionDefinition>>;
+}
+
+function questionIdOf(reference: RawPhaseQuestionReference): string {
+  return typeof reference === "string" ? reference : reference.question_id;
+}
+
+function normalizeQuestionReferences(
+  map: Readonly<Record<string, readonly RawPhaseQuestionReference[]>>
+): Record<string, readonly string[]> {
+  return Object.fromEntries(
+    Object.entries(map).map(([key, references]) => [
+      key,
+      references.map(questionIdOf)
+    ])
+  );
+}
+
+// Single normalization step from the on-disk format to the runtime dataset.
+// Exported so both the loader and tests exercise the same conversion.
+export function normalizePhaseQuestionDataset(
+  raw: RawPhaseQuestionDataset
+): PhaseQuestionDataset {
+  return {
+    schema_version: raw.schema_version,
+    generated_at: raw.generated_at,
+    slots: raw.slots,
+    slot_to_questions: normalizeQuestionReferences(raw.slot_to_questions),
+    phase_to_questions: normalizeQuestionReferences(raw.phase_to_questions),
+    question_catalog: raw.question_catalog
+  };
 }
 
 export interface PhaseExitCriterion {
@@ -161,8 +220,10 @@ export async function loadDomainDatasets(
   datasetDirectory: string
 ): Promise<DomainDatasets> {
   return {
-    phaseQuestions: await loadJson<PhaseQuestionDataset>(
-      `${datasetDirectory}/phase-detector-questions.json`
+    phaseQuestions: normalizePhaseQuestionDataset(
+      await loadJson<RawPhaseQuestionDataset>(
+        `${datasetDirectory}/phase-detector-questions.json`
+      )
     ),
     phaseRules: await loadJson<PhaseRulesDataset>(
       `${datasetDirectory}/phase-detector-rules.json`
