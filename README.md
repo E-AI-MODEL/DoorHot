@@ -898,6 +898,8 @@ DEMO_ACCOUNTS_ENABLED=true
 
 Gebruik deze instelling niet met echte gebruikersgegevens.
 
+Alleen in de demo (in-memory of `DEMO_ACCOUNTS_ENABLED=true`) vervalt de minimale wachtwoordlengte bij registratie. Buiten de demo blijft de volledige eis (minimaal 12 tekens) gelden, zodat de demo-uitzondering echte registraties niet verzwakt.
+
 </details>
 
 <details>

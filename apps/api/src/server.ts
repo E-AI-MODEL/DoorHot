@@ -183,7 +183,8 @@ await registerAuthProfileRoutes(server, {
   authorization: services.authorization,
   profileService: services.profileService,
   tokenService: services.tokenService,
-  demoLoginEnabled
+  demoLoginEnabled,
+  minPasswordLength: demoAccountsEnabled ? 1 : 12
 });
 
 const parityFlows = await createParityFlowServices({

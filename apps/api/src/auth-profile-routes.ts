@@ -29,8 +29,15 @@ export async function registerAuthProfileRoutes(
     profileService: ProfileService;
     tokenService: TokenService;
     demoLoginEnabled?: boolean;
+    // Minimum registration password length. Relaxed to 1 only in the
+    // demo (in-memory or DEMO_ACCOUNTS_ENABLED); real environments
+    // keep the full policy so the demo exception cannot weaken
+    // production registration. Login is never length-checked so
+    // existing demo accounts keep working.
+    minPasswordLength?: number;
   }
 ): Promise<void> {
+  const minPasswordLength = services.minPasswordLength ?? 12;
   server.addHook("preHandler", async (request, reply) => {
     const publicPaths = [
       "/health",
@@ -72,7 +79,7 @@ export async function registerAuthProfileRoutes(
   server.post("/v1/auth/register", async (request, reply) => {
     const parsed = z.object({
       email: z.string().email(),
-      password: z.string().min(1).max(200)
+      password: z.string().min(minPasswordLength).max(200)
     }).safeParse(request.body);
     if (!parsed.success) {
       return reply.code(400).send({
