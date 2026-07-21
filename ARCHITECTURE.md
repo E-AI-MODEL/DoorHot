@@ -14,25 +14,27 @@ Webapp
   ▼
 API en autorisatie
   │
-  ├───────────────┬───────────────────┐
-  ▼               ▼                   ▼
-General Coach  Personal Coach   Human Advisor Chat
-  │               │
-  └───────┬───────┘
-          ▼
-AI Orchestrator
-  │
-  ├───────────────┬───────────────────┐
-  ▼               ▼                   ▼
-Retrieval     Journey/Route      Execution Tools
-  │             Engines               │
-  ▼               │                   ▼
-Knowledge         ▼             Confirmation/Outbox
-  │           Graph Projection        │
-  └───────────────┴───────────────────┘
+  ├───────────────┬───────────────────┬──────────────────┐
+  ▼               ▼                   ▼                  ▼
+General Coach  Personal Coach   Human Advisor Chat   AI Orchestrator
+  │               │                   │              (parallel lane)
+  │               │                   │                  │
+  ▼               ▼                   ▼                  ▼
+Retrieval /   Journey/Route/      Persistente         Deterministische
+Knowledge     Phase Engines       gesprekken          planning + shadow
+  │               │                   │              en explainability
+  └───────────────┴───────────────────┴──────────────────┘
                   ▼
               PostgreSQL
 ```
+
+De coaches en de orchestrator staan naast elkaar onder de API; de coaches
+gebruiken retrieval en de engines rechtstreeks. De orchestrator is een
+parallelle laag voor deterministische planning, shadow-evaluatie en
+explainability. Op de chatkanalen levert hij alleen het plan (intent en
+stappen); de daadwerkelijke tooluitvoering loopt via het aparte
+`/v1/orchestrate`-endpoint, zodat het antwoord en de journey-mutaties
+uitsluitend van de coaches komen.
 
 ## Chatkanalen
 
