@@ -156,6 +156,15 @@ function renderShell(content: string): void {
       void render();
     });
   }
+
+  for (const navButton of app.querySelectorAll<HTMLButtonElement>(
+    "nav button[data-view]"
+  )) {
+    if (navButton.dataset.view === state.view) {
+      navButton.classList.add("active");
+      navButton.setAttribute("aria-current", "page");
+    }
+  }
 }
 
 function messagePanel(
@@ -186,6 +195,13 @@ function messagePanel(
           <p>Waarmee kan ik je helpen?</p>
         </article>
       </div>
+      ${personal ? "" : `
+      <div class="suggestions" id="chat-suggestions">
+        <button type="button" class="suggestion-chip">Wat is de pabo?</button>
+        <button type="button" class="suggestion-chip">Wat kost zij-instroom?</button>
+        <button type="button" class="suggestion-chip">Hoeveel verdient een leraar?</button>
+        <button type="button" class="suggestion-chip">Ben ik bevoegd met een buitenlands diploma?</button>
+      </div>`}
       <form id="chat-form" class="composer">
         <label class="sr-only" for="chat-message">Je vraag</label>
         <textarea
@@ -302,10 +318,22 @@ async function bindChat(personal: boolean): Promise<void> {
 
   if (!form || !textarea) return;
 
+  const suggestions =
+    document.querySelector<HTMLDivElement>("#chat-suggestions");
+  for (const chip of suggestions?.querySelectorAll<HTMLButtonElement>(
+    ".suggestion-chip"
+  ) ?? []) {
+    chip.addEventListener("click", () => {
+      textarea.value = chip.textContent?.trim() ?? "";
+      form.requestSubmit();
+    });
+  }
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const message = textarea.value.trim();
     if (!message || state.busy) return;
+    suggestions?.remove();
 
     if (personal && !state.user) {
       state.view = "account";
