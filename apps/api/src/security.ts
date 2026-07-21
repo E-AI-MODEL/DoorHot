@@ -79,6 +79,12 @@ interface RateBucket {
 export function registerSecurityControls(
   server: FastifyInstance
 ): void {
+  // In-memory buckets are per API instance, so the effective limit scales
+  // with the number of instances. For a single instance (demo, small
+  // deploy) this is exact; a multi-instance deployment that needs a global
+  // limit should back this with a shared store. request.ip only reflects
+  // the real client when the server is created with trustProxy enabled
+  // (see TRUST_PROXY in server.ts).
   const buckets = new Map<string, RateBucket>();
   const windowMs = Number(
     process.env.RATE_LIMIT_WINDOW_MS ?? 60_000
