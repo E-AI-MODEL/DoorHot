@@ -437,25 +437,27 @@ antwoord de deur uit gaat.
 flowchart TD
     Q["Vraag van de gebruiker"]
 
-    Q -->|algemene coach| GATE{"Answerability-poort<br/>raakt de vraag het onderwijs?"}
+    Q -->|algemene coach| RET["Retrieval<br/>FTS + semantisch + trusted-source web-fallback"]
+    RET --> GATE{"Answerability<br/>domein-match of verse externe bron?"}
     GATE -->|nee| DEC["Nette weigering + uitnodiging<br/>geen bron, geen verzonnen antwoord"]
-    GATE -->|ja| RET["Retrieval<br/>FTS + semantisch + trusted-source web-fallback"]
+    GATE -->|ja| VAL
 
-    Q -->|persoonlijke coach| ENG["Deterministische engines<br/>Phase - Route - Journey<br/>= bron van waarheid"]
+    Q -->|persoonlijke coach| ENG["Deterministische engines<br/>Phase - Route<br/>= bron van waarheid"]
     ENG --> LLMP["LLM verwoordt de context<br/>muteert zelf niets"]
-
-    RET --> VAL["Validatie en repair<br/>de laatste grens"]
     LLMP --> VAL
-    VAL --> ANS["Antwoord"]
+
+    VAL["Validatie en repair<br/>de laatste grens"] --> ANS["Antwoord"]
 
     ORCH["Orchestrator<br/>parallelle plan-only laan<br/>levert intent + plan voor uitleg"] -.->|voegt metadata toe| ANS
 ```
 
-- **Algemene coach:** stateless en publiek. De poort laat door zodra de vraag
-  het onderwijs raakt en weigert anders zonder een least-bad record als bron te
+- **Algemene coach:** stateless en publiek. De poort beoordeelt ná retrieval
+  of het toprecord het onderwijs raakt (of er een verse externe bron is
+  gevonden) en weigert anders, zonder een least-bad record als bron te
   presenteren.
-- **Persoonlijke coach:** de engines beslissen over fase, route en journey; het
-  model verwoordt dat en stelt wijzigingen als bevestigbare voorstellen voor.
+- **Persoonlijke coach:** de Phase- en Route-engines beslissen; het model
+  verwoordt dat en stelt wijzigingen als bevestigbare voorstellen voor.
+  Journey-state loopt via de aparte journey-endpoints, niet via de chatgeneratie.
 - **Adviseurchat:** puur menselijk, geen AI-generatie.
 - **Orchestrator:** loopt op de chatkanalen plan-only mee voor explainability en
   vervangt het coachantwoord niet.
