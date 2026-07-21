@@ -322,28 +322,54 @@ describe("AI parity pipeline", () => {
       { preferExtractiveAnswer: true }
     );
 
-    const offTopic = await provider.createDraft(
-      "general-coach",
-      { message: "Wat is de hoofdstad van Frankrijk?" },
-      { slots: [] }
-    );
+    // Clearly off-topic questions are declined without sources, including
+    // ones that only share a generic word ("beste") or a money word with
+    // the domain, and ones whose phrasing brushes a two-letter abbreviation
+    // ("vo" inside "voor"/"voetballer").
+    for (const message of [
+      "Wat is de hoofdstad van Frankrijk?",
+      "Wat is het beste recept voor lasagne?",
+      "Wie is de beste voetballer ter wereld?",
+      "Hoeveel kost een nieuwe auto?"
+    ]) {
+      const declined = await provider.createDraft(
+        "general-coach",
+        { message },
+        { slots: [] }
+      );
+      expect(declined.directAnswer).toContain(
+        "werken en leren in het onderwijs"
+      );
+      expect(declined.sources).toEqual([]);
+      expect(declined.verifiedLinks).toEqual([]);
+      expect(declined.directAnswer).not.toContain("basisonderwijs");
+    }
 
-    expect(offTopic.directAnswer).toContain(
-      "werken en leren in het onderwijs"
-    );
-    expect(offTopic.sources).toEqual([]);
-    expect(offTopic.verifiedLinks).toEqual([]);
-    expect(offTopic.directAnswer).not.toContain("basisonderwijs");
-
+    // In-domain questions are answered, including broad ones that only
+    // touch education through the word "onderwijs" or a compound like
+    // "lerarentekort" rather than a full concept phrase.
     const inScope = await provider.createDraft(
       "general-coach",
       { message: "Wat is de pabo?" },
       { slots: [] }
     );
-
     expect(inScope.directAnswer).toContain(
       "leidt op tot leraar in het basisonderwijs"
     );
+
+    for (const message of [
+      "Ik twijfel of het onderwijs iets voor mij is",
+      "Waarom is er een lerarentekort?"
+    ]) {
+      const answered = await provider.createDraft(
+        "general-coach",
+        { message },
+        { slots: [] }
+      );
+      expect(answered.directAnswer).not.toContain(
+        "werken en leren in het onderwijs, zoals"
+      );
+    }
   });
 
   it("combines personal journey context with an extractive answer", async () => {

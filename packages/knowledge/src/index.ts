@@ -1826,9 +1826,13 @@ export class AdaptiveRetrievalAnswerDraftProvider
     });
 
     // Answerability gate for the public coach: retrieval always returns
-    // a best record, but a record is only a real answer when it shares
-    // an education concept or content word with the question. Trusted
-    // web results (webfallback) count as in-scope. Otherwise decline
+    // a best record, but the best record is only a real answer when it
+    // shares an education concept or a whole content word with the
+    // question. The check runs against the top retrieved record — widening
+    // it to all candidates was measured to re-admit clearly off-topic
+    // questions ("wie won de laatste Ajax wedstrijd") because generic
+    // words leak, so the floor stays on the best match. Trusted web
+    // results (webfallback) count as in-scope. Otherwise decline
     // gracefully instead of presenting the least-bad record with
     // confidence.
     if (
@@ -1999,55 +2003,114 @@ const GENERIC_FACET_CONCEPTS: ReadonlySet<string> = new Set([
   "resources"
 ]);
 
+// Whether a concept phrase occurs on whole-word boundaries in the text.
+// The gate must not use plain substring matching the way the retriever's
+// feature extractor does: the lexicon contains two-letter abbreviations
+// ("vo", "po") that would otherwise match inside ordinary words such as
+// "voor" or "voetballer" and make an off-topic question look on-topic.
+// A boundary is the start/end of the text or any non-alphanumeric char, so
+// hyphenated phrases like "zij-instroom" still match as a whole.
+function containsPhraseOnBoundary(
+  normalized: string,
+  phrase: string
+): boolean {
+  const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(
+    `(?<![\\p{L}\\p{N}])${escaped}(?![\\p{L}\\p{N}])`,
+    "u"
+  ).test(normalized);
+}
+
 // Which education-domain concepts a piece of text touches, reusing the
 // same SEMANTIC_CONCEPTS lexicon the retriever scores against so the gate
 // and the ranking agree on what "on-topic" means. Generic question-shape
 // facets are excluded so they cannot make an off-topic question look
-// answerable.
+// answerable, and matching is on word boundaries (see above).
 function domainConceptsOf(value: string): ReadonlySet<string> {
   const normalized = normalizeSemanticText(value);
   const concepts = new Set<string>();
   for (const [concept, phrases] of Object.entries(SEMANTIC_CONCEPTS)) {
     if (GENERIC_FACET_CONCEPTS.has(concept)) continue;
-    if (phrases.some((phrase) => normalized.includes(phrase))) {
+    if (
+      phrases.some((phrase) =>
+        containsPhraseOnBoundary(normalized, phrase)
+      )
+    ) {
       concepts.add(concept);
     }
   }
   return concepts;
 }
 
-// A retrieved record only counts as a real answer when it shares an
-// education concept OR a substantive content word with the question.
-// Retrieval always returns a nearest record, so without this check an
-// off-topic question ("hoofdstad van Frankrijk") would still be answered
-// with confident but irrelevant content.
+// Economic concepts describe money, not education specifically, so they
+// fire on off-domain questions too ("hoeveel kost een auto", "wat verdient
+// een voetballer"). They only establish education footing together with an
+// education-specific concept or anchor, never on their own.
+const ECONOMIC_CONCEPTS: ReadonlySet<string> = new Set([
+  "cost",
+  "salary",
+  "subsidy",
+  "employment",
+  "extra_pay"
+]);
+
+// Education vocabulary that is not a single SEMANTIC_CONCEPTS phrase, matched
+// as a stem inside a query token so compounds count too: "onderwijs" also
+// catches "basisonderwijs"/"onderwijsloket", "lerar" catches
+// "leraren"/"lerarentekort"/"lerarenopleiding", "instroom" catches
+// "zij-instroom". Stems are chosen to be education-specific with negligible
+// off-domain collisions.
+const EDUCATION_ANCHOR_STEMS: readonly string[] = [
+  "onderwijs",
+  "onderwijz",
+  "lerar",
+  "instroom",
+  "omschol"
+];
+
+// School-family words listed as whole tokens, because a short "scho" stem
+// would also match unrelated words such as "schoenen" or "schoon".
+const EDUCATION_ANCHOR_TOKENS: ReadonlySet<string> = new Set([
+  "school",
+  "scholen",
+  "schooldag",
+  "schooldagen",
+  "scholing",
+  "schoolvak",
+  "schoolvakken"
+]);
+
+// Does the QUESTION itself show education footing? The public coach is
+// stateless and broad, so answerability is decided on the question, not on
+// word overlap with a least-bad record (that leaks generic words like
+// "beste" or "weer"). A question is in-domain when it touches an
+// education-specific concept (facets and money-only concepts excluded) or an
+// education anchor. Deliberately permissive within the domain and strict
+// against clearly off-topic questions (geography, sport, cooking, weather).
+function queryHasEducationFooting(query: string): boolean {
+  for (const concept of domainConceptsOf(query)) {
+    if (!ECONOMIC_CONCEPTS.has(concept)) return true;
+  }
+
+  const tokens = normalizeSemanticText(query).split(" ").filter(Boolean);
+  return tokens.some(
+    (token) =>
+      EDUCATION_ANCHOR_TOKENS.has(token) ||
+      EDUCATION_ANCHOR_STEMS.some((stem) => token.includes(stem))
+  );
+}
+
+// The public coach can answer when retrieval produced a record to ground on
+// AND the question actually has education footing. Retrieval always returns
+// a nearest record, so the footing check is what stops an off-topic question
+// ("hoofdstad van Frankrijk") from being answered with confident but
+// irrelevant content.
 function hasDomainRelevantAnswer(
   query: string,
   top: KnowledgeSearchResult | undefined
 ): boolean {
   if (!top) return false;
-
-  const recordText = [
-    top.record.title,
-    ...(top.record.aliases ?? []),
-    top.record.body,
-    top.record.category ?? "",
-    ...top.record.tags
-  ].join(" ");
-
-  const queryConcepts = domainConceptsOf(query);
-  const recordConcepts = domainConceptsOf(recordText);
-  for (const concept of queryConcepts) {
-    if (recordConcepts.has(concept)) return true;
-  }
-
-  const recordNormalized = normalizeSemanticText(recordText);
-  const queryTokens = normalizeSemanticText(query)
-    .split(" ")
-    .filter(
-      (token) => token.length >= 3 && !DUTCH_STOPWORDS.has(token)
-    );
-  return queryTokens.some((token) => recordNormalized.includes(token));
+  return queryHasEducationFooting(query);
 }
 
 function combinePersonalAndGroundedAnswer(
