@@ -345,21 +345,11 @@ describe("AI parity pipeline", () => {
       expect(declined.directAnswer).not.toContain("basisonderwijs");
     }
 
-    // In-domain questions are answered, including broad ones that only
-    // touch education through the word "onderwijs" or a compound like
-    // "lerarentekort" rather than a full concept phrase.
-    const inScope = await provider.createDraft(
-      "general-coach",
-      { message: "Wat is de pabo?" },
-      { slots: [] }
-    );
-    expect(inScope.directAnswer).toContain(
-      "leidt op tot leraar in het basisonderwijs"
-    );
-
+    // In-domain questions whose retrieved record actually relates to them
+    // are answered.
     for (const message of [
-      "Ik twijfel of het onderwijs iets voor mij is",
-      "Waarom is er een lerarentekort?"
+      "Hoe lang duurt de pabo?",
+      "Leidt de pabo op tot leraar?"
     ]) {
       const answered = await provider.createDraft(
         "general-coach",
@@ -370,6 +360,28 @@ describe("AI parity pipeline", () => {
         "Waar kan ik je binnen dat onderwerp mee helpen"
       );
     }
+
+    const inScope = await provider.createDraft(
+      "general-coach",
+      { message: "Wat is de pabo?" },
+      { slots: [] }
+    );
+    expect(inScope.directAnswer).toContain(
+      "leidt op tot leraar in het basisonderwijs"
+    );
+
+    // An in-domain question whose only retrieved record is unrelated is
+    // declined too: retrieval always returns a nearest record, so grounding
+    // the answer on it would present an irrelevant record as if it answered.
+    const unrelated = await provider.createDraft(
+      "general-coach",
+      { message: "Welke subsidies zijn er voor omscholing?" },
+      { slots: [] }
+    );
+    expect(unrelated.directAnswer).toContain(
+      "werken en leren in het onderwijs"
+    );
+    expect(unrelated.sources).toEqual([]);
   });
 
   it("combines personal journey context with an extractive answer", async () => {

@@ -2103,17 +2103,54 @@ function queryHasEducationFooting(query: string): boolean {
   );
 }
 
-// The public coach can answer when retrieval produced a record to ground on
-// AND the question actually has education footing. Retrieval always returns
-// a nearest record, so the footing check is what stops an off-topic question
-// ("hoofdstad van Frankrijk") from being answered with confident but
-// irrelevant content.
+// Beyond the question being in-domain, the retrieved record must actually
+// relate to it: retrieval always returns a nearest record, so an on-domain
+// question whose best match is unrelated would otherwise be answered from
+// that record. The record relates when it shares a (non-facet) education
+// concept or a substantive whole content word with the question. Because the
+// education-footing check already blocks off-topic questions, this second
+// check only tightens on-domain questions and cannot re-open the generic-word
+// leak that footing closed.
+function topRecordRelatesToQuery(
+  query: string,
+  top: KnowledgeSearchResult
+): boolean {
+  const recordText = [
+    top.record.title,
+    ...(top.record.aliases ?? []),
+    top.record.body,
+    top.record.category ?? "",
+    ...top.record.tags
+  ].join(" ");
+
+  const queryConcepts = domainConceptsOf(query);
+  const recordConcepts = domainConceptsOf(recordText);
+  for (const concept of queryConcepts) {
+    if (recordConcepts.has(concept)) return true;
+  }
+
+  const recordTokens = new Set(
+    normalizeSemanticText(recordText).split(" ").filter(Boolean)
+  );
+  const queryTokens = normalizeSemanticText(query)
+    .split(" ")
+    .filter((token) => token.length >= 4 && !DUTCH_STOPWORDS.has(token));
+  return queryTokens.some((token) => recordTokens.has(token));
+}
+
+// The public coach can answer when retrieval produced a record to ground on,
+// the question has education footing, AND that record actually relates to the
+// question. Retrieval always returns a nearest record, so both the footing
+// check (blocks off-topic questions like "hoofdstad van Frankrijk") and the
+// relevance check (blocks an unrelated nearest record for an on-topic
+// question) are needed.
 function hasDomainRelevantAnswer(
   query: string,
   top: KnowledgeSearchResult | undefined
 ): boolean {
   if (!top) return false;
-  return queryHasEducationFooting(query);
+  if (!queryHasEducationFooting(query)) return false;
+  return topRecordRelatesToQuery(query, top);
 }
 
 function combinePersonalAndGroundedAnswer(
