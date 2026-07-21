@@ -20,6 +20,24 @@ import {
   createStructuredLogRecord
 } from "@door010/observability";
 
+// Behind a reverse proxy or load balancer the socket IP is the proxy, not
+// the client, so per-IP rate limiting collapses to one bucket for everyone.
+// TRUST_PROXY tells Fastify to honour X-Forwarded-For so request.ip is the
+// real client. It stays off by default: enabling it when NOT behind a
+// trusted proxy would let clients spoof their IP. Accepts true/false, a hop
+// count, or a comma-separated IP/CIDR allowlist.
+function parseTrustProxy(
+  value: string | undefined
+): boolean | number | string {
+  if (value === undefined || value === "" || value === "false") {
+    return false;
+  }
+  if (value === "true") return true;
+  const hops = Number(value);
+  if (Number.isInteger(hops) && hops >= 0) return hops;
+  return value;
+}
+
 const server = Fastify({
   logger: {
     level: process.env.LOG_LEVEL ?? "info",
@@ -34,7 +52,8 @@ const server = Fastify({
       censor: "[REDACTED]"
     }
   },
-  requestIdHeader: "x-request-id"
+  requestIdHeader: "x-request-id",
+  trustProxy: parseTrustProxy(process.env.TRUST_PROXY)
 });
 
 registerSecurityControls(server);
@@ -458,13 +477,11 @@ server.post("/v1/chat/general", async (request, reply) => {
     });
   }
 
-  const [response, orchestration] = await Promise.all([
-    services.generalCoach.respond(parsed.data),
-    services.orchestrator.execute({
-      requestId: request.id,
-      ...parsed.data
-    })
-  ]);
+  const response = await services.generalCoach.respond(parsed.data);
+  const orchestration = services.orchestrator.preview({
+    requestId: request.id,
+    ...parsed.data
+  });
   const result = await registerMutations({
     response,
     conversationId: parsed.data.conversationId,
@@ -495,13 +512,11 @@ server.post("/v1/chat/personal", async (request, reply) => {
     });
   }
 
-  const [response, orchestration] = await Promise.all([
-    services.personalCoach.respond(parsed.data),
-    services.orchestrator.execute({
-      requestId: request.id,
-      ...parsed.data
-    })
-  ]);
+  const response = await services.personalCoach.respond(parsed.data);
+  const orchestration = services.orchestrator.preview({
+    requestId: request.id,
+    ...parsed.data
+  });
   const result = await registerMutations({
     response,
     conversationId: parsed.data.conversationId,

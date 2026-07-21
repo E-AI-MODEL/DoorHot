@@ -739,6 +739,13 @@ export class DeterministicAnswerComposer {
   }
 }
 
+export interface OrchestrationPreview {
+  id: string;
+  intent: OrchestrationIntent;
+  status: "planned";
+  plan: OrchestrationPlan;
+}
+
 export class AiOrchestrator {
   constructor(
     private readonly planner: DeterministicIntentPlanner,
@@ -747,6 +754,24 @@ export class AiOrchestrator {
     private readonly repository: OrchestrationRepository,
     private readonly shadowPlanning?: ShadowPlanningService
   ) {}
+
+  // Explainability-only plan for the chat channels. The coach already does
+  // the real retrieval and journey work, so running the orchestrator's
+  // tools alongside it only duplicated that work and, on the personal path,
+  // touched journey state concurrently with the coach. The chat response
+  // surfaces just the intent and plan, so previewing the deterministic plan
+  // gives exactly that with no tool execution, no side effects and no
+  // per-message persistence. Full execution stays available via execute()
+  // for the dedicated /v1/orchestrate endpoint.
+  preview(request: OrchestrationRequest): OrchestrationPreview {
+    const plan = this.planner.plan(request);
+    return {
+      id: crypto.randomUUID(),
+      intent: plan.intent,
+      status: "planned",
+      plan
+    };
+  }
 
   async execute(
     request: OrchestrationRequest

@@ -73,4 +73,83 @@ describe("knowledge backoffice authorization", () => {
     expect(response.json()).toHaveProperty("connectors");
     await server.close();
   });
+
+  // These knowledge routes are not /v1/backoffice/-prefixed, so they were
+  // reachable by any authenticated candidate before the guard was added.
+  // A candidate could add a trusted domain (which feeds the web-fallback)
+  // or ingest arbitrary FAQs into the knowledge base.
+  it("forbids a candidate from adding a trusted source", async () => {
+    const server = await buildServer();
+    const response = await server.inject({
+      method: "POST",
+      url: "/v1/trusted-sources",
+      headers: { "x-test-roles": "candidate" },
+      payload: {
+        sourceKey: "attacker-source",
+        label: "Attacker",
+        authority: 0.9,
+        allowedDomains: ["evil.example"]
+      }
+    });
+    expect(response.statusCode).toBe(403);
+    await server.close();
+  });
+
+  it("forbids a candidate from ingesting FAQs", async () => {
+    const server = await buildServer();
+    const response = await server.inject({
+      method: "POST",
+      url: "/v1/knowledge/ingest/faqs",
+      headers: { "x-test-roles": "candidate" },
+      payload: {
+        faqs: [{ question: "Geïnjecteerd?", answer: "Geïnjecteerd." }]
+      }
+    });
+    expect(response.statusCode).toBe(403);
+    await server.close();
+  });
+
+  it("forbids a candidate from listing knowledge items or sources", async () => {
+    const server = await buildServer();
+    const items = await server.inject({
+      method: "GET",
+      url: "/v1/knowledge/items",
+      headers: { "x-test-roles": "candidate" }
+    });
+    const sources = await server.inject({
+      method: "GET",
+      url: "/v1/trusted-sources",
+      headers: { "x-test-roles": "candidate" }
+    });
+    expect(items.statusCode).toBe(403);
+    expect(sources.statusCode).toBe(403);
+    await server.close();
+  });
+
+  it("allows an administrator to add a trusted source and ingest FAQs", async () => {
+    const server = await buildServer();
+    const source = await server.inject({
+      method: "POST",
+      url: "/v1/trusted-sources",
+      headers: { "x-test-roles": "administrator" },
+      payload: {
+        sourceKey: "official-source",
+        label: "Official",
+        authority: 0.9,
+        allowedDomains: ["rijksoverheid.nl"]
+      }
+    });
+    expect(source.statusCode).toBe(201);
+
+    const ingest = await server.inject({
+      method: "POST",
+      url: "/v1/knowledge/ingest/faqs",
+      headers: { "x-test-roles": "administrator" },
+      payload: {
+        faqs: [{ question: "Wat is de pabo?", answer: "Een opleiding." }]
+      }
+    });
+    expect(ingest.statusCode).toBe(202);
+    await server.close();
+  });
 });
