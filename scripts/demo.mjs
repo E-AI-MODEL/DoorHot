@@ -3,10 +3,11 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 // Starts the in-memory demo stack: the API dev server (seeded at boot
-// with all reference data) plus the Vite webapp. When Ollama is
-// available a small local LLM from Hugging Face powers the coach;
-// without it the coach answers extractively from the knowledge base.
-// Everything runs in one process tree; Ctrl+C stops both.
+// with all reference data) plus the Vite webapp. The coach picks the
+// best available LLM: a hosted model via the Hugging Face router when
+// an HF token is present, otherwise a small local model via Ollama.
+// With neither, the coach answers extractively from the knowledge
+// base. Everything runs in one process tree; Ctrl+C stops both.
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const children = [];
@@ -69,6 +70,29 @@ async function ensureDemoLlm() {
     return {};
   }
 
+  // Tier 1: een gehoste LLM via de Hugging Face router. Volledig
+  // OpenAI-compatibel, dus de orchestratie en systeemprompts werken
+  // ongewijzigd. Alleen actief als er een HF-token in de omgeving
+  // staat (Codespaces secret / env var) - nooit in de repo.
+  const hfToken =
+    process.env.HF_TOKEN ??
+    process.env.HUGGINGFACE_API_KEY ??
+    process.env.HUGGINGFACEHUB_API_TOKEN;
+  if (hfToken) {
+    const hfModel =
+      process.env.DEMO_HF_MODEL ?? "Qwen/Qwen2.5-7B-Instruct";
+    const hfBaseUrl =
+      process.env.HF_BASE_URL ?? "https://router.huggingface.co/v1";
+    console.log(`[llm] gehoste LLM via Hugging Face: ${hfModel}`);
+    return {
+      LLM_BASE_URL: hfBaseUrl,
+      LLM_API_KEY: hfToken,
+      LLM_MODEL: hfModel,
+      LLM_TIMEOUT_MS: process.env.LLM_TIMEOUT_MS ?? "60000"
+    };
+  }
+
+  // Tier 2: een kleine lokale LLM via Ollama.
   const model =
     process.env.DEMO_LLM_MODEL ??
     "hf.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF:Q4_K_M";

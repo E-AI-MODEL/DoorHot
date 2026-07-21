@@ -1825,6 +1825,21 @@ export class AdaptiveRetrievalAnswerDraftProvider
       allowWebFallback: chatbotKey === "general-coach"
     });
 
+    // A bare greeting is not a knowledge question. Without an LLM the
+    // extractive path would otherwise ground it on the nearest record and
+    // answer a "hallo" with a random knowledge item, so respond with a warm
+    // welcome instead. But a greeting followed by a real, in-domain question
+    // ("Hallo, wat kost de pabo?") must still be answered, so only take the
+    // welcome shortcut when the message carries no education footing of its
+    // own — that keeps small-talk openers ("Hallo, kun je me helpen?") warm
+    // while letting a greeted question fall through to the normal pipeline.
+    const looksLikeGreeting =
+      retrieval.intent === "greeting" ||
+      startsWithGreeting(request.message);
+    if (looksLikeGreeting && !queryHasEducationFooting(request.message)) {
+      return greetingDraft(chatbotKey);
+    }
+
     // Answerability gate for the public coach: retrieval always returns
     // a best record, but the best record is only a real answer when it
     // shares an education concept or a whole content word with the
@@ -1877,10 +1892,19 @@ export class AdaptiveRetrievalAnswerDraftProvider
 
     const topInternal = retrieval.internal[0];
     const topExternal = retrieval.external[0];
+    // The public coach already passed the answerability gate, so its top
+    // record is relevant. The personal coach has no such gate, so only
+    // ground on the nearest record when it actually relates to the question;
+    // otherwise an off-topic or vague message would be answered with a
+    // random record instead of the deterministic journey draft.
+    const canGroundOnInternal =
+      topInternal !== undefined &&
+      (chatbotKey === "general-coach" ||
+        topRecordRelatesToQuery(request.message, topInternal));
     const extractiveAnswer = this.options.preferExtractiveAnswer
       ? topExternal
         ? `${topExternal.text} (Bron: ${topExternal.title})`
-        : topInternal
+        : canGroundOnInternal
           ? `${topInternal.record.body} (Bron: ` +
             `${topInternal.record.title})`
           : undefined
@@ -1919,6 +1943,12 @@ export class AdaptiveRetrievalAnswerDraftProvider
       }
     );
 
+    // When the top internal record was rejected as grounding (a vague or
+    // off-topic personal-coach message), it must not survive as a citation
+    // or a visible link either — presenting a rejected record as a source
+    // is the same "least-bad record" failure the grounding check prevents.
+    const internalCitations = canGroundOnInternal ? retrieval.internal : [];
+
     const sources: SourceReference[] = [
       ...retrieval.external.map((item) => ({
         provider: item.sourceKey,
@@ -1926,7 +1956,7 @@ export class AdaptiveRetrievalAnswerDraftProvider
         sourceUrl: item.sourceUrl,
         retrievedAt: item.retrievedAt
       })),
-      ...retrieval.internal.map((item) => ({
+      ...internalCitations.map((item) => ({
         provider:
           item.record.sourceKey ?? "door010-knowledge",
         externalId:
@@ -1947,7 +1977,7 @@ export class AdaptiveRetrievalAnswerDraftProvider
           href: item.sourceUrl!,
           sourceKey: item.sourceKey
         })),
-      ...retrieval.internal
+      ...internalCitations
         .filter((item) => item.record.sourceUrl)
         .map((item) => ({
           label: item.record.title,
@@ -1985,6 +2015,35 @@ function outOfScopeDraft(): AnswerDraft {
     directAnswer: OUT_OF_SCOPE_ANSWER,
     supportingDetail:
       "Je kunt me bijvoorbeeld vragen naar zij-instroom, de pabo, je " +
+      "bevoegdheid of het salaris van een leraar.",
+    verifiedLinks: [],
+    sources: []
+  };
+}
+
+// A message that opens with a greeting word, so small-talk openers like
+// "Hallo, kun je me helpen?" get a welcome rather than a knowledge lookup.
+const GREETING_OPENERS =
+  /^\s*(hoi+|hallo+|h[ae]y|hi|hai|yo|goedemorgen|goedemiddag|goedenavond|goeiedag|goedendag|hoihoi)\b/i;
+
+function startsWithGreeting(message: string): boolean {
+  return GREETING_OPENERS.test(message);
+}
+
+// Warm welcome for a greeting, so a "hallo" is never answered with a
+// knowledge record. Channel-aware but carries no sources or links.
+function greetingDraft(
+  chatbotKey: "general-coach" | "personal-journey-coach"
+): AnswerDraft {
+  return {
+    directAnswer:
+      chatbotKey === "general-coach"
+        ? "Welkom bij het Onderwijsloket Rotterdam. Heb je een vraag " +
+          "over werken of leren in het onderwijs? Ik help je graag verder."
+        : "Hoi! Ik gebruik wat je met me deelt om je gericht verder te " +
+          "helpen. Waarmee kan ik je van dienst zijn?",
+    supportingDetail:
+      "Je kunt bijvoorbeeld vragen naar zij-instroom, de pabo, je " +
       "bevoegdheid of het salaris van een leraar.",
     verifiedLinks: [],
     sources: []
