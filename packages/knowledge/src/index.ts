@@ -1967,22 +1967,25 @@ export class AdaptiveRetrievalAnswerDraftProvider
 }
 
 const OUT_OF_SCOPE_ANSWER =
-  "Ik help met vragen over werken en leren in het onderwijs, " +
-  "zoals opleidingen, routes, bevoegdheden, kosten, salaris, " +
+  "Ik denk graag met je mee over werken en leren in het onderwijs — " +
+  "van opleidingen en routes tot bevoegdheden, kosten, salaris, " +
   "subsidies en het onderwijsloket bij jou in de buurt. Deze vraag " +
-  "lijkt daar niet over te gaan. Stel je vraag gerust opnieuw binnen " +
-  "dat onderwerp.";
+  "lijkt daar net buiten te vallen. Waar kan ik je binnen dat " +
+  "onderwerp mee helpen?";
 
 // Graceful decline when the question falls outside the education domain.
-// It carries no sources or links on purpose: presenting a "least-bad"
-// record as if it answered the question is exactly the failure mode this
-// gate exists to prevent.
+// The copy stays inviting rather than a flat refusal, and it is fed by the
+// real pillars of the domain the coach actually covers (opleidingen,
+// routes, bevoegdheden, kosten, salaris, subsidies, loket) so the
+// suggestions are always accurate. It carries no sources or links on
+// purpose: presenting a "least-bad" record as if it answered the question
+// is exactly the failure mode this gate exists to prevent.
 function outOfScopeDraft(): AnswerDraft {
   return {
     directAnswer: OUT_OF_SCOPE_ANSWER,
     supportingDetail:
-      "Stel bijvoorbeeld een vraag over zij-instroom, de pabo, " +
-      "bevoegdheden of het salaris van een leraar.",
+      "Je kunt me bijvoorbeeld vragen naar zij-instroom, de pabo, je " +
+      "bevoegdheid of het salaris van een leraar.",
     verifiedLinks: [],
     sources: []
   };

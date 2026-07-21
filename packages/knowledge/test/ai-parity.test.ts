@@ -367,7 +367,7 @@ describe("AI parity pipeline", () => {
         { slots: [] }
       );
       expect(answered.directAnswer).not.toContain(
-        "werken en leren in het onderwijs, zoals"
+        "Waar kan ik je binnen dat onderwerp mee helpen"
       );
     }
   });
