@@ -581,9 +581,13 @@ Code:
 
 # LLM: aanwezig, maar nog niet inhoudelijk doorgetest
 
-De repo bevat meerdere aansluitpunten voor een taalmodel.
+De repo bevat meerdere aansluitpunten voor een taalmodel. Omdat de orchestratie en de systeemprompts provider-neutraal zijn (elke OpenAI-compatible `/chat/completions`-endpoint werkt), kiest `npm run demo` automatisch de beste beschikbare route:
 
-De Codespaces-configuratie probeert automatisch een klein lokaal model via Ollama te installeren. Een OpenAI-compatible endpoint kan ook via environmentvariabelen worden aangesloten.
+1. **Gehost via de Hugging Face router** — actief zodra er een HF-token in de omgeving staat (`HF_TOKEN`, `HUGGINGFACE_API_KEY` of `HUGGINGFACEHUB_API_TOKEN`). De demo zet dan `LLM_BASE_URL=https://router.huggingface.co/v1` en gebruikt standaard `Qwen/Qwen2.5-7B-Instruct` (te overschrijven met `DEMO_HF_MODEL`). Het token hoort thuis als Codespaces-secret of environmentvariabele en staat **nooit** in de repo.
+2. **Lokaal via Ollama** — een klein model dat de Codespaces-configuratie automatisch probeert te installeren.
+3. **Zonder LLM** — extractief en deterministisch uit de kennisbank.
+
+Een eigen OpenAI-compatible endpoint kan altijd via `LLM_BASE_URL`/`LLM_API_KEY`/`LLM_MODEL` worden aangesloten; dat gaat vóór alle bovenstaande tiers.
 
 De invloed van die LLM-route is nog niet voldoende doorgetest.
 
