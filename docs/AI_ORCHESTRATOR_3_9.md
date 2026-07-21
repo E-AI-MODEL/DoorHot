@@ -92,30 +92,40 @@ De v3.9 composer is bewust deterministisch. Hij gebruikt:
 - handoffregels.
 
 De bestaande LLM- en response-validatiepipeline blijft actief in de algemene
-en persoonlijke coach. De orchestrator wordt als sidecar uitgevoerd en voegt
-planmetadata toe zonder het bestaande coachantwoord te vervangen.
+en persoonlijke coach. Op de chatkanalen levert de orchestrator alleen het
+plan (intent en stappen) als aanvullende metadata; hij vervangt het
+coachantwoord niet en voert er geen tools uit.
 
 ## Coachintegratie
 
-Beide endpoints leveren nu aanvullend:
+Op de chatkanalen draait de orchestrator **plan-only**: het deterministische
+plan wordt berekend voor explainability, maar de tools worden niet
+uitgevoerd. De coach doet daar de echte retrieval en journeywerkzaamheden, dus
+een sidecar-uitvoering zou dat werk enkel dubbelen en op het persoonlijke pad
+gelijktijdig journey-state aanraken. Er wordt op de chatkanalen daarom ook geen
+run gepersisteerd. Beide endpoints leveren aanvullend:
 
 ```json
 {
   "orchestration": {
     "runId": "uuid",
     "intent": "journey_guidance",
-    "status": "completed",
+    "status": "planned",
     "plan": {}
   }
 }
 ```
 
+Volledige uitvoering — tools, trace-events en persistentie in
+`orchestration_runs`/`orchestration_events` — gebeurt uitsluitend via het
+aparte `/v1/orchestrate`-endpoint.
+
 Endpoints:
 
 ```text
-POST /v1/chat/general
-POST /v1/chat/personal
-POST /v1/orchestrate
+POST /v1/chat/general      (plan-only preview)
+POST /v1/chat/personal     (plan-only preview)
+POST /v1/orchestrate       (volledige uitvoering)
 ```
 
 ## Observability

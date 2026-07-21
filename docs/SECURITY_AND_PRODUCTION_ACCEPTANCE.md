@@ -29,7 +29,16 @@ Configuratie:
 RATE_LIMIT_WINDOW_MS=60000
 RATE_LIMIT_DEFAULT=180
 RATE_LIMIT_AUTH=20
+TRUST_PROXY=false
 ```
+
+De rate limiter sleutelt op het client-IP. Achter een reverse proxy of load
+balancer is het socket-IP de proxy, waardoor alle clients één bucket delen.
+Zet `TRUST_PROXY` dan op de juiste waarde (`true`, een hopcount, of een
+IP/CIDR-allowlist) zodat `X-Forwarded-For` wordt gehonoreerd. Laat het `false`
+buiten een vertrouwde proxy, anders kan een client zijn IP spoofen. De buckets
+zijn in-memory per API-instance; een multi-instance-deployment dat een globale
+limiet nodig heeft, moet dit met een gedeelde store onderbouwen.
 
 ## Dead-letterprivacy
 

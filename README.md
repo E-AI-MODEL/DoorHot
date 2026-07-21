@@ -425,6 +425,41 @@ In de code bestaan drie gesprekstypen:
 - `personal-ai`
 - `advisor`
 
+## Hoe een antwoord betrouwbaar blijft
+
+Het onderscheidende van Door010 zit niet in "er komt tekst uit", maar in de
+grenzen daaromheen: de deterministische engines zijn de bron van waarheid, het
+taalmodel verwoordt maar bepaalt niets zelf, de algemene coach weigert netjes
+wat buiten het onderwijs valt, en een validator is de laatste grens vóór het
+antwoord de deur uit gaat.
+
+```mermaid
+flowchart TD
+    Q["Vraag van de gebruiker"]
+
+    Q -->|algemene coach| GATE{"Answerability-poort<br/>raakt de vraag het onderwijs?"}
+    GATE -->|nee| DEC["Nette weigering + uitnodiging<br/>geen bron, geen verzonnen antwoord"]
+    GATE -->|ja| RET["Retrieval<br/>FTS + semantisch + trusted-source web-fallback"]
+
+    Q -->|persoonlijke coach| ENG["Deterministische engines<br/>Phase - Route - Journey<br/>= bron van waarheid"]
+    ENG --> LLMP["LLM verwoordt de context<br/>muteert zelf niets"]
+
+    RET --> VAL["Validatie en repair<br/>de laatste grens"]
+    LLMP --> VAL
+    VAL --> ANS["Antwoord"]
+
+    ORCH["Orchestrator<br/>parallelle plan-only laan<br/>levert intent + plan voor uitleg"] -.->|voegt metadata toe| ANS
+```
+
+- **Algemene coach:** stateless en publiek. De poort laat door zodra de vraag
+  het onderwijs raakt en weigert anders zonder een least-bad record als bron te
+  presenteren.
+- **Persoonlijke coach:** de engines beslissen over fase, route en journey; het
+  model verwoordt dat en stelt wijzigingen als bevestigbare voorstellen voor.
+- **Adviseurchat:** puur menselijk, geen AI-generatie.
+- **Orchestrator:** loopt op de chatkanalen plan-only mee voor explainability en
+  vervangt het coachantwoord niet.
+
 <details>
 <summary><strong>1. Website en vaste flows</strong></summary>
 
