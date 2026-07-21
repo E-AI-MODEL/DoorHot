@@ -438,11 +438,12 @@ flowchart TD
     Q["Vraag van de gebruiker"]
 
     Q -->|algemene coach| RET["Retrieval<br/>FTS + semantisch + trusted-source web-fallback"]
-    RET --> GATE{"Answerability<br/>domein-match of verse externe bron?"}
+    RET --> GATE{"Answerability<br/>raakt de vraag het onderwijs,<br/>of is er een verse externe bron?"}
     GATE -->|nee| DEC["Nette weigering + uitnodiging<br/>geen bron, geen verzonnen antwoord"]
     GATE -->|ja| VAL
 
     Q -->|persoonlijke coach| ENG["Deterministische engines<br/>Phase - Route<br/>= bron van waarheid"]
+    GM["Graph Memory<br/>journey-context (alleen-lezen)"] --> LLMP
     ENG --> LLMP["LLM verwoordt de context<br/>muteert zelf niets"]
     LLMP --> VAL
 
@@ -452,12 +453,13 @@ flowchart TD
 ```
 
 - **Algemene coach:** stateless en publiek. De poort beoordeelt ná retrieval
-  of het toprecord het onderwijs raakt (of er een verse externe bron is
-  gevonden) en weigert anders, zonder een least-bad record als bron te
-  presenteren.
+  of de **vraag** het onderwijs raakt (education-footing) en weigert anders
+  netjes, zonder een least-bad record als bron te presenteren. Een verse
+  externe bron telt als in-scope.
 - **Persoonlijke coach:** de Phase- en Route-engines beslissen; het model
-  verwoordt dat en stelt wijzigingen als bevestigbare voorstellen voor.
-  Journey-state loopt via de aparte journey-endpoints, niet via de chatgeneratie.
+  verwoordt dat en krijgt journey-context **alleen-lezen** mee via Graph
+  Memory. De Journey Engine wordt niet aangeroepen of gemuteerd; wijzigingen
+  lopen als bevestigbare voorstellen via de aparte journey-endpoints.
 - **Adviseurchat:** puur menselijk, geen AI-generatie.
 - **Orchestrator:** loopt op de chatkanalen plan-only mee voor explainability en
   vervangt het coachantwoord niet.
