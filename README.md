@@ -961,6 +961,8 @@ De waarden in dit voorbeeld zijn placeholders.
 
 Een werkende aansluiting bewijst nog niet dat de provider inhoudelijk, juridisch of technisch geschikt is voor productie.
 
+**Controleren dat de route leeft:** `npm run verify:llm` stuurt één vaste testvraag naar het geconfigureerde endpoint en logt model, HTTP-status, latency en de eerste regels van het antwoord. Het toont het token nooit en stopt met een duidelijke melding als er geen endpoint is ingesteld. Het zegt alleen dat de route *werkt*, niet dat die inhoudelijk *goed* is — dat blijft de aparte met/zonder-LLM-vergelijking.
+
 </details>
 
 ---

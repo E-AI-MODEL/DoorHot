@@ -1825,12 +1825,18 @@ export class AdaptiveRetrievalAnswerDraftProvider
       allowWebFallback: chatbotKey === "general-coach"
     });
 
-    // A greeting is not a knowledge question. Without an LLM the extractive
-    // path would otherwise ground it on the nearest record and answer a
-    // "hallo" with a random knowledge item, so respond with a warm welcome
-    // instead. Catch both the intent classification and a leading greeting
-    // word ("Hallo, kun je me helpen?" classifies as a question).
-    if (retrieval.intent === "greeting" || startsWithGreeting(request.message)) {
+    // A bare greeting is not a knowledge question. Without an LLM the
+    // extractive path would otherwise ground it on the nearest record and
+    // answer a "hallo" with a random knowledge item, so respond with a warm
+    // welcome instead. But a greeting followed by a real, in-domain question
+    // ("Hallo, wat kost de pabo?") must still be answered, so only take the
+    // welcome shortcut when the message carries no education footing of its
+    // own — that keeps small-talk openers ("Hallo, kun je me helpen?") warm
+    // while letting a greeted question fall through to the normal pipeline.
+    const looksLikeGreeting =
+      retrieval.intent === "greeting" ||
+      startsWithGreeting(request.message);
+    if (looksLikeGreeting && !queryHasEducationFooting(request.message)) {
       return greetingDraft(chatbotKey);
     }
 
@@ -1937,6 +1943,12 @@ export class AdaptiveRetrievalAnswerDraftProvider
       }
     );
 
+    // When the top internal record was rejected as grounding (a vague or
+    // off-topic personal-coach message), it must not survive as a citation
+    // or a visible link either — presenting a rejected record as a source
+    // is the same "least-bad record" failure the grounding check prevents.
+    const internalCitations = canGroundOnInternal ? retrieval.internal : [];
+
     const sources: SourceReference[] = [
       ...retrieval.external.map((item) => ({
         provider: item.sourceKey,
@@ -1944,7 +1956,7 @@ export class AdaptiveRetrievalAnswerDraftProvider
         sourceUrl: item.sourceUrl,
         retrievedAt: item.retrievedAt
       })),
-      ...retrieval.internal.map((item) => ({
+      ...internalCitations.map((item) => ({
         provider:
           item.record.sourceKey ?? "door010-knowledge",
         externalId:
@@ -1965,7 +1977,7 @@ export class AdaptiveRetrievalAnswerDraftProvider
           href: item.sourceUrl!,
           sourceKey: item.sourceKey
         })),
-      ...retrieval.internal
+      ...internalCitations
         .filter((item) => item.record.sourceUrl)
         .map((item) => ({
           label: item.record.title,

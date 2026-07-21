@@ -18,6 +18,7 @@
     "verify:datasets": "tsx scripts/verify-dataset-parity.ts",
     "clean": "tsc -b --clean",
     "verify:compile-readiness": "tsx scripts/verify-compile-readiness.ts",
+    "verify:llm": "node scripts/verify-llm.mjs",
     "verify:migrations": "node scripts/verify-migrations-pglite.mjs",
     "verify:seed": "tsx scripts/verify-seed-pglite.ts",
     "migrate": "node scripts/migrate-postgres.mjs",

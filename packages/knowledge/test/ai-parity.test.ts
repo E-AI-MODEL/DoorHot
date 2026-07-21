@@ -470,7 +470,8 @@ describe("AI parity pipeline", () => {
     );
 
     // Retrieval always returns the pabo record as nearest, but a vague
-    // message should not be answered from it.
+    // message should not be answered from it - and the rejected record must
+    // not survive as a citation or link either.
     const vague = await provider.createDraft(
       "personal-journey-coach",
       { message: "ahif" },
@@ -479,6 +480,8 @@ describe("AI parity pipeline", () => {
     expect(vague.directAnswer).not.toContain(
       "De pabo past bij een route naar het basisonderwijs"
     );
+    expect(vague.sources).toEqual([]);
+    expect(vague.verifiedLinks).toEqual([]);
 
     const greeting = await provider.createDraft(
       "personal-journey-coach",
@@ -488,6 +491,16 @@ describe("AI parity pipeline", () => {
     expect(greeting.directAnswer).toContain("Hoi!");
     expect(greeting.sources).toEqual([]);
     expect(greeting.directAnswer).not.toContain("De pabo past");
+
+    // A greeting followed by a real, in-domain question must still be
+    // answered from the knowledge base instead of only getting a welcome.
+    const greetedQuestion = await provider.createDraft(
+      "personal-journey-coach",
+      { message: "Hallo, wat kost de pabo?" },
+      { slots: [] }
+    );
+    expect(greetedQuestion.directAnswer).toContain("De pabo past");
+    expect(greetedQuestion.directAnswer).not.toContain("Hoi!");
   });
 
   it("repairs internal journey identifiers and status labels", async () => {
