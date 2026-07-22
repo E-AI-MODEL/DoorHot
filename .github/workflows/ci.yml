@@ -35,16 +35,7 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Audit dependencies
-        id: npm_audit
-        continue-on-error: true
-        run: npm audit --audit-level=moderate --json > npm-audit-report.json
-
-      - name: Upload npm audit report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: door010-npm-audit-${{ github.sha }}
-          path: npm-audit-report.json
+        run: npm audit --audit-level=moderate
 
       - name: Typecheck
         run: npm run typecheck
@@ -66,12 +57,6 @@ jobs:
 
       - name: Guard shadow reranker quality
         run: npm run benchmark:shadow-reranker:check
-
-      - name: Enforce dependency audit
-        if: always() && steps.npm_audit.outcome == 'failure'
-        run: |
-          cat npm-audit-report.json
-          exit 1
 
   e2e:
     name: Run browser parity tests
