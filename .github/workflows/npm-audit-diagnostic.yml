@@ -1,0 +1,64 @@
+name: Door010 npm audit diagnostic
+
+on:
+  push:
+    branches:
+      - agent/npm-audit-diagnostic
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Capture npm audit report
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Capture audit context
+        run: |
+          {
+            echo "node=$(node --version)"
+            echo "npm=$(npm --version)"
+            echo "registry=$(npm config get registry)"
+            echo "sha=${GITHUB_SHA}"
+          } > npm-audit-context.txt
+
+      - name: Generate npm audit JSON
+        id: npm_audit
+        run: |
+          set +e
+          npm audit --audit-level=moderate --json > npm-audit-report.json
+          status=$?
+          echo "exit_code=${status}" >> "$GITHUB_OUTPUT"
+          echo "audit_exit_code=${status}" >> npm-audit-context.txt
+          exit 0
+
+      - name: Upload npm audit diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: door010-npm-audit-${{ github.sha }}
+          path: |
+            npm-audit-report.json
+            npm-audit-context.txt
+
+      - name: Enforce dependency audit
+        if: always() && steps.npm_audit.outputs.exit_code != '0'
+        run: |
+          cat npm-audit-context.txt
+          cat npm-audit-report.json
+          exit 1
