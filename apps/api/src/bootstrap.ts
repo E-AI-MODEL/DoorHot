@@ -122,6 +122,10 @@ export interface ApplicationServices {
   profileService: ProfileService;
   tokenService: HmacTokenService;
   knowledgeSearch: import("@door010/knowledge").KnowledgeSearch;
+  // Exposed for read-only observability (candidate tracing / audit): this is
+  // the exact pipeline the coaches use, so a trace reflects the real runtime
+  // instead of a hand-rebuilt copy. Surfacing it changes no behaviour.
+  retrievalPipeline: AdaptiveRetrievalPipeline;
   knowledgeIngestion: FaqIngestionService;
   knowledgeRepository: InMemoryKnowledgeRepository;
   trustedSourceRepository: InMemoryTrustedSourceRepository;
@@ -471,6 +475,7 @@ await routeStepIngestion.ingest({ steps: routeStepContent });
     phasePreferenceResolver,
     datasetsDirectory,
     knowledgeSearch,
+    retrievalPipeline,
     knowledgeIngestion,
     knowledgeRepository,
     trustedSourceRepository,

@@ -19,6 +19,8 @@
     "clean": "tsc -b --clean",
     "verify:compile-readiness": "tsx scripts/verify-compile-readiness.ts",
     "verify:llm": "node scripts/verify-llm.mjs",
+    "audit:data-parity": "node scripts/audit-data-runtime-parity.mjs",
+    "trace:chat": "tsx scripts/trace-chat-query.ts",
     "verify:migrations": "node scripts/verify-migrations-pglite.mjs",
     "verify:seed": "tsx scripts/verify-seed-pglite.ts",
     "migrate": "node scripts/migrate-postgres.mjs",
