@@ -1,0 +1,180 @@
+{
+  "generatedAt": "2026-07-22T14:01:01.474Z",
+  "indexedTotal": 166,
+  "phaseItemCategorisation": {
+    "catalog": 654,
+    "referencedBySlots": 441,
+    "referencedByPhases": 163,
+    "both": 101,
+    "onlySlot": 340,
+    "onlyPhase": 62,
+    "unreferenced": 151
+  },
+  "rows": [
+    {
+      "file": "phase-detector-questions.json",
+      "sha256": "938a13ef4d4c",
+      "count": 654,
+      "format": "object: slots + slot_to_questions + phase_to_questions + catalogus",
+      "chatIndexed": false,
+      "consumer": "packages/domain/src/phase-engine.ts",
+      "sourceLink": "n.v.t.",
+      "tests": "phase-detector-real-dataset.test.ts (echte dataset)",
+      "status": "Actief na contractfix (PR #22): slot/fase-verwijzingen worden genormaliseerd naar question_id en resolven in de catalogus."
+    },
+    {
+      "file": "phase-detector-rules.json",
+      "sha256": "43586fd65265",
+      "count": 5,
+      "format": "object: phases[] met required/optional slots",
+      "chatIndexed": false,
+      "consumer": "packages/domain/src/phase-engine.ts",
+      "sourceLink": "n.v.t.",
+      "tests": "phase-engine.test.ts",
+      "status": "Actief: bepaalt vereiste/optionele slots per fase."
+    },
+    {
+      "file": "phase-system-4.json",
+      "sha256": "e751ab9b8d11",
+      "count": 4,
+      "format": "object: phases[]",
+      "chatIndexed": false,
+      "consumer": "packages/domain/src/phase-systems.ts",
+      "sourceLink": "n.v.t.",
+      "tests": "phase-systems.test.ts",
+      "status": "Actief."
+    },
+    {
+      "file": "phase-system-5.json",
+      "sha256": "9fe1914ee18b",
+      "count": 5,
+      "format": "object: phases[]",
+      "chatIndexed": false,
+      "consumer": "packages/domain/src/phase-systems.ts",
+      "sourceLink": "n.v.t.",
+      "tests": "phase-systems.test.ts",
+      "status": "Actief."
+    },
+    {
+      "file": "phase-system-9.json",
+      "sha256": "babc2634bba4",
+      "count": 9,
+      "format": "object: phases[]",
+      "chatIndexed": false,
+      "consumer": "packages/domain/src/phase-systems.ts",
+      "sourceLink": "n.v.t.",
+      "tests": "phase-systems.test.ts",
+      "status": "Actief."
+    },
+    {
+      "file": "journey-phases.json",
+      "sha256": "40ea5a7d81cd",
+      "count": 9,
+      "format": "array van fasedefinities",
+      "chatIndexed": false,
+      "consumer": "packages/domain/src/journey-phases.ts",
+      "sourceLink": "n.v.t.",
+      "tests": "journey-phases.test.ts",
+      "status": "Actief (journeycontext)."
+    },
+    {
+      "file": "routes.json",
+      "sha256": "c0fec940bacf",
+      "count": 3378,
+      "format": "array van routes met stap-/antwoordrelaties",
+      "chatIndexed": false,
+      "consumer": "packages/domain/src/route-engine.ts",
+      "sourceLink": "n.v.t.",
+      "tests": "route-engine.test.ts",
+      "status": "Actief voor routebepaling."
+    },
+    {
+      "file": "route-questions.json",
+      "sha256": "bebc7a1237b4",
+      "count": 4,
+      "format": "array van vragen met answers[]",
+      "chatIndexed": false,
+      "consumer": "packages/domain/src/route-engine.ts",
+      "sourceLink": "n.v.t.",
+      "tests": "route-engine.test.ts",
+      "status": "Actief voor routebepaling."
+    },
+    {
+      "file": "route-steps.json",
+      "sha256": "5dc5cd633487",
+      "count": 66,
+      "format": "array van stappen met faqs[]/articles[]",
+      "chatIndexed": true,
+      "consumer": "apps/api/src/bootstrap.ts + packages/domain/src/route-engine.ts",
+      "sourceLink": "present (deels)",
+      "tests": "retrieval-trace-parity.test.ts (166 records)",
+      "status": "Geindexeerd in chatretrieval. INERT: de faqs/articles-CMS-verwijzingen op een routestap worden geladen maar niet geconsumeerd."
+    },
+    {
+      "file": "faq-seed.json",
+      "sha256": "f13d28f50d55",
+      "count": 48,
+      "format": "object: { faqs: [...] }",
+      "chatIndexed": true,
+      "consumer": "apps/api/src/bootstrap.ts",
+      "sourceLink": "present (source_url)",
+      "tests": "retrieval-trace-parity.test.ts",
+      "status": "Geindexeerd in chatretrieval. Enige bron in de benchmark. LET OP: FAQ-records krijgen GEEN itemType (alleen category)."
+    },
+    {
+      "file": "regional-education-desks.json",
+      "sha256": "e2c6be8ad42e",
+      "count": 52,
+      "format": "array van loketten",
+      "chatIndexed": true,
+      "consumer": "apps/api/src/bootstrap.ts",
+      "sourceLink": "present (loket-URL)",
+      "tests": "retrieval-trace-parity.test.ts",
+      "status": "Geindexeerd (itemType regional_desk). NIET in de benchmark."
+    },
+    {
+      "file": "interest-talent-test.json",
+      "sha256": "ab1e4d90a1dd",
+      "count": 8,
+      "format": "object/array met vragen",
+      "chatIndexed": false,
+      "consumer": "apps/api (talent-test route)",
+      "sourceLink": "n.v.t.",
+      "tests": "parity-flows (e2e)",
+      "status": "Actief voor de talententest."
+    },
+    {
+      "file": "retrieval-benchmark.json",
+      "sha256": "30750e980068",
+      "count": 333,
+      "format": "array van query/expected",
+      "chatIndexed": false,
+      "consumer": "scripts/evaluate-retrieval-baseline.mjs + evaluate-hybrid-retrieval.ts",
+      "sourceLink": "n.v.t.",
+      "tests": "benchmark-scripts",
+      "status": "Alleen benchmark. Meet tegen FAQ-only, NIET tegen de volledige runtime-collectie (loketten + routestappen ontbreken)."
+    },
+    {
+      "file": "learned-reranker-model.json",
+      "sha256": "234df5ff1ae4",
+      "count": 10,
+      "format": "object: featureNames + weights",
+      "chatIndexed": false,
+      "consumer": "packages/knowledge (LearnedLinearKnowledgeReranker)",
+      "sourceLink": "n.v.t.",
+      "tests": "learned-reranker.test.ts",
+      "status": "Actief. Titelfeatures getraind op canonieke titel; aliases niet in de vier titelfeatures."
+    },
+    {
+      "file": "manifest.json",
+      "sha256": "f2bdd1bf9ee6",
+      "count": 2,
+      "format": "object: verwachte aantallen",
+      "chatIndexed": false,
+      "consumer": "scripts/verify-dataset-parity.ts",
+      "sourceLink": "n.v.t.",
+      "tests": "verify:datasets",
+      "status": "Actief als verwachte-aantallen-manifest."
+    }
+  ]
+}
